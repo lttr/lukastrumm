@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+{{> meta }}
+</head>
+<body>
+
+{{> header }}
+
+<main{{#if navsub}} class="subpages"{{/if}}>
+
+  <div class="content">
+
+    <article>
+
+      {{#if title}}
+        <h1>{{ title }}</h1>
+      {{/if}}
+
+      {{#each articles}}
+        <p> 
+          <a href="/{{ path }}">{{ title }}</a>
+          <span>{{ date }}</span>
+        </p>
+        <p>
+          <i> {{ excerpt }} </i>
+        </p>
+      {{/each}}
+
+    </article>
+
+    {{> navsub }}
+
+  </div>
+
+</main>
+
+{{> footer template='article' }}
+
+</body>
+</html>

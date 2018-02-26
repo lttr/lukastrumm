@@ -1,0 +1,44 @@
+{
+  "name": "lukastrumm",
+  "version": "1.0.0",
+  "description": "Personal site about software engineering on the web",
+  "engines": {
+    "node": ">=8.0"
+  },
+  "homepage": "https://lukastrumm.com",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lttr/lukastrumm.git"
+  },
+  "author": "Lukas Trumm",
+  "license": "MIT",
+  "main": "build.js",
+  "scripts": {
+    "dev:build": "node build.js",
+    "dev:watch": "onchange 'build.js' 'src/**/*' -w -i -- npm run dev:build",
+    "dev:serve": "browser-sync start -s build/ --no-notify --open",
+    "start": "run-p --print-label dev:watch dev:serve",
+    "production": "NODE_ENV=production node build.js"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.23.5",
+    "handlebars": "^4.0.5",
+    "metalsmith": "^2.1.0",
+    "metalsmith-assets": "^0.1.0",
+    "metalsmith-better-excerpts": "^0.1.7",
+    "metalsmith-collections": "^0.7.0",
+    "metalsmith-debug-ui": "^0.3.0",
+    "metalsmith-excerpts": "^1.2.0",
+    "metalsmith-feed": "^0.2.0",
+    "metalsmith-headings": "^0.2.0",
+    "metalsmith-layouts": "^1.6.4",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-permalinks": "^0.5.0",
+    "metalsmith-publish": "^0.1.3",
+    "metalsmith-tags": "^2.0.0",
+    "npm-run-all": "^4.1.2",
+    "onchange": "^3.3.0",
+    "standard": "^10.0.3"
+  },
+  "dependencies": {}
+}

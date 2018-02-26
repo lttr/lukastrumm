@@ -1,0 +1,20 @@
+{{#if navsub}}
+
+	<!-- sub navigation -->
+	<nav class="nav sub">
+		<ul>
+
+		{{#each navsub}}
+			<li>
+			{{#if active}}
+				<strong>{{title}}</strong>
+			{{else}}
+				<a href="{{path}}">{{title}}</a>
+			{{/if}}
+			</li>
+		{{/each}}
+
+		</ul>
+	</nav>
+
+{{/if}}

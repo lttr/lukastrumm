@@ -1,0 +1,9 @@
+<nav class="nav main">
+	<ul>
+	{{#each pages}}
+		<li>
+			<a href="/{{path}}"{{#if active}} class="active"{{/if}}>{{title}}</a>
+		</li>
+	{{/each}}
+	</ul>
+</nav>

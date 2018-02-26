@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+{{> meta }}
+</head>
+<body>
+
+{{> header }}
+
+<main{{#if navsub}} class="subpages"{{/if}}>
+
+	<div class="content">
+
+		<article>
+
+			<h1>{{ title }}</h1>
+
+			{{#if isPage}}
+			{{else}}
+
+				<p class="articleinfo">Published {{ dateFormat }}, {{ wordCount }} words, {{ readingTime }}-minute read</p>
+
+			{{/if}}
+
+			<ul class="section table-of-contents">
+			  {{#each headings }}
+				   <li><a href="#{{ id }}"># {{ text }}</a></li>
+			  {{/each}}   
+			</ul>
+
+			{{{ contents }}}
+
+			<ul>
+			{{#each tags }}
+				<li><a href="/topics/{{ slug }}">{{ slug }}</a></li>
+			{{/each}}
+			</ul>
+
+			{{#if isPage}}
+
+				{{> pagelist }}
+
+			{{else}}
+
+				<nav class="nav page">
+					<ul>
+
+					{{#if previous.title }}
+						<li><a href="{{ root }}{{ previous.path }}/" class="back">&laquo; back: {{ previous.title }}</a></li></p>
+					{{/if}}
+
+					{{#if next.title }}
+						<li><a href="{{ root }}{{ next.path }}/" class="next">next: {{ next.title }} &raquo;</a></li></p>
+					{{/if}}
+
+					</ul>
+				</nav>
+
+			{{/if}}
+
+			</article>
+
+		{{> navsub }}
+
+		</div>
+
+</main>
+
+{{> footer template='article' }}
+
+</body>
+</html>
