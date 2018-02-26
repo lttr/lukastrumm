@@ -106,7 +106,7 @@ console.log(`${DEV_BUILD ? '[Development]' : '[Production]'} build started.`)
 // Build a site for me ...
 const site = metalsmith(dirs.base)
   // start with clean destination
-  .clean(true)
+  .clean(!DEV_BUILD)
   // and generate from directory
   .source(dirs.content)
   // to directory

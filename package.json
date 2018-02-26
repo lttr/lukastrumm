@@ -18,7 +18,7 @@
     "dev:watch": "onchange 'build.js' 'src/**/*' -w -i -- npm run dev:build",
     "dev:serve": "browser-sync start -s build/ --no-notify --open",
     "start": "run-p --print-label dev:watch dev:serve",
-    "production": "NODE_ENV=production node build.js"
+    "production": "NODE_ENV=production node build.js && git submodule update"
   },
   "devDependencies": {
     "browser-sync": "^2.23.5",
