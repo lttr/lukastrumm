@@ -1,3 +1,3 @@
 [submodule "shortcuts"]
-	path = build/shortcuts
+	path = shortcuts
 	url = git@github.com:lttr/shortcuts
