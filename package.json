@@ -14,14 +14,18 @@
   "license": "MIT",
   "main": "build.js",
   "scripts": {
-    "dev:build": "node build.js",
+    "build": "cross-env NODE_ENV=production node build.js && run-p -l build:sub:*",
+    "build:sub:shortcuts": "cd shortcuts && npm run build && copyfiles -f build/* ../build/shortcuts/",
+    "dev:build": "node build.js && run-p -l build:sub:*",
     "dev:watch": "onchange 'build.js' 'src/**/*' -w -i -- npm run dev:build",
     "dev:serve": "browser-sync start -s build/ --no-notify --open",
     "start": "run-p --print-label dev:watch dev:serve",
-    "production": "NODE_ENV=production node build.js && git submodule update"
+    "production": "npm run build"
   },
   "devDependencies": {
     "browser-sync": "^2.23.5",
+    "copyfiles": "^2.0.0",
+    "cross-env": "^5.2.0",
     "handlebars": "^4.0.5",
     "metalsmith": "^2.1.0",
     "metalsmith-assets": "^0.1.0",
