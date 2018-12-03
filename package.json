@@ -14,13 +14,16 @@
   "license": "MIT",
   "main": "build.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production node build.js && run-p -l build:sub:*",
-    "build:sub:shortcuts": "cd shortcuts && npm run build && copyfiles -f build/* ../build/shortcuts/",
-    "build:sub": "run-p -l build:sub:*",
+    "build": "run-s -l build:core:prod build:submodules:install build:submodules:build build:submodule:*",
+    "build:submodule:shortcuts": "copyfiles -u 2 \"shortcuts/build/**/*\" build/shortcuts/",
+    "build:submodule:talks": "copyfiles -u 2 \"talks/dist/**/*\" build/talks",
+    "build:submodules:install": "git submodule foreach npm install",
+    "build:submodules:build": "git submodule foreach npm run build",
+    "build:core:prod": "cross-env NODE_ENV=production node build.js",
     "build:core": "node build.js",
-    "watch": "npm run build:sub && onchange \"build.js\" \"src/**/*\" -w -i -- npm run build:core",
-    "serve": "browser-sync start -s build/ -f build/ --no-notify --open",
-    "start": "run-p --print-label dev:watch dev:serve",
+    "watch": "onchange build.js \"src/**/*\" -w -i -- npm run build:core",
+    "serve": "browser-sync start -s build/ -f build/ --no-notify --open .",
+    "start": "run-p -l dev:watch dev:serve",
     "production": "npm run build"
   },
   "devDependencies": {
