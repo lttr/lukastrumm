@@ -16,9 +16,10 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production node build.js && run-p -l build:sub:*",
     "build:sub:shortcuts": "cd shortcuts && npm run build && copyfiles -f build/* ../build/shortcuts/",
-    "dev:build": "node build.js && run-p -l build:sub:*",
-    "dev:watch": "onchange 'build.js' 'src/**/*' -w -i -- npm run dev:build",
-    "dev:serve": "browser-sync start -s build/ --no-notify --open",
+    "build:sub": "run-p -l build:sub:*",
+    "build:core": "node build.js",
+    "watch": "npm run build:sub && onchange \"build.js\" \"src/**/*\" -w -i -- npm run build:core",
+    "serve": "browser-sync start -s build/ -f build/ --no-notify --open",
     "start": "run-p --print-label dev:watch dev:serve",
     "production": "npm run build"
   },
@@ -31,6 +32,7 @@
     "metalsmith-assets": "^0.1.0",
     "metalsmith-better-excerpts": "^0.1.7",
     "metalsmith-collections": "^0.7.0",
+    "metalsmith-date-formatter": "^1.0.2",
     "metalsmith-debug-ui": "^0.3.0",
     "metalsmith-excerpts": "^1.2.0",
     "metalsmith-feed": "^0.2.0",

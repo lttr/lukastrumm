@@ -12,11 +12,12 @@ const dirs = {
   lib: path.join(__dirname, '/lib/'),
   source: './src/',
   content: './src/content/',
-  dest: './build/'
+  dest: './build/',
 }
 
 const assets = require('metalsmith-assets')
 const collections = require('metalsmith-collections')
+const dateFormatter = require('metalsmith-date-formatter')
 const debugui = require('metalsmith-debug-ui')
 const excerpts = require('metalsmith-better-excerpts')
 const headings = require('metalsmith-headings')
@@ -38,37 +39,37 @@ const siteMeta = {
     poweredByWeb: 'https://www.metalsmith.io/',
     runOnWeb: 'https://www.netlify.com/',
     domain: DEV_BUILD ? 'http://localhost' : 'https://lukastrumm.com',
-    root: '/'
-  }
+    root: '/',
+  },
 }
 
 const templateConfig = {
   engine: 'handlebars',
   directory: dirs.source + 'template/',
   partials: dirs.source + 'partials/',
-  default: 'article.hbs'
+  default: 'article.hbs',
 }
 
 const collectionsConfig = {
   pages: {
     sortBy: 'priority',
     reverse: true,
-    refer: false
+    refer: false,
   },
   articles: {
     pattern: 'articles/*/*.md',
     sortBy: 'date',
     reverse: true,
     refer: true,
-    limit: 50
+    limit: 50,
   },
   topics: {
     pattern: 'topics/**/*',
     sortBy: 'date',
     reverse: true,
     refer: true,
-    limit: 50
-  }
+    limit: 50,
+  },
 }
 
 const tagsConfig = {
@@ -77,28 +78,41 @@ const tagsConfig = {
   layout: 'list-of-topics.hbs',
   sortBy: 'date',
   reverse: true,
-  slug: { mode: 'rfc3986' }
+  slug: { mode: 'rfc3986' },
 }
 
 const excerptsConfig = {
   moreRegExp: /\s*<!--\s*more\s*-->/i,
   stripTags: true,
   pruneLength: 300,
-  pruneString: '…'
+  pruneString: '…',
 }
 
 const markdownConfig = {
   smartypants: true,
   gfm: true,
-  tables: true
+  tables: true,
 }
 
 const headingsConfig = {
-  selectors: ['h2', 'h3']
+  selectors: ['h2', 'h3'],
 }
 
 const linksConfig = {
-  pattern: ':mainCollection/:title'
+  pattern: ':mainCollection/:title',
+}
+
+const dateFormatConfig = {
+  dates: [
+    {
+      key: 'publishDate',
+      format: 'YYYY-MM-DD',
+    },
+    {
+      key: 'modifiedDate',
+      format: 'YYYY-MM-DD',
+    },
+  ],
 }
 
 console.log(`${DEV_BUILD ? '[Development]' : '[Production]'} build started.`)
@@ -127,6 +141,8 @@ const site = metalsmith(dirs.base)
   .use(excerpts(excerptsConfig))
   // and make pages available at logical locations
   .use(permalinks(linksConfig))
+  // format dates
+  .use(dateFormatter(dateFormatConfig))
 
 // Show me what is going on
 if (DEBUG && DEV_BUILD) {
@@ -137,17 +153,21 @@ site
   // and merge my content with templates
   .use(layouts(templateConfig))
   // make feed for machines to understand
-  .use(rssfeed({
-    collection: 'articles',
-    site_url: site.domain + (siteMeta.rootpath || ''),
-    title: site.name,
-    description: site.desc
-  }))
+  .use(
+    rssfeed({
+      collection: 'articles',
+      site_url: site.domain + (siteMeta.rootpath || ''),
+      title: site.name,
+      description: site.desc,
+    })
+  )
   // dont forget about other frontend assets
-  .use(assets({
-    source: dirs.source + 'assets/',
-    destination: './'
-  }))
+  .use(
+    assets({
+      source: dirs.source + 'assets/',
+      destination: './',
+    })
+  )
   // and finally save the hard work!
   .build(error => {
     if (error) {
@@ -156,3 +176,4 @@ site
       console.log('Site build successfully.')
     }
   })
+
