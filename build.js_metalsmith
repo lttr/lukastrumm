@@ -10,8 +10,8 @@ const path = require('path')
 const dirs = {
   base: path.join(__dirname, '/'),
   lib: path.join(__dirname, '/lib/'),
-  source: './src/',
-  content: './src/content/',
+  source: './src_metalsmith/',
+  content: './src_metalsmith/content/',
   dest: './build/',
 }
 
@@ -169,11 +169,10 @@ site
     })
   )
   // and finally save the hard work!
-  .build(error => {
+  .build((error) => {
     if (error) {
       console.log(error)
     } else {
       console.log('Site build successfully.')
     }
   })
-
