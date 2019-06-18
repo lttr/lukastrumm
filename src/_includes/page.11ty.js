@@ -8,7 +8,7 @@ module.exports = function({ content, metadata, collections, page }) {
       <h2>Blog posts</h2>
       <ul>
         ${collections.blog.map(
-          (blog) => html`
+          blog => html`
             <li>${blog.data.title}</li>
           `
         )}
@@ -16,7 +16,7 @@ module.exports = function({ content, metadata, collections, page }) {
       <h2>Articles</h2>
       <ul>
         ${collections.articles.map(
-          (article) => html`
+          article => html`
             <li>${article.data.title}</li>
           `
         )}

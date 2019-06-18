@@ -19,13 +19,18 @@
     "build:submodules:install": "git submodule foreach npm install",
     "build:submodules:build": "git submodule foreach npm run build",
     "build": "eleventy --input=src --output=dist",
-    "serve": "eleventy --watch --input=src --output=dist --serve"
+    "serve": "eleventy --watch --input=src --output=dist --serve",
+    "lint": "eslint src/**/*.js",
+    "format": "prettier src/**/* --write"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.8.3",
     "copyfiles": "^2.1.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^5.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
     "npm-run-all": "^4.1.5",
-    "standard": "^10.0.3",
+    "prettier": "^1.18.2",
     "viperhtml": "^2.17.0"
   }
 }
