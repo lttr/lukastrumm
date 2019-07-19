@@ -18,8 +18,10 @@
     "build:submodule:talks": "copyfiles -u 2 \"talks/dist/**/*\" build/talks",
     "build:submodules:install": "git submodule foreach npm install",
     "build:submodules:build": "git submodule foreach npm run build",
+    "clean": "rimraf dist/*",
     "build": "eleventy --input=src --output=dist",
-    "serve": "eleventy --watch --input=src --output=dist --serve",
+    "serve": "eleventy --input=src --output=dist --serve --port 2000",
+    "watch": "eleventy --input=src --output=dist --watch",
     "lint": "eslint src/**/*.js",
     "format": "prettier src/**/* --write"
   },
@@ -31,6 +33,8 @@
     "eslint-plugin-prettier": "^3.1.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
+    "rimraf": "^2.6.3",
+    "simple-icons": "^1.11.0",
     "viperhtml": "^2.17.0"
   }
 }

@@ -1,0 +1,53 @@
+/* general */
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+/* layout */
+
+body {
+  margin: 0;
+  pading: 6px;
+  height: 100%;
+}
+
+.page-wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+main {
+  height: 100%;
+  padding-bottom: 60px;
+}
+
+/* footer */
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #6f5b1a;
+  background-color: #eeece6;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 10px);
+  margin: 5px;
+}
+
+footer > * {
+  padding: 1rem 0.5rem;
+}
+
+footer a {
+  color: #6f5b1a;
+}
+
+.social-icon svg {
+  fill: currentColor;
+  height: 1rem;
+}

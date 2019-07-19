@@ -1,5 +1,5 @@
 ---
-tags: blog
+layout: blog
 title: First blog
 ---
 
