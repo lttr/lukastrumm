@@ -1,3 +1,5 @@
+const inclusiveLangPlugin = require('@11ty/eleventy-plugin-inclusive-language')
+
 module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection('articles', function(collection) {
     return collection
@@ -19,5 +21,9 @@ module.exports = function(eleventyConfig) {
       .filter(item => item.inputPath.includes('pages/'))
   })
 
-  eleventyConfig.addPassthroughCopy('src/css')
+  eleventyConfig.addPlugin(inclusiveLangPlugin)
+
+  return {
+    templateFormats: ['11ty.js', 'md', 'css', 'jpg', 'png'],
+  }
 }

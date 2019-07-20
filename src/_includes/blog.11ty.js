@@ -1,18 +1,8 @@
-const viperhtml = require('viperhtml')
+const { base } = require('./base.11ty')
 
-const html = viperhtml.wire()
-
-module.exports = {
-  data() {
-    return {
-      title: 'Articles',
-      permalink: 'articles',
-      layout: 'page',
-    }
-  },
+module.exports = class {
   render(data) {
-    return html`
-      <div>foo</div>
-    `
-  },
+    const template = data.content
+    return base(this, template, data)
+  }
 }

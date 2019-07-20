@@ -17,6 +17,10 @@ function base(self, content, data) {
         <meta name="Description" content="${metadata.description}" />
         <link rel="stylesheet" href="${self.url('/css/index.css')}" />
         <link
+          href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Raleway:800&display=swap"
+          rel="stylesheet"
+        />
+        <link
           rel="alternate"
           href="${self.url(metadata.feed.path)}"
           type="application/atom+xml"
@@ -47,19 +51,19 @@ function base(self, content, data) {
             ${{ html: content }}
           </main>
 
-          <footer>
-            <span class="copyright">
-              Lukas Trumm &copy; ${new Date().getFullYear()}
-            </span>
+          <footer class="margins-off">
+            <a href="https://github.com/lttr">
+              <span class="social-icon">${{ html: githubIcon.svg }}</span>
+            </a>
             <a href="https://www.goodreads.com/user/show/64207622-luk-trumm">
               <span class="social-icon">${{ html: goodreadsIcon.svg }}</span>
             </a>
             <a href="https://twitter.com/lukastrumm">
               <span class="social-icon">${{ html: twitterIcon.svg }}</span>
             </a>
-            <a href="https://github.com/lttr">
-              <span class="social-icon">${{ html: githubIcon.svg }}</span>
-            </a>
+            <span class="copyright">
+              Lukas Trumm &copy; ${new Date().getFullYear()}
+            </span>
           </footer>
         </div>
       </body>
