@@ -4,4 +4,4 @@ layout: page
 permalink: /blog/
 ---
 
-# Blog
+# Blog B

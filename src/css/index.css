@@ -11,7 +11,7 @@
 
 /* lobotomized owl selector */
 * + * {
-  margin-top: 1.2em;
+  margin-top: calc(1.24 * 1.24em);
 }
 
 .margins-off > * {
@@ -48,7 +48,6 @@ ul > li + li {
   flex-direction: column;
   margin: 0 auto;
   max-width: 800px;
-  padding: 6px;
   min-height: 100%;
   position: relative;
 }

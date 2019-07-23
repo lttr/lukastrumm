@@ -6,14 +6,14 @@ const twitterIcon = require('simple-icons/icons/twitter')
 const html = viperhtml.wire()
 
 function base(self, content, data) {
-  const { metadata, collections, page } = data
+  const { metadata, collections, page, title } = data
   return html`
     <!DOCTYPE html>
     <html lang="en">
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>${metadata.title}</title>
+        <title>${title} - ${metadata.title}</title>
         <meta name="Description" content="${metadata.description}" />
         <link rel="stylesheet" href="${self.url('/css/index.css')}" />
         <link

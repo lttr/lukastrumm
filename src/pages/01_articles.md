@@ -1,7 +1,6 @@
 ---
 title: Articles
-layout: page
-permalink: /articles/
+permalink: /articlesXXX/
 ---
 
 # Articles
