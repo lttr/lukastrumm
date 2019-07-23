@@ -1,4 +1,6 @@
 const inclusiveLangPlugin = require('@11ty/eleventy-plugin-inclusive-language')
+const pluginRss = require('@11ty/eleventy-plugin-rss')
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection('articles', function(collection) {
@@ -17,13 +19,15 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addCollection('nav', function(collection) {
     return collection
-      .getFilteredByGlob('./src/pages/*')
+      .getFilteredByGlob('./src/pages/0*')
       .sort((a, b) => a.inputPath > b.inputPath)
   })
 
   eleventyConfig.addPlugin(inclusiveLangPlugin)
+  eleventyConfig.addPlugin(pluginRss)
+  eleventyConfig.addPlugin(syntaxHighlight)
 
   return {
-    templateFormats: ['11ty.js', 'md', 'css', 'jpg', 'png'],
+    templateFormats: ['11ty.js', 'md', 'css', 'jpg', 'svg', 'png', 'ico'],
   }
 }

@@ -1,16 +1,15 @@
 {
-  "title": "Lukas Trumm",
+  "title": "lttr",
   "url": "https://lukastrumm.com/",
   "description": "Ideas about web engineering",
   "feed": {
-    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "subtitle": "Ideas about web engineering",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "url": "https://lukastrumm.com/feed/feed.xml",
     "id": "https://lukastrumm.com/"
   },
   "author": {
-    "name": "Lukas Trumm",
-    "email": "lukas.trumm@gmail.com"
+    "name": "Lukas Trumm"
   }
 }

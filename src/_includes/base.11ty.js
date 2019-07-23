@@ -13,13 +13,14 @@ function base(self, content, data) {
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>${title} - ${metadata.title}</title>
+        <title>${title}${title ? ' - ' : ''}${metadata.title}</title>
         <meta name="Description" content="${metadata.description}" />
         <link rel="stylesheet" href="${self.url('/css/index.css')}" />
         <link
           href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Raleway:800&display=swap"
           rel="stylesheet"
         />
+        <link href="/css/prism-darcula.css" rel="stylesheet" />
         <link
           rel="alternate"
           href="${self.url(metadata.feed.path)}"
@@ -30,21 +31,23 @@ function base(self, content, data) {
       <body>
         <div class="page-wrapper">
           <header>
-            <h1 class="home">
+            <h1>
               <a href="${self.url('/')}">${metadata.title}</a>
             </h1>
-            <ul class="nav">
-              ${collections.nav.map(item => {
-                let classList = 'nav-item'
-                classList +=
-                  item.url === page.url ? 'nav-item nav-item-active' : ''
-                return html`
-                  <li class="${classList}">
-                    <a href="${self.url(item.url)}">${item.data.title}</a>
-                  </li>
-                `
-              })}
-            </ul>
+            <nav>
+              <ul>
+                ${collections.nav.map(item => {
+                  let classList = 'nav-item'
+                  classList +=
+                    item.url === page.url ? 'nav-item nav-item-active' : ''
+                  return html`
+                    <li class="${classList}">
+                      <a href="${self.url(item.url)}">${item.data.title}</a>
+                    </li>
+                  `
+                })}
+              </ul>
+            </nav>
           </header>
 
           <main>

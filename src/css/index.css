@@ -41,6 +41,14 @@ ul > li + li {
   margin-top: 0.4em;
 }
 
+a {
+  color: var(--primary-color);
+}
+
+pre * + * {
+  margin-top: 0.2rem;
+}
+
 /* layout */
 
 .page-wrapper {
@@ -92,4 +100,60 @@ footer a {
 .social-icon svg {
   fill: currentColor;
   height: 1rem;
+}
+
+/* header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.6rem 0 0.45rem 0;
+  margin: 0;
+  border-bottom: 1px solid var(--back-color);
+}
+
+header a {
+  text-decoration: none;
+}
+
+header h1 {
+  font-size: 1.3rem;
+}
+
+header nav,
+header ul,
+header h1 {
+  margin: 0;
+}
+
+header nav ul {
+  display: flex;
+  align-items: baseline;
+}
+
+header nav li {
+  list-style: none;
+  display: inline-block;
+  position: relative;
+  margin: 0 0.2rem;
+  padding-left: 10px;
+  padding-right: 8px;
+}
+
+header nav li::before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -2px;
+  margin-left: -14px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  content: '';
+}
+
+header nav li:nth-child(1)::before {
+  display: none;
 }
