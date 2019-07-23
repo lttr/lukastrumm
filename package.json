@@ -14,8 +14,8 @@
   "license": "MIT",
   "scripts": {
     "build:submodules": "run-s -l build:submodules:install build:submodules:build build:submodule:*",
-    "build:submodule:shortcuts": "copyfiles -u 2 \"shortcuts/build/**/*\" build/shortcuts/",
-    "build:submodule:talks": "copyfiles -u 2 \"talks/dist/**/*\" build/talks",
+    "build:submodule:shortcuts": "copyfiles -u 2 \"shortcuts/dist/**/*\" dist/shortcuts/",
+    "build:submodule:talks": "copyfiles -u 2 \"talks/dist/**/*\" dist/talks",
     "build:submodules:install": "git submodule foreach npm install",
     "build:submodules:build": "git submodule foreach npm run build",
     "clean": "rimraf dist/*",
