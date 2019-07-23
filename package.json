@@ -23,7 +23,8 @@
     "serve": "eleventy --input=src --output=dist --serve --port 2000",
     "watch": "eleventy --input=src --output=dist --watch",
     "lint": "eslint src/**/*.js",
-    "format": "prettier src/**/* --write"
+    "format": "prettier src/**/* --write",
+    "production": "run-s -l build && build:submodules"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.8.3",
