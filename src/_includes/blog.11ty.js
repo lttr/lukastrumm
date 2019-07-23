@@ -1,8 +1,13 @@
-const { base } = require('./base.11ty')
+const { html, base } = require('./base.11ty')
 
 module.exports = class {
   render(data) {
-    const template = data.content
+    const { content, collections } = data
+    const template = html`
+      <article>
+        ${{ html: content }}
+      </article>
+    `
     return base(this, template, data)
   }
 }
