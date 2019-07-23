@@ -24,7 +24,7 @@
     "watch": "eleventy --input=src --output=dist --watch",
     "lint": "eslint src/**/*.js",
     "format": "prettier src/**/* --write",
-    "production": "run-s -l build && build:submodules"
+    "production": "run-s -l build build:submodules"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.8.3",
