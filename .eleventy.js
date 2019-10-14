@@ -20,7 +20,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection('nav', function(collection) {
     return collection
       .getFilteredByGlob('./src/pages/0*')
-      .sort((a, b) => a.inputPath > b.inputPath)
+      .sort((a, b) => (a.inputPath > b.inputPath ? 1 : -1))
   })
 
   eleventyConfig.addPlugin(inclusiveLangPlugin)
