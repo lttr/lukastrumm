@@ -154,6 +154,11 @@ header nav li::before {
   content: '';
 }
 
+header nav .is-active {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
 header nav li:nth-child(1)::before {
   display: none;
 }

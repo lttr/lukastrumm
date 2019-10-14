@@ -1,8 +1,7 @@
 ---
-title: Software
+title: About software gardening
 tags: engineering
 ---
 
-# About software gardening
 
 Tihsdlifasdlij

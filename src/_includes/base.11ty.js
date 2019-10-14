@@ -37,12 +37,14 @@ function base(self, content, data) {
             <nav>
               <ul>
                 ${collections.nav.map(item => {
-                  let classList = 'nav-item'
-                  classList +=
-                    item.url === page.url ? 'nav-item nav-item-active' : ''
+                  const isActive = page.url.startsWith(item.data.permalink)
                   return html`
-                    <li class="${classList}">
-                      <a href="${self.url(item.url)}">${item.data.title}</a>
+                    <li>
+                      <a
+                        class="${isActive ? 'is-active' : ''}"
+                        href="${self.url(item.url)}"
+                        >${item.data.title}</a
+                      >
                     </li>
                   `
                 })}
