@@ -17,6 +17,13 @@ module.exports = function(eleventyConfig) {
       .reverse()
   })
 
+  eleventyConfig.addCollection('notes', function(collection) {
+    return collection
+      .getAllSorted()
+      .filter(item => item.inputPath.includes('notes/'))
+      .reverse()
+  })
+
   eleventyConfig.addCollection('nav', function(collection) {
     return collection
       .getFilteredByGlob('./src/pages/0*')
