@@ -1,6 +1,7 @@
 const inclusiveLangPlugin = require('@11ty/eleventy-plugin-inclusive-language')
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+const markdownIt = require('markdown-it')
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection('articles', function(collection) {
@@ -29,6 +30,14 @@ module.exports = function(eleventyConfig) {
       .getFilteredByGlob('./src/pages/0*')
       .sort((a, b) => (a.inputPath > b.inputPath ? 1 : -1))
   })
+
+  const markdownOptions = {
+    html: true,
+    breaks: true,
+    linkify: true,
+    typographer: true,
+  }
+  eleventyConfig.setLibrary('md', markdownIt(markdownOptions))
 
   eleventyConfig.addPlugin(inclusiveLangPlugin)
   eleventyConfig.addPlugin(pluginRss)
