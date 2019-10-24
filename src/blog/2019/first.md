@@ -2,16 +2,56 @@
 title: First blog
 ---
 
-Blog text
+[[toc]]
 
+Test of markdown capabilities. [^markdown-capabilities]
+
+- unordered **list**
+  * nested _item_
+
+## Second level heading
+
+> blockquote
+
+~~Not a sentence~~
+
+You should search [here](https://duckduckgo.com).
+
+JavaScript:
 ```js
 function foo() {
   return `bar`;
 }
 ```
 
-This HTML thing -- it is furions
+<details>
+<summary>Hidden content</summary>
+You found it!
+</details>
 
-mdash &mdash;
-ndash &ndash;
-dash -
+### HTML ^[[html's homepage](https://www.w3.org/html/)]
+
+## Paragraphs
+
+Block of paragraph
+on multiple lines
+separated only by newlines
+and not empty lines.
+
+<div id="a">a</div>
+
+"Typography" -- it's fantastic!
+
+
+
+
+*[HTML]: Hyper Text Markup Language
+
+[^markdown-capabilities]: [markdown capabilities](https://github.com/markdown-it/markdown-it#syntax-extensions)
+
+
+
+
+<script>
+document.getElementById('a').textContent = 'Changed by JavaScript'
+</script>

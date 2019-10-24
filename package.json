@@ -24,7 +24,8 @@
     "watch": "eleventy --input=src --output=dist --watch",
     "lint": "eslint src/**/*.js",
     "format": "prettier src/**/* --write",
-    "production": "run-s -l build build:submodules"
+    "production": "run-s -l build build:submodules",
+    "start": "npm run serve"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.8.3",
@@ -36,6 +37,10 @@
     "eslint-config-prettier": "^5.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "markdown-it": "^10.0.0",
+    "markdown-it-abbr": "^1.0.4",
+    "markdown-it-anchor": "^5.2.5",
+    "markdown-it-footnote": "^3.0.2",
+    "markdown-it-table-of-contents": "^0.4.4",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
     "rimraf": "^2.6.3",

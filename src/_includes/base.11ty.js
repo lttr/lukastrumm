@@ -20,7 +20,7 @@ function base(self, content, data) {
           href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Raleway:800&display=swap"
           rel="stylesheet"
         />
-        <link href="/css/prism-darcula.css" rel="stylesheet" />
+        <link href="/css/prism-duotone-light.css" rel="stylesheet" />
         <link
           rel="alternate"
           href="${self.url(metadata.feed.path)}"
