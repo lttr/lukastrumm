@@ -181,8 +181,12 @@ header nav li:nth-child(1)::before {
 
 /* article */
 
-article {
+.article-content {
   position: relative;
+}
+
+.article-content.has-excerpt > p:first-child {
+  font-style: italic;
 }
 
 /* toc */

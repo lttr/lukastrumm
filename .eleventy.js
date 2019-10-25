@@ -35,6 +35,10 @@ module.exports = function(eleventyConfig) {
       .sort((a, b) => (a.inputPath > b.inputPath ? 1 : -1))
   })
 
+  eleventyConfig.setFrontMatterParsingOptions({
+    excerpt: true,
+  })
+
   const markdownOptions = {
     html: true,
     breaks: true,

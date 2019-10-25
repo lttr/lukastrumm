@@ -1,5 +1,10 @@
 ---
 title: First blog
+tags: meta
+---
+
+This is the start of my content and this will be shown as the excerpt.
+
 ---
 
 [[toc]]
