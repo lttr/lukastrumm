@@ -1,5 +1,7 @@
 ---
 title: First blog
+date: 2019-10-24
+updated: 2019-10-25
 tags: meta
 ---
 

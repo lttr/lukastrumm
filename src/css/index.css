@@ -181,6 +181,10 @@ header nav li:nth-child(1)::before {
 
 /* article */
 
+.article-description {
+  color: var(--primary-color);
+}
+
 .article-content {
   position: relative;
 }
