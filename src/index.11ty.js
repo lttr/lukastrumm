@@ -1,6 +1,6 @@
 const { html, base } = require('./_includes/base.11ty')
 
-module.exports = class {
+module.exports = {
   render(data) {
     const { content, collections } = data
     const template = html`
@@ -37,5 +37,5 @@ module.exports = class {
     `
 
     return base(this, template, data)
-  }
+  },
 }

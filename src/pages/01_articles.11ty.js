@@ -1,12 +1,10 @@
 const { html, base } = require('../_includes/base.11ty')
 
-module.exports = class {
-  data() {
-    return {
-      title: 'Articles',
-      permalink: '/articles/',
-    }
-  }
+module.exports = {
+  data: {
+    title: 'Articles',
+    permalink: '/articles/',
+  },
 
   render(data) {
     const template = html`
@@ -22,5 +20,5 @@ module.exports = class {
       </ul>
     `
     return base(this, template, data)
-  }
+  },
 }

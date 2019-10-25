@@ -1,12 +1,10 @@
 const { html, base } = require('../_includes/base.11ty')
 
-module.exports = class {
-  data() {
-    return {
-      title: 'Reading',
-      permalink: '/reading/',
-    }
-  }
+module.exports = {
+  data: {
+    title: 'Reading',
+    permalink: '/reading/',
+  },
 
   render(data) {
     const template = html`
@@ -28,7 +26,7 @@ module.exports = class {
       </section>
     `
     return base(this, template, data)
-  }
+  },
 }
 
 function goodreadsStyling() {
