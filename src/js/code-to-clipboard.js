@@ -1,4 +1,5 @@
-const preNodes = Array.from(document.querySelectorAll('pre'))
+const preNodes = Array.from(document.querySelectorAll('pre[class*="language-"]'))
+
 
 preNodes.forEach((preNode, index) => {
   if (preNode.firstChild.tagName.toLowerCase() === 'code') {
@@ -10,6 +11,7 @@ preNodes.forEach((preNode, index) => {
     button.title = 'Copy to clipboard'
     button.classList.add('copy-to-clipboard-button')
     button.textContent = 'copy'
+    button.style.width = '3.5em'
 
     codeNode.id = id
 
@@ -21,5 +23,9 @@ preNodes.forEach((preNode, index) => {
 const clipboard = new ClipboardJS('.copy-to-clipboard-button')
 
 clipboard.on('success', (e) => {
+  e.trigger.textContent = 'done'
+  setTimeout(() => {
+    e.trigger.textContent = 'copy'
+  }, 3000)
   e.clearSelection();
 })
