@@ -12,9 +12,11 @@ module.exports = {
       <ul>
         ${data.collections.articles.map(
           article => html`
-            <a href="${article.url}">
-              <li>${article.data.title}</li>
-            </a>
+            <li>
+              <a href="${article.url}">
+                ${article.data.title}
+              </a>
+            </li>
           `
         )}
       </ul>

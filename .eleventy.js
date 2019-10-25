@@ -8,6 +8,11 @@ const markdownItAnchor = require('markdown-it-anchor')
 const markdownItToc = require('markdown-it-table-of-contents')
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy('src/js')
+  eleventyConfig.addPassthroughCopy('src/css')
+  eleventyConfig.addPassthroughCopy('src/images')
+  eleventyConfig.addPassthroughCopy('favicon.ico')
+
   eleventyConfig.addCollection('articles', function(collection) {
     return collection
       .getAllSorted()
@@ -63,6 +68,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight)
 
   return {
-    templateFormats: ['11ty.js', 'md', 'css', 'jpg', 'svg', 'png', 'ico'],
+    templateFormats: ['11ty.js', 'md'],
   }
 }

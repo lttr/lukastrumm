@@ -54,14 +54,18 @@ pre * + * {
   margin-top: 0.2rem;
 }
 
+pre {
+  border-radius: 4px;
+}
+
 code {
   font-size: 16px !important;
-  line-height: 1.6rem !important;
+  line-height: 1.5rem !important;
 }
 
 blockquote {
   color: var(--primary-color);
-  border-left: 3px solid var(--back-color);
+  border-left: 6px solid var(--back-color);
   padding-left: 1rem;
 }
 
@@ -191,6 +195,21 @@ header nav li:nth-child(1)::before {
 
 .article-content.has-excerpt > p:first-child {
   font-style: italic;
+}
+
+.copy-to-clipboard-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: var(--primary-color);
+  padding: 2px 5px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+}
+
+.copy-to-clipboard-button:hover {
+  background-color: var(--back-color);
 }
 
 /* toc */

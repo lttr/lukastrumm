@@ -20,13 +20,15 @@ function base(self, content, data) {
           href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Raleway:800&display=swap"
           rel="stylesheet"
         />
-        <link href="/css/prism-duotone-light.css" rel="stylesheet" />
+        <link href="/css/prism-tomorrow.css" rel="stylesheet" />
         <link
           rel="alternate"
           href="${self.url(metadata.feed.path)}"
           type="application/atom+xml"
           title="${metadata.title}"
         />
+        <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+        <script defer src="/js/code-to-clipboard.js"></script>
       </head>
       <body>
         <div class="page-wrapper">
@@ -57,13 +59,13 @@ function base(self, content, data) {
           </main>
 
           <footer class="margins-off">
-            <a href="https://github.com/lttr">
+            <a href="https://github.com/lttr" aria-label="Github - lttr">
               <span class="social-icon">${{ html: githubIcon.svg }}</span>
             </a>
-            <a href="https://www.goodreads.com/user/show/64207622-luk-trumm">
+            <a href="https://www.goodreads.com/user/show/64207622-luk-trumm" aria-label="Goodreads - lukastrumm">
               <span class="social-icon">${{ html: goodreadsIcon.svg }}</span>
             </a>
-            <a href="https://twitter.com/lukastrumm">
+            <a href="https://twitter.com/lukastrumm" aria-label="Twitter - lukastrumm">
               <span class="social-icon">${{ html: twitterIcon.svg }}</span>
             </a>
             <span class="copyright">
