@@ -27,6 +27,7 @@ function base(self, content, data) {
           type="application/atom+xml"
           title="${metadata.title}"
         />
+        <script defer src="${self.url('/js/index.js')}"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
         <script defer src="${self.url('/js/code-to-clipboard.js')}"></script>
       </head>

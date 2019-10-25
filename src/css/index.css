@@ -34,6 +34,10 @@ body {
   color: var(--text-color);
 }
 
+body {
+  margin: 0 0.5rem;
+}
+
 h1,
 h2,
 h3,
@@ -124,8 +128,8 @@ footer a {
 header {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  padding: 0.6rem 0 0.45rem 0;
+  align-items: center;
+  padding: 0.6rem 0 0.5rem 0;
   margin: 0;
   border-bottom: 1px solid var(--back-color);
 }
@@ -139,14 +143,14 @@ header h1 {
   font-size: 1.3rem;
 }
 
-header nav,
-header ul,
-header h1 {
+header * {
   margin: 0;
 }
 
 header nav ul {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   align-items: baseline;
 }
 
