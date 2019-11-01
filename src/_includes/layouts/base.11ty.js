@@ -28,7 +28,10 @@ function base(self, content, data) {
           title="${metadata.title}"
         />
         <script defer src="${self.url('/js/index.js')}"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+        <script
+          defer
+          src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"
+        ></script>
         <script defer src="${self.url('/js/code-to-clipboard.js')}"></script>
       </head>
       <body>
@@ -63,10 +66,16 @@ function base(self, content, data) {
             <a href="https://github.com/lttr" aria-label="Github - lttr">
               <span class="social-icon">${{ html: githubIcon.svg }}</span>
             </a>
-            <a href="https://www.goodreads.com/user/show/64207622-luk-trumm" aria-label="Goodreads - lukastrumm">
+            <a
+              href="https://www.goodreads.com/user/show/64207622-luk-trumm"
+              aria-label="Goodreads - lukastrumm"
+            >
               <span class="social-icon">${{ html: goodreadsIcon.svg }}</span>
             </a>
-            <a href="https://twitter.com/lukastrumm" aria-label="Twitter - lukastrumm">
+            <a
+              href="https://twitter.com/lukastrumm"
+              aria-label="Twitter - lukastrumm"
+            >
               <span class="social-icon">${{ html: twitterIcon.svg }}</span>
             </a>
             <span class="copyright">
@@ -74,7 +83,12 @@ function base(self, content, data) {
             </span>
           </footer>
         </div>
-        <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+        <script
+          src="//instant.page/3.0.0"
+          type="module"
+          defer
+          integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"
+        ></script>
       </body>
     </html>
   `

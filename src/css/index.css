@@ -2,7 +2,10 @@
 
 :root {
   --primary-color: hsl(0, 0%, 44%);
-  --secondary-color: hsl(240, 64%, 55%);
+  /* --secondary-color: hsl(240, 64%, 55%);
+  --tertiary-color: hsl(350, 67%, 55%); */
+  --secondary-color: hsl(352, 68%, 48%);
+  --tertiary-color: hsl(240, 64%, 55%);
   --text-color: hsl(60, 4%, 13%);
   --back-color: #eaeaea;
   --light: #fafafa;
@@ -187,7 +190,8 @@ header nav li:nth-child(1)::before {
 
 /* article */
 
-.article-description {
+.article-date {
+  font-size: 0.85rem;
   color: var(--primary-color);
 }
 
@@ -266,4 +270,14 @@ code {
 
 .header-anchor:hover {
   color: var(--primary-color);
+}
+
+/* tags */
+
+.tag {
+  background-color: var(--tertiary-color);
+  color: var(--light);
+  font-family: var(--heading-font);
+  padding: 1px 5px 3px 5px;
+  border-radius: 2px;
 }

@@ -1,6 +1,6 @@
 ---
 title: Projects
-layout: page
+layout: layouts/page
 permalink: /projects/
 ---
 

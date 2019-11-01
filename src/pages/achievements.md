@@ -1,6 +1,6 @@
 ---
 title: Achievements
-layout: page
+layout: layouts/page
 permalink: '/achievements/'
 ---
 

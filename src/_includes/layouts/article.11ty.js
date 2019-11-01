@@ -1,22 +1,14 @@
 const { html, base } = require('./base.11ty')
+const { formatDate } = require('../helpers/formatDate')
 
 module.exports = {
   render(data) {
-    const { content, title, updated, page } = data
+    const { content, title, updated, page, tags } = data
     const { excerpt, date } = page
 
     const sectionClasses = ['article-content']
     if (excerpt) {
       sectionClasses.push('has-excerpt')
-    }
-
-    function formatDate(dateTime) {
-      const dateFormatOptions = {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      }
-      return Intl.DateTimeFormat('en', dateFormatOptions).format(dateTime)
     }
 
     const template = html`
@@ -37,6 +29,19 @@ module.exports = {
         <section class="${sectionClasses.join(' ')}">
           ${{ html: content }}
         </section>
+        ${tags
+          ? html`
+              <section class="tags">
+                ${tags.map(tag => {
+                  const index = data.collections.tagList.indexOf(tag)
+                  const url = index === 0 ? `/tag` : `/tag/${index}`
+                  return html`
+                    <a href="${url}" class="tag">${tag}</a>
+                  `
+                })}
+              </section>
+            `
+          : ''}
       </article>
     `
     return base(this, template, data)

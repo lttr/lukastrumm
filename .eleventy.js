@@ -8,10 +8,14 @@ const markdownItAnchor = require('markdown-it-anchor')
 const markdownItToc = require('markdown-it-table-of-contents')
 
 module.exports = function(eleventyConfig) {
+  // Copy files
+
   eleventyConfig.addPassthroughCopy('src/js')
   eleventyConfig.addPassthroughCopy('src/css')
   eleventyConfig.addPassthroughCopy('src/images')
   eleventyConfig.addPassthroughCopy('favicon.ico')
+
+  // Create collections
 
   eleventyConfig.addCollection('articles', function(collection) {
     return collection
@@ -34,15 +38,33 @@ module.exports = function(eleventyConfig) {
       .reverse()
   })
 
+  eleventyConfig.addCollection('posts', function(collection) {
+    return collection
+      .getAllSorted()
+      .filter(
+        item =>
+          item.inputPath.includes('articles/') ||
+          item.inputPath.includes('blog/') ||
+          item.inputPath.includes('notes/')
+      )
+      .reverse()
+  })
+
   eleventyConfig.addCollection('nav', function(collection) {
     return collection
       .getFilteredByGlob('./src/pages/0*')
       .sort((a, b) => (a.inputPath > b.inputPath ? 1 : -1))
   })
 
+  eleventyConfig.addCollection('tagList', getTagList)
+
+  // Configure front matter
+
   eleventyConfig.setFrontMatterParsingOptions({
     excerpt: true,
   })
+
+  // Configure markdown
 
   const markdownOptions = {
     html: true,
@@ -63,11 +85,25 @@ module.exports = function(eleventyConfig) {
       .use(markdownItToc)
   )
 
+  // Add plugins
+
   eleventyConfig.addPlugin(inclusiveLangPlugin)
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(syntaxHighlight)
 
   return {
+    // Configure used template formats
     templateFormats: ['11ty.js', 'md'],
   }
+}
+
+function getTagList(collection) {
+  return [
+    ...new Set(
+      collection
+        .getAll()
+        .filter(item => Array.isArray(item.data.tags))
+        .flatMap(item => item.data.tags)
+    ),
+  ]
 }

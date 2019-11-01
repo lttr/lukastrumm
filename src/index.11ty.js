@@ -1,16 +1,17 @@
-const { html, base } = require('./_includes/base.11ty')
+const { html, base } = require('./_includes/layouts/base.11ty')
+const { postInline } = require('./_includes/partials/postInline.11ty')
 
 module.exports = {
   render(data) {
-    const { content, collections } = data
+    const { collections } = data
     const template = html`
       <h2>Articles</h2>
       <ul>
         ${collections.articles.map(
           item => html`
-            <a href="${item.url}">
-              <li>${item.data.title}</li>
-            </a>
+            <li>
+              ${postInline(item.data)}
+            </li>
           `
         )}
       </ul>
@@ -18,9 +19,9 @@ module.exports = {
       <ul>
         ${collections.blog.map(
           item => html`
-            <a href="${item.url}">
-              <li>${item.data.title}</li>
-            </a>
+            <li>
+              ${postInline(item.data)}
+            </li>
           `
         )}
       </ul>
@@ -28,9 +29,9 @@ module.exports = {
       <ul>
         ${collections.notes.map(
           item => html`
-            <a href="${item.url}">
-              <li>${item.data.title}</li>
-            </a>
+            <li>
+              ${postInline(item.data)}
+            </li>
           `
         )}
       </ul>

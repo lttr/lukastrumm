@@ -1,6 +1,6 @@
 ---
 title: Life
-layout: page
+layout: layouts/page
 permalink: /life/
 ---
 

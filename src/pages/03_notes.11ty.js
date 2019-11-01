@@ -1,4 +1,4 @@
-const { html, base } = require('../_includes/base.11ty')
+const { html, base } = require('../_includes/layouts/base.11ty')
 
 module.exports = {
   data: {

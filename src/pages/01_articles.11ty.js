@@ -1,4 +1,5 @@
-const { html, base } = require('../_includes/base.11ty')
+const { html, base } = require('../_includes/layouts/base.11ty')
+const { postInline } = require('../_includes/partials/postInline.11ty')
 
 module.exports = {
   data: {
@@ -13,9 +14,7 @@ module.exports = {
         ${data.collections.articles.map(
           article => html`
             <li>
-              <a href="${article.url}">
-                ${article.data.title}
-              </a>
+              ${postInline(article.data)}
             </li>
           `
         )}
