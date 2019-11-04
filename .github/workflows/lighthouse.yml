@@ -11,7 +11,6 @@ jobs:
           urls: |
             https://lukastrumm.com/
             https://lukastrumm.com/projects
-          budgetPath: .github/lighthouse/budget.json
       - name: Save results
         uses: actions/upload-artifact@master
         with:
