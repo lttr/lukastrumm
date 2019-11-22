@@ -1,4 +1,5 @@
 const { html, base } = require('../_includes/layouts/base.11ty')
+const { postInline } = require('../_includes/partials/postInline.11ty')
 
 module.exports = {
   data: {
@@ -11,10 +12,10 @@ module.exports = {
       <h1>Notes</h1>
       <ul>
         ${data.collections.notes.map(
-          note => html`
-            <a href="${note.url}">
-              <li>${note.data.title}</li>
-            </a>
+          item => html`
+            <li>
+              ${postInline(item.data)}
+            </li>
           `
         )}
       </ul>
