@@ -1,5 +1,5 @@
 ---
-Integrate prettier, eslint and editorconfig
+title: Integrate prettier, eslint and editorconfig
 ---
 
 Use `editorconfig` for common editor configuration (line endings, charset, indentation).
