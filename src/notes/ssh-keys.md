@@ -6,30 +6,30 @@ tags: linux
 
 ### Generate key
 
-```sh
+```bash
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 
 ### Check correct file permissions
 
-```sh
+```bash
 stat -c '%a %n' ~/.ssh ~/.ssh/*
 ```
 
 should output something like:
-```sh
-700 /home/<username>/.ssh
-600 /home/<username>/.ssh/id_rsa
-644 /home/<username>/.ssh/id_rsa.pub
-644 /home/<username>/.ssh/known_hosts
-```
 
+```bash
+700 /home/[username]/.ssh
+600 /home/[username]/.ssh/id_rsa
+644 /home/[username]/.ssh/id_rsa.pub
+644 /home/[username]/.ssh/known_hosts
+```
 
 ### Copy to clipboard
 
 `copy` is e.g. `xclip -sel clip`
 
-```sh
+```bash
 cat ~/.ssh/id_rsa.pub | copy
 ```
 
@@ -37,12 +37,12 @@ cat ~/.ssh/id_rsa.pub | copy
 
 to compare with the one saved in an online service
 
-```sh
+```bash
 ssh-add -l -E md5
 ```
 
 ### Test connection to Github
 
-```sh
+```bash
 ssh -T git@github.com
 ```

@@ -30,7 +30,7 @@ module.exports = {
         ${collections.notes.map(
           item => html`
             <li>
-              ${postInline(item.data)}
+              ${postInline(item.data, false)}
             </li>
           `
         )}

@@ -1,5 +1,7 @@
 ---
 title: Latency and timing
+date: 2019-12-12
+tags: software-engineering
 ---
 
 It is important to know basic timings and latencies.

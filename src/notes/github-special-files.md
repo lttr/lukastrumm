@@ -1,5 +1,7 @@
 ---
 title: Github special files
+date: 2019-12-12
+tags: software-project
 ---
 
 Usually placed in repository's root, `docs`, or `.github` folder.
