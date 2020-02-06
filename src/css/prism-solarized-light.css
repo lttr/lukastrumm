@@ -1,0 +1,472 @@
+.copy-to-clipboard-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: var(--base0);
+  background-color: var(--code-background);
+  padding: 2px 5px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+}
+
+.copy-to-clipboard-button:hover {
+  color: var(--base01);
+  background-color: var(--base2);
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  color: var(--code-foreground);
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*='language-'] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background-color: var(--code-background);
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--code-comment);
+}
+
+.token.punctuation {
+  color: var(--code-foreground);
+}
+
+.token.tag {
+  color: var(--code-tag);
+}
+
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: var(--code-number);
+}
+
+.token.string,
+.token.char,
+.token.builtin,
+.token.url,
+.token.attr-value,
+.token.inserted {
+  color: var(--code-string);
+}
+
+.token.function,
+.token.property {
+  color: var(--code-property);
+}
+
+.token.entity,
+.token.atrule,
+.token.attr-name {
+  color: var(--code-attribute);
+}
+
+.token.selector,
+.token.keyword {
+  color: var(--code-keyword);
+}
+
+.token.boolean,
+.token.class-name {
+  color: var(--code-class);
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: var(--code-important);
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+/* line highlighting */
+
+.highlight-line {
+  display: inline-block;
+
+  /* del, ins, mark default styles */
+  text-decoration: none;
+  color: inherit;
+}
+
+.highlight-line-active {
+  background-color: #eee8d52a;
+  border-radius: 3px;
+}
+
+.highlight-line-add {
+  background-color: #8599007b;
+  border-radius: 3px;
+}
+
+.highlight-line-add:before {
+  content: '+';
+  position: relative;
+  left: -0.35em;
+  margin-left: -0.5em;
+  color: var(--green);
+}
+
+.highlight-line-remove {
+  background-color: #dc322f7b;
+  border-radius: 3px;
+}
+
+.highlight-line-remove:before {
+  content: '-';
+  position: relative;
+  left: -0.35em;
+  margin-left: -0.5em;
+  color: var(--red);
+}
+
+.highlight-line:not(:last-child) {
+  min-width: 100%;
+}
+.highlight-line .highlight-line:not(:last-child) {
+  min-width: 0;
+}
+
+code,
+.gutter,
+.line-numbers-rows > span:before {
+  font-family: $monoFallback;
+  font-size: #{(14 / 16)}em;
+  line-height: px2rem(18);
+
+  .fonts-loaded & {
+    font-family: $mono;
+  }
+
+  .windows & {
+    font-family: $monoFallback;
+  }
+}
+
+$code-top-h: 87;
+$code-bot-h: 90;
+
+pre {
+  margin: px2rem(24) calc(-18% / 272 * 100);
+  position: relative;
+
+  &:before {
+    background: url('/assets/code-block-top.svg') top left no-repeat;
+    content: ' ';
+    display: block;
+    height: px2rem($code-top-h);
+    width: 100%;
+  }
+
+  &:after {
+    background: url('/assets/code-block-bottom.svg') bottom left no-repeat;
+    content: ' ';
+    display: block;
+    height: px2rem($code-bot-h);
+    margin-top: px2rem((-18 - 24));
+    width: 100%;
+    z-index: -1;
+  }
+
+  code {
+    background: $code-bg;
+    color: $code-colour;
+    display: block;
+    margin-top: px2rem(-15 - 24);
+    overflow: auto;
+    padding: 0 calc(18% / 320 * 100);
+  }
+}
+
+.line-number {
+  color: $diminish;
+}
+
+// Comments
+.comment {
+  color: $diminish;
+}
+.delimiter {
+  color: $diminish;
+}
+
+// Reserved words
+.keyword {
+  color: $mustard;
+}
+
+.property {
+  color: $dark-red;
+}
+
+// HTML
+.tag {
+  color: $mustard;
+}
+.attr-name {
+  color: $light-green;
+}
+
+// Variables and user-defined functions.
+.variable,
+.this,
+.global {
+  color: $light-blue;
+}
+
+// Built in functions
+.function,
+.scope {
+  color: $light-green;
+}
+
+// Numbers
+.number {
+  color: $off-teal;
+}
+
+// Strings
+.string,
+.attr-value {
+  color: $off-teal;
+}
+
+// Class names
+.class-name {
+  color: $ruby;
+}
+
+// Punctuation
+.punctuation {
+  color: $code-colour;
+}
+
+// Code block scroll bars
+// ---------------------------------------------------------------------------------
+
+pre {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    margin-left: 10px;
+  }
+
+  ::-webkit-scrollbar-track-piece {
+    background-color: lighten($code-bg, 10%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    width: px2rem(50);
+    background-color: $diminish;
+    border: px2rem(1) solid $code-bg;
+    -webkit-border-radius: px2rem(6);
+  }
+
+  scrollbar-face-color: $diminish;
+  scrollbar-shadow-color: $code-bg;
+  scrollbar-highlight-color: $code-bg;
+  scrollbar-3dlight-color: $code-bg;
+  scrollbar-darkshadow-color: $code-bg;
+  scrollbar-track-color: lighten($code-bg, 10%);
+  scrollbar-arrow-color: transparent;
+}
+
+// Code tables
+// ---------------------------------------------------------------------------------
+
+.codetable tbody > tr td {
+  display: block;
+  padding: 0;
+}
+.codetable td:nth-child(1) pre {
+  margin-bottom: 0;
+}
+
+.codetable td:nth-child(2) pre {
+  margin-top: 0;
+}
+
+@media (min-width: $wide) {
+  .codetable {
+    margin: px2rem(20) ((-36 / 836) * 100%) px2rem(21);
+  }
+
+  .codetable pre {
+    margin-left: 0;
+    height: 100%;
+  }
+
+  .codetable tbody > tr td {
+    display: table-cell;
+    vertical-align: top;
+    position: relative;
+  }
+
+  .codetable td:nth-child(1) pre {
+    margin-bottom: px2rem(21);
+  }
+
+  .codetable td:nth-child(2) pre {
+    margin-top: px2rem(20);
+  }
+}
+
+// Line Numbers from Prism
+// ---------------------------------------------------------------------------------
+
+pre.line-numbers {
+  position: relative;
+  // padding-left: 3em;
+  counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+  position: relative;
+  padding-left: 3em;
+  padding-bottom: px2rem(18);
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  // left: -3.8em;
+  left: 0;
+  width: 3em; /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+  border-right: 0px solid mix($diminish, $code-bg);
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.line-numbers-rows > span {
+  pointer-events: none;
+  display: block;
+  counter-increment: linenumber;
+  min-height: px2rem(18);
+}
+
+.line-numbers-rows > span:before {
+  content: counter(linenumber);
+  // color: #999;
+  color: $diminish;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+}
+
+// Tablet Styles
+// ---------------------------------------------------------------------------------
+@media (min-width: $medium) {
+  pre {
+    border-image-slice: (34 / 493) * 100% (60 / 763) * 100% (35 / 493) * 100% 0
+      fill;
+    border-image-source: url('/assets/code-med.svg');
+    border-width: px2rem(34) px2rem(60) px2rem(35) 0;
+    border-style: solid;
+    margin: px2rem(8) (-20 / 550) * 100% px2rem(31) (-25 / 550) * 100%;
+    -moz-border-image: url('/assets/code-med.png') 34 60 35 0 fill; /* Workaround for Firefox bug (fixed in v48, but as yet unreleased) */
+    overflow: hidden;
+    padding: px2rem(14) 0 px2rem(13);
+
+    &:before,
+    &:after {
+      content: none;
+    }
+  }
+
+  pre code {
+    margin-right: (-40 / 534) * 100%;
+    margin-top: 0;
+    padding: 0 0 0 (24 / 534) * 100%;
+  }
+
+  // .line,
+  // .line-number {
+  //     font-size:   px2rem(16);
+  //     line-height: px2rem(27);
+  //     min-height:  px2rem(27);
+  // }
+}
+
+// Desktop Styles
+// ---------------------------------------------------------------------------------
+
+@media (min-width: $wide) {
+  pre {
+    //box-sizing: border-box;
+    margin: px2rem(20) ((-36 / 836) * 100%) px2rem(21);
+    padding: px2rem(27) 0;
+  }
+
+  pre.line-numbers > code {
+    box-sizing: border-box;
+    left: px2rem(2);
+    padding-bottom: px2rem(27);
+    padding-left: px2rem(45);
+    top: px2rem(2);
+    width: 100%;
+  }
+
+  .line-numbers .line-numbers-rows {
+    width: px2rem(45);
+  }
+
+  code,
+  .line-numbers-rows > span::before {
+    font-size: px2rem(16);
+    line-height: px2rem(27);
+  }
+
+  .line-numbers-rows > span {
+    min-height: px2rem(27);
+  }
+}

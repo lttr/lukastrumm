@@ -1,9 +1,10 @@
-const preNodes = Array.from(document.querySelectorAll('pre[class*="language-"]'))
+const preElements = Array.from(
+  document.querySelectorAll('pre[class*="language-"]')
+)
 
-
-preNodes.forEach((preNode, index) => {
-  if (preNode.firstChild.tagName.toLowerCase() === 'code') {
-    const codeNode = preNode.firstChild
+preElements.forEach((preElement, index) => {
+  const codeElement = preElement.querySelector('code[class*="language-"]')
+  if (codeElement) {
     const button = document.createElement('button')
     const id = `copy-${index}`
 
@@ -13,19 +14,19 @@ preNodes.forEach((preNode, index) => {
     button.textContent = 'copy'
     button.style.width = '3.5em'
 
-    codeNode.id = id
+    codeElement.id = id
 
-    preNode.style.position = 'relative'
-    preNode.insertAdjacentElement('afterbegin', button)
+    preElement.style.position = 'relative'
+    preElement.insertAdjacentElement('afterbegin', button)
   }
 })
 
 const clipboard = new ClipboardJS('.copy-to-clipboard-button')
 
-clipboard.on('success', (e) => {
+clipboard.on('success', e => {
   e.trigger.textContent = 'done'
   setTimeout(() => {
     e.trigger.textContent = 'copy'
   }, 3000)
-  e.clearSelection();
+  e.clearSelection()
 })

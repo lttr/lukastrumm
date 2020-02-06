@@ -18,4 +18,21 @@ function postInline(data, includeDate = true) {
   `
 }
 
+function postWithExcerpt(data) {
+  const {
+    title,
+    page: { url, date, excerpt },
+  } = data
+  return html`
+    <a href="${url}">${title}</a><br />
+    <em class="article-date">
+      ${formatDate(date)}
+    </em>
+    <p class="excerpt">
+      ${excerpt}
+    </p>
+  `
+}
+
 module.exports.postInline = postInline
+module.exports.postWithExcerpt = postWithExcerpt

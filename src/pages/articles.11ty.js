@@ -1,20 +1,20 @@
 const { html, base } = require('../_includes/layouts/base.11ty')
-const { postInline } = require('../_includes/partials/postInline.11ty')
+const { postInline } = require('../_includes/partials/postSnippets.11ty')
 
 module.exports = {
   data: {
-    title: 'Blog',
-    permalink: '/blog/',
+    title: 'Articles',
+    permalink: '/articles/',
   },
 
   render(data) {
     const template = html`
-      <h1>Blog</h1>
+      <h1>Articles</h1>
       <ul>
-        ${data.collections.blog.map(
-          blog => html`
+        ${data.collections.articles.map(
+          article => html`
             <li>
-              ${postInline(blog.data)}
+              ${postInline(article.data)}
             </li>
           `
         )}

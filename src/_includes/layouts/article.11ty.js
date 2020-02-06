@@ -6,7 +6,7 @@ module.exports = {
     const { content, title, updated, page, tags } = data
     const { excerpt, date } = page
 
-    const sectionClasses = ['article-content']
+    const sectionClasses = ['post-content']
     if (excerpt) {
       sectionClasses.push('has-excerpt')
     }
@@ -33,10 +33,9 @@ module.exports = {
           ? html`
               <section class="tags">
                 ${tags.map(tag => {
-                  const index = data.collections.tagList.indexOf(tag)
-                  const url = index === 0 ? `/tag` : `/tag/${index}`
+                  const url = `/tag/${tag}`
                   return html`
-                    <a href="${url}" class="tag">${tag}</a>
+                    <a href="${url}" class="tag-badge">${tag}</a>
                   `
                 })}
               </section>

@@ -1,5 +1,5 @@
 {
-  "title": "lttr",
+  "title": "Lukas Trumm",
   "url": "https://lukastrumm.com/",
   "description": "Ideas about web engineering",
   "feed": {
@@ -11,5 +11,13 @@
   },
   "author": {
     "name": "Lukas Trumm"
-  }
+  },
+  "navigation": [
+    { "text": "Articles", "url": "/articles" },
+    { "text": "Blog", "url": "/blog" },
+    { "text": "Notes", "url": "/notes" },
+    { "text": "Projects", "url": "/projects" },
+    { "text": "Life", "url": "/life" },
+    { "text": "About", "url": "/about" }
+  ]
 }

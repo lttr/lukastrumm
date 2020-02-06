@@ -1,5 +1,5 @@
 const { html, base } = require('../_includes/layouts/base.11ty')
-const { postInline } = require('../_includes/partials/postInline.11ty')
+const { postInline } = require('../_includes/partials/postSnippets.11ty')
 
 module.exports = {
   data: {
@@ -7,14 +7,19 @@ module.exports = {
       data: 'collections',
       size: 1,
       addAllPagesToCollections: true,
+      // filter out all 'system' tags
       filter: ['all', 'tagList', 'nav', 'articles', 'posts', 'notes', 'blog'],
     },
+    permalink: data => `/tag/${data.pagination.items[0]}/`,
   },
 
   render(data) {
     const tag = data.pagination.items[0]
     const template = html`
-      <h1>Tagged ${tag}</h1>
+      <strong>
+        Tag
+        <h2>${tag}</h2>
+      </strong>
       <ul>
         ${data.collections[tag].map(item => {
           return html`
