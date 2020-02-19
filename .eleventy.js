@@ -1,3 +1,5 @@
+const glob = require('glob')
+
 const inclusiveLangPlugin = require('@11ty/eleventy-plugin-inclusive-language')
 const lazyImagesPlugin = require('eleventy-plugin-lazyimages')
 const pluginRss = require('@11ty/eleventy-plugin-rss')
@@ -19,7 +21,9 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('src/{js,blog,notes,articles}/**/*.js')
   eleventyConfig.addPassthroughCopy('src/{css,blog,notes,articles}/**/*.css')
-  eleventyConfig.addPassthroughCopy('src/**/*.{ico,png,gif,jpg,jpeg}')
+  eleventyConfig.addPassthroughCopy({
+    'src/**/*.{ico,png,svg,gif,jpg,jpeg}': 'img',
+  })
 
   // Create collections
 
@@ -112,6 +116,21 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(lazyImagesPlugin, {
     imgSelector: '.post-content img',
+    transformImgPath: relativePath => {
+      // For image paths find the full path relative to project root
+      // otherwise lazyImagesPlugin would not be able to locate the image.
+      if (relativePath.startsWith('/') || relativePath.startsWith('./')) {
+        relativePath = relativePath.replace(/^.*\/(.*)/, '$1')
+      }
+      const files = glob.sync('src/**/' + relativePath)
+      if (Array.isArray(files) && files[0]) {
+        relativePath = files[0]
+        if (files.length > 1) {
+          console.warn('More than one file with the same name was found!')
+        }
+      }
+      return relativePath
+    },
   })
   eleventyConfig.addPlugin(inclusiveLangPlugin)
   eleventyConfig.addPlugin(pluginRss)

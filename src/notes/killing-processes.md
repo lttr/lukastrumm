@@ -62,4 +62,4 @@ portkill() {
 }
 ```
 
-![portkill function killing python process](/src/notes/killing-processes/portkill.gif)
+![portkill function killing python process](/img/portkill.gif)

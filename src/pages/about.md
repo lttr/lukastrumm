@@ -6,7 +6,7 @@ permalink: /about/
 
 # About me
 
-<img src="/images/lt.jpg"
+<img src="/img/lt.jpg"
   width="220"
   height="220"
   alt="Lukas Trumm"
