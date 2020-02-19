@@ -48,46 +48,15 @@
   position: absolute;
   top: 5px;
   right: 5px;
-  color: var(--button-color-fg);
-  background-color: var(--button-color-bg);
+  color: var(--button-fg);
+  background-color: var(--button-bg);
   padding: 2px 5px;
   border-radius: 2px;
   border: none;
   cursor: pointer;
-  display: none;
 }
 
 .copy-to-clipboard-button:hover {
-  color: var(--button-color-fg);
-  background-color: var(--button-color-bg-hover);
-}
-
-.m-mdic-copy-wrapper {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  padding: 2px 5px;
-  height: 18px;
-}
-
-.u-mdic-copy-notify {
-  position: absolute;
-  text-align: right;
-  top: calc(5px + 17px);
-  right: 0;
-  font-size: 80%;
-  display: none;
-}
-
-.u-mdic-copy-btn {
-  color: var(--button-fg);
-  background-color: var(--button-bg);
-  border: none;
-  cursor: pointer;
-  border-radius: 2px;
-}
-
-.u-mdic-copy-btn:hover {
   color: var(--button-fg);
   background-color: var(--button-bg-hover);
 }
@@ -159,6 +128,15 @@ pre[class*='language-'] {
 
 pre * {
   margin: 0;
+}
+
+pre .title {
+  font-size: 1rem;
+  color: var(--code-comment-fg);
+  position: relative;
+  top: -1em;
+  font-family: var(--heading-font);
+  font-weight: var(--heading-font-weight);
 }
 
 /* Code blocks */

@@ -9,14 +9,18 @@ module.exports = {
   render(data) {
     const template = html`
       <style>
-        li {
-          list-style: none;
-        }
         .category {
           display: inline-block;
           font-size: var(--small-font);
           color: var(--primary-color);
           width: 3.5em;
+        }
+        .search-results,
+        .search-results ul {
+          padding: 0;
+        }
+        .search-results li {
+          list-style: none;
         }
       </style>
       <section class="center">
@@ -32,7 +36,7 @@ module.exports = {
           </p>
         </div>
         <div class="search-results">
-          <ul id="search-results"></ul>
+          <ul id="search-results-list"></ul>
         </div>
         <template id="results-template">
           <li>
@@ -55,7 +59,7 @@ module.exports = {
         </noscript>
       </section>
 
-      <div style="margin-top: 0">
+      <div class="search-results" style="margin-top: 0">
         <ul id="initial-list">
           ${data.collections.posts.map(post => {
             function getCategory(url) {
@@ -89,7 +93,7 @@ module.exports = {
       <script>
         const input = document.getElementById('search-input')
         const initialList = document.getElementById('initial-list')
-        const results = document.getElementById('search-results')
+        const results = document.getElementById('search-results-list')
         const resultsTemplate = document.getElementById('results-template')
 
         function getCategory(url) {

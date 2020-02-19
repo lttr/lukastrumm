@@ -16,10 +16,11 @@ module.exports = {
   render(data) {
     const tag = data.pagination.items[0]
     const template = html`
-      <strong>
-        Tag
-        <h2>${tag}</h2>
-      </strong>
+      <p></p>
+      <p>
+        <strong>tag</strong>
+        <span class="tag-badge">${tag}</span>
+      </p>
       <ul>
         ${data.collections[tag].map(item => {
           return html`

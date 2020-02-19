@@ -12,7 +12,7 @@
   --tertiary-color: hsl(240, 64%, 55%);
 
   --text-color: hsl(60, 4%, 13%);
-  --back-color: hsl(0, 12%, 69%);
+  --back-color: #cfcdca;
   --light: #fafafa;
   --body-back-color: white;
 
@@ -66,12 +66,11 @@
 /* general */
 
 /* lobotomized owl selector */
-* + * {
+main * + * {
   margin-top: calc(1.24 * 1.24em);
 }
 
-.margins-off > * {
-  margin-top: 0;
+section {
 }
 
 html,
@@ -81,7 +80,7 @@ body {
   height: 100%;
   font-family: var(--body-font);
   font-size: 17px;
-  line-height: 1.6rem;
+  line-height: 1.6em;
   background-color: var(--body-back-color);
   color: var(--text-color);
 }
@@ -100,6 +99,12 @@ h5,
 h6 {
   font-family: var(--heading-font);
   font-weight: var(--heading-font-weight);
+}
+
+h1 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
 }
 
 ul > li + li,
@@ -152,7 +157,6 @@ footer {
   justify-content: center;
   align-items: center;
   color: var(--primary-color);
-  /* border-top: 1px solid var(--back-color); */
   position: absolute;
   bottom: 0;
   left: 0;
@@ -163,7 +167,8 @@ footer {
 }
 
 footer > * {
-  padding: 1rem 0.5rem;
+  padding: 1em 0.5em;
+  margin: 0;
 }
 
 footer a {
@@ -202,9 +207,10 @@ header a {
   text-decoration: none;
 }
 
-header h1 {
+.site-name {
   font-size: 1.3rem;
   padding-left: 8px;
+  color: var(--primary-color);
 }
 
 header * {
@@ -251,6 +257,10 @@ header nav li:nth-child(1)::before {
 
 /* article */
 
+.article-description {
+  margin-top: 1rem;
+}
+
 .article-date {
   font-size: var(--small-font);
   color: var(--primary-color);
@@ -270,13 +280,16 @@ header nav li:nth-child(1)::before {
   border-top: 1px solid var(--back-color);
 }
 
+.post-content:not(.has-excerpt) > *:first-child {
+  margin-top: calc(1.24 * 1.24em);
+}
+
 hr {
   display: none;
 }
 
 .footnotes {
   border-top: 1px solid var(--back-color);
-  border-bottom: 1px solid var(--back-color);
 }
 
 /* images */
@@ -299,38 +312,6 @@ figcaption {
   display: block;
   height: auto;
   max-width: 100%;
-}
-
-/* code blocks */
-
-/* inline code */
-/* article :not(pre) code {
-  white-space: nowrap;
-  background-color: var(--code-background);
-  padding: 2px 5px;
-  border-radius: 2px;
-}
-
-pre[class*='language-'] {
-  border-radius: 4px;
-  line-height: 1.5rem;
-  padding: 1.4rem;
-  width: 100%;
-}
-
-code[class*='language-'] {
-  font-family: 'Fira Mono', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
-    monospace !important;
-  padding: 0;
-} */
-
-.klipsed .m-mdic-copy-wrapper {
-  display: none;
-}
-
-.klipse-fallback code,
-.klipse-actual code {
-  /* opacity: 0.3; */
 }
 
 /* toc */

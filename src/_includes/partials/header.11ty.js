@@ -1,7 +1,7 @@
 module.exports = (html, self, data) => html`
   <header>
     <h1>
-      <a href="${self.url('/')}">${data.metadata.title}</a>
+      <a class="site-name" href="${self.url('/')}">${data.metadata.title}</a>
     </h1>
     <nav>
       <ul>

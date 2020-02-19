@@ -78,7 +78,7 @@ function base(self, content, data) {
             ${{ html: content }}
           </main>
 
-          <footer class="margins-off">
+          <footer>
             <a href="https://github.com/lttr" aria-label="Github - lttr">
               <span class="social-icon">${{ html: githubIcon.svg }}</span>
             </a>
