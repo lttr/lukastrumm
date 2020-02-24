@@ -12,6 +12,7 @@ jobs:
             https://lukastrumm.com/
             https://lukastrumm.com/projects
           budgetPath: .github/lighthouse/budget.json
+          configPath: .github/lighthouse/lighthouserc.json
       - name: Save results
         uses: actions/upload-artifact@master
         if: always()
