@@ -21,6 +21,10 @@
   --code-function-fg: #c62e4d;
   --code-variable-fg: #b47300;
   --code-result: #fff;
+
+  --font-family-code: 'Fira Mono', Consolas, Monaco, 'Andale Mono',
+    'Ubuntu Mono', monospace;
+  --font-size-code: 16px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -54,6 +58,7 @@
   border-radius: 2px;
   border: none;
   cursor: pointer;
+  font-family: var(--font-family-code);
 }
 
 .copy-to-clipboard-button:hover {
@@ -115,8 +120,8 @@ code[class*='language-'],
 pre[class*='language-'] {
   color: var(--text-color);
   background-color: var(--code-bg);
-  font-family: 'Fira Mono', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
-    monospace;
+  font-family: var(--font-family-code);
+  font-size: var(--font-size-code);
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -148,11 +153,26 @@ pre[class*='language-'] {
 
 /* Inline code */
 :not(pre) > code {
+  font-family: var(--font-family-code);
+  font-size: var(--font-size-code);
   border-radius: 0.25em;
   padding: 2px 5px;
   white-space: normal;
   background-color: var(--code-bg);
 }
+
+/* Editable code blocks */
+
+.klipse-actual {
+  font-size: var(--font-size-code);
+}
+
+.klipse-snippet::after,
+.klipse-result::after {
+  font-family: var(--font-family-code);
+}
+
+/* Tokens */
 
 .token.comment,
 .token.prolog,

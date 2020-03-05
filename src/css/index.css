@@ -1,9 +1,18 @@
 /* settings */
 
+@font-face {
+  font-family: Charter;
+  src: url('/css/charter_regular-webfont.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
+
 :root {
   /* heights and widths */
-  --max-width: 825px;
-  --small-font: 0.85rem;
+  --max-width: 725px;
+  --small-font: 0.9rem;
 
   /* site colors */
   --primary-color: hsl(0, 0%, 44%);
@@ -19,7 +28,8 @@
   /* fonts */
   --heading-font: 'Raleway', sans-serif;
   --heading-font-weight: 600;
-  --body-font: 'Libre Baskerville', serif;
+  --body-font: 'Charter', serif;
+  --font-size: 18px;
 
   /* solarized colors */
   --base03: #002b36;
@@ -79,7 +89,7 @@ body {
   margin: 0;
   height: 100%;
   font-family: var(--body-font);
-  font-size: 17px;
+  font-size: var(--font-size);
   line-height: 1.6em;
   background-color: var(--body-back-color);
   color: var(--text-color);
@@ -87,7 +97,7 @@ body {
 
 @media (max-width: 30em) {
   body {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
@@ -105,6 +115,7 @@ h1 {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-size: 2rem;
+  line-height: 2.2rem;
 }
 
 ul > li + li,
@@ -114,7 +125,7 @@ ul ul {
 
 a {
   color: var(--secondary-color);
-  text-decoration: underline;
+  text-decoration: none;
   text-decoration-color: var(--secondary-color-light);
 }
 
@@ -135,19 +146,19 @@ blockquote {
 /* layout */
 
 .page-wrapper {
+  position: relative;
+}
+
+main {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   padding-top: 0;
   padding-left: 1rem;
   padding-right: 1rem;
+  padding-bottom: 6rem;
   max-width: var(--max-width);
   min-height: 100%;
-  position: relative;
-}
-
-main {
-  padding-bottom: 6rem;
 }
 
 /* footer */
@@ -193,38 +204,45 @@ footer a {
 /* header */
 
 header {
+  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.6rem 0 0.5rem 0;
-  margin: 0;
-  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.12);
-  border-radius: 2px;
+  max-width: var(--max-width);
+  padding: 0.6rem 0 0.5rem 0.2rem;
+  margin: 0 auto;
 }
 
-header a {
+.header-content a {
   color: var(--text-color);
-  text-decoration: none;
+}
+
+.header-content * {
+  margin: 0;
 }
 
 .site-name {
   font-size: 1.3rem;
-  padding-left: 8px;
+  font-family: var(--body-font);
+  line-height: 1.5rem;
   color: var(--primary-color);
 }
 
-header * {
-  margin: 0;
+.site-name a {
+  padding-left: 7px;
 }
 
-header nav ul {
+.header-nav ul {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-items: baseline;
 }
 
-header nav li {
+.header-nav li {
   list-style: none;
   display: inline-block;
   position: relative;
@@ -233,7 +251,7 @@ header nav li {
   padding-right: 8px;
 }
 
-header nav li::before {
+.header-nav li::before {
   display: block;
   position: absolute;
   top: 50%;
@@ -246,12 +264,11 @@ header nav li::before {
   content: '';
 }
 
-header nav .is-active {
+.header-nav .is-active {
   font-weight: bold;
-  font-size: 1.1rem;
 }
 
-header nav li:nth-child(1)::before {
+.header-nav li:nth-child(1)::before {
   display: none;
 }
 
@@ -268,6 +285,7 @@ header nav li:nth-child(1)::before {
 
 .post-content {
   position: relative;
+  overflow-wrap: break-word;
 }
 
 .post-content.has-excerpt > p:first-child {
@@ -318,12 +336,8 @@ figcaption {
 
 .table-of-contents {
   font-family: var(--heading-font);
-  font-size: 0.9rem;
+  font-size: var(--small-font);
   border-bottom: 1px solid var(--back-color);
-}
-
-.table-of-contents a {
-  text-decoration: none;
 }
 
 .table-of-contents a:hover {
@@ -347,7 +361,6 @@ figcaption {
 
 .header-anchor {
   color: var(--primary-color);
-  text-decoration: none;
 }
 
 .header-anchor:hover {
@@ -380,11 +393,10 @@ figcaption {
   font-family: var(--heading-font);
   border-radius: 2px;
   border: 1px solid var(--back-color);
-  font-size: 0.9rem;
+  font-size: var(--small-font);
   line-height: 1.2rem;
   margin: 0.3em;
   padding: 1px 5px;
-  text-decoration: none;
 }
 
 .tag-badge:hover {
@@ -400,8 +412,8 @@ figcaption {
 /* mermaid */
 
 .mermaid * {
-  font-size: 0.9rem !important;
-  line-height: 0.9rem !important;
+  font-size: var(--small-font) !important;
+  line-height: var(--small-font) !important;
   font-family: var(--heading-font) !important;
 }
 
