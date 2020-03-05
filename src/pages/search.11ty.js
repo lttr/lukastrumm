@@ -1,5 +1,21 @@
-const { html, base } = require('../_includes/layouts/base.11ty')
+const html = require('viperhtml').wire()
+
+const base = require('../_includes/layouts/base.11ty')
 const { postInline } = require('../_includes/partials/postSnippets.11ty')
+
+function getCategory(url) {
+  const firstSegment = url.split('/')[1]
+  if (firstSegment) {
+    switch (firstSegment) {
+      case 'articles':
+        return 'article'
+      case 'notes':
+        return 'note'
+      default:
+        return firstSegment
+    }
+  }
+}
 
 module.exports = {
   data: {
@@ -62,20 +78,6 @@ module.exports = {
       <div class="search-results" style="margin-top: 0">
         <ul id="initial-list">
           ${data.collections.posts.map(post => {
-            function getCategory(url) {
-              const firstSegment = url.split('/')[1]
-              if (firstSegment) {
-                switch (firstSegment) {
-                  case 'articles':
-                    return 'article'
-                  case 'notes':
-                    return 'note'
-                  default:
-                    return firstSegment
-                }
-              }
-            }
-
             const url = post.data.page.url
             const category = getCategory(url)
             return html`
@@ -84,6 +86,15 @@ module.exports = {
                   post.data,
                   false
                 )}
+              </li>
+            `
+          })}
+          ${data.collections.tagList.sort().map(tag => {
+            const url = `/tag/${tag}`
+            return html`
+              <li>
+                <span class="category">${getCategory(url)}</span>
+                <a href="${url}" class="tag-badge">${tag}</a>
               </li>
             `
           })}
@@ -112,6 +123,7 @@ module.exports = {
 
         function performSearch(searchIndex) {
           const searchString = input.value
+          results.innerHTML = ''
           if (searchString && searchString.length > 2) {
             initialList.hidden = true
             results.hidden = false
@@ -146,7 +158,6 @@ module.exports = {
           } else {
             initialList.hidden = false
             results.hidden = true
-            results.innerHTML = ''
           }
         }
 

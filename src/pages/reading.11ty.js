@@ -1,4 +1,6 @@
-const { html, base } = require('../_includes/layouts/base.11ty')
+const html = require('viperhtml').wire()
+
+const base = require('../_includes/layouts/base.11ty')
 
 module.exports = {
   data: {
@@ -33,19 +35,21 @@ function goodreadsStyling() {
   return html`
     <style type="text/css" media="screen">
       .gr_grid_container {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-gap: 1rem;
         align-items: baseline;
       }
 
       .gr_grid_book_container {
         width: 98px;
-        height: 160px;
         padding: 0px 0px;
         overflow: hidden;
       }
     </style>
   `
 }
+
 function currentlyReadingSnippet() {
   return html`
     <div id="gr_grid_widget_1563908353">

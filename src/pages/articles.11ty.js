@@ -1,4 +1,6 @@
-const { html, base } = require('../_includes/layouts/base.11ty')
+const html = require('viperhtml').wire()
+
+const base = require('../_includes/layouts/base.11ty')
 const { postInline } = require('../_includes/partials/postSnippets.11ty')
 
 module.exports = {

@@ -15,6 +15,14 @@ module.exports = {
           cleanTemplate(item.templateContent),
       })
     }
+    for (const tag of data.collections.tagList) {
+      const url = `/tag/${tag}`
+      searchIndex.push({
+        url: url,
+        title: tag,
+        text: tag,
+      })
+    }
     return JSON.stringify(searchIndex)
   },
 }
