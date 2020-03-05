@@ -7,6 +7,7 @@
   font-weight: normal;
   font-stretch: normal;
   font-display: swap;
+  unicode-range: U+0000-0029, U+007A-5FF; /* Latin characters without [A-Za-z0-9] */
 }
 
 :root {
