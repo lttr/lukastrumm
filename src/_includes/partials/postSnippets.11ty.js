@@ -1,5 +1,6 @@
-const { html } = require('../layouts/base.11ty')
-const { formatDate } = require('../helpers/formatDate')
+const html = require('viperhtml').wire()
+
+const formatDate = require('../helpers/formatDate')
 
 function postInline(data, includeDate = true) {
   const {

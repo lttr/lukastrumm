@@ -1,5 +1,7 @@
-const { html, base } = require('./base.11ty')
-const { formatDate } = require('../helpers/formatDate')
+const html = require('viperhtml').wire()
+
+const base = require('./base.11ty')
+const formatDate = require('../helpers/formatDate')
 
 module.exports = {
   render(data) {

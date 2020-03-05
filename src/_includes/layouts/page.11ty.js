@@ -1,4 +1,4 @@
-const { base } = require('./base.11ty')
+const base = require('./base.11ty')
 
 module.exports = {
   render(data) {

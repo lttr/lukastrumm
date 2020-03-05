@@ -1,4 +1,4 @@
-function formatDate(dateTime) {
+module.exports = function formatDate(dateTime) {
   const dateFormatOptions = {
     year: 'numeric',
     month: 'long',
@@ -6,5 +6,3 @@ function formatDate(dateTime) {
   }
   return Intl.DateTimeFormat('en', dateFormatOptions).format(dateTime)
 }
-
-module.exports.formatDate = formatDate
