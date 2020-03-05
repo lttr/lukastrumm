@@ -27,6 +27,6 @@ clipboard.on('success', e => {
   e.trigger.textContent = 'done'
   setTimeout(() => {
     e.trigger.textContent = 'copy'
-  }, 3000)
+  }, 2000)
   e.clearSelection()
 })

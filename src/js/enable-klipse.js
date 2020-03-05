@@ -1,3 +1,7 @@
+window.klipse_settings = {
+  selector_eval_js: '.klipse-eval-js', // css selector for the html elements you want to klipsify
+}
+
 const klipseFallbacks = Array.from(
   document.querySelectorAll('.klipse-fallback')
 )
