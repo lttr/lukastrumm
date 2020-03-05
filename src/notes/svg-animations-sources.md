@@ -36,3 +36,6 @@ http://goinkscape.com/category/inkscape-tutorials/inkscape-snap-svg/
 
 2013 look at SVG animations
 http://tavmjong.free.fr/SVG/ANIMATION/
+
+Animations best practices
+https://uxdesign.cc/the-ultimate-guide-to-proper-use-of-animation-in-ux-10bd98614fa9
