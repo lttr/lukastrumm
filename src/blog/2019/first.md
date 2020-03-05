@@ -254,9 +254,10 @@ graph TD;
 ## Embed
 
 <iframe
+  class="lazyload"
+  data-src="https://repl.it/repls/OrangeredHospitableKernelmode?lite=true"
   height="400px"
   width="100%"
-  src="https://repl.it/repls/OrangeredHospitableKernelmode?lite=true"
   scrolling="no"
   frameborder="no"
   allowtransparency="true"
