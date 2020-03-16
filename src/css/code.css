@@ -161,17 +161,6 @@ pre[class*='language-'] {
   background-color: var(--code-bg);
 }
 
-/* Editable code blocks */
-
-.klipse-actual {
-  font-size: var(--font-size-code);
-}
-
-.klipse-snippet::after,
-.klipse-result::after {
-  font-family: var(--font-family-code);
-}
-
 /* Tokens */
 
 .token.comment,

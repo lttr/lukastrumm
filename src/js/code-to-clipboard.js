@@ -1,5 +1,5 @@
 const preElements = Array.from(
-  document.querySelectorAll('pre[class*="language-"]')
+  document.querySelectorAll('pre[class*="language-"]:not(.klipse-actual)')
 )
 
 preElements.forEach((preElement, index) => {

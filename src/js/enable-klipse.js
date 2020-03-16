@@ -12,6 +12,6 @@ for (const fallback of klipseFallbacks) {
 
 const klipseActual = Array.from(document.querySelectorAll('.klipse-actual'))
 
-for (const fallback of klipseActual) {
-  fallback.style.display = 'block'
+for (const actual of klipseActual) {
+  actual.style.display = 'block'
 }

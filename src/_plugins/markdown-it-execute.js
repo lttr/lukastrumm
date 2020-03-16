@@ -8,17 +8,16 @@ const enhance = render => (...args) => {
   if (doRun) {
     const klipseFallback = originalResult.replace(
       /<pre[^>]*>/,
-      '<pre class="language-js klipse-fallback">'
+      '<pre class="klipse-fallback language-js">'
     )
-    newResult = `
-        ${originalResult}
-        ${klipseFallback}
-        <pre class="klipse-actual" style="display: none;">
-          <code class="language-js klipse-eval-js">
-            ${tokens[idx].content}
-          </code>
-        </pre>
-      `
+    newResult = [
+      klipseFallback,
+      '<pre class="klipse-actual language-js" style="display: none;">',
+      '<code class="klipse-eval-js language-js">',
+      tokens[idx].content.trim(),
+      '</code>',
+      '</pre>',
+    ].join('')
   }
   return newResult
 }
