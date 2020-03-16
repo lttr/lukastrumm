@@ -24,15 +24,16 @@
   --small-font: 0.9rem;
 
   /* site colors */
-  --primary-color: hsl(0, 0%, 44%);
+  --primary-color: hsl(352, 0%, 44%);
   --secondary-color: hsl(352, 68%, 48%);
   --secondary-color-light: hsl(352, 68%, 77%);
   --tertiary-color: hsl(240, 64%, 55%);
 
-  --text-color: hsl(60, 4%, 13%);
-  --back-color: #cfcdca;
-  --light: #fafafa;
-  --body-back-color: white;
+  --text-color: hsl(352, 4%, 13%);
+  --back-color: hsl(352, 5%, 80%);
+  --light: hsl(352, 19%, 96%);
+  --body-back-color: hsl(352, 19%, 99%);
+  --box-shadow: rgba(0, 0, 0, 0.12);
 
   /* fonts */
   --heading-font: 'Raleway', sans-serif;
@@ -70,15 +71,17 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* site colors */
-    --primary-color: hsl(0, 0%, 70%);
+    --primary-color: hsl(352, 0%, 70%);
     --secondary-color: hsl(352, 100%, 66%);
     --secondary-color-light: hsl(352, 68%, 77%);
     --tertiary-color: hsl(240, 64%, 55%);
 
-    --text-color: hsl(60, 4%, 89%);
-    --back-color: hsl(0, 12%, 69%);
-    --light: #fafafa;
-    --body-back-color: #002b36;
+    --text-color: hsl(352, 4%, 89%);
+    --back-color: hsl(352, 5%, 80%);
+    --light: hsl(352, 19%, 25%);
+    --body-back-color: hsl(352, 4%, 13%);
+
+    --box-shadow: rgba(255, 255, 255, 0.12);
   }
 }
 
@@ -185,7 +188,7 @@ footer {
   left: 0;
   width: 100%;
   font-size: var(--small-font);
-  box-shadow: inset 1px 2px 3px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: inset 1px 2px 3px 0 var(--box-shadow);
   border-radius: 2px;
 }
 
@@ -216,7 +219,7 @@ footer a {
 /* header */
 
 header {
-  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 1px 2px 3px 0 var(--box-shadow);
 }
 
 .header-content {
