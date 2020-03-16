@@ -7,10 +7,14 @@ const enhance = render => (...args) => {
   const originalResult = render.apply(this, args)
   let newResult = originalResult
   if (isMermaid) {
+    const diagramText = tokens[idx].content
+    const approxHeight = diagramText.split('\n').length * 40
     newResult = `
       <figure>
-        <pre class="mermaid" hidden>
-            ${tokens[idx].content}
+        <pre
+          class="mermaid"
+          style="min-height: ${approxHeight}px; visibility: hidden;">
+            ${diagramText}
         </pre>
         <figcaption>${caption ? caption : ''}</figcaption>
       </figure>
