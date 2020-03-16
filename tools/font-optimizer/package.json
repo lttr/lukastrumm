@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node index.js",
     "clean": "rm -r ./charter*",
-    "copy-fonts": "cp charter_regular-webfont_optimized charter_regular-webfont.woff2 ../../src/css/"
+    "copy-fonts": "cp charter_regular-webfont_optimized charter_*-webfont.woff2 ../../src/css/"
   },
   "devDependencies": {
     "fontmin": "^0.9.8",

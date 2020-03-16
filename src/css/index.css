@@ -7,7 +7,15 @@
   font-weight: normal;
   font-stretch: normal;
   font-display: swap;
-  unicode-range: U+0000-0029, U+007A-5FF; /* Latin characters without [A-Za-z0-9] */
+}
+
+@font-face {
+  font-family: Charter;
+  src: url('/css/charter_italic-webfont.woff2') format('woff2');
+  font-style: italic;
+  font-weight: normal;
+  font-stretch: normal;
+  font-display: swap;
 }
 
 :root {
@@ -78,7 +86,7 @@
 
 /* lobotomized owl selector */
 main * + * {
-  margin-top: calc(1.24 * 1.24em);
+  margin-top: calc(1.2 * 1.2em);
 }
 
 section {
@@ -91,7 +99,7 @@ body {
   height: 100%;
   font-family: var(--body-font);
   font-size: var(--font-size);
-  line-height: 1.6em;
+  line-height: 1.5;
   background-color: var(--body-back-color);
   color: var(--text-color);
 }
@@ -116,7 +124,6 @@ h1 {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-size: 2rem;
-  line-height: 2.2rem;
 }
 
 ul > li + li,
@@ -132,6 +139,10 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+p {
+  margin-bottom: 1rem;
 }
 
 p > * {
@@ -228,7 +239,7 @@ header {
 .site-name {
   font-size: 1.3rem;
   font-family: var(--body-font);
-  line-height: 1.5rem;
+  line-height: 1.5;
   color: var(--primary-color);
 }
 
@@ -395,7 +406,7 @@ figcaption {
   border-radius: 2px;
   border: 1px solid var(--back-color);
   font-size: var(--small-font);
-  line-height: 1.2rem;
+  line-height: 1.2;
   margin: 0.3em;
   padding: 1px 5px;
 }

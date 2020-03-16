@@ -14,7 +14,6 @@ module.exports = () => `
   font-weight: normal;
   font-stretch: normal;
   font-display: swap;
-  unicode-range: U+0030-0039, U+0041-005A, U+0061-007A;
 }
 ${indexCss}
 </style>

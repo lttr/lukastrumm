@@ -82,6 +82,12 @@ async function main() {
     path.join(__dirname, 'charter_regular-webfont.woff2')
   )
 
+  console.log('Converting italic ttf font to woff2')
+  await convertToWoff2(
+    path.join(__dirname, 'charter', 'webfonts', 'charter_italic-webfont.ttf'),
+    path.join(__dirname, 'charter_italic-webfont.woff2')
+  )
+
   console.log('Create base64 version from optimized woff2')
   await base64FromWoff2(
     path.join(__dirname, 'charter_regular-webfont_optimized.woff2'),
