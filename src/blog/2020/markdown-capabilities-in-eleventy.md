@@ -37,6 +37,32 @@ I've set it by a configuration option:
 breaks: true
 ```
 
+(Code block without specified language.)
+
+### Text elements
+
+**bold** _italic_ ~~strikethrough~~ `code`
+
+> Quote
+
+```js
+const foo = 'more code'
+```
+
+(Code block with language specified as `js`.)
+
+### Lists
+
+- First
+  - Alpha
+  - Beta
+- Second
+
+1. First
+   1. Alpha
+   2. Beta
+2. Second
+
 ### Automatic conversions
 
 Links like example.com are automatically converted.
@@ -48,6 +74,16 @@ You can use two hyphens to produce an n-dash, e.g. 9--12. Or three hyphens---to 
 ## Extras
 
 Extra markdown functionality is provided either by embedded or external `markdown-it` plugins.
+
+### Tables
+
+| Memory      | Latency (ns) |
+| ----------- | ------------ |
+| L1 cache    | 0.5          |
+| L2 cache    | 7            |
+| Main memory | 100          |
+
+Source: [Latency Numbers Every Programmer Should Know](https://gist.github.com/jboner/2841832)
 
 ### Footnotes
 

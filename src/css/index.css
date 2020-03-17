@@ -130,7 +130,9 @@ h1 {
 }
 
 ul > li + li,
-ul ul {
+ul ul,
+ol > li + li,
+ol ol {
   margin-top: 0.1em;
 }
 
@@ -156,6 +158,24 @@ blockquote {
   color: var(--primary-color);
   border-left: 6px solid var(--back-color);
   padding-left: 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table tbody td,
+table thead th {
+  border: 1px solid #dbdbdb;
+  border-width: 0 0 1px 0;
+  text-align: left;
+  padding: 0.5em 0.6em;
+  vertical-align: top;
+}
+
+table tbody tr:last-child td {
+  border-bottom-width: 0;
 }
 
 /* layout */
