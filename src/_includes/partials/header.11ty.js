@@ -22,8 +22,14 @@ module.exports = (eleventy, data) => html`
             `
           })}
           <li>
-            <a href="${eleventy.url('/search')}" id="search-link" alt="search">
+            <a
+              href="${eleventy.url('/search')}"
+              id="search-link"
+              aria-label="search"
+            >
               <svg
+                role="img"
+                aria-label="search"
                 style="position: relative; bottom: -5px; transform: scale(0.9);"
                 xmlns="http://www.w3.org/2000/svg"
                 height="24"
