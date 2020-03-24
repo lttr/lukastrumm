@@ -13,3 +13,7 @@ tags:
 - [Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
 - [TypeScript](https://medium.com/javascript-scene/you-might-not-need-typescript-or-static-types-aa7cb670a77b)
 - [Underscore](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore)
+- [GUI](https://github.com/you-dont-need/You-Dont-Need-GUI)
+- [Loops](https://github.com/you-dont-need/You-Dont-Need-Loops)
+
+[You Don't Need (Github organization)](https://github.com/you-dont-need)

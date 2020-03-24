@@ -42,4 +42,28 @@ function deduplicate(array) {
 function randomColor() {
   return '#' + Math.floor(Math.random() * 256 ** 3 - 1).toString(16)
 }
+
+function* range(from, to) {
+  if (typeof from === 'number') {
+    if (to >= from) {
+      for (let i = from; i <= to; i++) {
+        yield i
+      }
+    } else {
+      for (let i = from; i >= to; i--) {
+        yield i
+      }
+    }
+  } else if (typeof from === 'string') {
+    if (to >= from) {
+      for (let i = from.charCodeAt(0); i <= to.charCodeAt(0); i++) {
+        yield String.fromCharCode(i)
+      }
+    } else {
+      for (let i = from.charCodeAt(0); i >= to.charCodeAt(0); i--) {
+        yield String.fromCharCode(i)
+      }
+    }
+  }
+}
 ```
