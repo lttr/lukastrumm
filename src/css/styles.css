@@ -181,7 +181,8 @@ table tbody tr:last-child td {
 /* layout */
 
 .page-wrapper {
-  position: relative;
+  position: relative; /* footer at the bottom */
+  min-height: 100vh; /* footer at the bottom */
 }
 
 main {
@@ -191,9 +192,8 @@ main {
   padding-top: 0;
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-bottom: 6rem;
+  padding-bottom: 6rem; /* footer at the bottom */
   max-width: var(--max-width);
-  min-height: 100%;
 }
 
 /* footer */
@@ -203,10 +203,10 @@ footer {
   justify-content: center;
   align-items: center;
   color: var(--primary-color);
-  position: absolute;
-  bottom: 0;
+  position: absolute; /* footer at the bottom */
+  bottom: 0; /* footer at the bottom */
   left: 0;
-  width: 100%;
+  width: 100%; /* footer at the bottom */
   font-size: var(--small-font);
   box-shadow: inset 1px 2px 3px 0 var(--box-shadow);
   border-radius: 2px;
