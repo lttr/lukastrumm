@@ -103,3 +103,19 @@ graph TD;
 ```
 
 ### Figures
+
+### HTML example
+
+```html {run}
+<a href="google.com">google</a>
+
+<style>
+  code {
+    font-size: 28px;
+  }
+</style>
+```
+
+```js {run}
+window.klipse_settings
+```

@@ -3,8 +3,13 @@
   position: relative;
 }
 
+.klipse-result {
+  padding-top: 1.3rem;
+}
+
 .klipse-snippet::after,
-.klipse-result::after {
+.klipse-result::after,
+.klipse-actual.language-html > .CodeMirror::after {
   position: absolute;
   top: 0;
   right: 0;
@@ -17,6 +22,10 @@
 
 .klipse-snippet::after {
   content: 'JavaScript';
+}
+
+.klipse-actual.language-html > .CodeMirror::after {
+  content: 'HTML';
 }
 
 .klipse-result::after {
@@ -40,10 +49,6 @@ pre[class*='language-'].klipse-actual {
 
 .klipse-snippet .CodeMirror:focus {
   border: solid 1px var(--button-bg-hover);
-}
-
-.klipse-result .CodeMirror-lines {
-  /* background-color: var(--code-result); */
 }
 
 .klipse-result .CodeMirror {

@@ -6,15 +6,21 @@ const enhance = render => (...args) => {
   const originalResult = render.apply(this, args)
   let newResult = originalResult
   if (doRun) {
+    const langMatches = infostring.match(/(\w+)/)
+    let lang = langMatches ? langMatches[1] : ''
+    if (lang === 'javascript') {
+      lang = 'js'
+    }
     const klipseFallback = originalResult.replace(
       /<pre[^>]*>/,
-      '<pre class="klipse-fallback language-js">'
+      `<pre class="klipse-fallback language-${lang}">`
     )
+    const trimmedContent = tokens[idx].content.trim()
     newResult = [
       klipseFallback,
-      '<pre class="klipse-actual language-js" style="display: none;">',
-      '<code class="klipse-eval-js language-js">',
-      tokens[idx].content.trim(),
+      `<pre class="klipse-actual language-${lang}" style="display: none;">`,
+      `<code class="klipse-eval-${lang} language-${lang}">`,
+      lang === 'html' ? htmlEntities(trimmedContent) : trimmedContent,
       '</code>',
       '</pre>',
     ].join('')
@@ -27,4 +33,12 @@ module.exports = (md = {}, options = {}) => {
   const fenceRender = md.renderer.rules.fence
   md.renderer.rules.code_block = enhance(codeBlockRender, options)
   md.renderer.rules.fence = enhance(fenceRender, options)
+}
+
+function htmlEntities(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
 }
