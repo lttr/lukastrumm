@@ -12,7 +12,7 @@ module.exports = {
       // filter out all 'system' tags
       filter: ['all', 'tagList', 'nav', 'articles', 'posts', 'notes', 'blog'],
     },
-    permalink: data => `/tag/${data.pagination.items[0]}/`,
+    permalink: (data) => `/tag/${data.pagination.items[0]}/`,
   },
 
   render(data) {
@@ -24,7 +24,7 @@ module.exports = {
         <span class="tag-badge">${tag}</span>
       </p>
       <ul>
-        ${data.collections[tag].map(item => {
+        ${data.collections[tag].map((item) => {
           return html`
             <li>
               ${postInline(item.data)}

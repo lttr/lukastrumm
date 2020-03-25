@@ -8,7 +8,7 @@ module.exports = (eleventy, data) => html`
       </h1>
       <nav class="header-nav">
         <ul>
-          ${data.metadata.navigation.map(item => {
+          ${data.metadata.navigation.map((item) => {
             const isActive = data.page.url.startsWith(item.url)
             return html`
               <li>

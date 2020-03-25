@@ -1,6 +1,6 @@
 const html = require('viperhtml').wire()
 
-module.exports = eleventy => html`
+module.exports = (eleventy) => html`
   <link rel="stylesheet" href="${eleventy.url('/css/codemirror.css')}" />
   <script defer src="${eleventy.url('/js/enable-klipse.js')}"></script>
   <script

@@ -73,7 +73,7 @@ const c = new TreeNode('C', null, null)
 const root = new TreeNode('*', p, c)
 
 function accumulatingAction(accumulator) {
-  return node => {
+  return (node) => {
     accumulator.push(node.value)
   }
 }

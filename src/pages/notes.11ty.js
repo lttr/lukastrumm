@@ -14,15 +14,13 @@ module.exports = {
       <h1>Notes</h1>
       <ul id="notes">
         ${data.collections.notes.map(
-          item => html`
+          (item) => html`
             <li>
               ${postInline(item.data)}
               ${Array.isArray(item.data.tags)
-                ? item.data.tags.map(tag => {
+                ? item.data.tags.map((tag) => {
                     const url = `/tag/${tag}`
-                    return html`
-                      <a href="${url}" class="tag-badge">${tag}</a>
-                    `
+                    return html` <a href="${url}" class="tag-badge">${tag}</a> `
                   })
                 : ''}
             </li>

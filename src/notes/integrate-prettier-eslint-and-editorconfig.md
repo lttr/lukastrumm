@@ -2,8 +2,8 @@
 title: Integrate prettier, eslint and editorconfig
 date: 2019-12-12
 tags:
- - software-project
- - linting
+  - software-project
+  - linting
 ---
 
 Use `editorconfig` for common editor configuration (line endings, charset, indentation).

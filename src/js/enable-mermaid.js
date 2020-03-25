@@ -1,11 +1,11 @@
 // elements with mermaid diagram code
 const mermaids = document.querySelectorAll('.mermaid')
 
-mermaids.forEach(element => {
+mermaids.forEach((element) => {
   // make diagram image visible after processing
   function callback(mutationList, observer) {
     const processedMutation = mutationList.find(
-      mutation => mutation.attributeName === 'data-processed'
+      (mutation) => mutation.attributeName === 'data-processed'
     )
     if (processedMutation && processedMutation.target.dataset['processed']) {
       processedMutation.target.style.visibility = 'visible'

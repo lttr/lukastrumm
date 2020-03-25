@@ -1,4 +1,4 @@
-const enhance = render => (...args) => {
+const enhance = (render) => (...args) => {
   // args = [tokens, idx, options, env, slf]
   const [tokens = {}, idx = 0] = args
   const infostring = tokens[idx].info

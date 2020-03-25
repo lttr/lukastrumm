@@ -23,7 +23,7 @@ preElements.forEach((preElement, index) => {
 
 const clipboard = new ClipboardJS('.copy-to-clipboard-button')
 
-clipboard.on('success', e => {
+clipboard.on('success', (e) => {
   e.trigger.textContent = 'done'
   setTimeout(() => {
     e.trigger.textContent = 'copy'

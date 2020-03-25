@@ -22,7 +22,7 @@ module.exports = {
     const template = html`
       <h1>Tags</h1>
       <p class="tags">
-        ${data.collections.tagList.sort().map(tag => {
+        ${data.collections.tagList.sort().map((tag) => {
           const url = `/tag/${tag}`
           const count = counter[tag]
           return html`

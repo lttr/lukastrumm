@@ -77,7 +77,7 @@ module.exports = {
 
       <div class="search-results" style="margin-top: 0">
         <ul id="initial-list">
-          ${data.collections.posts.map(post => {
+          ${data.collections.posts.map((post) => {
             const url = post.data.page.url
             const category = getCategory(url)
             return html`
@@ -89,7 +89,7 @@ module.exports = {
               </li>
             `
           })}
-          ${data.collections.tagList.sort().map(tag => {
+          ${data.collections.tagList.sort().map((tag) => {
             const url = `/tag/${tag}`
             return html`
               <li>
@@ -162,8 +162,8 @@ module.exports = {
         }
 
         const searchIndex = fetch('/search.json')
-          .then(r => r.json())
-          .then(searchIndex => {
+          .then((r) => r.json())
+          .then((searchIndex) => {
             performSearch(searchIndex)
             input.addEventListener('input', () => {
               performSearch(searchIndex)

@@ -14,7 +14,7 @@ module.exports = {
       <h1>Blog</h1>
       <ul>
         ${data.collections.blog.map(
-          blog => html`
+          (blog) => html`
             <li>
               ${postInline(blog.data)}
             </li>

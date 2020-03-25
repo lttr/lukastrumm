@@ -34,11 +34,9 @@ module.exports = {
         ${tags
           ? html`
               <section class="tags">
-                ${tags.map(tag => {
+                ${tags.map((tag) => {
                   const url = `/tag/${tag}`
-                  return html`
-                    <a href="${url}" class="tag-badge">${tag}</a>
-                  `
+                  return html` <a href="${url}" class="tag-badge">${tag}</a> `
                 })}
               </section>
             `
