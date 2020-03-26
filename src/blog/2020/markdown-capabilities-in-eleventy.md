@@ -1,5 +1,5 @@
 ---
-title: Markdown Capabilities In Eleventy
+title: Markdown capabilities in Eleventy
 date: 2020-01-30
 tags:
   - eleventy
@@ -37,7 +37,7 @@ I've set it by a configuration option:
 breaks: true
 ```
 
-(Code block without specified language.)
+_(Code block without specified language.)_
 
 ### Text elements
 
@@ -49,7 +49,7 @@ breaks: true
 const foo = 'more code'
 ```
 
-(Code block with language specified as `js`.)
+_(Code block with language specified as `js`.)_
 
 ### Lists
 
@@ -59,8 +59,8 @@ const foo = 'more code'
 - Second
 
 1. First
-   1. Alpha
-   2. Beta
+   - Alpha
+   - Beta
 2. Second
 
 ### Automatic conversions
@@ -87,9 +87,56 @@ Source: [Latency Numbers Every Programmer Should Know](https://gist.github.com/j
 
 ### Footnotes
 
-You can specify references to footnotes by writing something like `[^markdown -capabilities]` [^markdown-capabilities]
+You can specify references to footnotes by writing something like this
+inside markdown: [^markdown-capabilities]
+
+```markdown
+[^markdown -capabilities]
+```
+
+And somewhere after that:
+
+```markdown
+[^markdown-capabilities]: [markdown capabilities](https://github.com/markdown-it/markdown-it#syntax-extensions)
+```
 
 [^markdown-capabilities]: [markdown capabilities](https://github.com/markdown-it/markdown-it#syntax-extensions)
+
+### Anchors
+
+Hover over a heading, click the `#` sign and use targeted url...
+
+### Figures
+
+Look, this is a `<figure>` with caption.
+
+<div class="hide-white-background">
+
+![Box with title App depend on a bunch of Libs](/img/dependencies.png)
+
+</div>
+
+## My custom plugins
+
+You can write your own plugin for `markdown-it`---it is one function.
+
+### Code blocks with title
+
+This line
+
+```text
+\`\`\`html [Elaborate html document]
+```
+
+produces
+
+```html [Elaborate html document]
+<html>
+  <body>
+    <h1>Page</h1>
+  </body>
+</html>
+```
 
 ### Mermaid
 
@@ -102,20 +149,12 @@ graph TD;
   P -- authorized --> ON:::green;
 ```
 
-### Figures
+### Executable code blocks
 
-### HTML example
-
-```html {run}
-<a href="google.com">google</a>
-
-<style>
-  code {
-    font-size: 28px;
-  }
-</style>
-```
+Using [klipse](https://github.com/viebel/klipse).
 
 ```js {run}
-window.klipse_settings
+const t = window.performance.timing
+const duration = t.domContentLoadedEventEnd - t.navigationStart
+;`DOM loaded after ${duration} ms`
 ```
