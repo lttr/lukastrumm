@@ -7,7 +7,6 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 
 const markdownIt = require('markdown-it')
 const markdownItFootnote = require('markdown-it-footnote')
-const markdownItAbbr = require('markdown-it-abbr')
 const markdownItAnchor = require('markdown-it-anchor')
 const markdownItToc = require('markdown-it-table-of-contents')
 const markdownItFigures = require('markdown-it-implicit-figures')
@@ -16,7 +15,7 @@ const markdownItExecute = require('./src/_plugins/markdown-it-execute')
 const markdownItTitle = require('./src/_plugins/markdown-it-title')
 const markdownItMermaid = require('./src/_plugins/markdown-it-mermaid')
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   // Copy files
 
   eleventyConfig.addPassthroughCopy('src/{js,blog,notes,articles}/**/*.js')
@@ -28,32 +27,32 @@ module.exports = function(eleventyConfig) {
 
   // Create collections
 
-  eleventyConfig.addCollection('articles', function(collection) {
+  eleventyConfig.addCollection('articles', function (collection) {
     return collection
       .getAllSorted()
-      .filter(item => item.inputPath.includes('articles/'))
+      .filter((item) => item.inputPath.includes('articles/'))
       .reverse()
   })
 
-  eleventyConfig.addCollection('blog', function(collection) {
+  eleventyConfig.addCollection('blog', function (collection) {
     return collection
       .getAllSorted()
-      .filter(item => item.inputPath.includes('blog/'))
+      .filter((item) => item.inputPath.includes('blog/'))
       .reverse()
   })
 
-  eleventyConfig.addCollection('notes', function(collection) {
+  eleventyConfig.addCollection('notes', function (collection) {
     return collection
       .getAllSorted()
-      .filter(item => item.inputPath.includes('notes/'))
+      .filter((item) => item.inputPath.includes('notes/'))
       .reverse()
   })
 
-  eleventyConfig.addCollection('posts', function(collection) {
+  eleventyConfig.addCollection('posts', function (collection) {
     return collection
       .getAllSorted()
       .filter(
-        item =>
+        (item) =>
           item.inputPath.includes('articles/') ||
           item.inputPath.includes('blog/') ||
           item.inputPath.includes('notes/')
@@ -82,7 +81,6 @@ module.exports = function(eleventyConfig) {
     'md',
     markdownIt(markdownOptions)
       .use(markdownItFootnote)
-      .use(markdownItAbbr)
       .use(markdownItAnchor, {
         level: [2, 3],
         permalink: true,
@@ -117,7 +115,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(lazyImagesPlugin, {
     imgSelector: '.post-content img',
-    transformImgPath: relativePath => {
+    transformImgPath: (relativePath) => {
       // For image paths find the full path relative to project root
       // otherwise lazyImagesPlugin would not be able to locate the image.
       if (relativePath.startsWith('/') || relativePath.startsWith('./')) {
@@ -162,8 +160,8 @@ function getTagList(collection) {
     ...new Set(
       collection
         .getAll()
-        .filter(item => Array.isArray(item.data.tags))
-        .flatMap(item => item.data.tags)
+        .filter((item) => Array.isArray(item.data.tags))
+        .flatMap((item) => item.data.tags)
     ),
   ]
 }
