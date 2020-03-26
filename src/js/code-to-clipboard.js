@@ -5,6 +5,9 @@ const preElements = Array.from(
 preElements.forEach((preElement, index) => {
   const codeElement = preElement.querySelector('code[class*="language-"]')
   if (codeElement) {
+    const wrapperElement = document.createElement('div')
+    wrapperElement.classList.add('code-wrapper')
+
     const button = document.createElement('button')
     const id = `copy-${index}`
 
@@ -16,8 +19,11 @@ preElements.forEach((preElement, index) => {
 
     codeElement.id = id
 
-    preElement.style.position = 'relative'
-    preElement.insertAdjacentElement('afterbegin', button)
+    wrapperElement.style.position = 'relative'
+    wrapperElement.insertAdjacentElement('afterbegin', button)
+
+    preElement.insertAdjacentElement('beforebegin', wrapperElement)
+    wrapperElement.appendChild(preElement)
   }
 })
 
