@@ -5,4 +5,5 @@ tags: time-management
 ---
 
 ![Inbox](/img/gtd-inbox.png)
+
 ![Inbox](/img/gtd-projects.png)
