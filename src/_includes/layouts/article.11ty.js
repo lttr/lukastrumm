@@ -5,7 +5,7 @@ const formatDate = require('../helpers/formatDate')
 
 module.exports = {
   render(data) {
-    const { content, title, updated, page, tags } = data
+    const { content, title, updated, page, tags, updates } = data
     const { excerpt, date } = page
 
     const sectionClasses = ['post-content']
@@ -31,6 +31,7 @@ module.exports = {
         <section class="${sectionClasses.join(' ')}">
           ${{ html: content }}
         </section>
+
         ${tags
           ? html`
               <section class="tags">
@@ -41,6 +42,18 @@ module.exports = {
               </section>
             `
           : ''}
+        ${updates[page.inputPath]
+          ? html`
+              <section class="updates">
+                <div class="toc-heading">Updates</div>
+                <ul>
+                  ${updates[page.inputPath].map((update) => {
+                    return html`<li>${update.date} ${update.message}</li>`
+                  })}
+                </ul>
+              </section>
+            `
+          : null}
       </article>
     `
     return base(this, template, data)

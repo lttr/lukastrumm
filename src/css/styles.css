@@ -415,6 +415,17 @@ figcaption {
   visibility: visible;
 }
 
+/* updates */
+
+.updates .toc-heading {
+  font-family: var(--heading-font);
+  font-size: var(--small-font);
+}
+
+.updates ul {
+  margin-top: 0.5em;
+}
+
 /* tags */
 
 .tags {

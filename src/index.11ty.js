@@ -42,7 +42,7 @@ module.exports = {
         <h2>Articles</h2>
         <ul class="cards">
           ${collections.articles.map(
-            item => html`
+            (item) => html`
               <li class="card">
                 ${postWithExcerpt(item.data)}
               </li>
@@ -52,7 +52,7 @@ module.exports = {
         <h2>Blog posts</h2>
         <ul class="cards">
           ${collections.blog.map(
-            item => html`
+            (item) => html`
               <li class="card">
                 ${postWithExcerpt(item.data)}
               </li>
@@ -62,7 +62,7 @@ module.exports = {
         <h2>Notes</h2>
         <ul>
           ${collections.notes.map(
-            item => html`
+            (item) => html`
               <li>
                 ${postInline(item.data, false)}
               </li>

@@ -124,9 +124,10 @@ You can write your own plugin for `markdown-it`---it is one function.
 
 This line
 
-```text
-\`\`\`html [Elaborate html document]
-```
+````text
+```html [Elaborate html document]
+...html code...
+````
 
 produces
 
