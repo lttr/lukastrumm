@@ -2,7 +2,12 @@ const git = require('@npmcli/git')
 const util = require('util')
 const glob = util.promisify(require('glob'))
 
+/**
+ * @typedef { Object.<string, Array<{ date: string, message: string }> } Updates
+ * @returns Updates
+ */
 async function updates() {
+  /** @type Updates */
   const results = {}
   const files = await glob('src/**/*.md')
   for (const file of files) {

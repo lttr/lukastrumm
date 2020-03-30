@@ -17,6 +17,8 @@ module.exports = {
 
   render(data) {
     const tag = data.pagination.items[0]
+    const tagCollection = data.collections[tag]
+    tagCollection.reverse() // last posts first
     const template = html`
       <p></p>
       <p>
@@ -24,7 +26,7 @@ module.exports = {
         <span class="tag-badge">${tag}</span>
       </p>
       <ul>
-        ${data.collections[tag].map((item) => {
+        ${tagCollection.map((item) => {
           return html`
             <li>
               ${postInline(item.data)}

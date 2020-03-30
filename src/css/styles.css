@@ -417,6 +417,11 @@ figcaption {
 
 /* updates */
 
+.updates {
+  color: var(--primary-color);
+  font-style: italic;
+}
+
 .updates .toc-heading {
   font-family: var(--heading-font);
   font-size: var(--small-font);
@@ -431,11 +436,11 @@ figcaption {
 .tags {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-.post-content .tags {
+article .tags {
   justify-content: flex-end;
-  padding-bottom: 1.5rem;
 }
 
 .tag-badge {

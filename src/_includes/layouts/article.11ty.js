@@ -7,8 +7,17 @@ module.exports = {
   render(data) {
     const { content, title, updated, page, tags, updates } = data
     const { excerpt, date } = page
+    const currentArticleUpdates = updates[page.inputPath]
+    let updatedDate = updated
 
-    const sectionClasses = ['post-content']
+    const lastUpdate = currentArticleUpdates
+      ? currentArticleUpdates[currentArticleUpdates.length - 1]
+      : null
+    if (lastUpdate) {
+      updatedDate = new Date(lastUpdate.date)
+    }
+
+    sectionClasses = ['post-content']
     if (excerpt) {
       sectionClasses.push('has-excerpt')
     }
@@ -20,10 +29,10 @@ module.exports = {
           <em class="article-date">
             ${formatDate(date)}
           </em>
-          ${updated
+          ${updatedDate
             ? html`
                 <em class="article-date">
-                  (last update ${formatDate(updated)})
+                  (last update ${formatDate(updatedDate)})
                 </em>
               `
             : ''}
@@ -42,12 +51,12 @@ module.exports = {
               </section>
             `
           : ''}
-        ${updates[page.inputPath]
+        ${currentArticleUpdates
           ? html`
               <section class="updates">
                 <div class="toc-heading">Updates</div>
                 <ul>
-                  ${updates[page.inputPath].map((update) => {
+                  ${currentArticleUpdates.map((update) => {
                     return html`<li>${update.date} ${update.message}</li>`
                   })}
                 </ul>
