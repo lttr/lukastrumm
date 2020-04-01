@@ -1,23 +1,5 @@
 /* settings */
 
-@font-face {
-  font-family: Charter;
-  src: url('/css/charter_regular-webfont.woff2') format('woff2');
-  font-style: normal;
-  font-weight: normal;
-  font-stretch: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Charter;
-  src: url('/css/charter_italic-webfont.woff2') format('woff2');
-  font-style: italic;
-  font-weight: normal;
-  font-stretch: normal;
-  font-display: swap;
-}
-
 :root {
   /* heights and widths */
   --max-width: 725px;
@@ -127,6 +109,10 @@ h1 {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-size: 2rem;
+}
+
+.fonts-not-yet-loaded article h1 {
+  font-weight: 500;
 }
 
 ul > li + li,
@@ -467,8 +453,8 @@ article .tags {
 /* mermaid */
 
 .mermaid * {
-  font-size: var(--small-font) !important;
-  line-height: var(--small-font) !important;
+  font-size: 0.86rem !important;
+  line-height: 0.64rem !important;
   font-family: var(--heading-font) !important;
 }
 
@@ -490,6 +476,26 @@ article .tags {
 .mermaid .violet > * {
   fill: var(--violet-light) !important;
   stroke: var(--violet) !important;
+}
+
+.mermaid .yellow > * {
+  fill: var(--yellow-light) !important;
+  stroke: var(--yellow) !important;
+}
+
+.mermaid .orange > * {
+  fill: var(--orange-light) !important;
+  stroke: var(--orange) !important;
+}
+
+.mermaid .cyan > * {
+  fill: var(--cyan-light) !important;
+  stroke: var(--cyan) !important;
+}
+
+.mermaid .magenta > * {
+  fill: var(--magenta-light) !important;
+  stroke: var(--magenta) !important;
 }
 
 .mermaid .edgeLabel {

@@ -20,7 +20,8 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('src/{js,blog,notes,articles}/**/*.js')
   eleventyConfig.addPassthroughCopy('src/{css,blog,notes,articles}/**/*.css')
-  eleventyConfig.addPassthroughCopy('src/{css,blog,notes,articles}/**/*.woff2')
+  eleventyConfig.addPassthroughCopy('src/fonts/*.woff2')
+  eleventyConfig.addPassthroughCopy('src/favicon.ico')
   eleventyConfig.addPassthroughCopy({
     'src/**/*.{ico,png,svg,gif,jpg,jpeg}': 'img',
   })

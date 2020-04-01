@@ -7,7 +7,7 @@ const mermaid = require('../partials/mermaid.11ty')
 const header = require('../partials/header.11ty')
 const footer = require('../partials/footer.11ty')
 const criticalStyles = require('../partials/criticalStyles.11ty')
-const linkedStyles = require('../partials/linkedStyles.11ty')
+const fonts = require('../partials/fonts.11ty')
 
 module.exports = function base(eleventy, content, data) {
   const hasCodeBlock = content.includes('class="language')
@@ -18,12 +18,15 @@ module.exports = function base(eleventy, content, data) {
     <!DOCTYPE html>
     <html lang="en">
       <head>
-        ${meta(eleventy, data)} ${{ html: criticalStyles() }} ${linkedStyles()}
+        ${meta(eleventy, data)} ${fonts()}
+        <style>
+          ${{ html: criticalStyles() }}
+        </style>
         ${hasCodeBlock ? clipboard(eleventy) : null}
         ${hasMermaid ? mermaid(eleventy) : null}
         ${hasRunnableCodeBlock ? klipse(eleventy) : null}
       </head>
-      <body>
+      <body class="fonts-not-yet-loaded">
         <div class="page-wrapper">
           ${header(eleventy, data)}
           <main>
