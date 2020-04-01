@@ -7,7 +7,16 @@ const enhance = (render) => (...args) => {
   const originalResult = render.apply(this, args)
   let newResult = originalResult
   if (isMermaid) {
-    const diagramText = tokens[idx].content
+    // https://github.com/mermaid-js/mermaid/issues/580
+    const linkStyleBasis = `linkStyle default interpolate basis;`
+    let diagramText = tokens[idx].content
+    if (
+      !diagramText.includes(linkStyleBasis) &&
+      diagramText.startsWith('graph')
+    ) {
+      diagramText = diagramText.replace('\n', `\n${linkStyleBasis}\n`)
+    }
+
     const approxHeight = diagramText.split('\n').length * 40
     newResult = `
       <figure>

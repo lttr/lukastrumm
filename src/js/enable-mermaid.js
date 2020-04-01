@@ -23,6 +23,10 @@ mermaids.forEach((element) => {
 mermaid.initialize({
   startOnLoad: true,
   theme: 'neutral',
-  nodeSpacing: 40,
-  rankSpacing: 30,
+  flowchart: {
+    nodeSpacing: 50,
+    rankSpacing: 50,
+    curve: 'basis',
+  },
+  securityLevel: 'loose',
 })
