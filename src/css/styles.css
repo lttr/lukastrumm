@@ -111,10 +111,6 @@ h1 {
   font-size: 2rem;
 }
 
-.fonts-not-yet-loaded article h1 {
-  font-weight: 500;
-}
-
 ul > li + li,
 ul ul,
 ol > li + li,

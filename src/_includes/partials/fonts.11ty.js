@@ -1,6 +1,17 @@
 const html = require('viperhtml').wire()
 
 module.exports = () => html`
+  <!--
+  Preloading is a little bit faster, but the disadvantage
+  is that there are multiple font reflows - every time the browser
+  finishes downloading a font
+  <link
+    rel="preload"
+    href="/fonts/raleway_semibold_optimized.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  /> -->
   <script>
     async function loadFonts() {
       const baseFontRegular = new FontFace(
@@ -44,17 +55,17 @@ module.exports = () => html`
         }
       )
 
-      await baseFontRegular.load()
-      await baseFontItalic.load()
-      await monoFont.load()
-      await headingFont.load()
-
-      document.fonts.add(baseFontRegular)
-      document.fonts.add(baseFontItalic)
-      document.fonts.add(monoFont)
-      document.fonts.add(headingFont)
-
-      document.body.classList.remove('fonts-not-yet-loaded')
+      Promise.all([
+        baseFontRegular.load(),
+        baseFontItalic.load(),
+        monoFont.load(),
+        headingFont.load(),
+      ]).then((fonts) => {
+        for (const font of fonts) {
+          document.fonts.add(font)
+          document.body.classList.remove('fonts-not-yet-loaded')
+        }
+      })
     }
 
     loadFonts()

@@ -6,8 +6,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "clean": "rm -r ./charter*",
-    "copy-fonts": "cp charter_regular-webfont_optimized charter_*-webfont.woff2 ../../src/fonts/"
+    "clean": "rm -r ./charter* ./raleway*",
+    "copy-fonts": "cp charter_regular-webfont_optimized charter*.woff2 raleway*.woff2  ../../src/fonts/"
   },
   "devDependencies": {
     "fontmin": "^0.9.8",
