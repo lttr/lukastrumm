@@ -2,7 +2,12 @@ node_modules
 *.log*
 build
 dist
+
+# Cache for lazyimages plugin
 .lazyimages*
 
 # Local Netlify folder
 .netlify
+
+# My cache for data fetched during build
+.datacache

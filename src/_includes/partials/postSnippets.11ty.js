@@ -25,15 +25,13 @@ function postWithExcerpt(data) {
     page: { url, date, excerpt },
   } = data
   return html`
-    <a href="${url}">
-      <span class="article-title">${title}</span><br />
-      <em class="article-date">
-        ${formatDate(date)}
-      </em>
-      <p class="excerpt">
-        ${excerpt}
-      </p>
-    </a>
+    <a href="${url}" class="article-title">${title}</a><br />
+    <em class="article-date">
+      ${formatDate(date)}
+    </em>
+    <p class="excerpt">
+      ${excerpt}
+    </p>
   `
 }
 

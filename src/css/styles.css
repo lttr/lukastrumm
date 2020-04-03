@@ -542,40 +542,31 @@ article .tags {
   margin: 0;
 }
 
+.cards.full-width {
+  grid-template-columns: 1fr;
+}
+
 .card {
   border: 1px solid #dddbda;
   border-radius: 0.1em;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
   list-style-type: none;
+  padding: 1em 0.7em;
 }
 
 .card .excerpt {
-  font-size: 85%;
+  font-size: var(--small-font);
 }
 
-.card .article-date {
-  color: var(--primary-color);
-}
-
-.card .excerpt {
-  color: var(--text-color);
+.card br {
+  margin: 0;
 }
 
 .card a {
-  padding: 0.7em;
-  height: calc(100% - 2 * 0.7em);
-  display: block;
-}
-
-.card a:hover {
-  text-decoration: none;
-}
-
-.card a:hover .article-title {
-  text-decoration: underline;
+  width: 100%;
+  display: inline-block;
 }
 
 .card:hover {
-  border-color: var(--back-color);
   box-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.1);
 }
