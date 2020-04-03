@@ -14,29 +14,6 @@ module.exports = {
         .home-page h2 {
           text-align: center;
         }
-
-        .cards {
-          display: grid;
-          grid-gap: 10px;
-          grid-template-columns: repeat(
-            auto-fill,
-            minmax(calc(var(--max-width) / 3), 1fr)
-          );
-          padding: 0;
-          margin: 0;
-        }
-
-        .card {
-          border: 1px solid #dddbda;
-          border-radius: 0.1em;
-          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
-          padding: 0.7em;
-          list-style-type: none;
-        }
-
-        .card .excerpt {
-          font-size: 85%;
-        }
       </style>
       <section class="home-page">
         <h2>Articles</h2>

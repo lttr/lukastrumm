@@ -46,7 +46,7 @@ module.exports = () => html`
       )
       const headingFont = new FontFace(
         'Raleway',
-        'url(/fonts/raleway_semibold_latin.woff2)',
+        'url(/fonts/raleway_semibold_optimized.woff2)',
         {
           family: 'Raleway',
           style: 'normal',

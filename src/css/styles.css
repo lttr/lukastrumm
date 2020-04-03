@@ -18,9 +18,9 @@
   --box-shadow: rgba(0, 0, 0, 0.12);
 
   /* fonts */
-  --heading-font: 'Raleway', sans-serif;
+  --heading-font: 'Raleway', Arial, Helvetica, sans-serif;
   --heading-font-weight: 600;
-  --body-font: 'Charter', serif;
+  --body-font: 'Charter', Georgia, serif;
   --font-size: 18px;
 
   /* solarized colors */
@@ -527,4 +527,55 @@ article .tags {
   font-style: normal;
   background-color: var(--yellow-light);
   color: var(--text-color);
+}
+
+/* cards */
+
+.cards {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(calc(var(--max-width) / 3), 1fr)
+  );
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  border: 1px solid #dddbda;
+  border-radius: 0.1em;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+  list-style-type: none;
+}
+
+.card .excerpt {
+  font-size: 85%;
+}
+
+.card .article-date {
+  color: var(--primary-color);
+}
+
+.card .excerpt {
+  color: var(--text-color);
+}
+
+.card a {
+  padding: 0.7em;
+  height: calc(100% - 2 * 0.7em);
+  display: block;
+}
+
+.card a:hover {
+  text-decoration: none;
+}
+
+.card a:hover .article-title {
+  text-decoration: underline;
+}
+
+.card:hover {
+  border-color: var(--back-color);
+  box-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.1);
 }
