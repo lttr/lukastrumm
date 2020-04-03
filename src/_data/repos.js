@@ -27,7 +27,7 @@ module.exports = async function () {
     })
     const newData = await response.json()
 
-    setCacheData(cache, getOncePerDayCacheKey(), data)
+    setCacheData(cache, getOncePerDayCacheKey(), newData)
     return newData
   }
 
