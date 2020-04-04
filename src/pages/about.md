@@ -7,10 +7,10 @@ permalink: /about/
 # About me
 
 <img src="/img/lt.jpg"
-  width="220"
-  height="220"
-  alt="Lukas Trumm"
-  style="border-radius: 6px; float: right; margin: 0px 0px 10px 15px;">
+    width="220"
+    height="220"
+    alt="Lukas Trumm"
+    style="border-radius: 6px; margin: 0px 0px 10px 15px;">
 
 I am Lukas Trumm, software developer, scout leader and mountain runner.
 
@@ -24,8 +24,6 @@ I love running in the nature. In difficult (inspiring) conditions one can come u
 
 ### References
 
-[Principles](https://www.scout.org/promiseandlaw) of the Scout movement
-
-[Website](http://www.ctyriadvacitka.wz.cz) of my scout group
-
-[My Github](https://github.com/lttr/) profile
+- [Principles](https://www.scout.org/promiseandlaw) of the Scout movement
+- [Website](http://www.ctyriadvacitka.wz.cz) of my scout group
+- [My Github](https://github.com/lttr/) profile
