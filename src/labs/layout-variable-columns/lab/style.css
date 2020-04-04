@@ -1,0 +1,72 @@
+:root {
+  --main-back-color: #ddd;
+  --grid-back-color: #edd;
+  --flex-back-color: #ded;
+  --grid-item-color: #dcc;
+  --flex-item-color: #cdc;
+}
+body {
+  margin: 1em;
+  font-size: 1em;
+  font-family: sans-serif;
+}
+main {
+  background-color: var(--main-back-color);
+  padding: 1em;
+}
+h3 {
+  font-size: 1em;
+}
+.box {
+  margin: auto;
+  /* width: 35em; */
+}
+.grid {
+  background-color: var(--grid-back-color);
+  display: grid;
+  grid-gap: 1em;
+}
+.grid-fixed {
+  grid-template-columns: repeat(4, 10em);
+}
+.grid-auto-fill {
+  grid-template-columns: repeat(auto-fill, 10em);
+}
+.grid-auto-fill-minmax {
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+}
+.grid-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+}
+.grid-auto-fit-auto-max {
+  grid-template-columns: repeat(auto-fit, minmax(10em, auto));
+}
+.grid-fr {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid-auto-fr {
+  grid-template-columns: repeat(4, auto);
+}
+.flex {
+  background-color: var(--flex-back-color);
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-wrap: nowrap; */
+}
+.item {
+  text-align: center;
+  padding: 0.6em;
+}
+.grid-item {
+  background-color: var(--grid-item-color);
+}
+.flex-item {
+  background-color: var(--flex-item-color);
+  margin-right: 1em;
+  flex: 1 0 auto;
+  /* width: 10em; */
+}
+.flex-item:last-child {
+  margin-right: 0;
+}
+/* .special { } */

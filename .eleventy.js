@@ -18,8 +18,9 @@ const markdownItMermaid = require('./src/_plugins/markdown-it-mermaid')
 module.exports = function (eleventyConfig) {
   // Copy files
 
-  eleventyConfig.addPassthroughCopy('src/{js,blog,notes,articles}/**/*.js')
-  eleventyConfig.addPassthroughCopy('src/{css,blog,notes,articles}/**/*.css')
+  eleventyConfig.addPassthroughCopy(
+    'src/{js,blog,notes,articles,labs}/**/*.{html,css,js}'
+  )
   eleventyConfig.addPassthroughCopy('src/fonts/*.woff2')
   eleventyConfig.addPassthroughCopy('src/favicon.ico')
   eleventyConfig.addPassthroughCopy({
@@ -46,6 +47,13 @@ module.exports = function (eleventyConfig) {
     return collection
       .getAllSorted()
       .filter((item) => item.inputPath.includes('notes/'))
+      .reverse()
+  })
+
+  eleventyConfig.addCollection('labs', function (collection) {
+    return collection
+      .getAllSorted()
+      .filter((item) => item.inputPath.includes('labs/'))
       .reverse()
   })
 

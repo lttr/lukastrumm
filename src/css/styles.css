@@ -562,7 +562,7 @@ article .tags {
   margin: 0;
 }
 
-.card a {
+.card a.article-title {
   width: 100%;
   display: inline-block;
 }
