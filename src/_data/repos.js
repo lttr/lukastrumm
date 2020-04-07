@@ -4,7 +4,7 @@ const {
   getCachedData,
   setCacheData,
   getOncePerDayCacheKey,
-} = require('../_lib/cache')
+} = require('../_includes/helpers/cache')
 
 const reposUrl = 'https://api.github.com/users/lttr/repos'
 const specialHeader = {

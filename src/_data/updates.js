@@ -6,7 +6,7 @@ const {
   getCachedData,
   setCacheData,
   getOncePerHourCacheKey,
-} = require('../_lib/cache')
+} = require('../_includes/helpers/cache')
 
 /**
  * @typedef { Object.<string, Array<{ date: string, message: string }> } Updates
