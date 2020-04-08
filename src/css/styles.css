@@ -449,8 +449,8 @@ article .tags {
 /* mermaid */
 
 .mermaid * {
-  font-size: 0.86rem !important;
-  line-height: 0.64rem !important;
+  font-size: 0.88rem !important;
+  line-height: initial;
   font-family: var(--heading-font) !important;
 }
 
