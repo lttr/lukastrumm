@@ -120,6 +120,7 @@ module.exports = function (eleventyConfig) {
   // Configure watch mode
 
   eleventyConfig.addWatchTarget('./src/**/*.js')
+  eleventyConfig.addWatchTarget('./src/**/*.css')
 
   // Add plugins
 
@@ -148,6 +149,7 @@ module.exports = function (eleventyConfig) {
   })
   eleventyConfig.addPlugin(errorOverlay)
 
+  // Prism.js does not know mermaid, it has to be processed manually here
   const highlighter = eleventyConfig.markdownHighlighter
   eleventyConfig.addMarkdownHighlighter((str, language) => {
     if (language === 'mermaid') {
