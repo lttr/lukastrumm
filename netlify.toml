@@ -4,3 +4,8 @@
 
 [build.environment]
   NODE_VERSION = "12"
+
+[[headers]]
+  for = "/fonts/*.woff2"
+  [headers.values]
+    cache-control = "public, max-age=86400"
