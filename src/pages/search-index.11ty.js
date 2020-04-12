@@ -1,5 +1,6 @@
 module.exports = {
   data: {
+    layout: null,
     permalink: '/search.json',
   },
 

@@ -1,14 +1,32 @@
+.klipse-actual {
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+  transition: height 0.24s ease-in-out, opacity 0.24s ease-in-out;
+}
+
+.klipse-actual.active {
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+}
+
 .klipse-snippet,
 .klipse-result {
   position: relative;
 }
 
 .klipse-result {
-  padding-top: 1.3rem;
+  padding: 1.4em;
 }
 
-.klipse-snippet::after,
+.language-html .klipse-result {
+  white-space: initial;
+  font-family: var(--body-text);
+}
+
 .klipse-result::after,
+.klipse-actual.language-js > .CodeMirror::after,
 .klipse-actual.language-html > .CodeMirror::after {
   position: absolute;
   top: 0;
@@ -20,7 +38,7 @@
   font-family: var(--font-family-code);
 }
 
-.klipse-snippet::after {
+.klipse-actual.language-js > .CodeMirror::after {
   content: 'JavaScript';
 }
 
@@ -40,6 +58,10 @@ pre[class*='language-'].klipse-actual {
   height: 0;
 }
 
+.klipse-container {
+  white-space: normal;
+}
+
 .CodeMirror {
   font-family: 'Fira Mono', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
     monospace;
@@ -51,8 +73,13 @@ pre[class*='language-'].klipse-actual {
   border: solid 1px var(--button-bg-hover);
 }
 
-.klipse-result .CodeMirror {
-  background-color: var(--code-bg);
+.klipse-actual .CodeMirror-lines {
+  background-color: var(--body-back-color);
+}
+
+.klipse-result {
+  /* margin-top: 0.5rem; */
+  /* background-color: var(--body-back-color); */
 }
 
 /* PADDING */
@@ -173,7 +200,7 @@ pre[class*='language-'].klipse-actual {
 }
 
 .cm-s-default .cm-keyword {
-  color: var(--code-keyword-fg);
+  color: var(--code-operator-fg);
 }
 .cm-s-default .cm-atom {
   color: var(--code-symbol-fg);
@@ -211,22 +238,22 @@ pre[class*='language-'].klipse-actual {
   /* color: #555; */
 }
 .cm-s-default .cm-builtin {
-  color: var(--code-keyword-fg);
+  color: var(--code-tag-fg);
 }
 .cm-s-default .cm-bracket {
   /* color: #997; */
 }
 .cm-s-default .cm-tag {
-  color: var(--code-symbol-fg);
+  color: var(--code-tag-fg);
 }
 .cm-s-default .cm-attribute {
-  color: var(--code-keyword-fg);
+  color: var(--code-operator-fg);
 }
 .cm-s-default .cm-hr {
   /* color: #999; */
 }
 .cm-s-default .cm-link {
-  color: var(--code-keyword-fg);
+  color: var(--code-tag-fg);
 }
 
 .cm-s-default .cm-error {
@@ -297,7 +324,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   right: 0;
   top: 0;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .CodeMirror-hscrollbar {
   bottom: 0;

@@ -1,4 +1,4 @@
-const html = require('viperhtml').wire()
+const html = require('../../_lib/html')
 
 module.exports = (eleventy, data) => html`
   <header>

@@ -1,6 +1,4 @@
-const html = require('viperhtml').wire()
-
-const base = require('../_includes/layouts/base.11ty')
+const html = require('../_lib/html')
 const { postInline } = require('../_includes/partials/postSnippets.11ty')
 
 function getCategory(url) {
@@ -23,7 +21,7 @@ module.exports = {
   },
 
   render(data) {
-    const template = html`
+    return html`
       <style>
         .category {
           display: inline-block;
@@ -171,6 +169,5 @@ module.exports = {
           })
       </script>
     `
-    return base(this, template, data)
   },
 }

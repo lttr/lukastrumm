@@ -1,8 +1,7 @@
-const html = require('viperhtml').wire()
 const linkifyString = require('linkifyjs/string')
 
-const formatDate = require('../_includes/helpers/formatDate')
-const base = require('../_includes/layouts/base.11ty')
+const { html, raw } = require('../_lib/html')
+const formatDate = require('../_lib/formatDate')
 
 module.exports = {
   data: {
@@ -30,7 +29,7 @@ module.exports = {
         }
       </style>
     `
-    const template = html`
+    return html`
       ${styles}
       <h2>Labs</h2>
       <ul class="cards full-width">
@@ -44,7 +43,6 @@ module.exports = {
           .map(renderRepo)}
       </ul>
     `
-    return base(this, template, data)
   },
 }
 
@@ -89,7 +87,7 @@ function renderRepo(repo) {
         </a>
         ${repo.description
           ? html`<p class="excerpt">
-              ${{ html: linkifyString(repo.description, { target: null }) }}
+              ${raw`${linkifyString(repo.description, { target: null })}`}
             </p>`
           : null}
         <p class="source-language">

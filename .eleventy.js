@@ -12,7 +12,7 @@ const markdownItAnchor = require('markdown-it-anchor')
 const markdownItToc = require('markdown-it-table-of-contents')
 const markdownItFigures = require('markdown-it-implicit-figures')
 
-const markdownItExecute = require('./src/_plugins/markdown-it-execute')
+const markdownItKlipse = require('./src/_plugins/markdown-it-klipse')
 const markdownItTitle = require('./src/_plugins/markdown-it-title')
 const markdownItMermaid = require('./src/_plugins/markdown-it-mermaid')
 
@@ -23,6 +23,7 @@ module.exports = function (eleventyConfig) {
     'src/{js,blog,notes,articles,labs}/**/*.{html,css,js}'
   )
   eleventyConfig.addPassthroughCopy('src/fonts/*.woff2')
+  eleventyConfig.addPassthroughCopy('src/css/*.css')
   eleventyConfig.addPassthroughCopy('src/favicon.ico')
   eleventyConfig.addPassthroughCopy({
     'src/**/*.{ico,png,svg,gif,jpg,jpeg}': 'img',
@@ -105,7 +106,7 @@ module.exports = function (eleventyConfig) {
         figcaption: true,
       })
       // my custom plugins
-      .use(markdownItExecute)
+      .use(markdownItKlipse)
       .use(markdownItTitle)
       .use(markdownItMermaid)
   )

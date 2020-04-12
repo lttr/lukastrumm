@@ -1,0 +1,68 @@
+:root {
+  --body-back-color: hsl(352, 19%, 99%);
+
+  --yellow: #b58900;
+  --orange: #cb4b16;
+  --red: #dc322f;
+  --magenta: #d33682;
+  --violet: #6c71c4;
+  --blue: #268bd2;
+  --cyan: #2aa198;
+  --green: #859900;
+  --yellow-light: #d1b45a88;
+  --orange-light: #df8f6788;
+  --red-light: #e9807688;
+  --magenta-light: #e382a888;
+  --violet-light: #a5a5cf88;
+  --blue-light: #7bb5d888;
+  --cyan-light: #7ec2b588;
+  --green-light: #b5be5a88;
+}
+
+[id^='mermaid'] .green > * {
+  fill: var(--green-light) !important;
+  stroke: var(--green) !important;
+}
+
+[id^='mermaid'] .red > * {
+  fill: var(--red-light) !important;
+  stroke: var(--red) !important;
+}
+
+[id^='mermaid'] .blue > * {
+  fill: var(--blue-light) !important;
+  stroke: var(--blue) !important;
+}
+
+[id^='mermaid'] .violet > * {
+  fill: var(--violet-light) !important;
+  stroke: var(--violet) !important;
+}
+
+[id^='mermaid'] .yellow > * {
+  fill: var(--yellow-light) !important;
+  stroke: var(--yellow) !important;
+}
+
+[id^='mermaid'] .orange > * {
+  fill: var(--orange-light) !important;
+  stroke: var(--orange) !important;
+}
+
+[id^='mermaid'] .cyan > * {
+  fill: var(--cyan-light) !important;
+  stroke: var(--cyan) !important;
+}
+
+[id^='mermaid'] .magenta > * {
+  fill: var(--magenta-light) !important;
+  stroke: var(--magenta) !important;
+}
+
+[id^='mermaid'] .edgeLabel {
+  background-color: var(--body-back-color) !important;
+}
+
+body {
+  background-color: var(--body-back-color) !important;
+}

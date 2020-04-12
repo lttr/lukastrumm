@@ -17,9 +17,9 @@
   --code-symbol-fg: #905;
   --code-string-fg: #517a00;
   --code-operator-fg: #9a6e3a;
-  --code-keyword-fg: #07a;
+  --code-tag-fg: #07a;
   --code-function-fg: #c62e4d;
-  --code-variable-fg: #b47300;
+  --code-variable-fg: ​#996100;
   --code-result: #fff;
 
   --font-family-code: 'Fira Mono', Consolas, Monaco, 'Andale Mono',
@@ -41,7 +41,7 @@
     --code-symbol-fg: #905;
     --code-string-fg: #517a00;
     --code-operator-fg: #9a6e3a;
-    --code-keyword-fg: #07a;
+    --code-tag-fg: #07a;
     --code-function-fg: #c62e4d;
     --code-variable-fg: #b47300;
     --code-result: #111;
@@ -52,16 +52,16 @@
   position: absolute;
   top: 5px;
   right: 5px;
-  color: var(--button-fg);
-  background-color: var(--button-bg);
   padding: 2px 5px;
-  border-radius: 2px;
   border: none;
   cursor: pointer;
   font-family: var(--font-family-code);
+  background-color: var(--code-bg);
+  color: var(--code-comment-fg);
 }
 
 .copy-to-clipboard-button:hover {
+  border-radius: 3px;
   color: var(--button-fg);
   background-color: var(--button-bg-hover);
 }
@@ -136,7 +136,7 @@ pre * {
 }
 
 pre .title {
-  font-size: 1rem;
+  font-size: 0.85rem;
   color: var(--code-comment-fg);
   position: relative;
   top: -1em;
@@ -149,6 +149,7 @@ pre[class*='language-'] {
   overflow: auto;
   border-radius: 0.25em;
   padding: 1.4em;
+  padding-top: 1.6em;
 }
 
 /* Inline code */
@@ -174,7 +175,6 @@ pre[class*='language-'] {
 }
 
 .token.property,
-.token.tag,
 .token.boolean,
 .token.number,
 .token.constant,
@@ -183,8 +183,8 @@ pre[class*='language-'] {
   color: var(--code-symbol-fg);
 }
 
+.token.attr-value,
 .token.selector,
-.token.attr-name,
 .token.string,
 .token.char,
 .token.builtin,
@@ -192,6 +192,8 @@ pre[class*='language-'] {
   color: var(--code-string-fg);
 }
 
+.token.keyword,
+.token.attr-name,
 .token.operator,
 .token.entity,
 .token.url,
@@ -200,10 +202,9 @@ pre[class*='language-'] {
   color: var(--code-operator-fg);
 }
 
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-  color: var(--code-keyword-fg);
+.token.tag,
+.token.atrule {
+  color: var(--code-tag-fg);
 }
 
 .token.function,

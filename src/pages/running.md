@@ -1,6 +1,5 @@
 ---
 title: Running
-layout: layouts/page
 permalink: '/running/'
 ---
 

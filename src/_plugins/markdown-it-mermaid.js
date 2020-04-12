@@ -1,3 +1,5 @@
+const { html, raw } = require('../_lib/html')
+
 const enhance = (render) => (...args) => {
   // args = [tokens, idx, options, env, slf]
   const [tokens = {}, idx = 0] = args
@@ -18,14 +20,17 @@ const enhance = (render) => (...args) => {
     }
 
     const approxHeight = diagramText.split('\n').length * 40
-    newResult = `
+    const styles = `
+      min-height: ${approxHeight}px;
+      ${process.env.DEV ? '' : 'visibility: hidden;'}
+    `
+    newResult = html`
       <figure>
-        <pre
-          class="mermaid"
-          style="min-height: ${approxHeight}px; visibility: hidden;">
+        <pre class="mermaid" style="${styles}">
             ${diagramText}
-        </pre>
-        <figcaption>${caption ? caption : ''}</figcaption>
+        </pre
+        >
+        <figcaption>${caption ? raw`${caption}` : ''}</figcaption>
       </figure>
     `
   }

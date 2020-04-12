@@ -1,7 +1,7 @@
-const html = require('viperhtml').wire()
+const { html, raw } = require('../../_lib/html')
+const formatDate = require('../../_lib/formatDate')
 
 const base = require('./base.11ty')
-const formatDate = require('../helpers/formatDate')
 
 module.exports = {
   render(data) {
@@ -38,7 +38,7 @@ module.exports = {
             : ''}
         </section>
         <section class="${sectionClasses.join(' ')}">
-          ${{ html: content }}
+          ${raw`${content}`}
         </section>
 
         ${tags

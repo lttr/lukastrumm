@@ -1,3 +1,5 @@
+const { html, raw } = require('../_lib/html')
+
 const enhance = (render) => (...args) => {
   // args = [tokens, idx, options, env, slf]
   const [tokens = {}, idx = 0] = args
@@ -16,14 +18,18 @@ const enhance = (render) => (...args) => {
       `<pre class="klipse-fallback language-${lang}">`
     )
     const trimmedContent = tokens[idx].content.trim()
-    newResult = [
-      klipseFallback,
-      `<pre class="klipse-actual language-${lang}" style="display: none;">`,
-      `<code class="klipse-eval-${lang} language-${lang}">`,
-      lang === 'html' ? htmlEntities(trimmedContent) : trimmedContent,
-      '</code>',
-      '</pre>',
-    ].join('')
+    const preClasses = `klipse-actual language-${lang}`
+    const codeClasses = `klipse-eval-${lang} language-${lang}`
+    const editorType = lang === 'html' ? 'html' : 'code-mirror'
+    newResult = html`
+      ${raw`${klipseFallback}`}
+      <pre
+        class="${preClasses}"
+        data-editor-type="${editorType}"
+      ><code class="${codeClasses}">
+      ${lang === 'html' ? trimmedContent : trimmedContent}
+      </code></pre>
+    `.toString()
   }
   return newResult
 }
@@ -35,7 +41,7 @@ module.exports = (md = {}, options = {}) => {
   md.renderer.rules.fence = enhance(fenceRender, options)
 }
 
-function htmlEntities(str) {
+function encode(str) {
   return String(str)
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')

@@ -21,8 +21,7 @@
     "clean": "rimraf dist/*",
     "build": "eleventy",
     "debug": "DEBUG=Eleventy* eleventy",
-    "serve": "npm run clean && eleventy --watch --serve --port 2000",
-    "watch": "eleventy --watch",
+    "serve": "npm run clean && DEV=true eleventy --watch --serve --port 2000",
     "lint": "eslint src/**/*.{js,md}",
     "format": "prettier src/**/* --write",
     "production": "run-s -l build build:submodules",
@@ -43,17 +42,20 @@
     "eslint-plugin-prettier": "^3.1.2",
     "flat-cache": "^2.0.1",
     "glob": "^7.1.6",
+    "klipse": "^7.9.6",
     "linkifyjs": "^2.1.9",
     "markdown-it": "^10.0.0",
     "markdown-it-anchor": "^5.2.5",
     "markdown-it-footnote": "^3.0.2",
     "markdown-it-implicit-figures": "^0.9.0",
     "markdown-it-table-of-contents": "^0.4.4",
+    "mermaid": "^8.4.8",
     "node-fetch": "^2.6.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.2",
+    "puppeteer": "^2.1.1",
     "rimraf": "^3.0.2",
     "simple-icons": "^2.7.0",
-    "viperhtml": "^2.17.1"
+    "ucontent": "^1.1.10"
   }
 }

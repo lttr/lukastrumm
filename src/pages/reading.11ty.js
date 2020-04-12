@@ -1,6 +1,4 @@
-const html = require('viperhtml').wire()
-
-const base = require('../_includes/layouts/base.11ty')
+const html = require('../_lib/html')
 
 module.exports = {
   data: {
@@ -8,9 +6,9 @@ module.exports = {
     permalink: '/reading/',
   },
 
-  render(data) {
-    const template = html`
-      ${{ html: goodreadsStyling() }}
+  render() {
+    return html`
+      ${goodreadsStyling()}
       <h1>Reading</h1>
       <a
         rel="nofollow"
@@ -19,15 +17,14 @@ module.exports = {
       >
       <section>
         <h3>Currently reading</h3>
-        ${{ html: currentlyReadingSnippet() }}
+        ${currentlyReadingSnippet()}
       </section>
 
       <section>
         <h3>Read</h3>
-        ${{ html: readSnippet() }}
+        ${readSnippet()}
       </section>
     `
-    return base(this, template, data)
   },
 }
 

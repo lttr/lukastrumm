@@ -1,6 +1,4 @@
-const html = require('viperhtml').wire()
-
-const base = require('../_includes/layouts/base.11ty')
+const html = require('../_lib/html')
 const { postInline } = require('../_includes/partials/postSnippets.11ty')
 
 module.exports = {
@@ -10,7 +8,7 @@ module.exports = {
   },
 
   render(data) {
-    const template = html`
+    return html`
       <h1>Notes</h1>
       <ul id="notes">
         ${data.collections.notes.map(
@@ -28,6 +26,5 @@ module.exports = {
         )}
       </ul>
     `
-    return base(this, template, data)
   },
 }

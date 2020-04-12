@@ -1,0 +1,10 @@
+{
+  "startOnLoad": true,
+  "theme": "neutral",
+  "flowchart": {
+    "nodeSpacing": 50,
+    "rankSpacing": 50,
+    "curve": "basis"
+  },
+  "securityLevel": "loose"
+}

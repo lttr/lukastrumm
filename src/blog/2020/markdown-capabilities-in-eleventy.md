@@ -90,13 +90,13 @@ Source: [Latency Numbers Every Programmer Should Know](https://gist.github.com/j
 You can specify references to footnotes by writing something like this
 inside markdown: [^markdown-capabilities]
 
-```markdown
+```text
 [^markdown -capabilities]
 ```
 
 And somewhere after that:
 
-```markdown
+```text
 [^markdown-capabilities]: [markdown capabilities](https://github.com/markdown-it/markdown-it#syntax-extensions)
 ```
 
@@ -158,4 +158,18 @@ Using [klipse](https://github.com/viebel/klipse).
 const t = window.performance.timing
 const duration = t.domContentLoadedEventEnd - t.navigationStart
 ;`DOM loaded after ${duration} ms`
+```
+
+```html/2-3 {run} [HTML and CSS]
+<style>
+  .my-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 120px;
+  }
+</style>
+<p class="my-text">
+  Once upon a time, there was a man
+</p>
 ```

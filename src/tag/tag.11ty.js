@@ -1,10 +1,9 @@
-const html = require('viperhtml').wire()
-
-const base = require('../_includes/layouts/base.11ty')
+const html = require('../_lib/html')
 const { postInline } = require('../_includes/partials/postSnippets.11ty')
 
 module.exports = {
   data: {
+    layout: 'layouts/page',
     pagination: {
       data: 'collections',
       size: 1,
@@ -19,7 +18,7 @@ module.exports = {
     const tag = data.pagination.items[0]
     const tagCollection = data.collections[tag]
     tagCollection.reverse() // last posts first
-    const template = html`
+    return html`
       <p></p>
       <p>
         <strong>tag</strong>
@@ -38,6 +37,5 @@ module.exports = {
         <a href="/tags">&laquo; all tags</a>
       </p>
     `
-    return base(this, template, data)
   },
 }

@@ -570,3 +570,26 @@ article .tags {
 .card:hover {
   box-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.1);
 }
+
+/* buttons */
+
+.button {
+  font-weight: var(--heading-font-weight);
+  font-family: var(--heading-font);
+  border-radius: 3px;
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--body-back-color);
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: var(--text-color);
+  border-color: var(--text-color);
+}
+
+.run-code-button {
+  margin-top: 0;
+  padding: 0.3em 0.4em;
+  font-size: 0.9rem;
+}

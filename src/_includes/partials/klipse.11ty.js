@@ -1,10 +1,12 @@
-const html = require('viperhtml').wire()
+const html = require('../../_lib/html')
 
 module.exports = (eleventy) => html`
-  <link rel="stylesheet" href="${eleventy.url('/css/codemirror.css')}" />
-  <script defer src="${eleventy.url('/js/enable-klipse.js')}"></script>
-  <script
-    defer
-    src="https://cdn.jsdelivr.net/npm/klipse@7.8.3/dist/klipse_plugin.min.js"
-  ></script>
+  <link
+    rel="stylesheet"
+    href="${eleventy.url('/css/codemirror.css')}"
+    media="non-existing"
+    onload="this.media='all'"
+  />
+  <script async src="${eleventy.url('/js/klipse_plugin.min.js')}"></script>
+  <script async src="${eleventy.url('/js/javascript.inc.js')}"></script>
 `

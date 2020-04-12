@@ -1,15 +1,16 @@
-const html = require('viperhtml').wire()
-
-const base = require('./_includes/layouts/base.11ty')
+const html = require('./_lib/html')
 const {
   postInline,
   postWithExcerpt,
 } = require('./_includes/partials/postSnippets.11ty')
 
 module.exports = {
+  data: {
+    layout: 'layouts/page',
+  },
   render(data) {
     const { collections } = data
-    const template = html`
+    return html`
       <style>
         .home-page h2 {
           text-align: center;
@@ -48,7 +49,5 @@ module.exports = {
         </ul>
       </section>
     `
-
-    return base(this, template, data)
   },
 }
