@@ -246,6 +246,7 @@ header {
   font-family: var(--body-font);
   line-height: 1.5;
   color: var(--primary-color);
+  white-space: nowrap;
 }
 
 .site-name a {

@@ -1,11 +1,12 @@
 const inline = require('../../_lib/inline')
 const { html, raw, js } = require('../../_lib/html')
 
-const meta = require('../partials/meta.11ty')
+const fonts = require('../partials/fonts.11ty')
+const footer = require('../partials/footer.11ty')
+const header = require('../partials/header.11ty')
 const klipse = require('../partials/klipse.11ty')
 const mermaid = require('../partials/mermaid.11ty')
-const header = require('../partials/header.11ty')
-const footer = require('../partials/footer.11ty')
+const meta = require('../partials/meta.11ty')
 const styles = require('../partials/styles.11ty')
 
 module.exports = function base(eleventy, content, data) {
@@ -17,11 +18,8 @@ module.exports = function base(eleventy, content, data) {
     <!DOCTYPE html>
     <html lang="en">
       <head>
-        ${meta(eleventy, data)}
-        <script>
-          ${js`${inline('src/js/load-fonts.js')}`.min()}
-        </script>
-        ${styles()} ${hasMermaid ? mermaid(eleventy) : null}
+        ${meta(eleventy, data)} ${fonts()} ${styles()}
+        ${hasMermaid ? mermaid(eleventy) : null}
       </head>
       <body>
         <div class="page-wrapper">
