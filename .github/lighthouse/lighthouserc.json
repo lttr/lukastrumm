@@ -3,7 +3,26 @@
     "assert": {
       "preset": "lighthouse:no-pwa",
       "assertions": {
-        "first-contentful-paint": ["warn", { "minScore": 1.8 }]
+        "categories:performance": [
+          "error",
+          { "aggregationMethod": "optimistic", "minScore": 0.8 }
+        ],
+        "categories:accessibility": [
+          "error",
+          { "aggregationMethod": "optimistic", "minScore": 0.9 }
+        ],
+        "categories:seo": [
+          "error",
+          { "aggregationMethod": "optimistic", "minScore": 0.9 }
+        ],
+        "first-contentful-paint": [
+          "error",
+          { "maxNumericValue": 3000, "aggregationMethod": "optimistic" }
+        ],
+        "interactive": [
+          "error",
+          { "maxNumericValue": 5000, "aggregationMethod": "optimistic" }
+        ]
       }
     }
   }

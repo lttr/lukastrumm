@@ -8,7 +8,12 @@ jobs:
   lighthouse:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Sleep for 3 minutes
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '3m'
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Audit URLs using Lighthouse and ensure performance budget
         uses: treosh/lighthouse-ci-action@v2
         with:
