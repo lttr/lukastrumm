@@ -15,6 +15,6 @@
     "wawoff2": "^1.0.2"
   },
   "dependencies": {
-    "unzipper": "^0.10.9"
+    "unzipper": "^0.10.10"
   }
 }
