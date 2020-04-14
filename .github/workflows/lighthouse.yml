@@ -4,12 +4,13 @@ jobs:
   lighthouse:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Audit URLs using Lighthouse and ensure performance budget
-        uses: treosh/lighthouse-ci-action@v1
+        uses: treosh/lighthouse-ci-action@v2
         with:
           urls: |
             https://lukastrumm.com/
+            https://lukastrumm.com/blog/2020/markdown-capabilities-in-eleventy/
             https://lukastrumm.com/projects
           budgetPath: .github/lighthouse/budget.json
           configPath: .github/lighthouse/lighthouserc.json
