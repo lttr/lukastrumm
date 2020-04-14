@@ -89,12 +89,6 @@ body {
   color: var(--text-color);
 }
 
-@media (max-width: 30em) {
-  body {
-    font-size: 16px;
-  }
-}
-
 h1,
 h2,
 h3,
@@ -228,6 +222,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   max-width: var(--max-width);
   padding: 0.6rem 0 0.5rem 0.2rem;
   margin: 0 auto;
@@ -258,6 +253,8 @@ header {
   justify-content: center;
   flex-wrap: wrap;
   align-items: baseline;
+  padding: 0.3em;
+  font-size: 1.06rem;
 }
 
 .header-nav li {
@@ -291,6 +288,11 @@ header {
 }
 
 /* article */
+
+article li a {
+  /* increase tap target for links */
+  padding: 0.1em 0;
+}
 
 .article-description {
   margin-top: 1rem;
