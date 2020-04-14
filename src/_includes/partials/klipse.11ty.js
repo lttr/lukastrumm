@@ -7,6 +7,8 @@ module.exports = (eleventy) => html`
     media="non-existing"
     onload="this.media='all'"
   />
-  <script async src="${eleventy.url('/js/klipse_plugin.min.js')}"></script>
-  <script async src="${eleventy.url('/js/javascript.inc.js')}"></script>
+  <script
+    async
+    src="https://cdn.jsdelivr.net/npm/klipse@7.9.6/klipse_plugin.min.js"
+  ></script>
 `

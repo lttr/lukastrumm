@@ -13,4 +13,9 @@ module.exports = (eleventy, data) => html`
     type="application/atom+xml"
     title="${data.metadata.title}"
   />
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net/" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="preconnect" href="https://viebel.github.io" />
+  <link rel="preconnect" href="https://www.google-analytics.com" />
 `
