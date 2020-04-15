@@ -12,12 +12,12 @@ module.exports = {
     const { collections } = data
     return html`
       <style>
-        .home-page h2 {
+        .home-page h1 {
           text-align: center;
         }
       </style>
       <section class="home-page">
-        <h2>Articles</h2>
+        <h1>Articles</h1>
         <ul class="cards">
           ${collections.articles.map(
             (item) => html`
@@ -27,7 +27,7 @@ module.exports = {
             `
           )}
         </ul>
-        <h2>Blog posts</h2>
+        <h1>Blog posts</h1>
         <ul class="cards">
           ${collections.blog.map(
             (item) => html`
@@ -37,7 +37,7 @@ module.exports = {
             `
           )}
         </ul>
-        <h2>Notes</h2>
+        <h1>Notes</h1>
         <ul>
           ${collections.notes.map(
             (item) => html`
