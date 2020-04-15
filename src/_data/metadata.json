@@ -13,7 +13,6 @@
     "name": "Lukas Trumm"
   },
   "navigation": [
-    { "text": "Articles", "url": "/articles/" },
     { "text": "Blog", "url": "/blog/" },
     { "text": "Notes", "url": "/notes/" },
     { "text": "Projects", "url": "/projects/" },

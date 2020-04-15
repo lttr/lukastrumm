@@ -1,0 +1,32 @@
+@font-face {
+  font-family: Charter;
+  src: url('/fonts/charter_regular-webfont.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: Charter;
+  src: url('/fonts/charter_italic-webfont.woff2') format('woff2');
+  font-style: italic;
+  font-weight: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Fira Mono;
+  src: url('/fonts/firamono_regular_latin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Raleway;
+  src: url('/fonts/raleway_semibold_optimized.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: normal;
+  font-display: swap;
+}
