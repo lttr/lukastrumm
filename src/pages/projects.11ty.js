@@ -31,12 +31,12 @@ module.exports = {
     `
     return html`
       ${styles}
-      <h2>Labs</h2>
+      <h1>Labs</h1>
       <ul class="cards full-width">
         ${data.collections.labs.map((item) => html` ${renderLab(item.data)} `)}
       </ul>
 
-      <h2>Github projects</h2>
+      <h1>Github projects</h1>
       <ul class="cards full-width">
         ${data.repos
           .filter((repo) => !repo.fork && !repo.archived)
