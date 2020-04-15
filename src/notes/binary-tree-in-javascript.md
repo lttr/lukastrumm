@@ -14,9 +14,8 @@ class TreeNode {
 }
 
 class Stack {
-  _array = []
-
   constructor(firstItem) {
+    this._array = []
     if (firstItem != null) this.push(firstItem)
   }
 
@@ -34,9 +33,8 @@ class Stack {
 }
 
 class Queue {
-  _array = []
-
   constructor(firstItem) {
+    this._array = []
     if (firstItem != null) this.push(firstItem)
   }
 
