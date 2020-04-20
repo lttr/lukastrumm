@@ -18,6 +18,7 @@
     "build:submodule:talks": "copyfiles -u 2 \"talks/dist/**/*\" dist/talks",
     "build:submodules:install": "git submodule foreach npm install",
     "build:submodules:build": "git submodule foreach npm run build",
+    "cache:clean": "rimraf .datacache/*",
     "clean": "rimraf dist/*",
     "build": "eleventy",
     "debug": "DEBUG=Eleventy* eleventy",

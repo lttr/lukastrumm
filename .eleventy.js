@@ -129,6 +129,7 @@ module.exports = function (eleventyConfig) {
   // Add plugins
 
   eleventyConfig.addPlugin(lazyImagesPlugin, {
+    cacheFile: '.datacache/lazyimages',
     imgSelector: '.post-content img',
     transformImgPath: (relativePath) => {
       // For image paths find the full path relative to project root
