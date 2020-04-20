@@ -85,7 +85,7 @@ module.exports = function (eleventyConfig) {
 
   const markdownOptions = {
     html: true,
-    breaks: true,
+    breaks: false,
     linkify: true,
     typographer: true,
   }
