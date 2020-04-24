@@ -10,14 +10,9 @@ Let's try what markdown offers in context of Eleventy static site generator.
 
 ---
 
-Markdown in Eleventy is parsed by
-[markdown-it](https://github.com/markdown-it/markdown-it). It can be extended by
-a number of
-[plugins](https://www.npmjs.com/search?q=keywords:markdown-it-plugin).
+Markdown in Eleventy is parsed by [markdown-it](https://github.com/markdown-it/markdown-it). It can be extended by a number of [plugins](https://www.npmjs.com/search?q=keywords:markdown-it-plugin).
 
-The first example is a table of content---it is a list that consists of headings
-on level 2. The plugin for this is
-[`markdown-it-table-of-contents`](https://www.npmjs.com/package/markdown-it-table-of-contents).
+The first example is a table of content---it is a list that consists of headings on level 2. The plugin for this is [`markdown-it-table-of-contents`](https://www.npmjs.com/package/markdown-it-table-of-contents).
 
 [[toc]]
 
@@ -38,10 +33,7 @@ This paragraph contains
 multiple lines in source code,
 ~~because I like it more this way~~.
 
-Default markdown behavior is not inserting `<br>` on places of newlines. This is
-the behavior of html, too. It is better because there is less ambiguity in
-source code and you can let your formatter do it's work. I use Prettier with
-`"proseWrap": "always"` configuration option.
+Default markdown behavior is not inserting `<br>` on places of newlines. This is the behavior of html, too. It is better because there is less ambiguity in source code and you can let your formatter do it's work.
 
 ### Text elements
 
@@ -71,8 +63,7 @@ _(Code block with language specified as `js`.)_
 
 Links like example.com are automatically converted.
 
-You can use two hyphens to produce an n-dash, e.g. 9--12. Or three hyphens---to
-create [m-dash](https://www.thepunctuationguide.com/em-dash.html).
+You can use two hyphens to produce an n-dash, e.g. 9--12. Or three hyphens---to create [m-dash](https://www.thepunctuationguide.com/em-dash.html).
 
 "Quotation marks" and ellipsis is supported too...
 
@@ -89,16 +80,16 @@ Extra markdown functionality is provided either by embedded or external
 | L2 cache    | 7            |
 | Main memory | 100          |
 
-Source:
-[Latency Numbers Every Programmer Should Know](https://gist.github.com/jboner/2841832)
+Source: [Latency Numbers Every Programmer Should Know](https://gist.github.com/jboner/2841832)
 
 ### Footnotes
 
-You can specify references to footnotes by writing something like this inside
-markdown: [^markdown-capabilities]
+You can specify references to footnotes by writing something like this inside markdown: [^markdown-capabilities]
+
+[^markdown-capabilities]: [markdown capabilities](https://github.com/markdown-it/markdown-it#syntax-extensions)
 
 ```text
-[^markdown -capabilities]
+[^markdown-capabilities]
 ```
 
 And somewhere after that:
@@ -106,9 +97,6 @@ And somewhere after that:
 ```text
 [^markdown-capabilities]: [markdown capabilities](https://github.com/markdown-it/markdown-it#syntax-extensions)
 ```
-
-[^markdown-capabilities]:
-  [markdown capabilities](https://github.com/markdown-it/markdown-it#syntax-extensions)
 
 ### Anchors
 
