@@ -80,7 +80,7 @@ html {
 }
 
 /* lobotomized owl selector */
-main * + * {
+article * + * {
   margin-top: calc(1.15 * 1.2em);
 }
 
