@@ -39,12 +39,12 @@ Another important part of the GTD methodology is some sort of system for storing
 
 The advantages I am currently seeing:
 
-- Writing is easy (in Markdown; a note can be generated with simple command line alias)
-- Reading is easy (the result is a website)
-- Search is easy (my own search from command line or just google)
+- Writing is simple (in Markdown; a note can be generated with short command line alias)
+- Reading is simple (the result is a website)
+- Search is simple (my own search from command line or maybe google it)
 - Backup and history is built in (everything is in git)
 - The output can be plain text or a very interactive thing (because the result is a website)
-- Everything is instantly shareable (just send a link)
+- Everything is instantly shareable (send a link)
 - There is a possibility to integrate other sources of my information (e.g. list of [books I have read from Goodreads.com](/reading/))
 
 ## Additional tools
