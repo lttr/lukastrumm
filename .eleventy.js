@@ -166,7 +166,7 @@ module.exports = function (eleventyConfig) {
 
   return {
     // Configure used template formats
-    templateFormats: ['11ty.js', 'md'],
+    templateFormats: ['11ty.js', 'md', 'njk'],
     dir: {
       input: 'src',
       output: 'dist',

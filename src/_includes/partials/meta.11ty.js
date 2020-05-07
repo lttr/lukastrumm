@@ -9,7 +9,7 @@ module.exports = (eleventy, data) => html`
 
   <link
     rel="alternate"
-    href="${eleventy.url(data.metadata.feed.path)}"
+    href="${eleventy.url(data.metadata.feedPath)}"
     type="application/atom+xml"
     title="${data.metadata.title}"
   />

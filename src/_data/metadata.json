@@ -2,16 +2,7 @@
   "title": "Lukas Trumm",
   "url": "https://lukastrumm.com",
   "description": "Ideas about web engineering",
-  "feed": {
-    "subtitle": "Ideas about web engineering",
-    "filename": "feed.xml",
-    "path": "/feed/feed.xml",
-    "url": "https://lukastrumm.com/feed/feed.xml",
-    "id": "https://lukastrumm.com/"
-  },
-  "author": {
-    "name": "Lukas Trumm"
-  },
+  "feedPath": "/feed.xml",
   "navigation": [
     { "text": "Blog", "url": "/blog/" },
     { "text": "Notes", "url": "/notes/" },
