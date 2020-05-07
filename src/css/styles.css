@@ -197,7 +197,7 @@ footer {
 }
 
 footer > * {
-  padding: 1em 0.5em;
+  padding: 1em 0.6em;
   margin: 0;
 }
 
@@ -206,13 +206,13 @@ footer a {
 }
 
 .copyright {
-  border-left: 1px solid var(--primary-color);
-  padding: 0.3rem 0.5rem;
+  border-left: 1px solid var(--back-color);
++ padding: 0.2rem 0.7rem;
 }
 
 .social-icon {
   position: relative;
-  bottom: -2px;
+  bottom: -3px;
 }
 
 .social-icon svg {

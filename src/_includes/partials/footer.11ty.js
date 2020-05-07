@@ -25,5 +25,6 @@ module.exports = () =>
       <span class="copyright">
         Lukas Trumm &copy; ${new Date().getFullYear()}
       </span>
+      <a class="copyright" href="/about-this-site">About this site</a>
     </footer>
   `
