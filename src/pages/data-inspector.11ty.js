@@ -6,6 +6,8 @@ module.exports = {
   },
 
   render(data) {
+    const dataInspector = renderData(data)
+    const stats = renderStats(data)
     return html`
       <style>
         section {
@@ -64,7 +66,10 @@ module.exports = {
       <button id="expand-all">Expand all</button>
       <button id="collapse-all">Collapse all</button>
       <section class="data-inspector">
-        ${renderData(data)}
+        ${dataInspector}
+      </section>
+      <section class="stats">
+        ${stats}
       </section>
       <script>
         function saveToStorage(key, opened) {
@@ -163,7 +168,7 @@ const stringify = (v) => {
       str = `${v}`
     }
   } else if (isFunction(v)) {
-    str = ''
+    str = `${v}`
   } else if (isArray(v)) {
     str = `[ ${v.map((w) => stringify(w)).join(', ')} ]`
   } else if (isObject(v)) {
@@ -171,17 +176,21 @@ const stringify = (v) => {
       .map(([key, value]) => `${key}: ${stringify(value)}`)
       .join(', ')} }`
   }
-  return str
+  return shorten(str, 250)
 }
 
-const shorten = (str) => {
-  return `${str.slice(0, 40)}${str.length > 40 ? '…' : ''}`
+const shorten = (str, length = 40) => {
+  return `${str.slice(0, length)}${str.length > length ? '…' : ''}`
 }
 
 const natural = new Intl.Collator('en', {
   numeric: true,
   sensitivity: 'accent',
 }).compare
+
+const stats = {
+  nodes: 0,
+}
 
 function renderData(data) {
   const filter = (key) => !key.startsWith('_')
@@ -214,6 +223,7 @@ function renderKey(data, key, content) {
 }
 
 function renderSummary(key, value, excerpt = null) {
+  stats.nodes += 1
   return html`
     <summary
       >${key}
@@ -232,7 +242,7 @@ function renderDetails(key, value) {
       ${isSimple(value)
         ? stringify(value)
         : isFunction(value)
-        ? value
+        ? stringify(value)
         : isObject(value)
         ? renderData(value)
         : stringify(value)}
@@ -244,8 +254,10 @@ function renderDetails(key, value) {
 function renderCollections(data) {
   const filter = Boolean
   const content = (key, value) => html`
-    ${renderSummary(key, value)}
-    ${key === 'tagList' ? renderData(value) : renderCollection(value)}
+    <details>
+      ${renderSummary(key, value)}
+      ${key === 'tagList' ? renderData(value) : renderCollection(value)}
+    </details>
   `
   return html`
     <details>
@@ -260,10 +272,14 @@ function renderCollection(data) {
   const filter = Boolean
   const content = (key, value) => html`
     <details>
-      ${renderSummary(key, value, value.filePathStem)} ${renderPost(value)}
+      ${renderSummary(key, value, value.url)} ${renderPost(value)}
     </details>
   `
-  return renderKeys(data, filter, content)
+  return html`
+    <detail>
+      ${renderKeys(data, filter, content)}
+    </detail>
+  `
 }
 
 // /collections/<collection>/<post>
@@ -283,12 +299,39 @@ function renderPost(data) {
 function renderPostTemplate(data) {
   const filter = (key) =>
     !key.startsWith('_') &&
-    key !== 'data' &&
-    key !== 'config' &&
     key !== 'engine' &&
     key !== 'dataCache' &&
-    key !== 'inputContent' &&
     !key.includes('template')
   const content = (key, value) => renderDetails(key, value)
   return renderKeys(data, filter, content)
+}
+
+// Statistics
+
+function renderStats(data) {
+  const tags = [
+    ...new Set(
+      data.collections.all
+        .filter((item) => Array.isArray(item.data.tags))
+        .flatMap((item) => item.data.tags)
+    ),
+  ]
+  const dependencies = [
+    ...(data.pkg.devDependencies ? Object.keys(data.pkg.devDependencies) : []),
+    ...(data.pkg.dependencies ? Object.keys(data.pkg.dependencies) : []),
+  ]
+  const layouts = [
+    ...new Set(
+      data.collections.all.map((item) => item.template.frontMatter.data.layout)
+    ),
+  ]
+  return html`<h4>Statistics</h4>
+    <ul>
+      <li>number of data nodes inspected: ${stats.nodes}</li>
+      <li>number of collections: ${Object.keys(data.collections).length}</li>
+      <li>pages in 'all' collection: ${data.collections.all.length}</li>
+      <li>number of unique tags: ${tags.length}</li>
+      <li>number of direct dependencies: ${dependencies.length}</li>
+      <li>number of layouts: ${layouts.length}</li>
+    </ul> `
 }
