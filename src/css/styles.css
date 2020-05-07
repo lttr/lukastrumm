@@ -207,7 +207,7 @@ footer a {
 
 .copyright {
   border-left: 1px solid var(--back-color);
-+ padding: 0.2rem 0.7rem;
+  padding: 0.2rem 0.7rem;
 }
 
 .social-icon {
