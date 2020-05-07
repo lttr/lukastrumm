@@ -142,8 +142,7 @@ function currentlyReadingSnippet() {
         </div>
         <noscript
           ><br />Share <a rel="nofollow" href="/">book reviews</a> and ratings
-          with Lukáš, and even join a
-          <a rel="nofollow" href="/group">book club</a> on Goodreads.</noscript
+          with Lukáš.</noscript
         >
       </div>
     </div>
@@ -382,8 +381,7 @@ function readSnippet() {
         </div>
         <noscript
           ><br />Share <a rel="nofollow" href="/">book reviews</a> and ratings
-          with Lukáš, and even join a
-          <a rel="nofollow" href="/group">book club</a> on Goodreads.</noscript
+          with Lukáš</noscript
         >
       </div>
     </div>

@@ -9,6 +9,6 @@ module.exports = (eleventy) => html`
   />
   <script
     async
-    src="https://cdn.jsdelivr.net/npm/klipse@7.9.6/klipse_plugin.min.js"
+    src="https://cdn.jsdelivr.net/npm/klipse@7.9.6/dist/klipse_plugin.min.js"
   ></script>
 `
