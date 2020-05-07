@@ -52,8 +52,12 @@ module.exports = {
           font-weight: bold;
         }
 
-        .data-inspector summary i {
+        .data-inspector summary i,
+        .data-inspector summary em {
           font-weight: normal;
+        }
+        .data-inspector summary em {
+          color: rebeccapurple;
         }
       </style>
       <h1>Eleventy data inspector</h1>
@@ -64,7 +68,6 @@ module.exports = {
       </section>
       <script>
         function saveToStorage(key, opened) {
-          console.log(key, opened)
           const item = sessionStorage.getItem('eleventy-data-inspector')
           const keys = item ? new Set(JSON.parse(item)) : new Set()
           if (opened) {
@@ -112,15 +115,32 @@ module.exports = {
 }
 
 const isNullOrUndefined = (v) => v === null || v === undefined
-const isBoolean = (value) => typeof value === 'boolean'
-const isNumber = (value) => typeof value === 'number'
+const isBoolean = (v) => typeof v === 'boolean'
+const isNumber = (v) => typeof v === 'number'
 const isString = (v) => typeof v === 'string'
 const isBigInt = (v) => typeof v === 'bigint'
 const isSymbol = (v) => typeof v === 'symbol'
-const isRegExp = (value) => value instanceof RegExp
-const isDate = (value) => value instanceof Date
-const isObject = (value) => value instanceof Object
-const isArray = (value) => Array.isArray(value)
+const isFunction = (v) => typeof v === 'function'
+const isRegExp = (v) => v instanceof RegExp
+const isDate = (v) => v instanceof Date
+const isArray = (v) => Array.isArray(v)
+const isObject = (v) => v instanceof Object
+
+const classify = (v) => {
+  if (v === null) return 'null'
+  if (v === undefined) return 'undefined'
+  if (isBoolean(v)) return 'boolean'
+  if (isNumber(v)) return 'number'
+  if (isString(v)) return 'string'
+  if (isBigInt(v)) return 'bigint'
+  if (isSymbol(v)) return 'symbol'
+  if (isFunction(v)) return 'function'
+  if (isRegExp(v)) return 'regexp'
+  if (isDate(v)) return 'date'
+  if (isArray(v)) return 'array'
+  if (isObject(v)) return 'object'
+  return 'unknown'
+}
 
 const isSimple = (v) =>
   isNullOrUndefined(v) ||
@@ -142,6 +162,8 @@ const stringify = (v) => {
     } else {
       str = `${v}`
     }
+  } else if (isFunction(v)) {
+    str = ''
   } else if (isArray(v)) {
     str = `[ ${v.map((w) => stringify(w)).join(', ')} ]`
   } else if (isObject(v)) {
@@ -156,119 +178,117 @@ const shorten = (str) => {
   return `${str.slice(0, 40)}${str.length > 40 ? '…' : ''}`
 }
 
+const natural = new Intl.Collator('en', {
+  numeric: true,
+  sensitivity: 'accent',
+}).compare
+
 function renderData(data) {
+  const filter = (key) => !key.startsWith('_')
+  const content = (key, value) => html`
+    ${key === 'collections'
+      ? html`${renderCollections(value)}`
+      : html`${renderDetails(key, value)}`}
+  `
+  return renderKeys(data, filter, content)
+}
+
+function renderKeys(data, filter, content) {
   return html`
     <ul>
-      ${Object.entries(data)
-        .filter(([k]) => !k.startsWith('_'))
-        .map(([k, v]) => {
-          return html`
-            <li>
-              <details>
-                ${k === 'collections'
-                  ? html`${renderCollections(v)}`
-                  : html`${renderDetails(k, v)}`}
-              </details>
-            </li>
-          `
-        })}
+      ${Object.keys(data)
+        .filter(filter)
+        .sort(natural)
+        .map((key) => renderKey(data, key, content))}
     </ul>
+  `
+}
+
+function renderKey(data, key, content) {
+  const value = data[key]
+  return html`
+    <li>
+      ${content(key, value)}
+    </li>
+  `
+}
+
+function renderSummary(key, value, excerpt = null) {
+  return html`
+    <summary
+      >${key}
+      <em>${classify(value)}</em>
+      ${!isNullOrUndefined(excerpt)
+        ? html`<i>${shorten(stringify(excerpt))}</i>`
+        : ''}
+    </summary>
   `
 }
 
 function renderDetails(key, value) {
   return html`
-    <summary>${key} <i>${shorten(stringify(value))}</i></summary>
-    ${isSimple(value)
-      ? stringify(value)
-      : isObject(value)
-      ? renderData(value)
-      : stringify(value)}
+    <details>
+      ${renderSummary(key, value, value)}
+      ${isSimple(value)
+        ? stringify(value)
+        : isFunction(value)
+        ? value
+        : isObject(value)
+        ? renderData(value)
+        : stringify(value)}
+    </details>
   `
 }
 
-function renderCollections(collections) {
+// /collections
+function renderCollections(data) {
+  const filter = Boolean
+  const content = (key, value) => html`
+    ${renderSummary(key, value)}
+    ${key === 'tagList' ? renderData(value) : renderCollection(value)}
+  `
   return html`
-    <summary>collections</summary>
-    <ul>
-      ${Object.entries(collections).map(([collectionName, collection]) => {
-        return html`
-          <li>
-            <details>
-              <summary>${collectionName}</summary>
-              <ul>
-                ${collectionName === 'tagList'
-                  ? renderData(collection)
-                  : renderCollection(collection)}
-              </ul>
-            </details>
-          </li>
-        `
-      })}
-    </ul>
+    <details>
+      ${renderSummary('collections', data, null)}
+      ${renderKeys(data, filter, content)}
+    </details>
   `
 }
 
-function renderCollection(collection) {
-  return collection.map((post) => {
-    return html`
-      <details>
-        <summary>${post.fileSlug}</summary>
-        <li>
-          <ul>
-            ${renderPost(post)}
-          </ul>
-        </li>
-      </details>
-    `
-  })
-}
-
-function renderPost(post) {
-  return Object.keys(post)
-    .filter(
-      (key) =>
-        !key.startsWith('_') && key !== 'templateContent' && key !== 'data'
-    )
-    .map((key) => {
-      const value = post[key]
-      return html`
-        <li>
-          <details>
-            <summary
-              >${key}
-              <i
-                >${isSimple(value) ? shorten(stringify(value)) : ''}</i
-              ></summary
-            >
-            ${key === 'template' ? renderPostTemplate(value) : stringify(value)}
-          </details>
-        </li>
-      `
-    })
-}
-
-function renderPostTemplate(template) {
-  return html`
-    <ul>
-      ${Object.keys(template)
-        .filter((key) => !key.startsWith('_'))
-        .map((key) => {
-          const value = template[key]
-          return html`
-            <li>
-              <details>
-                <summary
-                  >${key}
-                  <i
-                    >${isSimple(value) ? shorten(stringify(value)) : ''}</i
-                  ></summary
-                >
-                ${value}
-              </details>
-            </li>
-          `
-        })}
-    </ul>
+// /collections/<collection>
+function renderCollection(data) {
+  const filter = Boolean
+  const content = (key, value) => html`
+    <details>
+      ${renderSummary(key, value, value.filePathStem)} ${renderPost(value)}
+    </details>
   `
+  return renderKeys(data, filter, content)
+}
+
+// /collections/<collection>/<post>
+function renderPost(data) {
+  const filter = (key) =>
+    !key.startsWith('_') && key !== 'templateContent' && key !== 'data'
+  const content = (key, value) => html`
+    <details>
+      ${renderSummary(key, value, value)}
+      ${key === 'template' ? renderPostTemplate(value) : stringify(value)}
+    </details>
+  `
+  return renderKeys(data, filter, content)
+}
+
+// /collections/<collection>/<post>/template
+function renderPostTemplate(data) {
+  const filter = (key) =>
+    !key.startsWith('_') &&
+    key !== 'data' &&
+    key !== 'config' &&
+    key !== 'engine' &&
+    key !== 'dataCache' &&
+    key !== 'inputContent' &&
+    !key.includes('template')
+  const content = (key, value) => renderDetails(key, value)
+  return renderKeys(data, filter, content)
 }
