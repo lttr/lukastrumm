@@ -61,6 +61,18 @@ module.exports = function (eleventyConfig) {
       .reverse()
   })
 
+  eleventyConfig.addCollection('feed', function (collection) {
+    return collection
+      .getAllSorted()
+      .filter(
+        (item) =>
+          item.inputPath.includes('articles/') ||
+          item.inputPath.includes('blog/') ||
+          item.inputPath.includes('labs/')
+      )
+      .reverse()
+  })
+
   eleventyConfig.addCollection('posts', function (collection) {
     return collection
       .getAllSorted()
@@ -68,6 +80,7 @@ module.exports = function (eleventyConfig) {
         (item) =>
           item.inputPath.includes('articles/') ||
           item.inputPath.includes('blog/') ||
+          item.inputPath.includes('labs/') ||
           item.inputPath.includes('notes/')
       )
       .reverse()

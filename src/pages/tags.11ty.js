@@ -9,11 +9,13 @@ module.exports = {
   render(data) {
     const counter = {}
     for (const post of data.collections.posts) {
-      for (const tag of post.data.tags) {
-        if (counter[tag]) {
-          counter[tag] += 1
-        } else {
-          counter[tag] = 1
+      if (Array.isArray(post.data.tags)) {
+        for (const tag of post.data.tags) {
+          if (counter[tag]) {
+            counter[tag] += 1
+          } else {
+            counter[tag] = 1
+          }
         }
       }
     }
