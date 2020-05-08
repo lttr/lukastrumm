@@ -1,0 +1,20 @@
+#page {
+  margin-top: 3vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+h1 {
+  text-align: center;
+}
+#grid {
+  margin: 1vw auto;
+  max-width: 1400px;
+}
+.key {
+  display: inline-block;
+  padding: 2px 5px;
+  margin: 2px;
+  border-radius: 3px;
+  background-color: #eaeaea;
+}

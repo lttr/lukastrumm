@@ -1,0 +1,149 @@
+shortcuts:
+
+    #
+    # editing
+    #
+
+  - name: "Delete line"
+    description: "Deteles the line where cursor is currently placed"
+    category: "editing"
+    my: "d,d"
+    vim: "d,d"
+    idea: "ctrl+y"
+    eclipse: "ctrl+d"
+    vscode: "ctrl+shift+k"
+    vstudio: "ctrl+l"
+
+    #
+    # help
+    #
+
+  - name: "Open documentation"
+    description: "Opens a window or browser with documantation about current word"
+    category: "help"
+    my: "F1"
+    vim: ""
+    idea: ""
+    eclipse: ""
+    vscode: ""
+    vstudio: ""
+  - name: "Quick help"
+    description: "Show concise documantation about current word"
+    category: "help"
+    my: "ctrl+h"
+    vim: "K"
+    idea: "ctrl+q"
+    eclipse: ""
+    vscode: ""
+    vstudio: ""
+  - name: "Parameter hints"
+    description: "Show types and names of parameters of current function"
+    category: "help"
+    my: "ctrl+shift+p"
+    vim: ""
+    idea: "ctrl+p"
+    eclipse: ""
+    vscode: "ctrl+shift+space"
+    vstudio: "ctrl+k,p"
+  - name: "Quick fix"
+    description: "Open menu with proposed improvements for current line of code"
+    category: "help"
+    my: "alt+enter"
+    vim: "-"
+    idea: "alt+enter"
+    eclipse: "ctrl+1"
+    vscode: "ctrl+."
+    vstudio: "alt+enter"
+
+    #
+    # navigation
+    #
+     
+  - name: "Code outline"
+    description: "Show a list of members / a structure of current file"
+    category: "navigation"
+    my: "ctrl+shift+o"
+    vim: "Tagbar plugin"
+    idea: "ctrl+f12"
+    eclipse: "ctrl+shift+o"
+    vscode: "shift+f12"
+    vstudio: "shift+f12"
+  - name: "Find all references"
+    description: "Find every usage of current symbol in the project"
+    category: "navigation"
+    my: "ctrl+shift+g"
+    vim: ":vimgrep"
+    idea: "alt+f7"
+    eclipse: "ctrl+shift+g"
+    vscode: "shift+f12"
+    vstudio: "shift+f12"
+  - name: "Go to implementation"
+    description: "Navigate to the implementation of the current method"
+    category: "navigation"
+    my: "ctrl+alt+b"
+    vim: ""
+    idea: "ctrl+alt+b"
+    eclipse: ""
+    vscode: ""
+    vstudio: "ctrl+f12"
+
+
+    #
+    # find and replace
+    #
+
+  - name: "Find"
+    description: "Find word or regexp in current editor"
+    category: "find and replace"
+    my: "/"
+    vim: "/"
+    idea: "ctrl+f"
+    eclipse: "ctrl+f"
+    vscode: "ctrl+f"
+    vstudio: "ctrl+f"
+  - name: "Replace"
+    description: "Replace word or regexp in current editor"
+    category: "find and replace"
+    my: "alt+shift+r"
+    vim: ":%s/"
+    idea: ""
+    eclipse: ""
+    vscode: ""
+    vstudio: "ctrl+h"
+
+    #
+    # project
+    #
+
+  - name: "Build project"
+    description: "Compile/make/build whole project"
+    category: "project"
+    my: "ctrl+f9"
+    vim: ":make"
+    idea: "ctrl+f9"
+    eclipse: "auto"
+    vscode: "Custom task"
+    vstudio: "ctrl+shift+b"
+
+    #
+    # debugging
+    #
+
+  - name: "Toggle breakpoint"
+    description: "Toggle breakpoint on current line"
+    category: "debugging"
+    my: "ctrl+f8"
+    vim: ""
+    idea: "ctrl+f8"
+    eclipse: "ctrl+shift+b"
+    vscode: "f9"
+    vstudio: "ctrl+shift+b"
+  - name: "View breakpoints"
+    description: "View all breakpoints"
+    category: "debugging"
+    my: "ctrl+shift+f8"
+    vim: ""
+    idea: "ctrl+f9"
+    eclipse: ""
+    vscode: ""
+    vstudio: "ctrl+alt+b"
