@@ -1,6 +1,0 @@
-[submodule "shortcuts"]
-	path = shortcuts
-	url = git@github.com:lttr/shortcuts
-[submodule "talks"]
-	path = talks
-	url = git@github.com:lttr/talks
