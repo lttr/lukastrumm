@@ -20,14 +20,15 @@ const markdownItDefaultType = require('./src/_plugins/markdown-it-default-type')
 module.exports = function (eleventyConfig) {
   // Copy files
 
-  eleventyConfig.addPassthroughCopy(
-    'src/{js,blog,notes,articles,labs}/**/*.{html,css,js}'
-  )
+  eleventyConfig.addPassthroughCopy('src/{blog,notes,articles,labs}/**/*')
   eleventyConfig.addPassthroughCopy('src/fonts/*.woff2')
   eleventyConfig.addPassthroughCopy('src/css/*.css')
+  eleventyConfig.addPassthroughCopy('src/js/*.js')
   eleventyConfig.addPassthroughCopy('src/favicon.ico')
   eleventyConfig.addPassthroughCopy('src/robots.txt')
   eleventyConfig.addPassthroughCopy('src/shortcuts/*')
+  // All images will be in one folder '/img' because it is easier
+  // to manage correct references to them
   eleventyConfig.addPassthroughCopy({
     'src/**/*.{ico,png,svg,gif,jpg,jpeg}': 'img',
   })
