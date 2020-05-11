@@ -1,4 +1,0 @@
----
-title: Speaking
-permalink: '/speaking/'
----

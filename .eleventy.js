@@ -20,7 +20,7 @@ const markdownItDefaultType = require('./src/_plugins/markdown-it-default-type')
 module.exports = function (eleventyConfig) {
   // Copy files
 
-  eleventyConfig.addPassthroughCopy('src/{blog,notes,articles,labs}/**/*')
+  eleventyConfig.addPassthroughCopy('src/{articles,blog,notes,talks,labs}/**/*')
   eleventyConfig.addPassthroughCopy('src/fonts/*.woff2')
   eleventyConfig.addPassthroughCopy('src/css/*.css')
   eleventyConfig.addPassthroughCopy('src/js/*.js')
@@ -35,59 +35,25 @@ module.exports = function (eleventyConfig) {
 
   // Create collections
 
-  eleventyConfig.addCollection('articles', function (collection) {
-    return collection
-      .getAllSorted()
-      .filter((item) => item.inputPath.includes('articles/'))
-      .reverse()
-  })
-
-  eleventyConfig.addCollection('blog', function (collection) {
-    return collection
-      .getAllSorted()
-      .filter((item) => item.inputPath.includes('blog/'))
-      .reverse()
-  })
-
-  eleventyConfig.addCollection('notes', function (collection) {
-    return collection
-      .getAllSorted()
-      .filter((item) => item.inputPath.includes('notes/'))
-      .reverse()
-  })
-
-  eleventyConfig.addCollection('labs', function (collection) {
-    return collection
-      .getAllSorted()
-      .filter((item) => item.inputPath.includes('labs/'))
-      .reverse()
-  })
-
-  eleventyConfig.addCollection('feed', function (collection) {
-    return collection
-      .getAllSorted()
-      .filter(
-        (item) =>
-          item.inputPath.includes('articles/') ||
-          item.inputPath.includes('blog/') ||
-          item.inputPath.includes('labs/')
-      )
-      .reverse()
-  })
-
-  eleventyConfig.addCollection('posts', function (collection) {
-    return collection
-      .getAllSorted()
-      .filter(
-        (item) =>
-          item.inputPath.includes('articles/') ||
-          item.inputPath.includes('blog/') ||
-          item.inputPath.includes('labs/') ||
-          item.inputPath.includes('notes/')
-      )
-      .reverse()
-  })
-
+  eleventyConfig.addCollection('articles', collectionByFolders('articles/'))
+  eleventyConfig.addCollection('blog', collectionByFolders('blog/'))
+  eleventyConfig.addCollection('notes', collectionByFolders('notes/'))
+  eleventyConfig.addCollection(
+    'labs',
+    collectionByFolderAndFile('labs/', 'README')
+  )
+  eleventyConfig.addCollection(
+    'talks',
+    collectionByFolderAndFile('talks/', 'README')
+  )
+  eleventyConfig.addCollection(
+    'feed',
+    collectionByFolders('articles/', 'blog/', 'labs/')
+  )
+  eleventyConfig.addCollection(
+    'posts',
+    collectionByFolders('articles/', 'blog/', 'labs/', 'notes/')
+  )
   eleventyConfig.addCollection('tagList', getTagList)
 
   // Configure front matter
@@ -186,6 +152,30 @@ module.exports = function (eleventyConfig) {
       input: 'src',
       output: 'dist',
     },
+  }
+}
+
+function collectionByFolders(...folderNames) {
+  return function (collection) {
+    return collection
+      .getAllSorted()
+      .filter((item) =>
+        folderNames.some((folderName) => item.inputPath.includes(folderName))
+      )
+      .reverse()
+  }
+}
+
+function collectionByFolderAndFile(folderName, fileName) {
+  return function (collection) {
+    return collection
+      .getAllSorted()
+      .filter(
+        (item) =>
+          item.inputPath.includes(folderName) &&
+          item.inputPath.includes(fileName)
+      )
+      .reverse()
   }
 }
 
