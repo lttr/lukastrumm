@@ -9,7 +9,6 @@ module.exports = {
 
   render(data) {
     return html`
-      <h1>Blog</h1>
       <ul>
         ${data.collections.blog.map(
           (blog) => html`

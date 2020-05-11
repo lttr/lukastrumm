@@ -6,7 +6,7 @@ const twitterIcon = require('simple-icons/icons/twitter')
 
 module.exports = () =>
   html`
-    <footer>
+    <footer class="page-footer">
       <a href="https://github.com/lttr" aria-label="Github - lttr">
         <span class="social-icon">${raw`${githubIcon.svg}`}</span>
       </a>

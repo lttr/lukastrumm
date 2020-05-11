@@ -3,8 +3,6 @@ title: Running
 permalink: '/running/'
 ---
 
-# Running
-
 My [komoot ![komoot-logo](/img/komoot.svg) profile](https://www.komoot.com/user/729131540685).
 
 ## One of my recent tracks

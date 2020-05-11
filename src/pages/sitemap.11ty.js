@@ -2,12 +2,12 @@ const html = require('../_lib/html')
 
 module.exports = {
   data: {
+    title: 'Sitemap',
     permalink: '/sitemap/',
   },
 
   render(data) {
     return html`
-      <h1>Sitemap</h1>
       <ul>
         ${data.collections.all
           .filter(
@@ -19,9 +19,9 @@ module.exports = {
             return html`
               <li>
                 <a href="${this.url(url)}">${this.url(url)}</a>
-                <span class="article-date"
-                  >${date.toISOString().slice(0, 10)}</span
-                >
+                <time datetime="${date.toISOString()}">
+                  ${date.toISOString().slice(0, 10)}
+                </time>
               </li>
             `
           })}

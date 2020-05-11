@@ -3,8 +3,6 @@ title: About this site
 permalink: /about-this-site/
 ---
 
-# About this site
-
 ## Technology
 
 - [Eleventy](https://11ty.dev)

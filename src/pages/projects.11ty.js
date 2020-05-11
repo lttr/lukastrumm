@@ -31,12 +31,13 @@ module.exports = {
     `
     return html`
       ${styles}
-      <h1>Labs</h1>
+
+      <h2>Labs</h2>
       <ul class="cards full-width">
         ${data.collections.labs.map((item) => html` ${renderLab(item.data)} `)}
       </ul>
 
-      <h1>Github projects</h1>
+      <h2>Github projects</h2>
       <ul class="cards full-width">
         ${data.repos
           .filter((repo) => !repo.fork && !repo.archived)
@@ -49,56 +50,58 @@ module.exports = {
 function renderLab(data) {
   const {
     title,
+    image,
     page: { url, date, excerpt },
   } = data
-  const labUrl = url + 'lab/'
+  const labUrl = url.replace('README/', '')
+  const readmeUrl = url
+  const imageUrl = `${labUrl}${image}`
+  const altText = `${title} - page screenshot`
   return html`
-    <li class="card">
-      <div class="card-body">
-        <a href="${labUrl}" class="article-title">${title}</a><br />
-        <em class="article-date">
-          ${formatDate(date)}
-        </em>
-        <p class="excerpt">
-          ${excerpt}
-        </p>
-      </div>
-      <div class="card-embed">
-        <a href="${labUrl}">
-          <iframe
-            src="${labUrl}"
-            class="card-iframe"
-            scrolling="no"
-            loading="lazy"
-            title="${`Embed HTML page - ${excerpt}`}"
-          />
-        </a>
-      </div>
+    <li class="card-wrapper">
+      <article class="card">
+        <div class="card-body">
+          <a href="${readmeUrl}" class="article-title">${title}</a><br />
+          <time datetime="${date.toISOString()}">
+            ${formatDate(date)}
+          </time>
+          <p class="excerpt">
+            ${excerpt}
+          </p>
+        </div>
+        <div class="card-embed">
+          <a href="${labUrl}">
+            <img src="${imageUrl}" alt="${altText}" />
+          </a>
+        </div>
+      </article>
     </li>
   `
 }
 
 function renderRepo(repo) {
   return html`
-    <li class="card">
-      <div class="card-body">
-        <a href="${repo.html_url}" class="article-title">
-          <span>${repo.name}</span>
-        </a>
-        ${repo.description
-          ? html`<p class="excerpt">
-              ${raw`${linkifyString(repo.description, { target: null })}`}
-            </p>`
-          : null}
-        <p class="source-language">
-          ${repo.language ? html`<code>${repo.language}</code>` : null}
-        </p>
-        <p class="topics">
-          ${repo.topics.map((topic) => {
-            return html`<span class="tag-badge">${topic}</span>`
-          })}
-        </p>
-      </div>
+    <li class="card-wrapper">
+      <article class="card">
+        <div class="card-body">
+          <a href="${repo.html_url}" class="article-title">
+            <span>${repo.name}</span>
+          </a>
+          ${repo.description
+            ? html`<p class="excerpt">
+                ${raw`${linkifyString(repo.description, { target: null })}`}
+              </p>`
+            : null}
+          <p class="source-language">
+            ${repo.language ? html`<code>${repo.language}</code>` : null}
+          </p>
+          <p class="topics">
+            ${repo.topics.map((topic) => {
+              return html`<span class="tag-badge">${topic}</span>`
+            })}
+          </p>
+        </div>
+      </article>
     </li>
   `
 }

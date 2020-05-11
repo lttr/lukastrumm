@@ -17,6 +17,7 @@ function getCategory(url) {
 
 module.exports = {
   data: {
+    title: 'Search',
     permalink: '/search/',
   },
 
@@ -39,7 +40,6 @@ module.exports = {
       </style>
       <section class="center">
         <div class="search-wrapper">
-          <h1>Search</h1>
           <p>
             <input
               type="search"

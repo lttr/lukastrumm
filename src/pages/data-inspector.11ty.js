@@ -2,6 +2,7 @@ const html = require('../_lib/html')
 
 module.exports = {
   data: {
+    title: 'Eleventy data inspector',
     permalink: '/data-inspector/',
   },
 
@@ -62,7 +63,6 @@ module.exports = {
           color: rebeccapurple;
         }
       </style>
-      <h1>Eleventy data inspector</h1>
       <button id="expand-all">Expand all</button>
       <button id="collapse-all">Collapse all</button>
       <section class="data-inspector">

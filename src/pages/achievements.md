@@ -3,8 +3,6 @@ title: Achievements
 permalink: '/achievements/'
 ---
 
-# Achievements
-
 _These are not accomplishments to show me off. This is only a list that motivates me to keep doing interesting things. It is in random order._
 
 - I walked across a rope without aids.

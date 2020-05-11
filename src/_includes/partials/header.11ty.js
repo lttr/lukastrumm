@@ -1,7 +1,7 @@
 const html = require('../../_lib/html')
 
 module.exports = (eleventy, data) => html`
-  <header>
+  <header class="page-header">
     <div class="header-content">
       <h1 class="site-name">
         <a href="${eleventy.url('/')}">${data.metadata.title}</a>

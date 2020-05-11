@@ -6,16 +6,12 @@ const {
 
 module.exports = {
   data: {
+    title: null,
     layout: 'layouts/page',
   },
   render(data) {
     const { collections } = data
     return html`
-      <style>
-        .home-page h1 {
-          text-align: center;
-        }
-      </style>
       <section class="home-page">
         <h1>Articles</h1>
         <ul class="cards">

@@ -24,45 +24,50 @@ module.exports = {
 
     const template = html`
       <article>
-        <h1>${title}</h1>
-        <section class="article-description">
-          <em class="article-date">
-            ${formatDate(date)}
-          </em>
-          ${updatedDate
-            ? html`
-                <em class="article-date">
-                  (last update ${formatDate(updatedDate)})
-                </em>
-              `
-            : ''}
-        </section>
+        <header>
+          ${title && html`<h1>${title}</h1>`}
+          <p>
+            <time datetime="${date.toISOString()}">
+              ${formatDate(date)}
+            </time>
+            ${updatedDate
+              ? html`
+                  <time datetime="${date.toISOString()}">
+                    (last update ${formatDate(updatedDate)})
+                  </time>
+                `
+              : ''}
+          </p>
+        </header>
+
         <section class="${sectionClasses.join(' ')}">
           ${raw`${content}`}
         </section>
 
-        ${tags
-          ? html`
-              <section class="tags">
-                ${tags.map((tag) => {
-                  const url = `/tag/${tag}`
-                  return html` <a href="${url}" class="tag-badge">${tag}</a> `
-                })}
-              </section>
-            `
-          : ''}
-        ${currentArticleUpdates
-          ? html`
-              <section class="updates">
-                <div class="toc-heading">Updates</div>
-                <ul>
-                  ${currentArticleUpdates.map((update) => {
-                    return html`<li>${update.date} ${update.message}</li>`
+        <footer>
+          ${tags
+            ? html`
+                <section class="tags">
+                  ${tags.map((tag) => {
+                    const url = `/tag/${tag}`
+                    return html` <a href="${url}" class="tag-badge">${tag}</a> `
                   })}
-                </ul>
-              </section>
-            `
-          : null}
+                </section>
+              `
+            : ''}
+          ${currentArticleUpdates
+            ? html`
+                <section class="updates">
+                  <div class="toc-heading">Updates</div>
+                  <ul>
+                    ${currentArticleUpdates.map((update) => {
+                      return html`<li>${update.date} ${update.message}</li>`
+                    })}
+                  </ul>
+                </section>
+              `
+            : null}
+        </footer>
       </article>
     `
     return base(this, template, data)

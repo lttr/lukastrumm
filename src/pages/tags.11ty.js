@@ -20,7 +20,6 @@ module.exports = {
       }
     }
     return html`
-      <h1>Tags</h1>
       <p class="tags">
         ${data.collections.tagList.sort().map((tag) => {
           const url = `/tag/${tag}`

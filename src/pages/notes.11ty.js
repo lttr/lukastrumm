@@ -9,7 +9,6 @@ module.exports = {
 
   render(data) {
     return html`
-      <h1>Notes</h1>
       <ul id="notes">
         ${data.collections.notes.map(
           (item) => html`

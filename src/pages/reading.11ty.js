@@ -9,7 +9,7 @@ module.exports = {
   render() {
     return html`
       ${goodreadsStyling()}
-      <h1>Reading</h1>
+
       <a
         rel="nofollow"
         href="https://www.goodreads.com/user/show/64207622-luk-trumm"
