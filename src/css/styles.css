@@ -79,18 +79,34 @@ html {
   box-sizing: inherit;
 }
 
+ul[class],
+ol[class] {
+  padding: 0;
+  list-style: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
 /* lobotomized owl selector */
 article * + * {
   margin-top: calc(1.15 * 1.2em);
 }
 
-section {
-}
-
 html,
 body {
-  padding: 0;
-  margin: 0;
   height: 100%;
   font-family: var(--body-font);
   font-size: var(--font-size);
@@ -164,6 +180,12 @@ table tbody tr:last-child td {
   border-bottom-width: 0;
 }
 
+time {
+  font-size: var(--small-font);
+  color: var(--primary-color);
+  font-style: italic;
+}
+
 /* layout */
 
 .page-wrapper {
@@ -182,7 +204,7 @@ main {
 
 /* footer */
 
-footer {
+.page-footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -196,12 +218,12 @@ footer {
   border-radius: 2px;
 }
 
-footer > * {
+.page-footer > * {
   padding: 1em 0.6em;
   margin: 0;
 }
 
-footer a {
+.page-footer a {
   color: var(--primary-color);
 }
 
@@ -220,9 +242,9 @@ footer a {
   height: 1rem;
 }
 
-/* header */
+/* page header */
 
-header {
+.page-header {
   box-shadow: 1px 2px 3px 0 var(--box-shadow);
 }
 
@@ -302,15 +324,6 @@ article li a {
   padding: 0.1em 0;
 }
 
-.article-description {
-  margin-top: 1rem;
-}
-
-.article-date {
-  font-size: var(--small-font);
-  color: var(--primary-color);
-}
-
 .post-content {
   position: relative;
   overflow-wrap: break-word;
@@ -353,9 +366,8 @@ figcaption {
   font-style: italic;
 }
 
-.post-content img,
-.post-content svg {
-  display: block;
+article img,
+article svg {
   height: auto;
   max-width: 100%;
 }
@@ -549,8 +561,6 @@ article .tags {
     auto-fill,
     minmax(calc(var(--max-width) / 3), 1fr)
   );
-  padding: 0;
-  margin: 0;
 }
 
 .cards.full-width {
@@ -560,7 +570,7 @@ article .tags {
 .card {
   border: 1px solid #dddbda;
   border-radius: 0.1em;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.1);
   list-style-type: none;
   padding: 1em 0.7em;
 }
@@ -578,8 +588,14 @@ article .tags {
   display: inline-block;
 }
 
-.card:hover {
-  box-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.1);
+.card-embed a {
+  display: block;
+  height: 100%;
+  border: 1px solid var(--back-color);
+}
+
+.card-embed a:hover {
+  border: 1px solid var(--primary-color);
 }
 
 /* buttons */
