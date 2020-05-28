@@ -319,11 +319,6 @@ main {
 
 /* article */
 
-article li a {
-  /* increase tap target for links */
-  padding: 0.1em 0;
-}
-
 .post-content {
   position: relative;
   overflow-wrap: break-word;
