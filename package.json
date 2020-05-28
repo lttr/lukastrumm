@@ -13,11 +13,6 @@
   "author": "Lukas Trumm",
   "license": "MIT",
   "scripts": {
-    "build:submodules": "run-s -l build:submodules:install build:submodules:build build:submodule:*",
-    "build:submodule:shortcuts": "copyfiles -u 2 \"shortcuts/dist/**/*\" dist/shortcuts/",
-    "build:submodule:talks": "copyfiles -u 2 \"talks/dist/**/*\" dist/talks",
-    "build:submodules:install": "git submodule foreach npm install",
-    "build:submodules:build": "git submodule foreach npm run build",
     "cache:clean": "rimraf .datacache/*",
     "clean": "rimraf dist/*",
     "build": "eleventy",
@@ -25,7 +20,6 @@
     "serve": "npm run clean && DEV=true eleventy --watch --serve --port 2000",
     "lint": "eslint src/**/*.{js,md}",
     "format": "prettier src/**/* --write",
-    "production": "run-s -l build build:submodules",
     "start": "npm run serve"
   },
   "devDependencies": {
