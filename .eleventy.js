@@ -21,8 +21,8 @@ module.exports = function (eleventyConfig) {
   // Copy files
 
   eleventyConfig.addPassthroughCopy('src/{articles,blog,notes,talks,labs}/**/*')
+  eleventyConfig.addPassthroughCopy('src/**/*.css')
   eleventyConfig.addPassthroughCopy('src/fonts/*.woff2')
-  eleventyConfig.addPassthroughCopy('src/css/*.css')
   eleventyConfig.addPassthroughCopy('src/js/*.js')
   eleventyConfig.addPassthroughCopy('src/favicon.ico')
   eleventyConfig.addPassthroughCopy('src/robots.txt')

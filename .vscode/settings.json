@@ -1,5 +1,6 @@
 {
   "[markdown]": {
     "editor.formatOnSave": true
-  }
+  },
+  "deno.enable": false
 }
