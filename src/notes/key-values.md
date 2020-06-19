@@ -48,3 +48,12 @@ keyvalues.com is a great website with a list of values that one might appreciate
 - Software architecture
 - Open and free software
 - HTML, CSS, JavaScript, JAM stack, Linux, ...
+
+## Strengths
+
+- I am generalist
+- I am organized
+
+## Weaknesses
+
+- I am working on my English
