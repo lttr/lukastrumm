@@ -19,9 +19,12 @@ module.exports = {
         <h1>Lukas Trumm</h1>
 
         <p class="links">
-          <a href="https://github.com/lttr">Github</a>
+          <span>email: lukas.trumm@gmail.com</span>
+          <span>location: Czech Republic</span>
+        </p>
+        <p class="links">
+          <a href="https://github.com/lttr">GitHub</a>
           <a href="https://lukastrumm.com">Personal site</a>
-          <a href="mailto:lukas.trumm@gmail.com">lukas.trumm@gmail.com</a>
         </p>
 
         <p>
@@ -35,14 +38,15 @@ module.exports = {
         <h2>Skills</h2>
 
         <ul>
-          <li>JavaScript and TypeScript are my main languages.</li>
-          <li>I am organized. I love to bring order into complex systems.</li>
+          <li>I am fluent in JavaScript and TypeScript</li>
           <li>
-            I am leader of a local Scout group. I know how to lead and mentor.
+            I have used a broad range or technologies and I look forward to
+            learning more
           </li>
+          <li>I can bring an order into a complex system</li>
           <li>
-            I am working on beiing fluent in English. My native language is
-            Czech.
+            I am leader of a local Scout group&mdash;I know how to lead and
+            mentor
           </li>
         </ul>
 
@@ -51,11 +55,11 @@ module.exports = {
         <p><strong>2017 &ndash; 2020 Domat Control System</strong></p>
         <ul>
           <li>
-            Lead frontend developer of B2B application (Angular, TypeScript,
+            Lead frontend engineer of a B2B application (Angular, TypeScript,
             RxJS, C#)
           </li>
           <li>
-            I have build CI/CD pipelines (Azure DevOps) and other internal
+            I have built CI/CD pipelines (Azure DevOps) and other internal
             automation
           </li>
           <li>
@@ -66,9 +70,12 @@ module.exports = {
 
         <p><strong>2014 &ndash; 2017 Unicorn Systems</strong></p>
         <ul>
-          <li>Member of site reliability engineering team</li>
+          <li>
+            I have learned how to keep a big system running as a member of site
+            reliability engineering team
+          </li>
           <li>I have learned Linux administration</li>
-          <li>One year of Java backend development</li>
+          <li>I was an enterprise Java backend developer</li>
         </ul>
 
         <h2>Education</h2>
