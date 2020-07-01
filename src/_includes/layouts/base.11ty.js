@@ -31,10 +31,10 @@ module.exports = function base(eleventy, content, data) {
         </div>
         <script>
           ${hasCodeBlock
-            ? js`${inline('src/js/enable-copy-to-clipboard.js')}`.min()
+            ? js`${inline('./src/js/enable-copy-to-clipboard.js')}`.min()
             : null}
           ${hasRunnableCodeBlock
-            ? js`${inline('src/js/enable-klipse.js')}`
+            ? js`${inline('./src/js/enable-klipse.js')}`
             : null}
         </script>
         ${hasRunnableCodeBlock ? raw`${klipse(eleventy)}` : null}

@@ -1,7 +1,6 @@
 const fs = require('fs')
-const path = require('path')
 
 module.exports = function inline(filePath) {
-  const fileBuffer = fs.readFileSync(path.join(process.cwd(), filePath))
+  const fileBuffer = fs.readFileSync(filePath)
   return fileBuffer.toString()
 }

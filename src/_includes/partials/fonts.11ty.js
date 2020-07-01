@@ -1,7 +1,7 @@
 const { html } = require('../../_lib/html')
 const inline = require('../../_lib/inline')
 
-const base64Font = inline('src/fonts/charter_regular-webfont_optimized')
+const base64Font = inline('./src/fonts/charter_regular-webfont_optimized')
 const fontUrl = `data:font/woff2;charset=utf-8;base64,${base64Font}`
 
 function fonts() {

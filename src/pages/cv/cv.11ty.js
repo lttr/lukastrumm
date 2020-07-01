@@ -1,3 +1,4 @@
+const path = require('path')
 const { html, css } = require('../../_lib/html')
 const inline = require('../../_lib/inline')
 
@@ -10,7 +11,7 @@ module.exports = {
   render() {
     const styles = html`<style>
       ${css`
-        ${inline('src/pages/cv/cv.css')}
+        ${inline(path.join(__dirname, 'cv.css'))}
       `}
     </style> `
     return html`
