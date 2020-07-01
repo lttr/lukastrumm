@@ -38,15 +38,14 @@ module.exports = {
         <h2>Skills</h2>
 
         <ul>
-          <li>I am fluent in JavaScript and TypeScript</li>
+          <li>JavaScript and TypeScript are languages of my choice</li>
           <li>
             I have used a broad range or technologies and I look forward to
             learning more
           </li>
           <li>I can bring an order into a complex system</li>
           <li>
-            I am leader of a local Scout group&mdash;I know how to lead and
-            mentor
+            As a leader of a local Scout group I know how to lead and mentor
           </li>
         </ul>
 
@@ -55,8 +54,8 @@ module.exports = {
         <p><strong>2017 &ndash; 2020 Domat Control System</strong></p>
         <ul>
           <li>
-            Lead frontend engineer of a B2B application (Angular, TypeScript,
-            RxJS, C#)
+            Lead frontend engineer of a B2B application (Angular, NX,
+            TypeScript, RxJS, C#)
           </li>
           <li>
             I have built CI/CD pipelines (Azure DevOps) and other internal
@@ -70,12 +69,12 @@ module.exports = {
 
         <p><strong>2014 &ndash; 2017 Unicorn Systems</strong></p>
         <ul>
+          <li>Enterprise Java backend developer</li>
           <li>
             I have learned how to keep a big system running as a member of site
             reliability engineering team
           </li>
           <li>I have learned Linux administration</li>
-          <li>I was an enterprise Java backend developer</li>
         </ul>
 
         <h2>Education</h2>
