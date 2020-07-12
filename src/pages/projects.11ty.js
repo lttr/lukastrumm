@@ -92,6 +92,11 @@ function renderRepo(repo) {
                 ${raw`${linkifyString(repo.description, { target: null })}`}
               </p>`
             : null}
+          <p class="website">
+            ${repo.homepage
+              ? html`<a href="${repo.homepage}">${repo.homepage}</a>`
+              : null}
+          </p>
           <p class="source-language">
             ${repo.language ? html`<code>${repo.language}</code>` : null}
           </p>
