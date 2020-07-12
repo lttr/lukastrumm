@@ -13,16 +13,16 @@ module.exports = {
     const { collections } = data
     return html`
       <section class="home-page">
-        <h1>Articles</h1>
+        <!-- <h1>Articles</h1>
         <ul class="cards">
           ${collections.articles.map(
-            (item) => html`
-              <li class="card">
-                ${postWithExcerpt(item.data)}
-              </li>
-            `
-          )}
-        </ul>
+          (item) => html`
+            <li class="card">
+              ${postWithExcerpt(item.data)}
+            </li>
+          `
+        )}
+        </ul> -->
         <h1>Blog posts</h1>
         <ul class="cards">
           ${collections.blog.map(
