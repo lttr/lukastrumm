@@ -56,11 +56,11 @@ module.exports = {
         <ul>
           <li>
             Lead frontend engineer of a B2B application (Angular, NX,
-            TypeScript, RxJS, C#)
+            TypeScript, RxJS, Redux, Jest, Cypress, C#)
           </li>
           <li>
             I have built CI/CD pipelines (Azure DevOps) and other internal
-            automation
+            automation (Powershell, Node)
           </li>
           <li>
             I have worked hard to keep documentation and written know-how up to
