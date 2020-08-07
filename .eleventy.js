@@ -48,7 +48,7 @@ module.exports = function (eleventyConfig) {
   )
   eleventyConfig.addCollection(
     'feed',
-    collectionByFolders('articles/', 'blog/', 'labs/')
+    collectionByFolders('articles/', 'blog/')
   )
   eleventyConfig.addCollection(
     'posts',
