@@ -7,7 +7,8 @@ module.exports = {
   },
 
   render(data) {
-    const dataInspector = renderData(data)
+    // TODO fix stack overflow
+    const dataInspector = null // renderData(data)
     const stats = renderStats(data)
     return html`
       <style>
