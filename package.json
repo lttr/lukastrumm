@@ -51,6 +51,6 @@
     "puppeteer": "^2.1.1",
     "rimraf": "^3.0.2",
     "simple-icons": "^2.19.0",
-    "ucontent": "^1.6.0"
+    "ucontent": "^2.0.0"
   }
 }
