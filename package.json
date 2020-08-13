@@ -50,7 +50,7 @@
     "prettier": "^2.0.5",
     "puppeteer": "^2.1.1",
     "rimraf": "^3.0.2",
-    "simple-icons": "^2.19.0",
+    "simple-icons": "^3.4.1",
     "ucontent": "^1.6.0"
   }
 }
