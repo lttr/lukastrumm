@@ -16,6 +16,7 @@ const markdownItKlipse = require('./src/_plugins/markdown-it-klipse')
 const markdownItTitle = require('./src/_plugins/markdown-it-title')
 const markdownItMermaid = require('./src/_plugins/markdown-it-mermaid')
 const markdownItDefaultType = require('./src/_plugins/markdown-it-default-type')
+const markdownItArrow = require('./src/_plugins/markdown-it-arrow')
 
 module.exports = function (eleventyConfig) {
   // Copy files
@@ -93,6 +94,7 @@ module.exports = function (eleventyConfig) {
       .use(markdownItTitle)
       .use(markdownItMermaid)
       .use(markdownItDefaultType)
+      .use(markdownItArrow)
   )
 
   // Configure browser-sync
