@@ -452,6 +452,7 @@ article .tags {
   line-height: 1.2;
   margin: 0.3em;
   padding: 1px 5px;
+  white-space: nowrap;
 }
 
 .tag-badge:hover {
