@@ -1,7 +1,7 @@
 ---
 title: Typography
 date: 2020-02-25
-tags:
+tags: fonts
 ---
 
 abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
