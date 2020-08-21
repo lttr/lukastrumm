@@ -37,3 +37,12 @@ When you manually lock your computer or when you are away for some time it provi
 ### Idle time
 
 Is a time when the computer evaluates that it is doing nothing. From the practical point of view the computer can be configured to do something useful after some specific time of beiing idle---lock the screen or suspend.
+
+## Sources
+
+- https://askubuntu.com/questions/369760/what-are-the-differences-between-sleep-standby-suspend-and-hibernate-in-ubuntu
+- https://askubuntu.com/questions/848698/wake-up-from-suspend-using-wireless-usb-keyboard-or-mouse-for-any-linux-distro/1155666#1155666
+- https://help.ubuntu.com/stable/ubuntu-help/power-suspend.html.en
+- https://help.ubuntu.com/stable/ubuntu-help/shell-exit.html.en#suspend
+- https://wiki.ubuntu.com/PowerManagement
+- https://help.ubuntu.com/stable/ubuntu-help/session-screenlocks.html.en
