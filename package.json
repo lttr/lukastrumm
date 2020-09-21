@@ -37,7 +37,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "flat-cache": "^2.0.1",
     "glob": "^7.1.6",
-    "klipse": "^7.10.3",
+    "klipse": "^7.10.5",
     "linkifyjs": "^2.1.9",
     "markdown-it": "^10.0.0",
     "markdown-it-anchor": "^5.3.0",
