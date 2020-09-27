@@ -67,6 +67,8 @@ You can use two hyphens to produce an n-dash, e.g. 9--12. Or three hyphens---to 
 
 "Quotation marks" and ellipsis is supported too...
 
+Arrows: rain -> wet
+
 ## Extras
 
 Extra markdown functionality is provided either by embedded or external
