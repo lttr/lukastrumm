@@ -10,6 +10,3 @@
   [headers.values]
     # cache for one month
     cache-control = "public, max-age=2592000"
-
-[[plugins]]
-  package = "netlify-plugin-checklinks"
