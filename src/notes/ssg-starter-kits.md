@@ -10,6 +10,7 @@ tags: ['ssg', 'eleventy']
 - https://github.com/philhawksworth/eleventyone
 - https://github.com/MadeByMike/supermaya
 - https://github.com/hankchizljaw/hylia
+- https://github.com/google/eleventy-high-performance-blog
 
 ## Gatsby
 
