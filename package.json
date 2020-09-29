@@ -20,7 +20,8 @@
     "serve": "npm run clean && DEV=true eleventy --incremental --watch --serve --port 2000",
     "lint": "eslint src/**/*.{js,md}",
     "format": "prettier src/**/* --write",
-    "start": "npm run serve"
+    "start": "npm run serve",
+    "check:links": "npx hyperlink --recursive --pretty --internal --root dist/ dist/**/*.html | npx tap-spot"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
