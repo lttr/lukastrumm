@@ -29,4 +29,5 @@ Please, think twice before using word _hyper_ for **anything**.
 - [Hyperscan](https://www.hyperscan.io/) (c library)
 - [Hyperpower](https://github.com/zeit/hyperpower) (terminal plugin)
 - [Awesome hyper](https://github.com/bnb/awesome-hyper) (...terminal)
+- [HyperCard](http://hypercard.org/) (legendary software which inspired first web browsers, [video from 1987](https://archive.org/details/CC501_hypercard))
 - ...
