@@ -20,7 +20,7 @@ module.exports = {
       }
     }
     return html`
-      <p class="tags">
+      <p class="tags cloud">
         ${data.collections.tagList.sort().map((tag) => {
           const url = `/tag/${tag}`
           const count = counter[tag]

@@ -436,11 +436,14 @@ article svg {
 .tags {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 article .tags {
   justify-content: flex-end;
+}
+
+.tags.cloud {
+  justify-content: center;
 }
 
 .tag-badge {
