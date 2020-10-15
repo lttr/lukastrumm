@@ -1,5 +1,5 @@
-const { html, raw } = require('../_lib/html')
-const formatDate = require('../_lib/formatDate')
+const { html } = require('../_lib/html')
+const { formatDate } = require('../_lib/formatDate')
 
 module.exports = {
   data: {

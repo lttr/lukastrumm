@@ -1,5 +1,5 @@
 const html = require('../../_lib/html')
-const formatDate = require('../../_lib/formatDate')
+const { formatDate } = require('../../_lib/formatDate')
 
 function postInline(data, includeDate = true) {
   const {

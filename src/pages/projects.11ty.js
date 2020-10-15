@@ -1,7 +1,5 @@
-const linkifyString = require('linkifyjs/string')
-
-const { html, raw } = require('../_lib/html')
-const formatDate = require('../_lib/formatDate')
+const { html } = require('../_lib/html')
+const { formatDate } = require('../_lib/formatDate')
 
 module.exports = {
   data: {
@@ -10,6 +8,13 @@ module.exports = {
   },
 
   render(data) {
+    const activeRepos = data.repos.filter(
+      (repo) => !repo.fork && !repo.archived
+    )
+    activeRepos.sort((a, b) => {
+      return new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime()
+    })
+
     const styles = html`
       <style>
         .card {
@@ -27,6 +32,40 @@ module.exports = {
           width: 100%;
           border: 2px solid var(--text-color);
         }
+
+        .repo-header {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: baseline;
+        }
+
+        @media (max-width: 550px) {
+          .repo-header {
+            display: block;
+          }
+        }
+
+        .repo-name {
+          font-family: var(--heading-font);
+          font-weight: var(--heading-font-weight);
+        }
+
+        .repo-site {
+          font-family: var(--heading-font);
+          font-weight: var(--heading-font-weight);
+        }
+
+        .repo-description {
+          margin: 0.3rem 0;
+        }
+
+        .repo-last-push,
+        .repo-lang,
+        .repo-topics {
+          font-size: var(--small-font);
+          margin: 0.2rem 0;
+        }
       </style>
     `
     return html`
@@ -39,9 +78,7 @@ module.exports = {
 
       <h2>Github projects</h2>
       <ul class="cards full-width">
-        ${data.repos
-          .filter((repo) => !repo.fork && !repo.archived)
-          .map(renderRepo)}
+        ${activeRepos.map(renderRepo)}
       </ul>
     `
   },
@@ -84,27 +121,36 @@ function renderRepo(repo) {
     <li class="card-wrapper">
       <article class="card">
         <div class="card-body">
-          <a href="${repo.html_url}" class="article-title">
-            <span>${repo.name}</span>
-          </a>
-          ${repo.description
-            ? html`<p class="excerpt">
-                ${raw`${linkifyString(repo.description, { target: null })}`}
-              </p>`
+          <header class="repo-header">
+            <div class="repo-name">
+              <a href="${repo.html_url}">
+                ${repo.name}
+              </a>
+              <span class="repo-site">
+                ${repo.homepage
+                  ? html`( <a href="${repo.homepage}">SITE</a> )`
+                  : null}
+              </span>
+            </div>
+            <div class="repo-last-push">
+              <time><i>Last activity:</i> ${formatDate(repo.pushed_at)}</time>
+            </div>
+          </header>
+          <div class="repo-description">
+            ${repo.description}
+          </div>
+          ${repo.language
+            ? html`<div class="repo-lang">
+                <i>Main language:</i>
+                ${repo.language ? html`${repo.language}` : null}
+              </div>`
             : null}
-          <p class="website">
-            ${repo.homepage
-              ? html`<a href="${repo.homepage}">${repo.homepage}</a>`
-              : null}
-          </p>
-          <p class="source-language">
-            ${repo.language ? html`<code>${repo.language}</code>` : null}
-          </p>
-          <p class="topics">
-            ${repo.topics.map((topic) => {
-              return html`<span class="tag-badge">${topic}</span>`
-            })}
-          </p>
+          ${repo.topics.length
+            ? html`<div class="repo-topics">
+                <i>Topics:</i>
+                ${repo.topics.join(', ')}
+              </div>`
+            : null}
         </div>
       </article>
     </li>
