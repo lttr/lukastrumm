@@ -15,9 +15,13 @@
           "error",
           { "aggregationMethod": "optimistic", "minScore": 0.9 }
         ],
-        "first-contentful-paint": [
+        "first-meaningful-paint": [
           "error",
           { "maxNumericValue": 3000, "aggregationMethod": "optimistic" }
+        ],
+        "first-contentful-paint": [
+          "error",
+          { "maxNumericValue": 4000, "aggregationMethod": "optimistic" }
         ],
         "interactive": [
           "error",
