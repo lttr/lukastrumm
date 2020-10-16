@@ -23,7 +23,7 @@
     "start": "npm run serve",
     "check:links": "npx hyperlink --recursive --pretty --internal --root dist/ dist/**/*.html | npx tap-spot",
     "prebuild": "CI=1 npm i cypress",
-    "postbuild": "eleventy --serve --port 2002 & npm run e2e && fkill :2002",
+    "postbuild": "eleventy --serve --port 2002 & npm run e2e && fkill --force :2002",
     "e2e": "cypress run",
     "e2e:dev": "CYPRESS_baseUrl=http://localhost:2000 cypress open"
   },
