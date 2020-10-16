@@ -4,10 +4,6 @@ updates:
     directory: '/'
     schedule:
       interval: 'monthly'
-    automerged_updates:
-      - match:
-          dependency_type: "all"
-          update_type: "semver:minor"
 
   - package-ecosystem: 'github-actions'
     directory: '/'
