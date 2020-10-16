@@ -3,10 +3,13 @@
   publish = "dist/"
 
 [build.environment]
-  NODE_VERSION = "12"
+  NODE_VERSION = "14"
 
 [[headers]]
   for = "/fonts/*.woff2"
   [headers.values]
     # cache for one month
     cache-control = "public, max-age=2592000"
+
+[[plugins]]
+  package = "netlify-plugin-cypress"
