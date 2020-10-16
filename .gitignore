@@ -11,3 +11,7 @@ dist
 
 # My cache for data fetched during build
 .datacache
+
+# Cypress
+cypress/videos
+cypress/screenshots
