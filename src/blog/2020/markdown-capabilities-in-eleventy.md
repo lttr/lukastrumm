@@ -167,7 +167,17 @@ const duration = t.domContentLoadedEventEnd - t.navigationStart
     width: 120px;
   }
 </style>
-<p class="my-text">
-  Once upon a time, there was a man
-</p>
+<p class="my-text">Once upon a time, there was a man</p>
+```
+
+```js/3-5/2 {run}
+const array = [1, 2, 3]
+let sum1 = array.reduce((acc, curr) => acc + curr, 0)
+let sum2 = 0
+for (const n of array) {
+  sum2 += n
+}
+
+console.log(sum1)
+console.log(sum2)
 ```

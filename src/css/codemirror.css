@@ -17,12 +17,14 @@
 }
 
 .klipse-result {
-  padding: 1.4em;
+  margin: 1.4em;
+  margin-right: 0;
 }
 
 .language-html .klipse-result {
   white-space: initial;
   font-family: var(--body-text);
+  background: var(--code-result);
 }
 
 .klipse-result::after,
@@ -199,59 +201,77 @@ pre[class*='language-'].klipse-actual {
   text-decoration: line-through;
 }
 
+.cm-s-default .cm-variable,
+.cm-s-default .cm-property,
+.cm-s-default .cm-def {
+  color: var(--code-fg);
+}
+
 .cm-s-default .cm-keyword {
   color: var(--code-operator-fg);
 }
+
 .cm-s-default .cm-atom {
   color: var(--code-symbol-fg);
 }
+
 .cm-s-default .cm-number {
   color: var(--code-symbol-fg);
 }
-.cm-s-default .cm-def {
-  color: var(--code-symbol-fg);
-}
-.cm-s-default .cm-variable,
+
 .cm-s-default .cm-punctuation,
-.cm-s-default .cm-property,
 .cm-s-default .cm-operator {
+  color: var(--code-operator-fg);
 }
+
 .cm-s-default .cm-variable-2 {
   /* color: #05a; */
 }
+
 .cm-s-default .cm-variable-3 {
   /* color: #085; */
 }
+
 .cm-s-default .cm-comment {
   color: var(--code-comment-fg);
 }
+
 .cm-s-default .cm-string {
   color: var(--code-string-fg);
 }
+
 .cm-s-default .cm-string-2 {
   color: var(--code-string-fg);
 }
+
 .cm-s-default .cm-meta {
   /* color: #555; */
 }
+
 .cm-s-default .cm-qualifier {
   /* color: #555; */
 }
+
 .cm-s-default .cm-builtin {
   color: var(--code-tag-fg);
 }
+
 .cm-s-default .cm-bracket {
   /* color: #997; */
 }
+
 .cm-s-default .cm-tag {
   color: var(--code-tag-fg);
 }
+
 .cm-s-default .cm-attribute {
   color: var(--code-operator-fg);
 }
+
 .cm-s-default .cm-hr {
   /* color: #999; */
 }
+
 .cm-s-default .cm-link {
   color: var(--code-tag-fg);
 }
@@ -259,6 +279,7 @@ pre[class*='language-'].klipse-actual {
 .cm-s-default .cm-error {
   color: #f00;
 }
+
 .cm-invalidchar {
   color: #f00;
 }
@@ -290,7 +311,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 .CodeMirror {
   position: relative;
   overflow: hidden;
-  background: white;
+  background: var(--code-bg);
 }
 
 .CodeMirror-scroll {
@@ -463,10 +484,10 @@ div.CodeMirror-dragcursors {
 }
 
 .CodeMirror-selected {
-  background: #d9d9d9;
+  background: var(--code-selection);
 }
 .CodeMirror-focused .CodeMirror-selected {
-  background: #d7d4f0;
+  background: var(--code-selection);
 }
 .CodeMirror-crosshair {
   cursor: crosshair;
@@ -474,7 +495,7 @@ div.CodeMirror-dragcursors {
 .CodeMirror-line::selection,
 .CodeMirror-line > span::selection,
 .CodeMirror-line > span > span::selection {
-  background: #d7d4f0;
+  background: var(--code-selection);
 }
 
 .cm-searching {

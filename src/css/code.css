@@ -11,6 +11,7 @@
   --highlight-line: hsl(42, 77%, 87%);
   --highlight-line-add: #8599004b;
   --highlight-line-remove: #dc322f4b;
+  --code-fg: var(--text-color);
   --code-bg: hsl(46, 20%, 94%);
   --code-executable-bg: hsl(3, 9%, 98%);
   --code-comment-fg: #626e7a;
@@ -21,10 +22,12 @@
   --code-function-fg: #c62e4d;
   --code-variable-fg: ​#996100;
   --code-result: #fff;
+  --code-selection: rgba(200, 200, 200, 0.5);
 
   --font-family-code: 'Fira Mono', Consolas, Monaco, 'Andale Mono',
     'Ubuntu Mono', monospace;
-  --font-size-code: 16px;
+  --font-size-code: 15px;
+  --font-size-code-fenced-block: 16px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,19 +35,21 @@
     --button-bg-hover: #a3a19e;
     --button-bg: #cfcdca;
     --button-fg: #fff;
-    --highlight-line: hsl(42, 77%, 87%);
-    --highlight-line-add: #8599004b;
-    --highlight-line-remove: #dc322f4b;
-    --code-bg: hsl(46, 20%, 1%);
+    --highlight-line: hsl(54, 42%, 26%);
+    --highlight-line-add: hsla(68, 100%, 30%, 0.29);
+    --highlight-line-remove: hsla(1, 71%, 52%, 0.29);
+    --code-fg: var(--text-color);
+    --code-bg: #2d2d2d;
     --code-executable-bg: hsl(3, 9%, 13%);
-    --code-comment-fg: #626e7a;
-    --code-symbol-fg: #905;
-    --code-string-fg: #517a00;
-    --code-operator-fg: #9a6e3a;
-    --code-tag-fg: #07a;
-    --code-function-fg: #c62e4d;
-    --code-variable-fg: #b47300;
+    --code-comment-fg: #999999;
+    --code-symbol-fg: #ffcc66;
+    --code-string-fg: #99cc99;
+    --code-operator-fg: #cc99cc;
+    --code-tag-fg: #f2777a;
+    --code-function-fg: #6699cc;
+    --code-variable-fg: #f2777a;
     --code-result: #111;
+    --code-selection: rgba(200, 200, 200, 0.5);
   }
 }
 
@@ -78,12 +83,10 @@
 
 .highlight-line-active {
   background-color: var(--highlight-line);
-  border-radius: 3px;
 }
 
 .highlight-line-add {
   background-color: var(--highlight-line-add);
-  border-radius: 3px;
 }
 
 .highlight-line-add:before {
@@ -96,7 +99,6 @@
 
 .highlight-line-remove {
   background-color: var(--highlight-line-remove);
-  border-radius: 3px;
 }
 
 .highlight-line-remove:before {
@@ -121,7 +123,7 @@ pre[class*='language-'] {
   color: var(--text-color);
   background-color: var(--code-bg);
   font-family: var(--font-family-code);
-  font-size: var(--font-size-code);
+  font-size: var(--font-size-code-fenced-block);
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -162,16 +164,26 @@ pre[class*='language-'] {
   background-color: var(--code-bg);
 }
 
+/* Code result */
+
+.code-result {
+  background: var(--code-result);
+}
+
 /* Tokens */
+
+.token.punctuation,
+.token.function,
+.token.selector,
+.token.attr-name {
+  color: var(--code-fg);
+}
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
   color: var(--code-comment-fg);
-}
-
-.token.punctuation {
 }
 
 .token.property,
@@ -184,7 +196,6 @@ pre[class*='language-'] {
 }
 
 .token.attr-value,
-.token.selector,
 .token.string,
 .token.char,
 .token.builtin,
@@ -193,7 +204,6 @@ pre[class*='language-'] {
 }
 
 .token.keyword,
-.token.attr-name,
 .token.operator,
 .token.entity,
 .token.url,
@@ -207,7 +217,6 @@ pre[class*='language-'] {
   color: var(--code-tag-fg);
 }
 
-.token.function,
 .token.class-name {
   color: var(--code-function-fg);
 }

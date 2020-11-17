@@ -12,16 +12,47 @@ const klipseFallbacks = Array.from(
 const klipseActual = Array.from(document.querySelectorAll('.klipse-actual'))
 
 for (const fallback of klipseFallbacks) {
-  const button = document.createElement('button')
-  button.classList.add('run-code-button')
-  button.classList.add('button')
-  button.textContent = 'Run code'
+  const wrapper = fallback.closest('.code-wrapper')
 
-  button.addEventListener('click', () => {
-    const wrapper = fallback.closest('.code-wrapper')
+  const editCodeButton = document.createElement('button')
+  editCodeButton.classList.add('run-code-button')
+  editCodeButton.classList.add('button')
+  editCodeButton.textContent = 'Edit code'
+
+  editCodeButton.addEventListener('click', () => {
     fallback.style.display = 'none'
-    if (wrapper) wrapper.style.display = 'none'
+    if (wrapper) {
+      wrapper.style.display = 'none'
+    }
     wrapper.nextElementSibling.classList.add('active')
   })
-  fallback.insertAdjacentElement('afterend', button)
+
+  const cancelCodeButton = document.createElement('button')
+  cancelCodeButton.classList.add('run-code-button')
+  cancelCodeButton.classList.add('button')
+  cancelCodeButton.textContent = 'Cancel editing code'
+
+  cancelCodeButton.addEventListener('click', () => {
+    fallback.style.display = 'block'
+    if (wrapper) {
+      wrapper.style.display = 'block'
+    }
+    wrapper.nextElementSibling.classList.remove('active')
+  })
+
+  fallback.insertAdjacentElement('afterend', editCodeButton)
+  wrapper.nextElementSibling.insertAdjacentElement(
+    'beforeend',
+    cancelCodeButton
+  )
+
+  // 'execute' html
+
+  const htmlContent = fallback.querySelector('code.language-html')
+  if (htmlContent) {
+    fallback.insertAdjacentHTML(
+      'beforeend',
+      `<hr><div class="code-result">${htmlContent.textContent}</div>`
+    )
+  }
 }

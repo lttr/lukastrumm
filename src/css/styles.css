@@ -58,10 +58,10 @@
     --secondary-color-light: hsl(352, 68%, 77%);
     --tertiary-color: hsl(240, 64%, 55%);
 
-    --text-color: hsl(352, 4%, 89%);
-    --back-color: hsl(352, 5%, 80%);
+    --text-color: hsl(352, 4%, 87%);
+    --back-color: hsl(352, 5%, 40%);
     --light: hsl(352, 19%, 25%);
-    --body-back-color: hsl(352, 4%, 13%);
+    --body-back-color: hsl(352, 4%, 20%);
 
     --box-shadow: rgba(255, 255, 255, 0.12);
   }
@@ -338,7 +338,7 @@ main {
   margin-top: calc(1.24 * 1.24em);
 }
 
-hr {
+.post-content hr {
   display: none;
 }
 
@@ -614,7 +614,16 @@ article .tags {
   border-color: var(--text-color);
 }
 
+/* code blocks */
+
+.code-wrapper hr {
+  display: block;
+  margin: 1rem 0;
+}
+
 .run-code-button {
+  display: flex;
+  margin-left: auto;
   margin-top: 0;
   padding: 0.3em 0.4em;
   font-size: 0.9rem;
