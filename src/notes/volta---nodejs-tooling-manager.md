@@ -8,7 +8,7 @@ tags:
 
 Volta is a nice tool for managing nodejs versions, and installing global npm packages.
 
-The best think is, that you install and forget---volta takes care of which version to use at runtime!
+The best thing is, that you install and forget---volta takes care of which version to use at runtime!
 
 https://docs.volta.sh/
 

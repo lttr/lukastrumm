@@ -628,3 +628,7 @@ article .tags {
   padding: 0.3em 0.4em;
   font-size: 0.9rem;
 }
+
+.cancel-code-button {
+  margin-top: 3rem;
+}

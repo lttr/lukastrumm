@@ -28,7 +28,7 @@ for (const fallback of klipseFallbacks) {
   })
 
   const cancelCodeButton = document.createElement('button')
-  cancelCodeButton.classList.add('run-code-button')
+  cancelCodeButton.classList.add('run-code-button', 'cancel-code-button')
   cancelCodeButton.classList.add('button')
   cancelCodeButton.textContent = 'Cancel editing code'
 
