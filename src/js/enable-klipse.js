@@ -9,8 +9,6 @@ const klipseFallbacks = Array.from(
   document.querySelectorAll('.klipse-fallback')
 )
 
-const klipseActual = Array.from(document.querySelectorAll('.klipse-actual'))
-
 for (const fallback of klipseFallbacks) {
   const wrapper = fallback.closest('.code-wrapper')
 
@@ -24,7 +22,8 @@ for (const fallback of klipseFallbacks) {
     if (wrapper) {
       wrapper.style.display = 'none'
     }
-    wrapper.nextElementSibling.classList.add('active')
+    const klipseActual = wrapper.nextElementSibling
+    klipseActual.classList.add('active')
   })
 
   const cancelCodeButton = document.createElement('button')
@@ -37,7 +36,8 @@ for (const fallback of klipseFallbacks) {
     if (wrapper) {
       wrapper.style.display = 'block'
     }
-    wrapper.nextElementSibling.classList.remove('active')
+    const klipseActual = wrapper.nextElementSibling
+    klipseActual.classList.remove('active')
   })
 
   fallback.insertAdjacentElement('afterend', editCodeButton)

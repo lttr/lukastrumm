@@ -147,7 +147,7 @@ pre .title {
 }
 
 /* Code blocks */
-pre[class*='language-'] {
+pre[class*='language-']:not(.klipse-actual) {
   overflow: auto;
   border-radius: 0.25em;
   padding: 1.4em;
@@ -168,6 +168,7 @@ pre[class*='language-'] {
 
 .code-result {
   background: var(--code-result);
+  white-space: initial;
 }
 
 /* Tokens */

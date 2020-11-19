@@ -1,16 +1,3 @@
-.klipse-actual {
-  visibility: hidden;
-  height: 0;
-  opacity: 0;
-  transition: height 0.24s ease-in-out, opacity 0.24s ease-in-out;
-}
-
-.klipse-actual.active {
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-}
-
 .klipse-snippet,
 .klipse-result {
   position: relative;
@@ -52,7 +39,7 @@
   content: 'Result';
 }
 
-pre[class*='language-'].klipse-actual {
+pre[class*='language-'].klipse-actual.active {
   padding: 0.5rem;
 }
 
@@ -79,9 +66,19 @@ pre[class*='language-'].klipse-actual {
   background-color: var(--body-back-color);
 }
 
-.klipse-result {
-  /* margin-top: 0.5rem; */
-  /* background-color: var(--body-back-color); */
+.klipse-actual {
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  transition: height 0.24s ease-in-out, opacity 0.24s ease-in-out;
+}
+
+.klipse-actual.active {
+  visibility: visible;
+  height: auto;
+  opacity: 1;
 }
 
 /* PADDING */
