@@ -11,11 +11,11 @@ Recently I have finished the Flexbox zombies game. The way the author forces you
 
 [Flexbox zombies](https://flexboxzombies.com) is an online course that teaches you the `display: flex` css property. It presents quite a boring topic---placing items on a screen---in a very atractive way.
 
-Even if you think you know css flexbox I would still recommend it, because it is interesting how it is presented directly inside a browser and everything is interactive. And you will probably find out you dont know everything. I have found a couple of new facts and following are some notes about it.
+Even if you think you know css flexbox I would still recommend it, because it is interesting how it is presented directly inside a browser and everything is interactive. And you will probably find out you don't know everything. I have found a couple of new facts and following are some notes about it.
 
 ## Start with display: flex
 
-The number of times one have to write `display: flex` in the course is overwhelming... at the end it was worth it. As the author said---it is about deliberate practice.
+The number of times one have to write `display: flex` in the course is overwhelming, but at the end, it was worth it. As the author said---it is about deliberate practice.
 
 Lets define a class with `display: flex` and a couple of other properties.
 
@@ -106,7 +106,7 @@ Shorthand property `flex` combines `flex-grow`, `flex-shrink` and `flex-basis`. 
 
 ## Align content
 
-In the following example the `align-content` property pushes all the items to the center of the container while `align-items` to the center of their rows.
+In the following example the `align-content` property pushes all the items to the vertical center of the container while `align-items` to the center of their lines.
 
 ```html/3,8 {run}
 <style>
@@ -143,7 +143,7 @@ In the following example the `align-content` property pushes all the items to th
 
 There are new properties available in some browsers that are not mentioned in the Flexbox zombies course.
 
-One is `gap`:
+One is [`gap`](https://developer.mozilla.org/en-US/docs/Web/CSS/gap):
 
 ```html {run}
 <style>
@@ -158,7 +158,7 @@ One is `gap`:
 </div>
 ```
 
-Another one is `place-content` a shorthand for `justify-content` and `align-content`:
+Another one is [`place-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/place-content) a shorthand for `justify-content` and `align-content`:
 
 ```html {run}
 <style>
@@ -177,3 +177,9 @@ Another one is `place-content` a shorthand for `justify-content` and `align-cont
   <div class="flex-item">Item 3</div>
 </div>
 ```
+
+## Conclusion
+
+The Flexbox zombies is a great course and great game at the same time. That's rare!
+
+I don't remember if the course mentioned a very useful value of `justify-content`: `space-evenly`. Other than that it is very thorough. I highly recommend this style of learning!
