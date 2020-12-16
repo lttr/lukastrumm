@@ -367,10 +367,6 @@ article svg {
   max-width: 100%;
 }
 
-.hide-white-background {
-  mix-blend-mode: darken;
-}
-
 /* toc */
 
 .table-of-contents {

@@ -108,11 +108,7 @@ Hover over a heading, click the `#` sign and use targeted url...
 
 Look, this is a `<figure>` with caption.
 
-<div class="hide-white-background">
-
 ![Box with title App depend on a bunch of Libs](/img/dependencies.png)
-
-</div>
 
 ## My custom plugins
 
