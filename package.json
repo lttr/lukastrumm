@@ -36,7 +36,7 @@
     "copyfiles": "^2.4.1",
     "cypress": "^6.1.0",
     "eleventy-plugin-error-overlay": "^0.1.2",
-    "eleventy-plugin-lazyimages": "^2.0.1",
+    "eleventy-plugin-lazyimages": "^2.1.0",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-markdown": "^1.0.2",
