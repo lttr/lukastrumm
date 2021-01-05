@@ -35,7 +35,7 @@
     --button-bg-hover: #a3a19e;
     --button-bg: #cfcdca;
     --button-fg: #fff;
-    --highlight-line: hsl(54, 42%, 26%);
+    --highlight-line: hsl(54, 30%, 23%);
     --highlight-line-add: hsla(68, 100%, 30%, 0.29);
     --highlight-line-remove: hsla(1, 71%, 52%, 0.29);
     --code-fg: var(--text-color);
