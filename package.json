@@ -41,7 +41,7 @@
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-markdown": "^1.0.2",
     "eslint-plugin-prettier": "^3.1.4",
-    "flat-cache": "^2.0.1",
+    "flat-cache": "^3.0.4",
     "glob": "^7.1.6",
     "klipse": "^7.10.5",
     "linkifyjs": "^2.1.9",
