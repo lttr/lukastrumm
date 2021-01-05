@@ -8,7 +8,8 @@ module.exports = {
 
   render(data) {
     // TODO fix stack overflow
-    const dataInspector = null // renderData(data)
+    const dataInspector = null
+    // const dataInspector = renderData(data)
     const stats = renderStats(data)
     return html`
       <style>
@@ -66,12 +67,8 @@ module.exports = {
       </style>
       <button id="expand-all">Expand all</button>
       <button id="collapse-all">Collapse all</button>
-      <section class="data-inspector">
-        ${dataInspector}
-      </section>
-      <section class="stats">
-        ${stats}
-      </section>
+      <section class="data-inspector">${dataInspector}</section>
+      <section class="stats">${stats}</section>
       <script>
         function saveToStorage(key, opened) {
           const item = sessionStorage.getItem('eleventy-data-inspector')
@@ -216,18 +213,14 @@ function renderKeys(data, filter, content) {
 
 function renderKey(data, key, content) {
   const value = data[key]
-  return html`
-    <li>
-      ${content(key, value)}
-    </li>
-  `
+  return html` <li>${content(key, value)}</li> `
 }
 
 function renderSummary(key, value, excerpt = null) {
   stats.nodes += 1
   return html`
-    <summary
-      >${key}
+    <summary>
+      ${key}
       <em>${classify(value)}</em>
       ${!isNullOrUndefined(excerpt)
         ? html`<i>${shorten(stringify(excerpt))}</i>`
@@ -276,11 +269,7 @@ function renderCollection(data) {
       ${renderSummary(key, value, value.url)} ${renderPost(value)}
     </details>
   `
-  return html`
-    <detail>
-      ${renderKeys(data, filter, content)}
-    </detail>
-  `
+  return html` <detail> ${renderKeys(data, filter, content)} </detail> `
 }
 
 // /collections/<collection>/<post>

@@ -17,19 +17,17 @@ module.exports = {
       updatedDate = new Date(lastUpdate.date)
     }
 
-    sectionClasses = ['post-content']
+    postContentSectionClasses = ['post-content']
     if (excerpt) {
-      sectionClasses.push('has-excerpt')
+      postContentSectionClasses.push('has-excerpt')
     }
 
     const template = html`
       <article>
         <header>
           ${title && html`<h1>${title}</h1>`}
-          <p>
-            <time datetime="${date.toISOString()}">
-              ${formatDate(date)}
-            </time>
+          <p class="post-header-description">
+            <time datetime="${date.toISOString()}">${formatDate(date)}</time>
             ${updatedDate
               ? html`
                   <time datetime="${date.toISOString()}">
@@ -37,24 +35,26 @@ module.exports = {
                   </time>
                 `
               : ''}
+            ${tags
+              ? html`
+                  <span class="tags">
+                    ${tags.map((tag) => {
+                      const url = `/tag/${tag}`
+                      return html`
+                        <a href="${url}" class="tag-badge">${tag}</a>
+                      `
+                    })}
+                  </span>
+                `
+              : ''}
           </p>
         </header>
 
-        <section class="${sectionClasses.join(' ')}">
+        <section class="${postContentSectionClasses.join(' ')}">
           ${raw`${content}`}
         </section>
 
         <footer>
-          ${tags
-            ? html`
-                <section class="tags">
-                  ${tags.map((tag) => {
-                    const url = `/tag/${tag}`
-                    return html` <a href="${url}" class="tag-badge">${tag}</a> `
-                  })}
-                </section>
-              `
-            : ''}
           ${currentArticleUpdates
             ? html`
                 <section class="updates">

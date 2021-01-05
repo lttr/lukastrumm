@@ -54,7 +54,7 @@
   :root {
     /* site colors */
     --primary-color: hsl(352, 0%, 70%);
-    --secondary-color: hsl(352, 100%, 66%);
+    --secondary-color: hsl(352, 100%, 72%);
     --secondary-color-light: hsl(352, 68%, 77%);
     --tertiary-color: hsl(240, 64%, 55%);
 
@@ -65,6 +65,15 @@
 
     --box-shadow: rgba(255, 255, 255, 0.12);
   }
+}
+
+/* useful colors */
+example {
+  color: darkcyan;
+  color: darkgreen;
+  color: cadetblue;
+  color: rebeccapurple;
+  color: purple;
 }
 
 /* general */
@@ -98,11 +107,6 @@ blockquote,
 dl,
 dd {
   margin: 0;
-}
-
-/* lobotomized owl selector */
-article * + * {
-  margin-top: 1.11em;
 }
 
 html,
@@ -319,9 +323,20 @@ main {
 
 /* article */
 
+.post-header-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .post-content {
   position: relative;
   overflow-wrap: break-word;
+}
+
+/* lobotomized owl selector */
+.post-content > * + * {
+  margin-top: 1.11rem;
 }
 
 .post-content.has-excerpt > p:first-child {
@@ -359,6 +374,7 @@ figure {
 figcaption {
   text-align: center;
   font-style: italic;
+  margin-top: 1rem;
 }
 
 article img,
@@ -416,6 +432,7 @@ article svg {
 .updates {
   color: var(--primary-color);
   font-style: italic;
+  margin-top: 2em;
 }
 
 .updates .toc-heading {
@@ -572,6 +589,9 @@ article .tags {
 
 .card .excerpt {
   font-size: var(--small-font);
+  font-style: italic;
+  margin-top: 0.5em;
+  margin-bottom: 0;
 }
 
 .card br {

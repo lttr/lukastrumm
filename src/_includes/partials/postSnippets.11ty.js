@@ -10,9 +10,7 @@ function postInline(data, includeDate = true) {
     <a href="${url}">${title}</a>
     ${includeDate
       ? html`
-          <time datetime="${date.toISOString()}">
-            ${formatDate(date)}
-          </time>
+          <time datetime="${date.toISOString()}">${formatDate(date)}</time>
         `
       : ''}
   `
@@ -25,12 +23,8 @@ function postWithExcerpt(data) {
   } = data
   return html`
     <a href="${url}" class="article-title">${title}</a><br />
-    <time datetime="${date.toISOString()}">
-      ${formatDate(date)}
-    </time>
-    <p class="excerpt">
-      ${excerpt}
-    </p>
+    <time datetime="${date.toISOString()}">${formatDate(date)}</time>
+    <p class="excerpt">${excerpt}</p>
   `
 }
 
