@@ -52,6 +52,11 @@ module.exports = {
 
         <h2>Work experience</h2>
 
+        <p><strong>2020 &ndash; 2021 Hanaboso</strong></p>
+        <ul>
+          <li>VueJS, Nuxt, GraphQL, Bootstrap, design systems</li>
+        </ul>
+
         <p><strong>2017 &ndash; 2020 Domat Control System</strong></p>
         <ul>
           <li>
