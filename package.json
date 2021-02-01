@@ -40,7 +40,7 @@
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-markdown": "^1.0.2",
-    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-prettier": "^3.3.1",
     "flat-cache": "^3.0.4",
     "glob": "^7.1.6",
     "klipse": "^7.10.5",
