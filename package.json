@@ -45,7 +45,7 @@
     "glob": "^7.1.6",
     "klipse": "^7.10.5",
     "linkifyjs": "^2.1.9",
-    "markdown-it": "^12.0.2",
+    "markdown-it": "^12.0.4",
     "markdown-it-anchor": "^6.0.1",
     "markdown-it-footnote": "^3.0.2",
     "markdown-it-highlight-lines": "^1.0.2",
