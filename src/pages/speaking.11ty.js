@@ -53,12 +53,8 @@ function renderTalk(data) {
       <article class="card">
         <div class="card-body">
           <a href="${readmeUrl}" class="article-title">${title}</a><br />
-          <time datetime="${date.toISOString()}">
-            ${formatDate(date)}
-          </time>
-          <p class="excerpt">
-            ${excerpt}
-          </p>
+          <time datetime="${date.toISOString()}"> ${formatDate(date)} </time>
+          <p class="excerpt">${excerpt}</p>
         </div>
         <div class="card-embed">
           ${image &&

@@ -24,9 +24,7 @@ module.exports = function base(eleventy, content, data) {
       <body>
         <div class="page-wrapper">
           ${header(eleventy, data)}
-          <main>
-            ${content}
-          </main>
+          <main>${content}</main>
           ${footer(eleventy, data)}
         </div>
         <script>

@@ -6,9 +6,7 @@ module.exports = {
     const { content, title } = data
     const template = html`
       <article>
-        <header>
-          ${title && html`<h1>${title}</h1>`}
-        </header>
+        <header>${title && html`<h1>${title}</h1>`}</header>
         ${raw`${content}`}
       </article>
     `
