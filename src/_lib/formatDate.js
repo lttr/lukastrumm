@@ -31,7 +31,16 @@ function formatDateNumeric(dateTime) {
   return formatDate(dateTime, options)
 }
 
+function formatMonthAndYear(dateTime) {
+  const options = {
+    year: 'numeric',
+    month: 'long',
+  }
+  return formatDate(dateTime, options)
+}
+
 module.exports = {
   formatDate,
   formatDateNumeric,
+  formatMonthAndYear,
 }
