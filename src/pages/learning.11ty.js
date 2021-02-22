@@ -24,8 +24,7 @@ module.exports = {
       }, {})
 
     return html`
-      <pre>${JSON.stringify(closedByYearMap, null, 2)}</pre>
-      <pre><em>This is my learning progress.</em></pre>
+      <p><em>This is my learning progress.</em></p>
       <h2>Upcomming</h2>
       <ul>
         ${data.learningProgressIssues
