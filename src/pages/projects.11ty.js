@@ -99,12 +99,8 @@ function renderLab(data) {
       <article class="card">
         <div class="card-body">
           <a href="${readmeUrl}" class="article-title">${title}</a><br />
-          <time datetime="${date.toISOString()}">
-            ${formatDate(date)}
-          </time>
-          <p class="excerpt">
-            ${excerpt}
-          </p>
+          <time datetime="${date.toISOString()}"> ${formatDate(date)} </time>
+          <p class="excerpt">${excerpt}</p>
         </div>
         <div class="card-embed">
           <a href="${labUrl}">
@@ -123,9 +119,7 @@ function renderRepo(repo) {
         <div class="card-body">
           <header class="repo-header">
             <div class="repo-name">
-              <a href="${repo.html_url}">
-                ${repo.name}
-              </a>
+              <a href="${repo.html_url}"> ${repo.name} </a>
               <span class="repo-site">
                 ${repo.homepage
                   ? html`( <a href="${repo.homepage}">SITE</a> )`
@@ -136,9 +130,7 @@ function renderRepo(repo) {
               <time><i>Last activity:</i> ${formatDate(repo.pushed_at)}</time>
             </div>
           </header>
-          <div class="repo-description">
-            ${repo.description}
-          </div>
+          <div class="repo-description">${repo.description}</div>
           ${repo.language
             ? html`<div class="repo-lang">
                 <i>Main language:</i>
