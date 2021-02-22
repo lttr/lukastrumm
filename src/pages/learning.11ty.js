@@ -28,7 +28,7 @@ module.exports = {
       <h2>Upcomming</h2>
       <ul>
         ${data.learningProgressIssues
-          .filter((issue) => issue.state === 'opened')
+          .filter((issue) => issue.state === 'open')
           .map(
             (issue) => html`<li>
               <h4>${issue.title}</h4>
