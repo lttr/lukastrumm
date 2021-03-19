@@ -14,9 +14,13 @@ module.exports = {
       blogsByYear[year].push(blog)
       return blogsByYear
     }, {})
+    const postsByYearEntries = Object.entries(postsByYear)
+    postsByYearEntries.sort(([yearA], [yearB]) => {
+      return Number(yearB) - Number(yearA)
+    })
 
     return html`
-      ${Object.entries(postsByYear).map(([year, posts]) => {
+      ${postsByYearEntries.map(([year, posts]) => {
         return html`
           <h2>${year}</h2>
           <ul>
