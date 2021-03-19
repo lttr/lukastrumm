@@ -20,7 +20,7 @@ module.exports = {
         <h1>Lukas Trumm</h1>
 
         <p class="links">
-          <span>email: lukas.trumm@gmail.com</span>
+          <span>email: lukas.trumm on gmail</span>
           <span>location: Czech Republic</span>
         </p>
         <p class="links">
@@ -52,9 +52,18 @@ module.exports = {
 
         <h2>Work experience</h2>
 
-        <p><strong>2020 &ndash; 2021 Hanaboso</strong></p>
+        <p><strong>2020 &ndash; present Hanaboso</strong></p>
         <ul>
-          <li>VueJS, Nuxt, GraphQL, Bootstrap, design systems</li>
+          <li>Senior frontend engineer</li>
+          <li>
+            I have worked on several public facing web applications and large
+            sites in cross-functional teams
+          </li>
+          <li>
+            I have developed a design system and used technologies like VueJS,
+            Nuxt, GraphQL, Sass, Bootstrap, Storybook, atomic design and a
+            headless CMS
+          </li>
         </ul>
 
         <p><strong>2017 &ndash; 2020 Domat Control System</strong></p>

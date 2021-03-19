@@ -23,4 +23,7 @@ I love running in the nature. In difficult (inspiring) conditions one can come u
 - [Website](http://www.ctyriadvacitka.wz.cz) of my scout group
 - [My Github](https://github.com/lttr/) profile
 
-[About this site](/about-this-site)
+## Meta
+
+- [About this site](/about-this-site)
+- [CV](/cv)
