@@ -15,3 +15,4 @@ tags: ['javascript', 'data-manipulation']
 - [Underdash](https://surma.github.io/underdash/)
 - [Lodash](https://lodash.com/)
 - [Composing software](https://medium.com/javascript-scene/transducers-efficient-data-processing-pipelines-in-javascript-7985330fe73d)
+- [Iterators for all the collections](https://www.wix.engineering/post/breaking-chains-with-pipelines-in-modern-javascript)
