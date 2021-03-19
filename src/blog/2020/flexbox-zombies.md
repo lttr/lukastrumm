@@ -3,6 +3,7 @@ title: Flexbox zombies
 date: 2020-11-14
 tags:
   - css
+  - learning
 ---
 
 Recently I have finished the Flexbox zombies game. The way the author forces you to deliberately practice a skill is great.

@@ -2,6 +2,10 @@ const { html, raw } = require('../_lib/html')
 const { formatMonthAndYear } = require('../_lib/formatDate')
 const linkifyStr = require('linkifyjs/string')
 
+function insertNewlines(str) {
+  return str.replace(/(\r\n)+/g, '<br>').replace(/(\n)+/g, '<br>')
+}
+
 module.exports = {
   data: {
     title: 'Learning',
@@ -33,7 +37,7 @@ module.exports = {
             .map(
               (issue) => html`<li>
                 <h4>${issue.title}</h4>
-                <p>${raw`${linkifyStr(issue.body)}`}</p>
+                <p>${raw`${insertNewlines(linkifyStr(issue.body))}`}</p>
               </li>`
             )}
         </ul>
@@ -50,7 +54,7 @@ module.exports = {
                 .map(
                   (issue) => html`<li>
                     <h4>${issue.title}</h4>
-                    <p>${raw`${linkifyStr(issue.body)}`}</p>
+                    <p>${raw`${insertNewlines(linkifyStr(issue.body))}`}</p>
                     <p>
                       <em
                         >finished in ${formatMonthAndYear(issue.closed_at)}</em
@@ -71,7 +75,7 @@ module.exports = {
             .map(
               (issue) => html`<li>
                 <h4>${issue.title}</h4>
-                <p>${raw`${linkifyStr(issue.body)}`}</p>
+                <p>${raw`${insertNewlines(linkifyStr(issue.body))}`}</p>
               </li>`
             )}
         </ul>

@@ -4,6 +4,7 @@ date: 2021-02-15
 tags:
   - frontend
   - components
+  - learning
 ---
 
 ## Templating

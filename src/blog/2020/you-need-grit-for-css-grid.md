@@ -3,6 +3,7 @@ title: You need grit for css grid
 date: 2020-12-29
 tags:
   - css
+  - learning
 ---
 
 CSS grid is an awesome piece of browser technology. The other side is that the concepts are not super intuitive and there is some work to be done before you can appreciate it. Endurance and passion is needed. Courage. Grit. Especially with those grid lines...
