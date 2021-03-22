@@ -37,7 +37,7 @@
     path = "/blog/2020/markdown-capabilities-in-eleventy/"
 
   [plugins.inputs.thresholds]
-    performance = 0.8
+    performance = 0.6
     accessibility = 0.9
     best-practices = 0.9
     seo = 0.9
