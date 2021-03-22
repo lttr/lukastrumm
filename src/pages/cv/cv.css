@@ -24,7 +24,3 @@ h1 {
 .links > *:not(:last-child) {
   margin-right: 1rem;
 }
-
-article * + * {
-  margin-top: 1.1em;
-}

@@ -130,9 +130,19 @@ h6 {
 }
 
 h1 {
+  font-size: 2rem !important;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  font-size: 2rem;
+}
+
+h2 {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1rem;
 }
 
 ul > li + li,
