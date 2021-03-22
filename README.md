@@ -1,6 +1,6 @@
 # lukastrumm.com
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/907021ec-61b6-42ba-ac7e-c1740214bddd/deploy-status)](https://app.netlify.com/sites/lukastrumm/deploys) &nbsp; [![](https://github.com/lttr/lukastrumm/workflows/Lighthouse%20Audit/badge.svg)](https://github.com/lttr/lukastrumm/actions?query=workflow%3A%22Lighthouse+Audit%22)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/907021ec-61b6-42ba-ac7e-c1740214bddd/deploy-status)](https://app.netlify.com/sites/lukastrumm/deploys)
 
 This is my personal website.
 
