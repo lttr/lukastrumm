@@ -30,6 +30,12 @@
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
 
+  [[plugins.inputs.audits]]
+    path = ""
+
+  [[plugins.inputs.audits]]
+    path = "/blog/2020/markdown-capabilities-in-eleventy/"
+
   [plugins.inputs.thresholds]
     performance = 0.9
     accessibility = 0.9
