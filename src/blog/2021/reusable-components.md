@@ -101,3 +101,7 @@ document.getElementById('b4').innerHTML
   = MyButtonComponent((level) => `My Powerful Button (level: ${level})`)
 </script>
 <br />
+
+## Extension
+
+## Nesting
