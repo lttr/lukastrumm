@@ -9,6 +9,7 @@ degit
 gzipped
 html-to-text
 install-latest
+npm-check-updates
 mit-licence
 recursive-install
 sort-package-json
