@@ -30,7 +30,7 @@
     "@11ty/eleventy": "^0.11.1",
     "@11ty/eleventy-plugin-inclusive-language": "^1.0.0",
     "@11ty/eleventy-plugin-rss": "^1.1.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
     "@netlify/plugin-lighthouse": "^1.4.2",
     "@npmcli/git": "^2.0.6",
     "copyfiles": "^2.4.1",
