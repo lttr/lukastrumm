@@ -11,8 +11,7 @@ module.exports = {
   render() {
     const styles = html`<style>
       ${css`
-        ${inline(path.join(__dirname, 'cv.css'))}
-      `}
+        ${inline(path.join(__dirname, 'cv.css'))}`}
     </style> `
     return html`
       ${styles}
@@ -54,15 +53,15 @@ module.exports = {
 
       <h3>2020 &ndash; present Hanaboso</h3>
       <ul>
-        <li>Senior frontend engineer</li>
+        <li>Team leader / architect</li>
         <li>
           I have worked on several public facing web applications and large
           sites in cross-functional teams
         </li>
         <li>
-          I have developed a design system and used technologies like VueJS,
-          Nuxt, GraphQL, Sass, Bootstrap, Storybook, atomic design and a
-          headless CMS
+          I have developed a design system with suport for RTL languages and
+          used technologies like VueJS, Nuxt, GraphQL, Sass, Bootstrap,
+          Storybook, atomic design and a headless CMS
         </li>
       </ul>
 

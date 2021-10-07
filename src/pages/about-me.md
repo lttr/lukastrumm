@@ -3,13 +3,15 @@ title: About me
 permalink: /about/
 ---
 
+**Husband | Father | Software engineer | Scout leader | Endurance runner | Craftsman at home**
+
 <img src="/img/lt.jpg"
-    width="220"
-    height="220"
+    width="320"
+    height="320"
     alt="Lukas Trumm"
     style="border-radius: 6px; margin: 0px 0px 10px 15px; float: right;">
 
-I am Lukas Trumm, software developer, scout leader and mountain runner.
+I love doing work that brings joy to everyone involved. I love my family. I love being alone and improving my craft.
 
 I strongly believe in the principles of the Scout movement. Software engineering craftsmanship is an area of my big interest in which I strive to do a professional job. It is a _duty to myself_ to excel in my profession.
 
@@ -20,7 +22,7 @@ I love running in the nature. In difficult (inspiring) conditions one can come u
 ### References
 
 - [Principles](https://www.scout.org/promiseandlaw) of the Scout movement
-- [Website](http://www.ctyriadvacitka.wz.cz) of my scout group
+- [Website](https://ctyriadvacitka.skauting.cz) of my scout group
 - [My Github](https://github.com/lttr/) profile
 
 ## Meta
