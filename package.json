@@ -51,7 +51,7 @@
     "markdown-it-highlight-lines": "^1.0.2",
     "markdown-it-implicit-figures": "^0.10.0",
     "markdown-it-table-of-contents": "^0.5.2",
-    "mermaid": "^8.9.2",
+    "mermaid": "^8.13.8",
     "netlify-plugin-cypress": "^2.1.0",
     "netlify-plugin-no-more-404": "0.0.15",
     "node-fetch": "^2.6.1",
