@@ -1,3 +1,7 @@
+/* stylelint-disable emptyRules */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable selector-class-pattern */
+
 .klipse-snippet,
 .klipse-result {
   position: relative;
@@ -397,10 +401,6 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   height: 100%;
   display: inline-block;
   margin-bottom: -30px;
-
-  /* Hack to make IE7 behave */
-  *zoom: 1;
-  *display: inline;
 }
 
 .CodeMirror-gutter-wrapper {

@@ -58,6 +58,7 @@
   stroke: var(--magenta) !important;
 }
 
+/* stylelint-disable-next-line selector-class-pattern */
 [id^='mermaid'] .edgeLabel {
   background-color: var(--body-back-color) !important;
 }
