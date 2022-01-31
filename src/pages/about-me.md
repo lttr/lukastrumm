@@ -3,13 +3,15 @@ title: About me
 permalink: /about/
 ---
 
-**Husband | Father | Software engineer | Scout leader | Endurance runner | Craftsman at home**
+**Husband | Father | Software eng | Scout leader | Endurance runner | Craftsman**
 
+<div class="text-align: center">
 <img src="/img/lt.jpg"
     width="320"
     height="320"
     alt="Lukas Trumm"
-    style="border-radius: 6px; margin: 0px 0px 10px 15px; float: right;">
+    style="border-radius: 6px; margin: 2rem;" />
+</div>
 
 I love doing work that brings joy to everyone involved. I love my family. I love being alone and improving my craft.
 
