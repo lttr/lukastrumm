@@ -17,7 +17,7 @@
     "clean": "rimraf dist/*",
     "build": "eleventy",
     "debug": "DEBUG=Eleventy* eleventy",
-    "serve": "npm run clean && DEV=true eleventy --watch --serve --incremental --port 2000",
+    "serve": "npm run clean && DEV=true eleventy --watch --serve --port 2000",
     "lint": "eslint src/**/*.{js,md}",
     "format": "prettier src/**/* --write",
     "start": "npm run serve",
@@ -35,7 +35,6 @@
     "@npmcli/git": "^2.1.0",
     "copyfiles": "^2.4.1",
     "cypress": "^9.2.1",
-    "eleventy-plugin-error-overlay": "^0.1.2",
     "eleventy-plugin-lazyimages": "^2.1.2",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
@@ -44,6 +43,7 @@
     "flat-cache": "^3.0.4",
     "glob": "^7.2.0",
     "klipse": "^7.11.2",
+    "linkify-string": "^3.0.4",
     "linkifyjs": "^3.0.5",
     "markdown-it": "^12.3.2",
     "markdown-it-anchor": "^8.4.1",
@@ -60,6 +60,9 @@
     "puppeteer": "^13.0.1",
     "rimraf": "^3.0.2",
     "simple-icons": "^6.6.0",
+    "stylelint": "^14.2.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^24.0.0",
     "ucontent": "^2.0.0"
   }
 }

@@ -1,6 +1,6 @@
 const { html, raw } = require('../_lib/html')
 const { formatMonthAndYear } = require('../_lib/formatDate')
-const linkifyStr = require('linkifyjs/string')
+const linkifyStr = require('linkify-string')
 
 function insertNewlines(str) {
   return str.replace(/(\r\n)+/g, '<br>').replace(/(\n)+/g, '<br>')

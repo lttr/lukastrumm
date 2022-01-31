@@ -6,21 +6,20 @@
   --small-font: 0.9rem;
 
   /* site colors */
-  --primary-color: hsl(352, 0%, 44%);
-  --secondary-color: hsl(352, 68%, 48%);
-  --secondary-color-light: hsl(352, 68%, 77%);
-  --tertiary-color: hsl(240, 64%, 55%);
-
-  --text-color: hsl(352, 4%, 13%);
-  --back-color: hsl(352, 5%, 80%);
-  --light: hsl(352, 19%, 96%);
-  --body-back-color: hsl(352, 19%, 99%);
-  --box-shadow: rgba(0, 0, 0, 0.12);
+  --primary-color: hsl(352deg 0% 44%);
+  --secondary-color: hsl(352deg 68% 48%);
+  --secondary-color-light: hsl(352deg 68% 77%);
+  --tertiary-color: hsl(240deg 64% 55%);
+  --text-color: hsl(352deg 4% 13%);
+  --back-color: hsl(352deg 5% 80%);
+  --light: hsl(352deg 19% 96%);
+  --body-back-color: hsl(352deg 19% 99%);
+  --box-shadow: rgb(0 0 0 / 12%);
 
   /* fonts */
-  --heading-font: 'Raleway', Arial, Helvetica, sans-serif;
+  --heading-font: 'Raleway', arial, helvetica, sans-serif;
   --heading-font-weight: 600;
-  --body-font: 'Charter', Georgia, serif;
+  --body-font: 'Charter', georgia, serif;
   --font-size: 18px;
 
   /* solarized colors */
@@ -53,22 +52,20 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* site colors */
-    --primary-color: hsl(352, 0%, 70%);
-    --secondary-color: hsl(352, 100%, 72%);
-    --secondary-color-light: hsl(352, 68%, 77%);
-    --tertiary-color: hsl(240, 64%, 55%);
-
-    --text-color: hsl(352, 4%, 87%);
-    --back-color: hsl(352, 5%, 40%);
-    --light: hsl(352, 19%, 25%);
-    --body-back-color: hsl(352, 4%, 20%);
-
-    --box-shadow: rgba(255, 255, 255, 0.12);
+    --primary-color: hsl(352deg 0% 70%);
+    --secondary-color: hsl(352deg 100% 72%);
+    --secondary-color-light: hsl(352deg 68% 77%);
+    --tertiary-color: hsl(240deg 64% 55%);
+    --text-color: hsl(352deg 4% 87%);
+    --back-color: hsl(352deg 5% 40%);
+    --light: hsl(352deg 19% 25%);
+    --body-back-color: hsl(352deg 4% 20%);
+    --box-shadow: rgb(255 255 255 / 12%);
   }
 }
 
 /* useful colors */
-example {
+.example-only {
   color: darkcyan;
   color: darkgreen;
   color: cadetblue;
@@ -83,8 +80,8 @@ html {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -184,7 +181,7 @@ table {
 table tbody td,
 table thead th {
   border: 1px solid #dbdbdb;
-  border-width: 0 0 1px 0;
+  border-width: 0 0 1px;
   text-align: left;
   padding: 0.5em 0.6em;
   vertical-align: top;
@@ -198,6 +195,28 @@ time {
   font-size: var(--small-font);
   color: var(--primary-color);
   font-style: italic;
+}
+
+/* images */
+
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+figcaption {
+  text-align: center;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+article img,
+article svg {
+  height: auto;
+  max-width: 100%;
 }
 
 /* layout */
@@ -246,12 +265,12 @@ main {
   padding: 0.2rem 0.7rem;
 }
 
-.social-icon {
+.page-footer .social-icon {
   position: relative;
   bottom: -3px;
 }
 
-.social-icon svg {
+.page-footer .social-icon svg {
   fill: currentColor;
   height: 1rem;
 }
@@ -331,68 +350,6 @@ main {
   display: none;
 }
 
-/* article */
-
-.post-header-description {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.post-content {
-  position: relative;
-  overflow-wrap: break-word;
-}
-
-/* lobotomized owl selector */
-.post-content > * + * {
-  margin-top: 1.11rem;
-}
-
-.post-content.has-excerpt > p:first-child {
-  font-style: italic;
-  padding-bottom: 1em;
-  border-bottom: 1px solid var(--back-color);
-}
-
-.post-content:not(.has-excerpt) {
-  border-top: 1px solid var(--back-color);
-}
-
-.post-content:not(.has-excerpt) > *:first-child {
-  margin-top: calc(1.24 * 1.24em);
-}
-
-.post-content hr {
-  display: none;
-}
-
-.footnotes {
-  border-top: 1px solid var(--back-color);
-}
-
-/* images */
-
-figure {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-}
-
-figcaption {
-  text-align: center;
-  font-style: italic;
-  margin-top: 1rem;
-}
-
-article img,
-article svg {
-  height: auto;
-  max-width: 100%;
-}
-
 /* toc */
 
 .table-of-contents {
@@ -415,26 +372,25 @@ article svg {
 }
 
 /* header anchor */
-.header-anchor,
-.header-anchor:visited {
-  visibility: hidden;
-}
-
 .header-anchor {
-  color: var(--primary-color);
+  color: var(--text-color);
 }
 
-.header-anchor:hover {
-  text-decoration: none;
+.header-anchor:hover::before,
+.header-anchor:focus::before {
+  content: url('/img/link-dark.svg');
+  left: -25px;
+  position: relative;
+  float: left;
+  width: 0;
+  height: 0;
 }
 
-:focus > .header-anchor,
-:focus > .header-anchor:visited,
-:hover > .header-anchor,
-:hover > .header-anchor:visited,
-.header-anchor:focus,
-.header-anchor:focus:visited {
-  visibility: visible;
+@media (prefers-color-scheme: dark) {
+  .header-anchor:hover::before,
+  .header-anchor:focus::before {
+    content: url('/img/link-light.svg');
+  }
 }
 
 /* updates */
@@ -491,6 +447,46 @@ article .tags {
   font-family: arial, sans-serif;
 }
 
+/* article */
+
+.post-header-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-content {
+  position: relative;
+  overflow-wrap: break-word;
+}
+
+/* lobotomized owl selector */
+.post-content > * + * {
+  margin-top: 1.11rem;
+}
+
+.post-content.has-excerpt > p:first-child {
+  font-style: italic;
+  padding-bottom: 1em;
+  border-bottom: 1px solid var(--back-color);
+}
+
+.post-content:not(.has-excerpt) {
+  border-top: 1px solid var(--back-color);
+}
+
+.post-content:not(.has-excerpt) > *:first-child {
+  margin-top: calc(1.24 * 1.24em);
+}
+
+.post-content hr {
+  display: none;
+}
+
+.footnotes {
+  border-top: 1px solid var(--back-color);
+}
+
 /* mermaid */
 
 .mermaid * {
@@ -539,6 +535,7 @@ article .tags {
   stroke: var(--magenta) !important;
 }
 
+/* stylelint-disable-next-line selector-class-pattern */
 .mermaid .edgeLabel {
   background-color: var(--body-back-color) !important;
 }
@@ -592,7 +589,7 @@ article .tags {
 .card {
   border: 1px solid #dddbda;
   border-radius: 0.1em;
-  box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 2px 2px 0 rgb(0 0 0 / 10%);
   list-style-type: none;
   padding: 1em 0.7em;
 }
@@ -613,13 +610,13 @@ article .tags {
   display: inline-block;
 }
 
-.card-embed a {
+.card .card-embed a {
   display: block;
   height: 100%;
   border: 1px solid var(--back-color);
 }
 
-.card-embed a:hover {
+.card .card-embed a:hover {
   border: 1px solid var(--primary-color);
 }
 
