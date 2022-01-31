@@ -86,6 +86,7 @@ pre[class*='language-'].klipse-actual.active {
 .CodeMirror-lines {
   padding: 1.4em; /* Vertical padding around content */
 }
+
 .CodeMirror pre {
   padding: 0 4px; /* Horizontal padding of content */
 }
@@ -102,8 +103,10 @@ pre[class*='language-'].klipse-actual.active {
   background-color: #f7f7f7;
   white-space: nowrap;
 }
+
 .CodeMirror-linenumbers {
 }
+
 .CodeMirror-linenumber {
   padding: 0 3px 0 5px;
   min-width: 20px;
@@ -115,6 +118,7 @@ pre[class*='language-'].klipse-actual.active {
 .CodeMirror-guttermarker {
   color: black;
 }
+
 .CodeMirror-guttermarker-subtle {
   color: #999;
 }
@@ -126,15 +130,18 @@ pre[class*='language-'].klipse-actual.active {
   border-right: none;
   width: 0;
 }
+
 /* Shown when moving in bi-directional text */
 .CodeMirror div.CodeMirror-secondarycursor {
   border-left: 1px solid silver;
 }
+
 .cm-fat-cursor .CodeMirror-cursor {
   width: auto;
   border: 0;
   background: #7e7;
 }
+
 .cm-fat-cursor div.CodeMirror-cursors {
   z-index: 1;
 }
@@ -149,9 +156,11 @@ pre[class*='language-'].klipse-actual.active {
 @keyframes blink {
   0% {
   }
+
   50% {
     background-color: transparent;
   }
+
   100% {
   }
 }
@@ -175,25 +184,32 @@ pre[class*='language-'].klipse-actual.active {
 .cm-s-default .cm-header {
   color: blue;
 }
+
 .cm-s-default .cm-quote {
   color: #090;
 }
+
 .cm-negative {
   color: #d44;
 }
+
 .cm-positive {
   color: #292;
 }
+
 .cm-header,
 .cm-strong {
   font-weight: bold;
 }
+
 .cm-em {
   font-style: italic;
 }
+
 .cm-link {
   text-decoration: underline;
 }
+
 .cm-strikethrough {
   text-decoration: line-through;
 }
@@ -290,12 +306,15 @@ pre[class*='language-'].klipse-actual.active {
 div.CodeMirror span.CodeMirror-matchingbracket {
   /* color: #0f0; */
 }
+
 div.CodeMirror span.CodeMirror-nonmatchingbracket {
   color: #f22;
 }
+
 .CodeMirror-matchingtag {
-  background: rgba(255, 150, 0, 0.3);
+  background: rgb(255 150 0 / 30%);
 }
+
 .CodeMirror-activeline-background {
   background: #e8f2ff;
 }
@@ -313,7 +332,9 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 
 .CodeMirror-scroll {
   overflow: scroll !important; /* Things will break if this is overridden */
+
   /* 30px is the magic margin used to hide the element's real scrollbars */
+
   /* See overflow: hidden in .CodeMirror */
   margin-bottom: -30px;
   margin-right: -30px;
@@ -322,6 +343,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   outline: none; /* Prevent dragging from highlighting the element */
   position: relative;
 }
+
 .CodeMirror-sizer {
   position: relative;
   border-right: 30px solid transparent;
@@ -338,22 +360,26 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   z-index: 6;
   display: none;
 }
+
 .CodeMirror-vscrollbar {
   right: 0;
   top: 0;
   overflow-x: hidden;
   overflow-y: auto;
 }
+
 .CodeMirror-hscrollbar {
   bottom: 0;
   left: 0;
   overflow-y: hidden;
   overflow-x: scroll;
 }
+
 .CodeMirror-scrollbar-filler {
   right: 0;
   bottom: 0;
 }
+
 .CodeMirror-gutter-filler {
   left: 0;
   bottom: 0;
@@ -365,32 +391,38 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   top: 0;
   z-index: 3;
 }
+
 .CodeMirror-gutter {
   white-space: normal;
   height: 100%;
   display: inline-block;
   margin-bottom: -30px;
+
   /* Hack to make IE7 behave */
   *zoom: 1;
   *display: inline;
 }
+
 .CodeMirror-gutter-wrapper {
   position: absolute;
   z-index: 4;
   background: none !important;
   border: none !important;
 }
+
 .CodeMirror-gutter-background {
   position: absolute;
   top: 0;
   bottom: 0;
   z-index: 4;
 }
+
 .CodeMirror-gutter-elt {
   position: absolute;
   cursor: default;
   z-index: 4;
 }
+
 .CodeMirror-gutter-wrapper {
   user-select: none;
 }
@@ -399,6 +431,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   cursor: text;
   min-height: 1px; /* prevents collapsing before first draw */
 }
+
 .CodeMirror pre {
   /* Reset some styles that the rest of the page might have set */
   border-radius: 0;
@@ -415,6 +448,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   position: relative;
   overflow: visible;
 }
+
 .CodeMirror-wrap pre {
   word-wrap: break-word;
   white-space: pre-wrap;
@@ -463,6 +497,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 .CodeMirror-cursor {
   position: absolute;
 }
+
 .CodeMirror-measure pre {
   position: static;
 }
@@ -472,6 +507,7 @@ div.CodeMirror-cursors {
   position: relative;
   z-index: 3;
 }
+
 div.CodeMirror-dragcursors {
   visibility: visible;
 }
@@ -483,12 +519,15 @@ div.CodeMirror-dragcursors {
 .CodeMirror-selected {
   background: var(--code-selection);
 }
+
 .CodeMirror-focused .CodeMirror-selected {
   background: var(--code-selection);
 }
+
 .CodeMirror-crosshair {
   cursor: crosshair;
 }
+
 .CodeMirror-line::selection,
 .CodeMirror-line > span::selection,
 .CodeMirror-line > span > span::selection {
@@ -497,7 +536,7 @@ div.CodeMirror-dragcursors {
 
 .cm-searching {
   background: #ffa;
-  background: rgba(255, 255, 0, 0.4);
+  background: rgb(255 255 0 / 40%);
 }
 
 /* Used to force a border model for a node */
@@ -513,7 +552,7 @@ div.CodeMirror-dragcursors {
 }
 
 /* See issue #2901 */
-.cm-tab-wrap-hack:after {
+.cm-tab-wrap-hack::after {
   content: '';
 }
 
@@ -528,18 +567,14 @@ span.CodeMirror-selectedtext {
   z-index: 10;
   overflow: hidden;
   list-style: none;
-
   margin: 0;
   padding: 2px;
-
-  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 3px 5px rgb(0 0 0 / 20%);
   border-radius: 3px;
   border: 1px solid silver;
-
   background: white;
   font-size: 90%;
   font-family: monospace;
-
   max-height: 20em;
   overflow-y: auto;
 }

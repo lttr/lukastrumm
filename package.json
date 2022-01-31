@@ -18,7 +18,7 @@
     "build": "eleventy",
     "debug": "DEBUG=Eleventy* eleventy",
     "serve": "npm run clean && DEV=true eleventy --watch --serve --port 2000",
-    "lint": "eslint src/**/*.{js,md}",
+    "lint": "eslint 'src/**/*.{js,md}'; stylelint 'src/**/*.css'",
     "format": "prettier src/**/* --write",
     "start": "npm run serve",
     "dev": "npm run serve",

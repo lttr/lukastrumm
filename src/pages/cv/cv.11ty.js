@@ -11,7 +11,8 @@ module.exports = {
   render() {
     const styles = html`<style>
       ${css`
-        ${inline(path.join(__dirname, 'cv.css'))}`}
+        ${inline(path.join(__dirname, 'cv.css'))}
+      `}
     </style> `
     return html`
       ${styles}

@@ -1,6 +1,5 @@
 :root {
-  --body-back-color: hsl(352, 19%, 99%);
-
+  --body-back-color: hsl(352deg 19% 99%);
   --yellow: #b58900;
   --orange: #cb4b16;
   --red: #dc322f;

@@ -141,15 +141,12 @@ module.exports = {
                 template.querySelector('.category').textContent = getCategory(
                   item.url
                 )
-                template.querySelector(
-                  '.search-match'
-                ).textContent = searchString
-                template.querySelector(
-                  '.search-text-start'
-                ).textContent = searchTextStart
-                template.querySelector(
-                  '.search-text-end'
-                ).textContent = searchTextEnd
+                template.querySelector('.search-match').textContent =
+                  searchString
+                template.querySelector('.search-text-start').textContent =
+                  searchTextStart
+                template.querySelector('.search-text-end').textContent =
+                  searchTextEnd
                 results.appendChild(template)
               }
             }

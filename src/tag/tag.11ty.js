@@ -26,11 +26,7 @@ module.exports = {
       </p>
       <ul>
         ${tagCollection.map((item) => {
-          return html`
-            <li>
-              ${postInline(item.data)}
-            </li>
-          `
+          return html` <li>${postInline(item.data)}</li> `
         })}
       </ul>
       <p>

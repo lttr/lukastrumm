@@ -4,13 +4,16 @@
   justify-content: center;
   flex-direction: column;
 }
+
 h1 {
   text-align: center;
 }
+
 #grid {
   margin: 1vw auto;
   max-width: 1400px;
 }
+
 .key {
   display: inline-block;
   padding: 2px 5px;

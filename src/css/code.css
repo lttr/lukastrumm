@@ -8,12 +8,12 @@
   --button-bg-hover: #a3a19e;
   --button-bg: #cfcdca;
   --button-fg: #fff;
-  --highlight-line: hsl(42, 77%, 87%);
+  --highlight-line: hsl(42deg 77% 87%);
   --highlight-line-add: #8599004b;
   --highlight-line-remove: #dc322f4b;
   --code-fg: var(--text-color);
-  --code-bg: hsl(46, 20%, 94%);
-  --code-executable-bg: hsl(3, 9%, 98%);
+  --code-bg: hsl(46deg 20% 94%);
+  --code-executable-bg: hsl(3deg 9% 98%);
   --code-comment-fg: #626e7a;
   --code-symbol-fg: #905;
   --code-string-fg: #517a00;
@@ -22,9 +22,8 @@
   --code-function-fg: #c62e4d;
   --code-variable-fg: ​#996100;
   --code-result: #fff;
-  --code-selection: rgba(200, 200, 200, 0.5);
-
-  --font-family-code: 'Fira Mono', Consolas, Monaco, 'Andale Mono',
+  --code-selection: rgb(200 200 200 / 50%);
+  --font-family-code: 'Fira Mono', consolas, monaco, 'Andale Mono',
     'Ubuntu Mono', monospace;
   --font-size-code: 15px;
   --font-size-code-fenced-block: 16px;
@@ -35,21 +34,21 @@
     --button-bg-hover: #a3a19e;
     --button-bg: #cfcdca;
     --button-fg: #fff;
-    --highlight-line: hsl(54, 30%, 23%);
-    --highlight-line-add: hsla(68, 100%, 30%, 0.29);
-    --highlight-line-remove: hsla(1, 71%, 52%, 0.29);
+    --highlight-line: hsl(54deg 30% 23%);
+    --highlight-line-add: hsl(68deg 100% 30% / 29%);
+    --highlight-line-remove: hsl(1deg 71% 52% / 29%);
     --code-fg: var(--text-color);
     --code-bg: #2d2d2d;
-    --code-executable-bg: hsl(3, 9%, 13%);
-    --code-comment-fg: #999999;
-    --code-symbol-fg: #ffcc66;
-    --code-string-fg: #99cc99;
-    --code-operator-fg: #cc99cc;
+    --code-executable-bg: hsl(3deg 9% 13%);
+    --code-comment-fg: #999;
+    --code-symbol-fg: #fc6;
+    --code-string-fg: #9c9;
+    --code-operator-fg: #c9c;
     --code-tag-fg: #f2777a;
-    --code-function-fg: #6699cc;
+    --code-function-fg: #69c;
     --code-variable-fg: #f2777a;
     --code-result: #111;
-    --code-selection: rgba(200, 200, 200, 0.5);
+    --code-selection: rgb(200 200 200 / 50%);
   }
 }
 
@@ -89,7 +88,7 @@
   background-color: var(--highlight-line-add);
 }
 
-.highlight-line-add:before {
+.highlight-line-add::before {
   content: '+';
   position: relative;
   left: -0.35em;
@@ -101,7 +100,7 @@
   background-color: var(--highlight-line-remove);
 }
 
-.highlight-line-remove:before {
+.highlight-line-remove::before {
   content: '-';
   position: relative;
   left: -0.35em;
@@ -112,6 +111,7 @@
 .highlight-line:not(:last-child) {
   min-width: 100%;
 }
+
 .highlight-line .highlight-line:not(:last-child) {
   min-width: 0;
 }
