@@ -27,10 +27,10 @@
     "e2e:dev": "cypress open"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy": "^2.0.0-canary.3",
     "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
     "@11ty/eleventy-plugin-rss": "^1.1.2",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.3",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "@netlify/plugin-lighthouse": "^2.1.2",
     "@npmcli/git": "^2.1.0",
     "copyfiles": "^2.4.1",
@@ -54,7 +54,7 @@
     "mermaid": "^8.13.8",
     "netlify-plugin-cypress": "^2.2.0",
     "netlify-plugin-no-more-404": "^0.0.15",
-    "node-fetch": "^2.6.6",
+    "node-fetch": "^3.2.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
     "puppeteer": "^13.0.1",
