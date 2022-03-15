@@ -91,13 +91,6 @@ module.exports = function (eleventyConfig) {
       .use(markdownItArrow)
   )
 
-  // Configure browser-sync
-
-  eleventyConfig.setBrowserSyncConfig({
-    open: true,
-    browser: 'firefox',
-  })
-
   // Configure watch mode
 
   eleventyConfig.addWatchTarget('**/*.md')

@@ -1,5 +1,5 @@
 ---
-title: install Nerd font
+title: Install Nerd font
 date: 2021-09-16
 tags: fonts
 ---

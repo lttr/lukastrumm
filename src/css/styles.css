@@ -655,3 +655,13 @@ article .tags {
 .cancel-code-button {
   margin-top: 3rem;
 }
+
+/* postInline component */
+
+.post-inline a {
+  margin-right: 0.75em;
+}
+
+.post-inline time {
+  margin-right: 0.5em;
+}

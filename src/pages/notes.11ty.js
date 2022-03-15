@@ -13,8 +13,7 @@ module.exports = {
         ${data.collections.notes.map(
           (item) => html`
             <li>
-              ${postInline(item.data)}
-              ${Array.isArray(item.data.tags)
+              ${postInline(item.data)}${Array.isArray(item.data.tags)
                 ? item.data.tags.map((tag) => {
                     const url = `/tag/${tag}`
                     return html` <a href="${url}" class="tag-badge">${tag}</a> `

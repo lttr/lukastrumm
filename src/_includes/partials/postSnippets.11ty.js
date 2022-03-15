@@ -7,12 +7,14 @@ function postInline(data, includeDate = true) {
     page: { url, date },
   } = data
   return html`
-    <a href="${url}">${title}</a>
-    ${includeDate
-      ? html`
-          <time datetime="${date.toISOString()}">${formatDate(date)}</time>
-        `
-      : ''}
+    <span class="post-inline">
+      <a href="${url}">${title}</a>
+      ${includeDate
+        ? html`<time datetime="${date.toISOString()}">
+            ${formatDate(date)}
+          </time>`
+        : ''}
+    </span>
   `
 }
 
