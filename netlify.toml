@@ -1,9 +1,16 @@
+[dev]
+framework = "#custom"
+command = "npx @11ty/eleventy --watch --serve --quiet --port 2000"
+port = 2020
+targetPort = 2000
+autoLaunch = false
+
 [build]
   command = "npm run build"
   publish = "dist/"
 
 [build.environment]
-  NODE_VERSION = "14"
+  NODE_VERSION = "16"
 
   # cache Cypress binary in local "node_modules" folder so Netlify caches it
   CYPRESS_CACHE_FOLDER = "./node_modules/CypressBinary"
@@ -42,3 +49,7 @@
     best-practices = 0.9
     seo = 0.9
     # pwa = 0.9
+
+[[edge_functions]]
+function = "eleventy-edge"
+path = "/*"

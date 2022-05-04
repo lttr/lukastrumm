@@ -3,7 +3,7 @@
   "private": true,
   "description": "Site about software engineering on the web",
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "homepage": "https://lukastrumm.com",
   "repository": {
@@ -17,7 +17,7 @@
     "clean": "rimraf dist/*",
     "build": "eleventy",
     "debug": "DEBUG=Eleventy* eleventy",
-    "serve": "npm run clean && DEV=true eleventy --watch --serve --port 2000",
+    "serve": "npm run clean && DEV=true eleventy --watch --serve --quiet --port 2000",
     "lint": "eslint 'src/**/*.{js,md}'; stylelint 'src/**/*.css'",
     "format": "prettier src/**/* --write",
     "start": "npm run serve",
@@ -52,6 +52,7 @@
     "markdown-it-implicit-figures": "^0.10.0",
     "markdown-it-table-of-contents": "^0.6.0",
     "mermaid": "^8.13.8",
+    "netlify-cli": "^10.0.0",
     "netlify-plugin-cypress": "^2.2.0",
     "netlify-plugin-no-more-404": "^0.0.15",
     "node-fetch": "^2.6.6",

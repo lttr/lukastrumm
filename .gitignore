@@ -8,6 +8,7 @@ dist
 
 # Local Netlify folder
 .netlify
+netlify/edge-functions/_generated
 
 # My cache for data fetched during build
 .datacache

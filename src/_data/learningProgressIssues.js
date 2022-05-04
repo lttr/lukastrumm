@@ -7,7 +7,7 @@ const {
 } = require('../_lib/cache')
 
 const reposUrl =
-  'https://api.github.com/repos/lttr/learning-progress/issues?state=all'
+  'https://api.github.com/repos/lttr/learning-progress/issues?state=all&per_page=100'
 const specialHeader = {
   // this header is required for fields in preview version
   // (topics property)
@@ -28,8 +28,11 @@ module.exports = async function () {
     })
     const newData = await response.json()
 
-    setCacheData(cache, getOncePerDayCacheKey(), newData)
-    return newData
+    // I'm only interested in issues that I have created
+    const filteredData = newData.filter((x) => x.user.login === 'lttr')
+
+    setCacheData(cache, getOncePerDayCacheKey(), filteredData)
+    return filteredData
   }
 
   return cachedData

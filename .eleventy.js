@@ -4,6 +4,7 @@ const inclusiveLangPlugin = require('@11ty/eleventy-plugin-inclusive-language')
 const lazyImagesPlugin = require('eleventy-plugin-lazyimages')
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+const { EleventyEdgePlugin } = require('@11ty/eleventy')
 
 const markdownIt = require('markdown-it')
 const markdownItFootnote = require('markdown-it-footnote')
@@ -123,6 +124,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight, {
     alwaysWrapLineHighlights: true,
   })
+  eleventyConfig.addPlugin(EleventyEdgePlugin)
 
   // Prism.js does not know mermaid, it has to be processed manually here
   const highlighter = eleventyConfig.markdownHighlighter
