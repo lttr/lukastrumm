@@ -13,12 +13,7 @@ ${JSON.stringify(data.eleventy.generator, null, 2)}
         </pre
         >
         <h2>Edge</h2>
-        <div>
-          ${raw`${await this.edge(
-            '{{ eleventy.generator | json }}',
-            'liquid'
-          )}`}
-        </div>
+        <div>${raw`${await this.edge('{{ eleventy | json }}', 'liquid')}`}</div>
       </div>
     `
   },

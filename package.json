@@ -27,7 +27,7 @@
     "e2e:dev": "cypress open"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0-canary.3",
+    "@11ty/eleventy": "^2.0.0-canary.9",
     "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
     "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
