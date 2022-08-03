@@ -17,6 +17,7 @@ const markdownItTitle = require('./src/_plugins/markdown-it-title')
 const markdownItMermaid = require('./src/_plugins/markdown-it-mermaid')
 const markdownItDefaultType = require('./src/_plugins/markdown-it-default-type')
 const markdownItArrow = require('./src/_plugins/markdown-it-arrow')
+const svgContents = require('eleventy-plugin-svg-contents')
 
 module.exports = function (eleventyConfig) {
   // Copy files
@@ -125,6 +126,7 @@ module.exports = function (eleventyConfig) {
     alwaysWrapLineHighlights: true,
   })
   eleventyConfig.addPlugin(EleventyEdgePlugin)
+  eleventyConfig.addPlugin(svgContents)
 
   // Prism.js does not know mermaid, it has to be processed manually here
   const highlighter = eleventyConfig.markdownHighlighter

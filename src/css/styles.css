@@ -665,3 +665,12 @@ article .tags {
 .post-inline time {
   margin-right: 0.5em;
 }
+
+/* svgs */
+svg.chameleon path[stroke^='#000'] {
+  stroke: var(--text-color);
+}
+
+svg.chameleon text {
+  fill: var(--text-color);
+}

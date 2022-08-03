@@ -11,7 +11,7 @@ Michael
 
 ## Templating
 
-```js {run}
+```javascript {run}
 function MyButtonComponent() {
   return `<button>My Button</button>`
 }
@@ -31,7 +31,7 @@ document.getElementById('b1').innerHTML = MyButtonComponent()
 
 ## Configuration
 
-```js {run}
+```javascript {run}
 function MyButtonComponent({ text }) {
   return `<button><em>${text}</em></button>`
 }
@@ -51,7 +51,7 @@ document.getElementById('b2').innerHTML = MyButtonComponent({ text: 'My Emphasis
 
 ## Adaptability
 
-```js {run}
+```javascript {run}
 function MyButtonComponent(content) {
   return `<button>${content}</button>`
 }
@@ -73,7 +73,7 @@ document.getElementById('b3').innerHTML = MyButtonComponent('<strong>My Strong B
 
 Only the child component in this example knows a special algorithm to compute something, while only the parent component knows how to present the information in text.
 
-```js {run}
+```javascript {run}
 // Child component
 function MyButtonComponent(contentFunction) {
   const computeLevelFromContent = (content) => content.length
