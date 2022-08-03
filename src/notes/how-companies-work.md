@@ -1,5 +1,5 @@
 ---
-title: how-companies-work
+title: How companies work
 date: 2022-07-15
 tags: 
   - organization
