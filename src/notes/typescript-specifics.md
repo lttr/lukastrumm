@@ -78,7 +78,7 @@ class UnreachableCaseError extends Error {
 default: throw new UnreachableCaseError(shape)
 ```
 
-Or the default case can be omitted, however then there is no runtime check and the switch
+Or the default case can be omitted, but then there is no runtime check and the switch
 has to be terminated with return statements.
 
 

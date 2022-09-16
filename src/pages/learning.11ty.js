@@ -26,6 +26,9 @@ module.exports = {
         closedByYear[year].push(issue)
         return closedByYear
       }, {})
+    const closedByYear = Object.entries(closedByYearMap)
+      .map(([year, issues]) => ({ year, issues }))
+      .sort((a, b) => b.year - a.year)
 
     return html`
       <div class="post-content">
@@ -42,8 +45,8 @@ module.exports = {
             )}
         </ul>
         <h2>Finished</h2>
-        ${Object.entries(closedByYearMap).map(
-          ([year, issues]) => html`
+        ${closedByYear.map(
+          ({ year, issues }) => html`
             <h3>${year}</h3>
             <ul>
               ${issues
