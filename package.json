@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git@github.com:lttr/lukastrumm.git"
   },
+  "packageManager": "pnpm@7.18.1",
   "author": "Lukas Trumm",
   "license": "MIT",
   "scripts": {
