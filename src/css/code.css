@@ -70,6 +70,11 @@
   background-color: var(--button-bg-hover);
 }
 
+.run-code-button-next-to-copy {
+  right: 60px;
+  font-weight: normal;
+}
+
 /* line highlighting */
 
 .highlight-line {

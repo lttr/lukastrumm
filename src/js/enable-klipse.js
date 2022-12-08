@@ -13,7 +13,10 @@ for (const fallback of klipseFallbacks) {
   const wrapper = fallback.closest('.code-wrapper')
 
   const editCodeButton = document.createElement('button')
-  editCodeButton.classList.add('run-code-button')
+  editCodeButton.classList.add(
+    'copy-to-clipboard-button',
+    'run-code-button-next-to-copy'
+  )
   editCodeButton.classList.add('button')
   editCodeButton.textContent = 'Edit code'
 
