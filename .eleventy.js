@@ -22,6 +22,7 @@ const svgContents = require('eleventy-plugin-svg-contents')
 module.exports = function (eleventyConfig) {
   // Copy files
 
+  eleventyConfig.addPassthroughCopy('_redirects')
   eleventyConfig.addPassthroughCopy('src/{articles,blog,notes,talks,labs}/**/*')
   eleventyConfig.addPassthroughCopy('src/css/*.css')
   eleventyConfig.addPassthroughCopy('src/fonts/*.woff2')
