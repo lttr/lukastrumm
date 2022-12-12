@@ -415,6 +415,7 @@ main {
 .tags {
   display: flex;
   flex-wrap: wrap;
+  gap: 0.3em;
 }
 
 article .tags {
@@ -432,7 +433,6 @@ article .tags {
   border: 1px solid var(--back-color);
   font-size: var(--small-font);
   line-height: 1.2;
-  margin: 0.3em;
   padding: 1px 5px;
   white-space: nowrap;
 }
@@ -452,7 +452,9 @@ article .tags {
 .post-header-description {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .post-content {
