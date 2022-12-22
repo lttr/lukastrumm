@@ -13,3 +13,5 @@ _These are not accomplishments to show me off. This is only a list that motivate
 - I have spent more then a year of my life at scout camps.
 - I have spent too much time watching Starcraft videos. I have learned English by doing so.
 - I have completed a vision quest. Four days and four nights in a forest without other people, electronics, food. Only with my mind.
+- I have set my annual goals for every year for 10 consecutive years.
+- My wife has told me several times that I am such a great dad to our children.

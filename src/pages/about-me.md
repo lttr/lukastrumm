@@ -23,7 +23,7 @@ I love running in the nature. In difficult (inspiring) conditions one can come u
 
 ### References
 
-- [Principles](https://www.scout.org/promiseandlaw) of the Scout movement
+- [Principles](https://www.scout.org/who-we-are/scout-movement/scout-promise-and-law) of the Scout movement
 - [Website](https://ctyriadvacitka.skauting.cz) of my scout group
 - [My Github](https://github.com/lttr/) profile
 
