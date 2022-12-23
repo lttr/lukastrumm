@@ -1,6 +1,7 @@
 ---
 title: Multi-branch, multi-language website
-date: 2022-12-15
+date: 2022-12-22
+draft: true
 tags:
   - websites
 ---
@@ -104,10 +105,10 @@ One of the big ideas that we wanted to implement was to have a set of
 components, that would hold the same concepts for business people, for the CMS,
 as well as for developers. Good example would be a Steps component, which
 represents a series of steps one have to follow in other to achieve something.
-Every step has a number, a title and a description. An easy concept that can work
-for designers, developers and editors. Although we have strived to communicate
-it well and show it live in a styleguide to everyone, it was still difficult
-to achieve consistency. Storyblok, our CMS of choice, have a concept of a
+Every step has a number, a title and a description. A concept that can work for
+designers, developers and editors. Although we have strived to communicate it
+well and show it live in a styleguide to everyone, it was still difficult to
+achieve consistency. Storyblok, our CMS of choice, have a concept of a
 component. But it is all about discipline to avoid having 4 different Steps
 components in the CMS mapping to 3 different components in code. And then some
 one needs a 6-step component where so far every aspect of the design of this
@@ -122,12 +123,54 @@ websites.
 The other thing is automation. We could implement an automated check for
 component mapping accross the system, the APIs are waiting to be used...
 
-### SEO, CSS, performance
+The last part is documentation. While Storyblok has mostly great docs, there
+were some missing guidance for building a large, complex website with multiple
+languages.
 
-Styling went mostly well, the
+We have also struggled with one late requirement from the client---to use
+Storyblok for writing blog posts, that are enhanced with custom components. At
+the time of building the site it was not really possible to have both clean
+editing experience and using our own Vue components to build the articles. The
+issue is that editors typically support either editing content in fixed page
+structure or writing in a free form but mostly text, links and maybe some images
+(think of CKEditor). We needed something in between where it would still be
+acceptable for non technical editors to create consistent but rich blog posts.
 
-- huge css
-- not mature tools (Nuxt)
+### SEO, performance, CSS
+
+One problematic part was that our client, despite our effort, was reluctant to
+give as any input about how performant the site should be and how much we should
+focus on SEO. Making a website performant and SEO friendly takes time and has to
+be planned. It is important to set some expectations up front, otherwise there
+might be some unpleasant surprises. And there were, since we had to prioritize
+other things than performance and SEO to meet deadlines.
+
+The performance part was a little bit problematic because of Nuxt. At version 2
+it was a great framework for applications, but the frontend had too much
+Javascript even in full static generation mode.
+
+Search functionality was another half baked feature that we have shipped. The
+decision was to have at least some search and don't spend much time with it
+rather than involving 3rd party service or a sofisticated backend. This decision
+was made based on an idea that visitors come from Google anyway. So the internal
+search was based on in build in Nuxt/content package, which is a client side
+search. Yeah, it means downloading an index in json, which has several
+megabytes. Not pretty, but it is cheap.
+
+The SEO is a lot of little things that are easier to manage if someone plan to
+do them up front. Correct HTTP status codes in all special cases, canonical
+urls, hand crafted meta data, etc. etc. We had to go back and improve all of
+these in later stages of the project when we got enough agreement and
+necessary information.
+
+Styling went mostly well, but there was one area, that we have underestimated.
+We have produced unnecessarily big css bundles because we were not careful
+enough with generating helper classes. When we noticed the problem it was too
+late to purge all the redundant styles easily. It was about the time when the
+tooling for Tailwind started to be great, its a pity... We might have been ok,
+if we had hand crafted all the CSS. Even with a huge help from VueJS with scoped
+styles, it is hard to keep it on the right track when several new developers
+start commiting at the same time.
 
 ### Updating a static site
 
@@ -147,7 +190,10 @@ have followed all the time. We have created a set of sass variables, utility
 classes and base components as building blocks for everything else. That worked
 great.
 
-Another great experiance was the integration with Storyblok.
+Another great experiance was the integration with Storyblok. Its API was flexible
+and fast and most of the tasks were straight forward. For example we needed to
+be notified when there was a change published in a subset of the site and that
+was convenient with their webhooks.
 
 ## What is the future
 
