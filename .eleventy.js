@@ -155,6 +155,9 @@ function collectionByFolders(...folderNames) {
       .filter((item) =>
         folderNames.some((folderName) => item.inputPath.includes(folderName))
       )
+      .filter((item) =>
+        process.env.ELEVENTY_ENV === 'production' ? !item.data.draft : true
+      )
       .reverse()
   }
 }

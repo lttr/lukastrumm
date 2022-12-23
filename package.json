@@ -16,7 +16,7 @@
   "scripts": {
     "cache:clean": "rimraf .datacache/*",
     "clean": "rimraf dist/*",
-    "build": "eleventy",
+    "build": "ELEVENTY_ENV=production eleventy",
     "debug": "DEBUG=Eleventy* eleventy",
     "serve": "npm run clean && DEV=true eleventy --watch --serve --quiet --port 2000",
     "lint": "eslint 'src/**/*.{js,md}'; stylelint 'src/**/*.css'",

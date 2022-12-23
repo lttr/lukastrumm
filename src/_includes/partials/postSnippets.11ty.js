@@ -26,6 +26,7 @@ function postWithExcerpt(data) {
   return html`
     <a href="${url}" class="article-title">${title}</a><br />
     <time datetime="${date.toISOString()}">${formatDate(date)}</time>
+    ${data.draft ? '>> DRAFT <<' : ''}
     <p class="excerpt">${excerpt}</p>
   `
 }
