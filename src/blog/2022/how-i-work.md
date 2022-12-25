@@ -1,12 +1,14 @@
 ---
 title: How I work
 date: 2022-12-16
-draft: true
 tags:
   - work
 ---
 
-TODO
+I feel like it is time to write down some specifics about how I work. This is no
+longer changing every year, so it might be useful as a reference for future
+collaborations. Also it works for me, so I am going to change something only if
+something significant will cross my way.
 
 ---
 
@@ -41,3 +43,8 @@ at work. It might be more like a living document more than a blog post.
 - I program in Neovim.
 - My config and other projects are [open on Github](https://github.com/lttr/).
 - When applicable I prefer continuous integration as a [collaboration scheme](https://martinfowler.com/articles/ship-show-ask.html).
+
+## Notes
+
+I've written a note about similar topic earlier. It was about [key values at
+work](/notes/key-values/).
