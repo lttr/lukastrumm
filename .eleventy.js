@@ -148,21 +148,18 @@ module.exports = function(eleventyConfig) {
 }
 
 function collectionByFolders(...folderNames) {
-  return function (collection) {
+  return function(collection) {
     return collection
       .getAllSorted()
       .filter((item) =>
         folderNames.some((folderName) => item.inputPath.includes(folderName))
-      )
-      .filter((item) =>
-        process.env.ELEVENTY_ENV === 'production' ? !item.data.draft : true
       )
       .reverse()
   }
 }
 
 function collectionByFolderAndFile(folderName, fileName) {
-  return function (collection) {
+  return function(collection) {
     return collection
       .getAllSorted()
       .filter(
