@@ -19,11 +19,11 @@ const markdownItDefaultType = require('./src/_plugins/markdown-it-default-type')
 const markdownItArrow = require('./src/_plugins/markdown-it-arrow')
 const svgContents = require('eleventy-plugin-svg-contents')
 
-module.exports = function (eleventyConfig) {
+module.exports = function(eleventyConfig) {
   // Copy files
 
   eleventyConfig.addPassthroughCopy('_redirects')
-  eleventyConfig.addPassthroughCopy('src/{articles,blog,notes,talks,labs}/**/*')
+  eleventyConfig.addPassthroughCopy('src/{blog,notes,talks,labs}/**/*')
   eleventyConfig.addPassthroughCopy('src/css/*.css')
   eleventyConfig.addPassthroughCopy('src/fonts/*.woff2')
   eleventyConfig.addPassthroughCopy('src/js/*.js')
@@ -38,7 +38,6 @@ module.exports = function (eleventyConfig) {
 
   // Create collections
 
-  eleventyConfig.addCollection('articles', collectionByFolders('articles/'))
   eleventyConfig.addCollection('blog', collectionByFolders('blog/'))
   eleventyConfig.addCollection('notes', collectionByFolders('notes/'))
   eleventyConfig.addCollection(
@@ -52,7 +51,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('feed', collectionByFolders('blog/'))
   eleventyConfig.addCollection(
     'posts',
-    collectionByFolders('articles/', 'blog/', 'labs/', 'notes/')
+    collectionByFolders('blog/', 'labs/', 'notes/')
   )
   eleventyConfig.addCollection('tagList', getTagList)
 

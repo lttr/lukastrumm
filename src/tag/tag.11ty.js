@@ -9,7 +9,7 @@ module.exports = {
       size: 1,
       addAllPagesToCollections: true,
       // filter out all 'system' tags
-      filter: ['all', 'tagList', 'nav', 'articles', 'posts', 'notes', 'blog'],
+      filter: ['all', 'tagList', 'nav', 'posts', 'notes', 'blog'],
     },
     permalink: (data) => `/tag/${data.pagination.items[0]}/`,
   },
@@ -26,8 +26,8 @@ module.exports = {
       </p>
       <ul>
         ${tagCollection.map((item) => {
-          return html` <li>${postInline(item.data)}</li> `
-        })}
+      return html` <li>${postInline(item.data)}</li> `
+    })}
       </ul>
       <p>
         <a href="/tags">&laquo; all tags</a>
