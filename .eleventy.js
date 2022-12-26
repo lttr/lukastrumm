@@ -20,6 +20,10 @@ const markdownItArrow = require('./src/_plugins/markdown-it-arrow')
 const svgContents = require('eleventy-plugin-svg-contents')
 
 module.exports = function(eleventyConfig) {
+  // Ignore files and folders
+
+  eleventyConfig.ignores.add('_drafts/')
+
   // Copy files
 
   eleventyConfig.addPassthroughCopy('_redirects')
