@@ -29,8 +29,8 @@ autoLaunch = false
 
   [plugins.inputs]
   # either "warn" or "error"
-  on404 = "error"
-  cacheKey = "no-more-404"
+  on404 = "warn"
+  cacheKey = "no-more-404-v2"
 
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
