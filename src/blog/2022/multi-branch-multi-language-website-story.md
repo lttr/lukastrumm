@@ -1,7 +1,6 @@
 ---
-title: Multi-branch, multi-language website
-date: 2022-12-22
-draft: true
+title: Multi-branch, multi-language website story
+date: 2022-12-30
 tags:
   - websites
 ---
@@ -15,9 +14,7 @@ during implementation.
 
 I am going to tell a story about one project where I learned a lot of things.
 The project was not a failure, we managed to deliver the solution and it runs in
-production, but I will focus on what went wrong. In another article I might
-focus on how much the technological landscape has changed in two years and
-how a similar solution could be better in the future.
+production, but I will focus on what went wrong.
 
 ## What we got
 
@@ -28,8 +25,8 @@ The initial requirements for the set of websites were roughly these:
 - The company has a set of branches and every branch will need its own website,
   possibly in multiple languages (!)
 - Most of the content but not all (!) will be the same
-- The design must be the same and editors should have very little room for
-  diverging from the original design
+- The design must be the same for every website and editors should have very
+  little room for diverging from the original design
 - All (!) content should be editable by editors, ideally in a WYSIWYG way,
   stored in a CMS
 
@@ -90,28 +87,27 @@ Let me start from the end. Unfortunately, the contract between companies ended
 unexpectedly, and we were not able to pay the technical debt back as we
 developers would like to do. Sometimes we have to say 'It is good enough.'
 
-First challange was the know-how. I was quite new to a team/tech leader role,
-while other colleages were even new to software development. At the same time
+First challenge was the know-how. I was quite new to a team/tech leader role,
+while other colleagues were even new to software development. At the same time
 our customer didn't have a good understanding about the scope of the project.
 For example communication with other branches of the company took a long time.
-These challanges led to very poor estimations. The go-live deadline was
-postponed several month. That might be a common situation on bigger software
-projects, but this time it happened mostly due to missed expectations on
-multiple fronts and lack of information from the client.
+For a long time there was nobody who understands requirements well. These
+challenges led to very poor estimations. The go-live deadline was postponed
+several months.
 
 ### CMS
 
 One of the big ideas that we wanted to implement was to have a set of
-components, that would hold the same concepts for business people, for the CMS,
+components, that would hold the same concept for business people, for the CMS,
 as well as for developers. Good example would be a Steps component, which
-represents a series of steps one have to follow in other to achieve something.
+represents a series of steps one have to follow in order to achieve something.
 Every step has a number, a title and a description. A concept that can work for
 designers, developers and editors. Although we have strived to communicate it
 well and show it live in a styleguide to everyone, it was still difficult to
 achieve consistency. Storyblok, our CMS of choice, have a concept of a
 component. But it is all about discipline to avoid having 4 different Steps
-components in the CMS mapping to 3 different components in code. And then some
-one needs a 6-step component where so far every aspect of the design of this
+components in the CMS mapping to 3 different components in code. And then
+someone needs a 6-step component where so far every aspect of the design of this
 component was based on the fact that it can only have a maximum of 5 steps.
 
 I would say that we could do two things to improve this situation. One is to
@@ -132,9 +128,10 @@ Storyblok for writing blog posts, that are enhanced with custom components. At
 the time of building the site it was not really possible to have both clean
 editing experience and using our own Vue components to build the articles. The
 issue is that editors typically support either editing content in fixed page
-structure or writing in a free form but mostly text, links and maybe some images
-(think of CKEditor). We needed something in between where it would still be
-acceptable for non technical editors to create consistent but rich blog posts.
+structure, completely free form page building or writing mostly text, links and
+maybe some images (think of CKEditor). We needed something in between where it
+would still be acceptable for non-technical editors to create consistent and
+rich blog posts.
 
 ### SEO, performance, CSS
 
@@ -145,44 +142,65 @@ be planned. It is important to set some expectations up front, otherwise there
 might be some unpleasant surprises. And there were, since we had to prioritize
 other things than performance and SEO to meet deadlines.
 
-The performance part was a little bit problematic because of Nuxt. At version 2
-it was a great framework for applications, but the frontend had too much
-Javascript even in full static generation mode.
+The performance part was a bit problematic because of Nuxt. At version 2 it was
+a great framework for applications, but the frontend had too much Javascript
+even in full static generation mode.
 
-Search functionality was another half baked feature that we have shipped. The
+Search functionality was another half-baked feature that we have shipped. The
 decision was to have at least some search and don't spend much time with it
-rather than involving 3rd party service or a sofisticated backend. This decision
+rather than involving 3rd party service or a sophisticated backend. This decision
 was made based on an idea that visitors come from Google anyway. So the internal
-search was based on in build in Nuxt/content package, which is a client side
+search was based on build in Nuxt/content package, which has a client side
 search. Yeah, it means downloading an index in json, which has several
-megabytes. Not pretty, but it is cheap.
+megabytes. A poor man's solution that worked OK in some situations.
 
 The SEO is a lot of little things that are easier to manage if someone plan to
 do them up front. Correct HTTP status codes in all special cases, canonical
-urls, hand crafted meta data, etc. etc. We had to go back and improve all of
+urls, handcrafted metadata, etc. etc. We had to go back and improve all of
 these in later stages of the project when we got enough agreement and
 necessary information.
 
 Styling went mostly well, but there was one area, that we have underestimated.
-We have produced unnecessarily big css bundles because we were not careful
+We have produced unnecessarily big CSS bundles because we were not careful
 enough with generating helper classes. When we noticed the problem it was too
 late to purge all the redundant styles easily. It was about the time when the
-tooling for Tailwind started to be great, its a pity... We might have been ok,
-if we had hand crafted all the CSS. Even with a huge help from VueJS with scoped
+tooling for Tailwind started to be great, it's a pity... We might have been ok,
+if we had handcrafted all the CSS. Even with a huge help from VueJS with scoped
 styles, it is hard to keep it on the right track when several new developers
-start commiting at the same time.
+start committing at the same time.
 
 ### Updating a static site
 
-- pipelines
-- amount of updates per day
-- slow builds
-- redeployment
+A big misconception we had was about frequency of updates. What first looked
+like a mostly static site turned out not to be so.
+
+Static site generation meant (at least for Nuxt at that time) a full rebuild of
+the whole site for every code or data change. It might not be a concern running
+a 5-minute build couple times a day. But as the pipeline grows the build and
+deploy no longer takes 5 minutes but may take 15. And a couple of websites times
+a couple of code, data and CMS changes results in too much work the pipelines
+has to do in one day. And resulted in unexpected slowdowns in delivery.
+
+Nuxt can be switched to SSR mode with minimal code changes. Unfortunately
+because of our infrastructure and for historical reasons we were not able to use
+it during the time we had.
+
+Frequent redeployments have another issue. The CDN, caching and Javascript in
+the browser has to be setup in such a way so that new deployments are
+transparent for the user of the website and does not cause missing assets or
+other errors. At the same time it should reasonably cache everything it can to
+speed up page load time. The Nuxt SSG site is served as HTML for the initial
+page load but is immediately enhanced with Javascript and becomes a single page
+application. At the time we had issues making this SPA to be refreshed if a
+deployment happened while a user was browsing the website. We had to write some
+rather hacky code to improve the situation (involving a forced full page
+reload).
 
 ## What was a success
 
-The site was down maybe once because of some DNS issues, but never because of
-infrastructure or code bug. Nothing can beat a web statically hosted from a CDN.
+As far as I know the site was down maybe once because of some DNS issues, but
+never because of infrastructure or code bug. Nothing can beat a web statically
+hosted from a CDN.
 
 We have managed to implement very nice design system. That is mostly designer's
 credit because she shared with us a set of principles and design tokens that we
@@ -190,11 +208,20 @@ have followed all the time. We have created a set of sass variables, utility
 classes and base components as building blocks for everything else. That worked
 great.
 
-Another great experiance was the integration with Storyblok. Its API was flexible
-and fast and most of the tasks were straight forward. For example we needed to
+Another great experience was the integration with Storyblok. Its API was flexible
+and fast and most of the tasks were straight forward. For example, we needed to
 be notified when there was a change published in a subset of the site and that
 was convenient with their webhooks.
 
 ## What is the future
 
-- transitional web apps
+Rich Harris called it Transitional web apps in one of his
+[presentations](https://www.youtube.com/watch?v=860d8usGC0o). The idea is to
+extract the best characteristics of multipage architecture and single page apps
+into one solution that is, well, transitional. We have used Vue framework which
+helped more junior members of our team to quickly became productive. On the
+other hand a good old PHP based solution would be better from several
+perspectives. A framework implementing the ideas of Transitional web apps could
+be very helpful for a project like this. From improving general know-how,
+delivering better performance and SEO, to simplifying deployment. The future is
+bright I guess...
