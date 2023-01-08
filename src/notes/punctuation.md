@@ -50,9 +50,9 @@ Single quotation marks
 
 > "When I say 'immediately,' I mean some time before August," said the...
 
-In czech the marks are different
+In czech the marks are different (The first is Single Low-9 Quotation Mark)
 
-> Říká se: &dbquo;Kdo jinému jámu kopá, sám do ní padá.&lbquo;
+> Říká se: &sbquo;Kdo jinému jámu kopá, sám do ní padá.&lsquo;
 
 Some other languages
 
