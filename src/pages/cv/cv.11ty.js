@@ -30,10 +30,10 @@ module.exports = {
 
       <p>
         <em
-          >I love web technologies. I am good at keeping things organized.
-          Whether it is architecture or user experience I am keen to work on the
-          success of a project.</em
-        >
+          >I love web technologies. I am good at keeping things organized. My
+          measure of success if whether the customer is enjoying the work, not
+          only me.
+        </em>
       </p>
 
       <h2>Skills</h2>
@@ -52,9 +52,9 @@ module.exports = {
 
       <h2>Work experience</h2>
 
-      <h3>2020 &ndash; present Hanaboso</h3>
+      <h3>2020 &ndash; 2023 Technical leader</h3>
       <ul>
-        <li>Team leader / architect</li>
+        <li>I have led a team at Hanaboso</li>
         <li>
           I have worked on several public facing web applications and large
           sites in cross-functional teams
@@ -66,11 +66,11 @@ module.exports = {
         </li>
       </ul>
 
-      <h3>2017 &ndash; 2020 Domat Control System</h3>
+      <h3>2017 &ndash; 2020 Frontend engineer</h3>
       <ul>
         <li>
-          Lead frontend engineer of a B2B application (Angular, NX, TypeScript,
-          RxJS, Redux, Jest, Cypress, C#)
+          I have built a B2B application (Angular, NX, TypeScript, RxJS, Redux,
+          Jest, Cypress, C#) at Domat Control Systems
         </li>
         <li>
           I have built CI/CD pipelines (Azure DevOps) and other internal
@@ -82,9 +82,9 @@ module.exports = {
         </li>
       </ul>
 
-      <h3>2014 &ndash; 2017 Unicorn Systems</h3>
+      <h3>2014 &ndash; 2017 Java developer</h3>
       <ul>
-        <li>Enterprise Java backend developer</li>
+        <li>I was an enterprise Java backend developer at Unicorn Systems</li>
         <li>
           I have learned how to keep a big system running as a member of site
           reliability engineering team
