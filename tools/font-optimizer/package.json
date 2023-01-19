@@ -10,7 +10,7 @@
     "copy-fonts": "cp charter_regular-webfont_optimized charter*.woff2 raleway*.woff2  ../../src/fonts/"
   },
   "devDependencies": {
-    "fontmin": "^0.9.8",
+    "fontmin": "^0.9.9",
     "node-fetch": "^2.6.1",
     "wawoff2": "^1.0.2"
   },
