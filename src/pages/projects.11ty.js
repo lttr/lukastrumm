@@ -8,9 +8,8 @@ module.exports = {
   },
 
   render(data) {
-    const activeRepos = data.repos.filter(
-      (repo) => !repo.fork && !repo.archived
-    )
+    const activeRepos =
+      data.repos?.filter((repo) => !repo.fork && !repo.archived) ?? []
     activeRepos.sort((a, b) => {
       return new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime()
     })

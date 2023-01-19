@@ -2,9 +2,6 @@
   "name": "lukastrumm",
   "private": true,
   "description": "Site about software engineering on the web",
-  "engines": {
-    "node": ">=18"
-  },
   "homepage": "https://lukastrumm.com",
   "repository": {
     "type": "git",
