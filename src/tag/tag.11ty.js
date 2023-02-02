@@ -1,5 +1,9 @@
 const html = require('../_lib/html')
-const { postInline } = require('../_includes/partials/postSnippets.11ty')
+const {
+  postInline,
+  tags,
+  getCategory,
+} = require('../_includes/partials/postSnippets.11ty')
 
 module.exports = {
   data: {
@@ -25,9 +29,16 @@ module.exports = {
         <span class="tag-badge">${tag}</span>
       </p>
       <ul>
-        ${tagCollection.map((item) => {
-      return html` <li>${postInline(item.data)}</li> `
-    })}
+        ${tagCollection.map(
+      (item) => html`
+            <li>
+              <span class="category">${getCategory(item.data.page.url)}</span>
+              ${postInline(item.data)}${Array.isArray(item.data.tags)
+          ? tags(item.data.tags)
+          : ''}
+            </li>
+          `
+    )}
       </ul>
       <p>
         <a href="/tags">&laquo; all tags</a>

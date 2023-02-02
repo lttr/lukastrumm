@@ -22,14 +22,14 @@ module.exports = {
     return html`
       <p class="tags cloud">
         ${data.collections.tagList.sort().map((tag) => {
-          const url = `/tag/${tag}`
-          const count = counter[tag]
-          return html`
+      const url = `/tag/${tag}`
+      const count = counter[tag]
+      return html`
             <a href="${url}" class="tag-badge">
               ${tag} <span class="count">(${count})</span>
             </a>
           `
-        })}
+    })}
       </p>
     `
   },

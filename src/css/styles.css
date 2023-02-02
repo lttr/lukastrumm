@@ -413,12 +413,12 @@ main {
 /* tags */
 
 .tags {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   gap: 0.3em;
 }
 
-article .tags {
+.post-header-description .tags {
   justify-content: flex-end;
 }
 
@@ -666,6 +666,13 @@ article .tags {
 
 .post-inline time {
   margin-right: 0.5em;
+}
+
+.category {
+  display: inline-block;
+  font-size: var(--small-font);
+  color: var(--primary-color);
+  width: 3em;
 }
 
 /* svgs */

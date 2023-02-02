@@ -1,17 +1,8 @@
 const html = require('../_lib/html')
-const { postInline } = require('../_includes/partials/postSnippets.11ty')
-
-function getCategory(url) {
-  const firstSegment = url.split('/')[1]
-  if (firstSegment) {
-    switch (firstSegment) {
-      case 'notes':
-        return 'note'
-      default:
-        return firstSegment
-    }
-  }
-}
+const {
+  postInline,
+  getCategory,
+} = require('../_includes/partials/postSnippets.11ty')
 
 module.exports = {
   data: {
@@ -22,12 +13,6 @@ module.exports = {
   render(data) {
     return html`
       <style>
-        .category {
-          display: inline-block;
-          font-size: var(--small-font);
-          color: var(--primary-color);
-          width: 3.5em;
-        }
         .search-results,
         .search-results ul {
           padding: 0;
