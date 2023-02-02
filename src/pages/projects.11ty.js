@@ -70,10 +70,12 @@ module.exports = {
     return html`
       ${styles}
 
-      <h2>Labs</h2>
-      <ul class="cards full-width">
-        ${data.collections.labs.map((item) => html` ${renderLab(item.data)} `)}
-      </ul>
+      <!-- <h2>Labs</h2> -->
+      <!-- <ul class="cards full-width"> -->
+      <!--   ${data.collections.labs.map(
+      (item) => html` ${renderLab(item.data)} `
+    )} -->
+      <!-- </ul> -->
 
       <h2>Github projects</h2>
       <ul class="cards full-width">
@@ -121,8 +123,8 @@ function renderRepo(repo) {
               <a href="${repo.html_url}"> ${repo.name} </a>
               <span class="repo-site">
                 ${repo.homepage
-                  ? html`( <a href="${repo.homepage}">SITE</a> )`
-                  : null}
+      ? html`( <a href="${repo.homepage}">SITE</a> )`
+      : null}
               </span>
             </div>
             <div class="repo-last-push">
@@ -131,17 +133,17 @@ function renderRepo(repo) {
           </header>
           <div class="repo-description">${repo.description}</div>
           ${repo.language
-            ? html`<div class="repo-lang">
+      ? html`<div class="repo-lang">
                 <i>Main language:</i>
                 ${repo.language ? html`${repo.language}` : null}
               </div>`
-            : null}
+      : null}
           ${repo.topics.length
-            ? html`<div class="repo-topics">
+      ? html`<div class="repo-topics">
                 <i>Topics:</i>
                 ${repo.topics.join(', ')}
               </div>`
-            : null}
+      : null}
         </div>
       </article>
     </li>
