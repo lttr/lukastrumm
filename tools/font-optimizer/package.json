@@ -4,10 +4,11 @@
   "license": "MIT",
   "author": "Lukas Trumm",
   "main": "index.js",
+  "packageManager": "pnpm@7.18.1",
   "scripts": {
     "start": "node index.js",
-    "clean": "rm -r ./charter* ./raleway*",
-    "copy-fonts": "cp charter_regular-webfont_optimized charter*.woff2 raleway*.woff2  ../../src/fonts/"
+    "clean": "rm -r ./charter* ./Charter* ./raleway*",
+    "copy-fonts": "cp charter_regular-optimized charter*.woff2 raleway*.woff2  ../../src/fonts/"
   },
   "devDependencies": {
     "fontmin": "^0.9.8",

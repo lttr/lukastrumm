@@ -58,10 +58,24 @@ async function base64FromWoff2(src, dest) {
 }
 
 async function processCharterFont() {
+  const charterFolderName = 'Charter 210112'
+  const woffFolderName = 'WOFF2 format (best for web)'
+  const subforlderName = 'Charter'
+  const charterBoldFileName = 'charter_bold.woff2'
+  const charterItalicFileName = 'charter_italic.woff2'
+  const charterRegularFileName = 'charter_regular.woff2'
+  const ttfFolderName = 'TTF format (best for Windows)'
+  const pathToWoff = path.join(
+    __dirname,
+    charterFolderName,
+    woffFolderName,
+    subforlderName
+  )
+
   console.log('Downloading font Charter')
   try {
     await download(
-      'https://practicaltypography.com/fonts/charter.zip',
+      'https://practicaltypography.com/fonts/Charter%20210112.zip',
       'charter.zip'
     )
   } catch (e) {
@@ -72,33 +86,44 @@ async function processCharterFont() {
   await unzipFile('charter.zip', path.join(__dirname, '.'))
 
   console.log('Optimizing ttf font')
-  await optimizeFont(
-    path.join(__dirname, 'charter', 'webfonts', 'charter_regular-webfont.ttf'),
-    path.join(__dirname, 'charter', 'optimized')
-  )
+  try {
+    await optimizeFont(
+      path.join(
+        __dirname,
+        charterFolderName,
+        ttfFolderName,
+        subforlderName,
+        'Charter Regular.ttf'
+      ),
+      __dirname
+    )
+  } catch (e) {
+    console.error(e)
+  }
 
   console.log('Converting optimized ttf font to woff2')
   await convertToWoff2(
-    path.join(__dirname, 'charter', 'optimized', 'charter_regular-webfont.ttf'),
-    path.join(__dirname, 'charter_regular-webfont_optimized.woff2')
-  )
-
-  console.log('Converting regular ttf font to woff2')
-  await convertToWoff2(
-    path.join(__dirname, 'charter', 'webfonts', 'charter_regular-webfont.ttf'),
-    path.join(__dirname, 'charter_regular-webfont.woff2')
-  )
-
-  console.log('Converting italic ttf font to woff2')
-  await convertToWoff2(
-    path.join(__dirname, 'charter', 'webfonts', 'charter_italic-webfont.ttf'),
-    path.join(__dirname, 'charter_italic-webfont.woff2')
+    path.join(__dirname, 'Charter Regular.ttf'),
+    path.join(__dirname, 'charter_regular-optimized.woff2')
   )
 
   console.log('Create base64 version from optimized woff2')
   await base64FromWoff2(
-    path.join(__dirname, 'charter_regular-webfont_optimized.woff2'),
-    path.join(__dirname, 'charter_regular-webfont_optimized')
+    path.join(__dirname, 'charter_regular-optimized.woff2'),
+    path.join(__dirname, 'charter_regular-optimized')
+  )
+
+  fs.copyFileSync(
+    path.join(pathToWoff, charterRegularFileName),
+    path.join(__dirname, charterRegularFileName)
+  )
+  fs.copyFileSync(
+    path.join(pathToWoff, charterItalicFileName),
+    path.join(__dirname, charterItalicFileName)
+  )
+  fs.copyFileSync(
+    path.join(pathToWoff, charterBoldFileName),
+    path.join(__dirname, charterBoldFileName)
   )
 }
 
@@ -109,7 +134,7 @@ async function processRalewayFont() {
   try {
     const fontFileUrl =
       'https://fonts.gstatic.com/l/font?kit=1Ptrg8zYS_SKggPNwPIsaqRdVNC84nM7zY2hLoUNFgNo9_mdWBt8wUNLmM3QMzzF1VBMXiasStu5cLqxWGNgjWNw5gaWlRkInoYN1xmDxvjSX7W7U3XMVXAjNb0MRMp6TqPO1w&skey=484edb0fdce88a64&v=v14'
-    await download(fontFileUrl, 'raleway_semibold_optimized.woff2')
+    await download(fontFileUrl, 'raleway_semibold-optimized.woff2')
   } catch (e) {
     console.error(e)
   }

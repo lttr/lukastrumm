@@ -1,21 +1,28 @@
 const { html } = require('../../_lib/html')
 const inline = require('../../_lib/inline')
 
-const base64Font = inline('./src/fonts/charter_regular-webfont_optimized')
+const base64Font = inline('./src/fonts/charter_regular-optimized')
 const fontUrl = `data:font/woff2;charset=utf-8;base64,${base64Font}`
 
 function fonts() {
   return html`
     <link
       rel="preload"
-      href="/fonts/charter_regular-webfont.woff2"
+      href="/fonts/charter_regular.woff2"
       as="font"
       type="font/woff2"
       crossorigin
     />
     <link
       rel="preload"
-      href="/fonts/charter_italic-webfont.woff2"
+      href="/fonts/charter_italic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/charter_bold.woff2"
       as="font"
       type="font/woff2"
       crossorigin
@@ -29,7 +36,7 @@ function fonts() {
     />
     <link
       rel="preload"
-      href="/fonts/raleway_semibold_optimized.woff2"
+      href="/fonts/raleway_semibold-optimized.woff2"
       as="font"
       type="font/woff2"
       crossorigin
@@ -45,9 +52,17 @@ function fonts() {
       }
       @font-face {
         font-family: Charter;
-        src: url('/fonts/charter_italic-webfont.woff2') format('woff2');
+        src: url('/fonts/charter_italic.woff2') format('woff2');
         font-style: italic;
         font-weight: normal;
+        font-stretch: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Charter;
+        src: url('/fonts/charter_bold.woff2') format('woff2');
+        font-style: normal;
+        font-weight: bold;
         font-stretch: normal;
         font-display: swap;
       }
@@ -61,7 +76,7 @@ function fonts() {
       }
       @font-face {
         font-family: Raleway;
-        src: url('/fonts/raleway_semibold_optimized.woff2') format('woff2');
+        src: url('/fonts/raleway_semibold-optimized.woff2') format('woff2');
         font-style: normal;
         font-weight: 600;
         font-stretch: normal;
@@ -71,7 +86,7 @@ function fonts() {
     <script>
       const baseFontRegular = new FontFace(
         'Charter',
-        'url(/fonts/charter_regular-webfont.woff2)',
+        'url(/fonts/charter_regular.woff2)',
         {
           family: 'Charter',
           style: 'normal',
