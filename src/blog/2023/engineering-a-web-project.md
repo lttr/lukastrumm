@@ -8,8 +8,9 @@ tags:
 ---
 
 This will be a long list. There is a lot of decisions that have to be made
-somehow when starting an ambitious software project. I will focus on a larger
-web site/application, since that is the type of software I usually work on.
+somehow when starting or maintaining an ambitious software project. I will focus
+on a larger web site/application, since that is the type of software I usually
+work on.
 
 ---
 
@@ -52,7 +53,8 @@ A **domain name** is something significant and the new application needs to be
 deployed in such a way that currently running systems under the domain will not
 be negatively affected.
 
-The current situation might force a certain type of **hosting**, infrastructure etc.
+- How can we **host** our website or application? Is it possible to change it now or
+  in the future?
 
 ## Users
 
@@ -60,26 +62,40 @@ The current situation might force a certain type of **hosting**, infrastructure 
 - **How many users** do we expect first day, first month, first year?
 - Which **browsers** and their versions are going to be supported?
 - Would the project suffer from missing **accessibility** features? Is it a subject of regulation?
-- Is any good to provide users with a **chatbot** and is it worth the effort and
+- Is it any good to provide users with a **chatbot** and is it worth the effort and
   possible performance issues?
 - Are there any use cases for our website/application to be used **without
   JavaScript** enabled?
 
 ## Code
 
-Code formatting
-Code style
-Code quality
-Code improvements before sharing
-Code merging rules, pull requests and code reviews
-Continuous delivery/deployment
-Continuous integration
-Automated testing
-Version control
-Framework
-Programming language
-Template for code generation
-Redeployments and cache invalidation
+- What is not in **version control** system? (secrets, documents)
+- Does every developer have an automatic way of **formatting** new code? (in
+  editor on save, precommit hook)
+- Is there a process in CI that checks common code **style issues** for every
+  change? (i.e. linting)
+- Is there a process in place that ensures that all code is **checked for quality**?
+  (code reviews, automated tests and checks)
+- Does every developer know when and how a code review is needed and when it is appropriate to merge? ([ship-show-ask](https://martinfowler.com/articles/ship-show-ask.html))
+- Are there some automated checks for security? ([dependencies](https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/about-dependabot-security-updates), [static code
+  analysys](https://github.com/github/codeql-action))
+- Is there a CI/CD pipeline that deploys every change? (continuous deployment)
+- Is there a **preview environment** for every change and is it practical to have
+  them?
+- Is there a know-how when and how to use unit **testing**, integration testing or
+  end-to-end testing?
+- Do we use the right programming **language** for the job?
+- Which **framework** do we use and what it solves and what problems it does not solve?
+- Is there a way to **generate** some boring boilerplate code?
+- Do we have a set of testing data?
+- Can we develop against this data set without even running the database?
+
+## Runtime
+
+- Does the web app handle redeployments seamlessly?
+- How is the cache on the CDN level invalidated?
+- Do we send correct security headers?
+- Do we send correct cache headers for HTML, data requests and assets?
 
 ## SEO and marketing
 
