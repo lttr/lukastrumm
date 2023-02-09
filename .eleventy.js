@@ -74,28 +74,31 @@ module.exports = function(eleventyConfig) {
     linkify: true,
     typographer: true,
   }
-  eleventyConfig.setLibrary(
-    'md',
-    markdownIt(markdownOptions)
-      .use(markdownItFootnote)
-      .use(markdownItAnchor, {
-        level: [2, 3],
-        permalink: markdownItAnchor.permalink.headerLink(),
-      })
-      .use(markdownItToc, {
-        includeLevel: [2],
-        containerHeaderHtml: '<div class="toc-heading">Table of content</div>',
-      })
-      .use(markdownItFigures, {
-        figcaption: true,
-      })
-      // my custom plugins
-      .use(markdownItKlipse)
-      .use(markdownItTitle)
-      .use(markdownItMermaid)
-      .use(markdownItDefaultType)
-      .use(markdownItArrow)
-  )
+  const md = markdownIt(markdownOptions)
+    .use(markdownItFootnote)
+    .use(markdownItAnchor, {
+      level: [2, 3],
+      permalink: markdownItAnchor.permalink.headerLink(),
+    })
+    .use(markdownItToc, {
+      includeLevel: [2],
+      containerHeaderHtml: '<div class="toc-heading">Table of content</div>',
+    })
+    .use(markdownItFigures, {
+      figcaption: true,
+    })
+    // my custom plugins
+    .use(markdownItKlipse)
+    .use(markdownItTitle)
+    .use(markdownItMermaid)
+    .use(markdownItDefaultType)
+    .use(markdownItArrow)
+  md.renderer.rules.footnote_block_open = () =>
+    `<h4 class="footnotes-title">Notes</h4>
+<section class="footnotes">
+<ol class="footnotes-list">`
+
+  eleventyConfig.setLibrary('md', md)
 
   // Configure watch mode
 

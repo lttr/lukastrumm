@@ -489,8 +489,32 @@ main {
   display: none;
 }
 
-.footnotes {
+/* footnotes */
+.footnotes-title {
+  margin-top: 2rem;
+  padding-top: 1rem;
   border-top: 1px solid var(--back-color);
+}
+
+.footnotes p {
+  font-style: italic;
+  font-size: 0.875rem;
+  margin-bottom: 0.4rem;
+}
+
+ol.footnotes-list {
+  padding-left: revert;
+  list-style-type: normal;
+}
+
+.footnotes-list li {
+  counter-increment: footnotes;
+}
+
+.footnotes-list li::marker {
+  font-style: normal;
+  font-size: 0.875rem;
+  content: '[' counter(footnotes) '] ';
 }
 
 /* mermaid */
