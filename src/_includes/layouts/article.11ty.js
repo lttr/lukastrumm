@@ -1,5 +1,6 @@
 const { html, raw } = require('../../_lib/html')
 const { formatDate } = require('../../_lib/formatDate')
+const comments = require('../partials/comments.11ty')
 
 const base = require('./base.11ty')
 
@@ -72,6 +73,7 @@ module.exports = {
         : null}
         </footer>
       </article>
+      <section class="comments">${comments(this)}</section>
     `
     return base(this, template, data)
   },

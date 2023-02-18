@@ -711,3 +711,11 @@ svg.chameleon path[stroke^='#000'] {
 svg.chameleon text {
   fill: var(--text-color);
 }
+
+/* comments */
+
+.comments {
+  margin-top: 2rem;
+  border-top: 1px solid var(--back-color);
+  padding-top: 2rem;
+}
