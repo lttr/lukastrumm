@@ -7,6 +7,7 @@ const base = require('./base.11ty')
 module.exports = {
   render(data) {
     const { content, title, updated, page, tags, updates } = data
+    // const isBlog(data.collections.blog.includes(page.))
     const { excerpt, date } = page
     const currentArticleUpdates = updates[page.inputPath]
     let updatedDate = updated
@@ -22,6 +23,10 @@ module.exports = {
     if (excerpt) {
       postContentSectionClasses.push('has-excerpt')
     }
+
+    const isBlog = data.collections.blog.some(
+      (post) => post.inputPath === page.inputPath
+    )
 
     const template = html`
       <article>
@@ -73,7 +78,9 @@ module.exports = {
         : null}
         </footer>
       </article>
-      <section class="comments">${comments(this)}</section>
+      ${isBlog
+        ? html`<section class="comments">${comments(this)}</section>`
+        : ''}
     `
     return base(this, template, data)
   },
