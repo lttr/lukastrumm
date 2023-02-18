@@ -21,6 +21,11 @@ autoLaunch = false
     # cache for one month
     cache-control = "public, max-age=2592000"
 
+[[headers]]
+  for = "/css/giscus-custom.css"
+  [headers.values]
+    Access-Control-Allow-Origin = "https://giscus.app"
+
 [[plugins]]
   package = "netlify-plugin-cypress"
 
