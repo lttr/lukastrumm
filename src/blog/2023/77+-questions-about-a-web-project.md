@@ -62,6 +62,10 @@ questions :-)
   and possible performance issues?
 - Are there any use cases for our website/application to be used **without
   JavaScript** enabled?
+- Do our users need more language mutations and other **internationalization**
+  adaptations? Will we need to support a RTL language?
+- Will we need to build **multiple variants** of the software for different
+  users/customers?
 
 ## Code
 
@@ -90,6 +94,8 @@ questions :-)
 - Is there a way to **generate** some boring boilerplate code?
 - Do we have a set of **testing data**?
 - Can we develop against this data set without even running the database?
+- Will there be only one **version of the software** at a time? Or will we have
+  to support multiple versions with following maintenance?
 
 ## Runtime
 
