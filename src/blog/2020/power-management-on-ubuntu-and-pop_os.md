@@ -10,7 +10,7 @@ Is it possible to hibernate a Linux machine? What is the difference between slee
 
 ---
 
-![What is going to happen?](/img/will-it-sleep.png)
+![What is going to happen?](will-it-sleep.png)
 
 I can finally answer these questions after a long time wondering why something does not work. Let me explain some of the concepts first.
 

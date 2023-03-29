@@ -63,7 +63,7 @@ First you need at least a little bit of experience with css grid, because I will
 
 Firefox has been a go to tool to visualize what is going on with css grid. Recently Chrome Dev tools added support too, and it can even show grid line names!
 
-![Previous picture under Chrome Dev tools grid analyzer](/img/css-grid-chrome-devtools.png)
+![Previous picture under Chrome Dev tools grid analyzer](css-grid-chrome-devtools.png)
 
 Suddenly you can see what is going on. There are six columns and six rows in this grid. There are lines around those columns and rows and some of them have name. These names can help with defining css properties---otherwise it can be very difficult to understand the code. I'm going to build the same picture with several approaches to show you the differencies.
 

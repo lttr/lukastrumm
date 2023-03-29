@@ -10,7 +10,7 @@ module.exports = {
 
   render(data) {
     return html`
-      <img src="/img/behvevode.jpg" alt="Foot" />
+      <img src="/images/behvevode.jpg" alt="Foot" />
 
       <p>
         <a href="https://www.komoot.com/user/729131540685">My Komoot profile</a>

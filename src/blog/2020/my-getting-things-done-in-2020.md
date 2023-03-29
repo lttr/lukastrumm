@@ -27,11 +27,11 @@ I have been using Wunderlist for several years, but it is going to be discontinu
 Recently I found [TickTick](https://ticktick.com/). It is also a multiplatform todo
 app. It has the advantage that you can customize the menu---namely remove the unnecessary items. It is important when you are looking for a tool, that is simple but has certain features. Primarily I need an Inbox and a couple of specific lists.
 
-![Here is an example of how the Inbox screen looks like in my TickTick.](/img/gtd-inbox.png)
+![Here is an example of how the Inbox screen looks like in my TickTick.](gtd-inbox.png)
 
 Other than that I like the option to create subtasks (for items in Projects list) and the ability to show and hide completed tasks.
 
-![The Projects list is a list of bigger or longer tasks where I track a series of my todos. When this is not enough or when there is more people involved I use a Trello board.](/img/gtd-projects.png)
+![The Projects list is a list of bigger or longer tasks where I track a series of my todos. When this is not enough or when there is more people involved I use a Trello board.](gtd-projects.png)
 
 ## Information archive
 

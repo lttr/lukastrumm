@@ -6,7 +6,7 @@ permalink: /about/
 **Husband | Father | Software eng | Scout leader | Endurance runner | Craftsman**
 
 <div class="text-align: center">
-<img src="/img/lt.jpg"
+<img src="/images/lt.jpg"
     width="320"
     height="320"
     alt="Lukas Trumm"

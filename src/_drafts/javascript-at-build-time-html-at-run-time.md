@@ -8,4 +8,4 @@ tags:
 
 What if you build your site with JavaScript only? **But serve HTML.**
 
-![HTML 86%, JavaScript 10%, CSS 3%](/img/html-86-percent.png)
+![HTML 86%, JavaScript 10%, CSS 3%](html-86-percent.png)

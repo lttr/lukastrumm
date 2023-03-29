@@ -16,6 +16,7 @@ The content inside of the `edge` shortcode is generated on the Edge.
 <pre>
 {{ eleventy | json }}
 </pre>
+
 {% endedge %}
 
 Markdown in Eleventy is parsed by [markdown-it](https://github.com/markdown-it/markdown-it). It can be extended by a number of [plugins](https://www.npmjs.com/search?q=keywords:markdown-it-plugin).
@@ -116,7 +117,7 @@ Hover over a heading, click the `#` sign and use targeted url...
 
 Look, this is a `<figure>` with caption.
 
-![Box with title App depend on a bunch of Libs](/img/dependencies.png)
+![Box with title App depend on a bunch of Libs](dependencies.png)
 
 ## My custom plugins
 

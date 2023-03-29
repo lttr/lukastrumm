@@ -382,7 +382,7 @@ main {
 
 .header-anchor:hover::before,
 .header-anchor:focus::before {
-  content: url('/img/link-dark.svg');
+  content: url('/images/link-dark.svg');
   left: -25px;
   position: relative;
   float: left;
@@ -393,7 +393,7 @@ main {
 @media (prefers-color-scheme: dark) {
   .header-anchor:hover::before,
   .header-anchor:focus::before {
-    content: url('/img/link-light.svg');
+    content: url('/images/link-light.svg');
   }
 }
 

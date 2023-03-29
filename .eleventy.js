@@ -19,7 +19,7 @@ const markdownItDefaultType = require('./src/_plugins/markdown-it-default-type')
 const markdownItArrow = require('./src/_plugins/markdown-it-arrow')
 const svgContents = require('eleventy-plugin-svg-contents')
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   // Ignore files and folders
 
   eleventyConfig.ignores.add('_drafts/')
@@ -34,10 +34,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/favicon.ico')
   eleventyConfig.addPassthroughCopy('src/robots.txt')
   eleventyConfig.addPassthroughCopy('src/shortcuts/*')
-  // All images will be in one folder '/img' because it is easier
-  // to manage correct references to them
+  eleventyConfig.addPassthroughCopy('src/images/*')
+  // All attachment images will be in one folder '/' because it is easier
+  // to manage correct references to them (only the name)
   eleventyConfig.addPassthroughCopy({
-    'src/**/*.{ico,png,svg,gif,jpg,jpeg}': 'img',
+    'src/**/*.{ico,png,svg,gif,jpg,jpeg}': '/',
   })
 
   // Create collections
@@ -155,7 +156,7 @@ module.exports = function(eleventyConfig) {
 }
 
 function collectionByFolders(...folderNames) {
-  return function(collection) {
+  return function (collection) {
     return collection
       .getAllSorted()
       .filter((item) =>
@@ -166,7 +167,7 @@ function collectionByFolders(...folderNames) {
 }
 
 function collectionByFolderAndFile(folderName, fileName) {
-  return function(collection) {
+  return function (collection) {
     return collection
       .getAllSorted()
       .filter(

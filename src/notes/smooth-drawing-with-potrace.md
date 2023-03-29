@@ -15,4 +15,4 @@ pdftoppm -singlefile input.pdf | potrace --output output.svg --blacklevel 0.72 -
 
 Potrace expects some some specific formats on input. My scanned drawing is in pdf and `pdftoppm` happaned to be installed on my Linux machine.
 
-![A simple drawing converted with `potrace`](/img/potrace-test.svg)
+![A simple drawing converted with `potrace`](potrace-test.svg)
