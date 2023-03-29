@@ -15,3 +15,4 @@ tags:
 - tree-shaking
 - time travel debugging
 - popcorning the UI (Sebastian Markbåge, https://twitter.com/sebmarkbage/status/1516852731251724293?s=20)
+- fallthrough attribute
