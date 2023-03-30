@@ -217,8 +217,7 @@ figcaption {
   margin-top: 1rem;
 }
 
-article img,
-article svg {
+article img {
   height: auto;
   max-width: 100%;
 }
@@ -710,6 +709,17 @@ svg.chameleon path[stroke^='#000'] {
 
 svg.chameleon text {
   fill: var(--text-color);
+}
+
+article svg {
+  height: auto;
+  max-width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  article img[src$='svg'] {
+    filter: invert(0.7);
+  }
 }
 
 /* comments */
