@@ -42,9 +42,10 @@ at work. It might be more like a living document more than a blog post.
 - I love web technologies.
 - I program in Neovim.
 - My config and other projects are [open on Github](https://github.com/lttr/).
-- When applicable I prefer continuous integration as a [collaboration scheme](https://martinfowler.com/articles/ship-show-ask.html).
+- When applicable I prefer continuous integration as a [collaboration
+  scheme](https://martinfowler.com/articles/ship-show-ask.html).
 
 ## Notes
 
 I've written a note about similar topic earlier. It was about [key values at
-work](/notes/key-values/).
+work](/notes/key-values).

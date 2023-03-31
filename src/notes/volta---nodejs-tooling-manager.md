@@ -4,6 +4,7 @@ date: 2020-10-14
 tags:
   - nodejs
   - javascript
+  - dependency-management
 ---
 
 Volta is a nice tool for managing nodejs versions, and installing global npm packages.

@@ -5,6 +5,7 @@ tags:
   - nodejs
   - npm
   - pnpm
+  - dependency-management
 ---
 
 ## Definitions
