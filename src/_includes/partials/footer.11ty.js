@@ -3,6 +3,7 @@ const { html, raw } = require('../../_lib/html')
 const { siGithub } = require('simple-icons/icons')
 const { siGoodreads } = require('simple-icons/icons')
 const { siTwitter } = require('simple-icons/icons')
+const { siMastodon } = require('simple-icons/icons')
 
 module.exports = () =>
   html`
@@ -21,6 +22,13 @@ module.exports = () =>
         aria-label="Twitter - lukastrumm"
       >
         <span class="social-icon">${raw`${siTwitter.svg}`}</span>
+      </a>
+      <a
+        rel="me"
+        href="https://mastodon.online/@lukastrumm"
+        aria-label="Mastodon - lukastrumm"
+      >
+        <span class="social-icon">${raw`${siMastodon.svg}`}</span>
       </a>
       <span class="copyright">
         Lukas Trumm &copy; ${new Date().getFullYear()}
