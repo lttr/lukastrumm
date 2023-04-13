@@ -15,6 +15,7 @@ tags:
 - https://open-props.style/
 - https://github.com/hankchizljaw/gorko
 - https://utopia.fyi/
+- https://www.joshwcomeau.com/shadow-palette/
 
 ## Javascript
 

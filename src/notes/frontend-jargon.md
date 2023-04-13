@@ -33,7 +33,7 @@ tags:
 - reusability
 - dirty checking
 - performance (ssr, load time in browser, updates in browser)
-- hydration
+- hydration (full, partial, lazy/on-demand)
 - serialization (across network, across web workers)
 - event handler
 - component
