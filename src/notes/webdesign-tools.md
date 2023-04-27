@@ -16,6 +16,8 @@ tags:
 - https://github.com/hankchizljaw/gorko
 - https://utopia.fyi/
 - https://www.joshwcomeau.com/shadow-palette/
+- https://css-generators.com/
+- https://chir.ag/projects/name-that-color/
 
 ## Javascript
 

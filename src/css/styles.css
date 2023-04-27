@@ -274,7 +274,7 @@ main {
 }
 
 .page-footer .social-icon svg {
-  fill: currentColor;
+  fill: currentcolor;
   height: 1rem;
 }
 
@@ -346,7 +346,7 @@ main {
 }
 
 .header-nav .is-active {
-  font-weight: bold;
+  font-weight: var(--heading-font-weight);
 }
 
 .header-nav li:nth-child(1)::before {
@@ -371,7 +371,7 @@ main {
 
 .toc-heading {
   margin-top: 1em;
-  font-weight: bold;
+  font-weight: var(--heading-font-weight);
 }
 
 /* header anchor */
