@@ -28,6 +28,10 @@ When a computer hibernates it saves its state to hard drive and then shuts down.
 
 Hibernation has most issues, probably because it is dependant on the combination of hardware and operating system. You might not need hibernation---sleep might save enough energy and power off might be fast enough.
 
+Update: Hibernation might be useful. A hibernated system does not consume power
+and hibernation protects from some class of possible attacks when the drive is
+encrypted as mentioned in [this article from System76](https://support.system76.com/articles/enable-hibernation).
+
 ### Power off
 
 Is a normal process of properly shutting down a computer. _Halting_ a computer might be slightly different. As I understand it _powering off_ is a more complete process.
@@ -64,3 +68,4 @@ A reasonable way to wake up your computer is to hit some key on a keyboard. It m
 - https://help.ubuntu.com/stable/ubuntu-help/shell-exit.html.en#suspend
 - https://wiki.ubuntu.com/PowerManagement
 - https://help.ubuntu.com/stable/ubuntu-help/session-screenlocks.html.en
+- https://support.system76.com/articles/enable-hibernation
