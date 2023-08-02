@@ -18,6 +18,19 @@ tags:
 - https://www.joshwcomeau.com/shadow-palette/
 - https://css-generators.com/
 - https://chir.ag/projects/name-that-color/
+    - https://gradient.style/
+- https://contrast-triangle.com
+- https://linear-easing-generator.netlify.app/
+- https://css.land/
+- https://huetone.ardov.me/
+- https://oklch.com
+- https://www.oddcontrast.com/
+- https://cssstats.com/
+
+
+## Fonts
+
+- https://seek-oss.github.io/capsize/
 
 ## Javascript
 
@@ -27,3 +40,8 @@ tags:
 ## SVG
 
 - https://www.softr.io/tools/svg-shape-generator
+- https://svgomg.net/
+
+## Images
+
+- https://squoosh.app/

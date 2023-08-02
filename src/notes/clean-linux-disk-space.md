@@ -1,7 +1,7 @@
 ---
 title: Clean Linux disk space
 date: 2022-09-17
-tags: 
+tags:
   - linux
 ---
 
@@ -18,6 +18,3 @@ npm cache clean --force
 rm -rf ..../node_modules
 rm -rf ..../.terraform
 ```
-
-
-
