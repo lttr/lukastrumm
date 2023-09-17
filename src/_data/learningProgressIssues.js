@@ -29,7 +29,10 @@ module.exports = async function () {
     const newData = await response.json()
 
     // I'm only interested in issues that I have created
-    const filteredData = newData.filter((x) => x.user.login === 'lttr')
+    // I'm only interested in issues that are open or closed as 'completed'
+    const filteredData = newData
+      .filter((x) => x.user.login === 'lttr')
+      .filter((x) => x.state === 'open' || x.state_reason === 'completed')
 
     setCacheData(cache, getOncePerDayCacheKey(), filteredData)
     return filteredData
