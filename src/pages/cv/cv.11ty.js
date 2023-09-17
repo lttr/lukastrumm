@@ -52,6 +52,9 @@ module.exports = {
 
       <h2>Work experience</h2>
 
+      <h3>2023+ HTML Architect</h3>
+      <p>Crafting user experiences with HTML, CSS and JavaScript at Quanti.</p>
+
       <h3>2020 &ndash; 2023 Technical leader</h3>
       <ul>
         <li>I have led a team at Hanaboso</li>
