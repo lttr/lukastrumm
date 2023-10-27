@@ -53,6 +53,3 @@ autoLaunch = false
     seo = 0.9
     # pwa = 0.9
 
-# [[edge_functions]]
-# function = "eleventy-edge"
-# path = "/*"

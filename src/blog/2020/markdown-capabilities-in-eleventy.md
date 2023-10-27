@@ -10,15 +10,6 @@ Let's try what markdown offers in context of Eleventy static site generator.
 
 ---
 
-{% edge %}
-The content inside of the `edge` shortcode is generated on the Edge.
-
-<pre>
-{{ eleventy | json }}
-</pre>
-
-{% endedge %}
-
 Markdown in Eleventy is parsed by [markdown-it](https://github.com/markdown-it/markdown-it). It can be extended by a number of [plugins](https://www.npmjs.com/search?q=keywords:markdown-it-plugin).
 
 The first example is a table of content---it is a list that consists of headings on level 2. The plugin for this is [`markdown-it-table-of-contents`](https://www.npmjs.com/package/markdown-it-table-of-contents).
