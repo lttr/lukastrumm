@@ -6,15 +6,13 @@ module.exports = {
     permalink: '/data-inspector/',
   },
 
-  render(data) {
-    const stats = renderStats(data)
-    return html`
-      <section class="stats">${stats}</section>
-      </script>
-    `
+  async render(data) {
+    const stats = await renderStats(data)
+    return html`<section class="stats">${stats}</section>`
   },
 }
-function renderStats(data) {
+
+async function renderStats(data) {
   const tags = [
     ...new Set(
       data.collections.all
