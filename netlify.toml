@@ -37,19 +37,19 @@ autoLaunch = false
   on404 = "warn"
   cacheKey = "no-more-404-v2"
 
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
-
-  [[plugins.inputs.audits]]
-    path = ""
-
-  [[plugins.inputs.audits]]
-    path = "/blog/2020/markdown-capabilities-in-eleventy/"
-
-  [plugins.inputs.thresholds]
-    performance = 0.6
-    accessibility = 0.9
-    best-practices = 0.9
-    seo = 0.9
-    # pwa = 0.9
+# [[plugins]]
+#   package = "@netlify/plugin-lighthouse"
+#
+#   [[plugins.inputs.audits]]
+#     path = ""
+#
+#   [[plugins.inputs.audits]]
+#     path = "/blog/2020/markdown-capabilities-in-eleventy/"
+#
+#   [plugins.inputs.thresholds]
+#     performance = 0.6
+#     accessibility = 0.9
+#     best-practices = 0.9
+#     seo = 0.9
+#     # pwa = 0.9
 
