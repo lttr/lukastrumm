@@ -7,7 +7,11 @@
     "type": "git",
     "url": "git@github.com:lttr/lukastrumm.git"
   },
-  "packageManager": "pnpm@7.18.1",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=8"
+  },
+  "packageManager": "pnpm@8.15.1",
   "author": "Lukas Trumm",
   "license": "MIT",
   "scripts": {
