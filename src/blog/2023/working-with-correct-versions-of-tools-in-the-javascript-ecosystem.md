@@ -1,10 +1,10 @@
 ---
 title: Working with correct versions of tools in the JavaScript ecosystem
-date: 2023-04-03 
+date: 2023-04-03
 tags:
-  - dependency-management 
-  - javascript 
-  - npm 
+  - dependency-management
+  - javascript
+  - npm
 ---
 
 The ideal is to have the desired version of every tool at every situation during both development and deployment. Docker might be the answer for someone, but it might not be practical to use it all the time. Let's analyze the situation.
@@ -21,10 +21,10 @@ By **situation,** I mean running your first command after `git clone`, running a
 
 ### There are several levels of perfection
 
-1) Nothing. When something breaks, someone might fix it.
-2) Documentation. README.md. After following the docs carefully, a developer should be on the correct version of tools. Extra communication is necessary when updating versions.
-3) Enforcement. There is configuration in place which forces certain tool versions and refuses to operate otherwise.
-4) Automagic. The environment (either local or in CI) is set up in such a way, that it automatically uses (and installs before) correct versions of tools as configured. Might be harder to achieve without extra maintenance and documentation.
+1. Nothing. When something breaks, someone might fix it.
+2. Documentation. README.md. After following the docs carefully, a developer should be on the correct version of tools. Extra communication is necessary when updating versions.
+3. Enforcement. There is configuration in place which forces certain tool versions and refuses to operate otherwise.
+4. Automagic. The environment (either local or in CI) is set up in such a way, that it automatically uses (and installs before) correct versions of tools as configured. Might be harder to achieve without extra maintenance and documentation.
 
 Based on these options, I think there is no ideal solution.
 
@@ -60,6 +60,7 @@ node --version > .node-version
 ```
 
 And then setup a tool and your command line shell. Some options:
+
 - [fnm](https://github.com/Schniz/fnm) is simple
 - [volta](https://docs.volta.sh/) can manage node, package manager and other tools from NPM
 - [asdf](https://asdf-vm.com/) is good when you need to handle more languages

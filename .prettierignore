@@ -1,5 +1,22 @@
-dist
+node_modules
+*.log*
 build
+dist
+
+# Cache for lazyimages plugin
+.lazyimages*
+
+# Local Netlify folder
 .netlify
+netlify/edge-functions/_generated
+
+# My cache for data fetched during build
+.datacache
+
+# Cypress
+cypress/videos
+cypress/screenshots
+
+pnpm-lock.yaml
 
 src/talks

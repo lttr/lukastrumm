@@ -1,7 +1,7 @@
 ---
 title: Parse, don't validate
 date: 2022-08-03
-tags: 
+tags:
 ---
 
 ### Resources
@@ -12,7 +12,7 @@ tags:
 ```typescript
 // parseFooData defines validator, type and parser logic
 // at the same time
-const incommingFooData: any = { foo: "foo@example.com" }
+const incommingFooData: any = { foo: 'foo@example.com' }
 const parsedFooData = parseFooData(incommingData)
 // parseFooData is now of type Foo or an error was thrown
 ```

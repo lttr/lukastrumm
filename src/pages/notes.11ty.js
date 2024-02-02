@@ -11,14 +11,14 @@ module.exports = {
     return html`
       <ul id="notes">
         ${data.collections.notes.map(
-      (item) => html`
+          (item) => html`
             <li>
               ${postInline(item.data)}${Array.isArray(item.data.tags)
-          ? tags(item.data.tags)
-          : ''}
+                ? tags(item.data.tags)
+                : ''}
             </li>
           `
-    )}
+        )}
       </ul>
     `
   },

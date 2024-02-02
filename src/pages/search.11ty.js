@@ -59,26 +59,26 @@ module.exports = {
       <div class="search-results" style="margin-top: 0">
         <ul id="initial-list">
           ${data.collections.posts.map((post) => {
-      const url = post.data.page.url
-      const category = getCategory(url)
-      return html`
+            const url = post.data.page.url
+            const category = getCategory(url)
+            return html`
               <li>
                 <span class="category">${category}</span>${postInline(
-        post.data,
-        false
-      )}
+                  post.data,
+                  false
+                )}
               </li>
             `
-    })}
+          })}
           ${data.collections.tagList.sort().map((tag) => {
-      const url = `/tag/${tag}`
-      return html`
+            const url = `/tag/${tag}`
+            return html`
               <li>
                 <span class="category">${getCategory(url)}</span>
                 <a href="${url}" class="tag-badge">${tag}</a>
               </li>
             `
-    })}
+          })}
         </ul>
       </div>
 

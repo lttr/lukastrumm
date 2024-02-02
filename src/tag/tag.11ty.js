@@ -30,15 +30,15 @@ module.exports = {
       </p>
       <ul>
         ${tagCollection.map(
-      (item) => html`
+          (item) => html`
             <li>
               <span class="category">${getCategory(item.data.page.url)}</span>
               ${postInline(item.data)}${Array.isArray(item.data.tags)
-          ? tags(item.data.tags)
-          : ''}
+                ? tags(item.data.tags)
+                : ''}
             </li>
           `
-    )}
+        )}
       </ul>
       <p>
         <a href="/tags">&laquo; all tags</a>

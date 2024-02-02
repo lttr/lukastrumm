@@ -10,10 +10,10 @@ function postInline(data, includeDate = true) {
     <span class="post-inline">
       <a href="${url}">${title}</a>
       ${includeDate
-      ? html`<time datetime="${date.toISOString()}">
+        ? html`<time datetime="${date.toISOString()}">
             ${formatDate(date)}
           </time>`
-      : ''}
+        : ''}
     </span>
   `
 }
@@ -34,9 +34,9 @@ function postWithExcerpt(data) {
 function tags(tags) {
   return html`<span class="tags"
     >${tags.map((tag) => {
-    const url = `/tag/${tag}`
-    return html`<a href="${url}" class="tag-badge">${tag}</a>`
-  })}</span
+      const url = `/tag/${tag}`
+      return html`<a href="${url}" class="tag-badge">${tag}</a>`
+    })}</span
   >`
 }
 

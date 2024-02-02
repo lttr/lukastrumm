@@ -1,7 +1,7 @@
 ---
 title: Code style, quality and appearance
 date: 2022-08-03
-tags: 
+tags:
   - linting
   - quality
   - code-review

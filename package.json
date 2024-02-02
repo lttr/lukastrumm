@@ -17,7 +17,7 @@
     "debug": "DEBUG=Eleventy* eleventy",
     "serve": "npm run clean && DEV=true eleventy --watch --serve --quiet --port 2000",
     "lint": "eslint 'src/**/*.{js,md}'; stylelint 'src/**/*.css'",
-    "format": "prettier src/**/* --write",
+    "format": "prettier --write . --ignore-path=.prettierignore",
     "start": "npm run serve",
     "dev": "npm run serve",
     "check:links": "npx hyperlink --recursive --pretty --internal --root dist/ dist/**/*.html | npx tap-spot",
