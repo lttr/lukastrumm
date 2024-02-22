@@ -18,7 +18,7 @@ const markdownItDefaultType = require('./src/_plugins/markdown-it-default-type')
 const markdownItArrow = require('./src/_plugins/markdown-it-arrow')
 const svgContents = require('eleventy-plugin-svg-contents')
 
-module.exports = function (eleventyConfig) {
+module.exports = function(eleventyConfig) {
   // Ignore files and folders
 
   eleventyConfig.ignores.add('_drafts/')
@@ -127,7 +127,9 @@ module.exports = function (eleventyConfig) {
       return relativePath
     },
   })
-  eleventyConfig.addPlugin(inclusiveLangPlugin)
+  eleventyConfig.addPlugin(inclusiveLangPlugin, {
+    words: 'simply,obviously,basically,of course,clearly,just,everyone knows',
+  })
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(syntaxHighlight, {
     alwaysWrapLineHighlights: true,
@@ -154,7 +156,7 @@ module.exports = function (eleventyConfig) {
 }
 
 function collectionByFolders(...folderNames) {
-  return function (collection) {
+  return function(collection) {
     return collection
       .getAllSorted()
       .filter((item) =>
@@ -165,7 +167,7 @@ function collectionByFolders(...folderNames) {
 }
 
 function collectionByFolderAndFile(folderName, fileName) {
-  return function (collection) {
+  return function(collection) {
     return collection
       .getAllSorted()
       .filter(
