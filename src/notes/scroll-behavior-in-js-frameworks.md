@@ -12,3 +12,4 @@ tags:
 - https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-router#scrollbehavior
 - https://github.com/vuejs/docs/issues/2381
 - https://github.com/nuxt/nuxt/discussions/21073
+- https://github.com/denoland/fresh/issues/2012

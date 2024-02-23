@@ -26,6 +26,9 @@ tags:
 - https://oklch.com
 - https://www.oddcontrast.com/
 - https://cssstats.com/
+- https://typescale.com/
+- https://buttonbuddy.dev/
+- https://supportscss.dev/
 
 ## Fonts
 
@@ -44,3 +47,14 @@ tags:
 ## Images
 
 - https://squoosh.app/
+
+## Design
+
+- https://www.realtimecolors.com
+
+## Performance
+
+- https://googlechrome.github.io/lighthouse/scorecalc/
+- https://pagespeed.web.dev/
+- http://webpagetest.org/
+- https://search.google.com/u/2/search-console/core-web-vitals
