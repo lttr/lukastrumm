@@ -1,6 +1,7 @@
 ---
 title: NX, Angular and monorepos (in czech)
 date: 2019-10
+slides: 2019-development-in-monorepo-using-nx_czech/01-novy-projekt
 ---
 
 Lightning talk

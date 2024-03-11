@@ -6,6 +6,6 @@ permalink: /life/
 - [learning](/learning)
 - [reading](/reading)
 - [achievements](/achievements)
-- [speaking](/speaking)
+- [talks](/talks)
 - [scouting](/scouting)
 - [running](/running)
