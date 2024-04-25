@@ -1,7 +1,7 @@
 ---
 title: Web performance with nuxt (in czech)
 date: 2024-04-25
-slides: https://talks.lukastrumm.com/2024/web-performance-with-nuxt
+slides: https://talks.lukastrumm.com/2024-web-performance-with-nuxt
 ---
 
 Výkonnost webu s Nuxt frameworkem

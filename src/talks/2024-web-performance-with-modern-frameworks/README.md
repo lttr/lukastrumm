@@ -1,7 +1,7 @@
 ---
 title: Web performance with modern frameworks (in czech)
-date: 2024-03
-slides: https://talks.lukastrumm.com/2024/web-performance
+date: 2024-03-12
+slides: https://talks.lukastrumm.com/2024-web-performance-with-modern-frameworks
 ---
 
 Výkonnost webu s moderními frameworky
