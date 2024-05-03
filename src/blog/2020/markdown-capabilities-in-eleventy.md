@@ -42,7 +42,7 @@ Default markdown behavior is not inserting `<br>` on places of newlines. This is
 > Quote
 
 ```js
-const foo = 'more code'
+const foo = "more code"
 ```
 
 _(Code block with language specified as `js`.)_

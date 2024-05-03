@@ -14,7 +14,7 @@ const enhance =
     if (title) {
       newResult = originResult.replace(
         /<pre[^>]*>/,
-        `$&<h2 class="title">${title}</h2>`
+        `$&<h2 class="title">${title}</h2>`,
       )
     }
     return newResult

@@ -1,7 +1,7 @@
 ---
 title: JavaScript collection manipulation
 date: 2020-02-27
-tags: ['javascript', 'data-manipulation']
+tags: ["javascript", "data-manipulation"]
 ---
 
 - [Array.prototype](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)

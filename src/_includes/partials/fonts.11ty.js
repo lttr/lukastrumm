@@ -1,7 +1,7 @@
-const { html } = require('../../_lib/html')
-const inline = require('../../_lib/inline')
+const { html } = require("../../_lib/html")
+const inline = require("../../_lib/inline")
 
-const base64Font = inline('./src/fonts/charter_regular-optimized')
+const base64Font = inline("./src/fonts/charter_regular-optimized")
 const fontUrl = `data:font/woff2;charset=utf-8;base64,${base64Font}`
 
 function fonts() {
@@ -44,7 +44,7 @@ function fonts() {
     <style>
       @font-face {
         font-family: Charter;
-        src: url('${fontUrl}') format('woff2');
+        src: url("${fontUrl}") format("woff2");
         font-style: normal;
         font-weight: normal;
         font-stretch: normal;
@@ -52,7 +52,7 @@ function fonts() {
       }
       @font-face {
         font-family: Charter;
-        src: url('/fonts/charter_italic.woff2') format('woff2');
+        src: url("/fonts/charter_italic.woff2") format("woff2");
         font-style: italic;
         font-weight: normal;
         font-stretch: normal;
@@ -60,7 +60,7 @@ function fonts() {
       }
       @font-face {
         font-family: Charter;
-        src: url('/fonts/charter_bold.woff2') format('woff2');
+        src: url("/fonts/charter_bold.woff2") format("woff2");
         font-style: normal;
         font-weight: bold;
         font-stretch: normal;
@@ -68,7 +68,7 @@ function fonts() {
       }
       @font-face {
         font-family: Fira Mono;
-        src: url('/fonts/firamono_regular_latin.woff2') format('woff2');
+        src: url("/fonts/firamono_regular_latin.woff2") format("woff2");
         font-style: normal;
         font-weight: normal;
         font-stretch: normal;
@@ -76,7 +76,7 @@ function fonts() {
       }
       @font-face {
         font-family: Raleway;
-        src: url('/fonts/raleway_semibold-optimized.woff2') format('woff2');
+        src: url("/fonts/raleway_semibold-optimized.woff2") format("woff2");
         font-style: normal;
         font-weight: 600;
         font-stretch: normal;
@@ -85,15 +85,15 @@ function fonts() {
     </style>
     <script>
       const baseFontRegular = new FontFace(
-        'Charter',
-        'url(/fonts/charter_regular.woff2)',
+        "Charter",
+        "url(/fonts/charter_regular.woff2)",
         {
-          family: 'Charter',
-          style: 'normal',
-          weight: 'normal',
-          stretch: 'normal',
-          display: 'swap',
-        }
+          family: "Charter",
+          style: "normal",
+          weight: "normal",
+          stretch: "normal",
+          display: "swap",
+        },
       )
       baseFontRegular.load().then((font) => {
         document.fonts.add(font)

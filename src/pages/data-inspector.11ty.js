@@ -1,9 +1,9 @@
-const html = require('../_lib/html')
+const html = require("../_lib/html")
 
 module.exports = {
   data: {
-    title: 'Eleventy data inspector',
-    permalink: '/data-inspector/',
+    title: "Eleventy data inspector",
+    permalink: "/data-inspector/",
   },
 
   render(data) {
@@ -19,7 +19,7 @@ function renderStats(data) {
     ...new Set(
       data.collections.all
         .filter((item) => Array.isArray(item.data.tags))
-        .flatMap((item) => item.data.tags)
+        .flatMap((item) => item.data.tags),
     ),
   ]
   const dependencies = [
@@ -28,7 +28,7 @@ function renderStats(data) {
   ]
   const layouts = [
     ...new Set(
-      data.collections.all.map((item) => item.template.frontMatter.data.layout)
+      data.collections.all.map((item) => item.template.frontMatter.data.layout),
     ),
   ]
 
@@ -45,12 +45,12 @@ function renderStats(data) {
 
   return html`<h4>Statistics</h4>
     <ul>
-      <li>${renderDetails('collections', Object.keys(data.collections))}</li>
+      <li>${renderDetails("collections", Object.keys(data.collections))}</li>
       <li>
         ${renderDetails("pages in 'all' collection", data.collections.all)}
       </li>
-      <li>${renderDetails('unique tags', tags)}</li>
-      <li>${renderDetails('direct dependencies', dependencies)}</li>
-      <li>${renderDetails('layouts', layouts)}</li>
+      <li>${renderDetails("unique tags", tags)}</li>
+      <li>${renderDetails("direct dependencies", dependencies)}</li>
+      <li>${renderDetails("layouts", layouts)}</li>
     </ul> `
 }

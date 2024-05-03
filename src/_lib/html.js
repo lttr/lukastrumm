@@ -1,4 +1,4 @@
-const { html, svg, raw, js, css } = require('ucontent')
+const { html, svg, raw, js, css } = require("ucontent")
 
 module.exports = html
 

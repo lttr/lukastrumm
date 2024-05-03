@@ -110,16 +110,16 @@ async function main() {
     copyUsingObjectAssign,
     copyUsingObjectDestructuring,
   ]
-  await run('Million once', runMillionOnce, functions)
+  await run("Million once", runMillionOnce, functions)
   await run(
-    'Thousand thousand times sync',
+    "Thousand thousand times sync",
     runThousandThousandTimesSync,
-    functions
+    functions,
   )
   await run(
-    'Thousand thousand times async',
+    "Thousand thousand times async",
     runThousandThousandTimesAsync,
-    functions
+    functions,
   )
 }
 main()

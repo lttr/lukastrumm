@@ -32,18 +32,18 @@
 }
 
 .klipse-actual.language-js > .CodeMirror::after {
-  content: 'JavaScript';
+  content: "JavaScript";
 }
 
 .klipse-actual.language-html > .CodeMirror::after {
-  content: 'HTML';
+  content: "HTML";
 }
 
 .klipse-result::after {
-  content: 'Result';
+  content: "Result";
 }
 
-pre[class*='language-'].klipse-actual.active {
+pre[class*="language-"].klipse-actual.active {
   padding: 0.5rem;
 }
 
@@ -56,7 +56,7 @@ pre[class*='language-'].klipse-actual.active {
 }
 
 .CodeMirror {
-  font-family: 'Fira Mono', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
+  font-family: "Fira Mono", Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
     monospace;
   height: 100%;
   color: var(--text-color);
@@ -76,7 +76,9 @@ pre[class*='language-'].klipse-actual.active {
   opacity: 0;
   padding: 0;
   margin: 0;
-  transition: height 0.24s ease-in-out, opacity 0.24s ease-in-out;
+  transition:
+    height 0.24s ease-in-out,
+    opacity 0.24s ease-in-out;
 }
 
 .klipse-actual.active {
@@ -553,7 +555,7 @@ div.CodeMirror-dragcursors {
 
 /* See issue #2901 */
 .cm-tab-wrap-hack::after {
-  content: '';
+  content: "";
 }
 
 /* Help users use markselection to safely style text background */

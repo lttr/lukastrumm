@@ -1,9 +1,9 @@
-const html = require('../_lib/html')
+const html = require("../_lib/html")
 
 module.exports = {
   data: {
-    title: 'Reading',
-    permalink: '/reading/',
+    title: "Reading",
+    permalink: "/reading/",
   },
 
   render() {

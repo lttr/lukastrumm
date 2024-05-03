@@ -1,6 +1,6 @@
 ---
 title: Achievements
-permalink: '/achievements/'
+permalink: "/achievements/"
 ---
 
 _These are not accomplishments to show me off. This is only a list that motivates me to keep doing interesting things. It is in random order._

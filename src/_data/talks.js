@@ -1,11 +1,11 @@
-const fetch = require('node-fetch')
-const matter = require('gray-matter')
+const fetch = require("node-fetch")
+const matter = require("gray-matter")
 
 const {
   getCachedData,
   setCacheData,
   getOncePerDayCacheKey,
-} = require('../_lib/cache')
+} = require("../_lib/cache")
 
 // Example output from gray-matter:
 //
@@ -22,19 +22,19 @@ const {
 //       '\n'
 //   } ]
 
-module.exports = async function() {
-  const { cachedData, cache } = getCachedData('talks', getOncePerDayCacheKey())
+module.exports = async function () {
+  const { cachedData, cache } = getCachedData("talks", getOncePerDayCacheKey())
 
   if (!cachedData) {
-    console.log('Fetching talks data from Github.')
+    console.log("Fetching talks data from Github.")
 
-    const owner = 'lttr'
-    const repo = 'talks'
-    const branch = 'master'
-    const fileName = 'README.md'
+    const owner = "lttr"
+    const repo = "talks"
+    const branch = "master"
+    const fileName = "README.md"
     const aTalkDirectoryPattern = /^\d{4}-.*$/
 
-    const url = (path = '') =>
+    const url = (path = "") =>
       `https://api.github.com/repos/${owner}/${repo}/contents/${path}`
 
     const downloadUrl = (path) =>
@@ -75,7 +75,7 @@ module.exports = async function() {
       setCacheData(cache, getOncePerDayCacheKey(), newData)
       return newData
     } catch (error) {
-      console.error('Error fetching README files:', error)
+      console.error("Error fetching README files:", error)
       throw error
     }
   }

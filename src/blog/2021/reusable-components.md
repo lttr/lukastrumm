@@ -73,7 +73,7 @@ is how a so called dumb component looks like.
 function MyButtonComponent({ text }) {
   return `<button>😊 <em>${text}</em></button>`
 }
-MyButtonComponent({ text: 'My Emphasised Button' })
+MyButtonComponent({ text: "My Emphasised Button" })
 ```
 
 ### Result
@@ -96,7 +96,7 @@ typically the case when the component accepts _slots_ for external content.
 function MyButtonComponent(content) {
   return `<button>${content}</button>`
 }
-MyButtonComponent('<strong>My Strong Button 🙍</strong>')
+MyButtonComponent("<strong>My Strong Button 🙍</strong>")
 ```
 
 ### Result
@@ -120,7 +120,7 @@ in text. Passing a funciton as a component property is known as _render props_.
 // Child component
 function MyButtonComponent(contentFunction) {
   const computeLevelFromContent = (content) => content.length
-  const level = computeLevelFromContent(contentFunction(''))
+  const level = computeLevelFromContent(contentFunction(""))
   const content = contentFunction(level)
   return `<button>${content}</button>`
 }
@@ -160,7 +160,7 @@ function MyButtonComponent({ buttonText } = {}) {
     buttonText = (level) => `My Powerful Button (level: ${level})`
   }
   const computeLevelFromContent = (content) => content.length
-  const level = computeLevelFromContent(buttonText(''))
+  const level = computeLevelFromContent(buttonText(""))
   const content = buttonText(level)
   return `<button>${content}</button>`
 }

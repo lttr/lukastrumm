@@ -1,19 +1,19 @@
-const html = require('../_lib/html')
+const html = require("../_lib/html")
 const {
   postInline,
   tags,
   getCategory,
-} = require('../_includes/partials/postSnippets.11ty')
+} = require("../_includes/partials/postSnippets.11ty")
 
 module.exports = {
   data: {
-    layout: 'layouts/page',
+    layout: "layouts/page",
     pagination: {
-      data: 'collections',
+      data: "collections",
       size: 1,
       addAllPagesToCollections: true,
       // filter out all 'system' tags
-      filter: ['all', 'tagList', 'nav', 'posts', 'notes', 'blog'],
+      filter: ["all", "tagList", "nav", "posts", "notes", "blog"],
     },
     permalink: (data) => `/tag/${data.pagination.items[0]}/`,
   },
@@ -35,9 +35,9 @@ module.exports = {
               <span class="category">${getCategory(item.data.page.url)}</span>
               ${postInline(item.data)}${Array.isArray(item.data.tags)
                 ? tags(item.data.tags)
-                : ''}
+                : ""}
             </li>
-          `
+          `,
         )}
       </ul>
       <p>

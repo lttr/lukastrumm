@@ -64,11 +64,11 @@ class Queue {
 //
 // Depth first order:
 // * + A B C
-const a = new TreeNode('A', null, null)
-const b = new TreeNode('B', null, null)
-const p = new TreeNode('+', a, b)
-const c = new TreeNode('C', null, null)
-const root = new TreeNode('*', p, c)
+const a = new TreeNode("A", null, null)
+const b = new TreeNode("B", null, null)
+const p = new TreeNode("+", a, b)
+const c = new TreeNode("C", null, null)
+const root = new TreeNode("*", p, c)
 
 function accumulatingAction(accumulator) {
   return (node) => {
@@ -139,21 +139,21 @@ function breadthFirstPrefixCycle(node, action) {
 const depthFirstPrefixRecursionResult = []
 depthFirstPrefixRecursion(
   root,
-  accumulatingAction(depthFirstPrefixRecursionResult)
+  accumulatingAction(depthFirstPrefixRecursionResult),
 )
 console.log(depthFirstPrefixRecursionResult)
 
 const depthFirstInfixRecursionResult = []
 depthFirstInfixRecursion(
   root,
-  accumulatingAction(depthFirstInfixRecursionResult)
+  accumulatingAction(depthFirstInfixRecursionResult),
 )
 console.log(depthFirstInfixRecursionResult)
 
 const depthFirstPostfixRecursionResult = []
 depthFirstPostfixRecursion(
   root,
-  accumulatingAction(depthFirstPostfixRecursionResult)
+  accumulatingAction(depthFirstPostfixRecursionResult),
 )
 console.log(depthFirstPostfixRecursionResult)
 
@@ -166,7 +166,7 @@ console.log(depthFirstPrefixCycleResult)
 const breadthFirstPrefixRecursionResult = []
 breadthFirstPrefixRecursion(
   root,
-  accumulatingAction(breadthFirstPrefixRecursionResult)
+  accumulatingAction(breadthFirstPrefixRecursionResult),
 )
 console.log(breadthFirstPrefixRecursionResult)
 

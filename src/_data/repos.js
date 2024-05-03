@@ -1,26 +1,26 @@
-const fetch = require('node-fetch')
+const fetch = require("node-fetch")
 
 const {
   getCachedData,
   setCacheData,
   getOncePerDayCacheKey,
-} = require('../_lib/cache')
+} = require("../_lib/cache")
 
-const reposUrl = 'https://api.github.com/users/lttr/repos'
+const reposUrl = "https://api.github.com/users/lttr/repos"
 const specialHeader = {
   // this header is required for fields in preview version
   // (topics property)
-  Accept: 'application/vnd.github.mercy-preview+json',
+  Accept: "application/vnd.github.mercy-preview+json",
 }
 
 module.exports = async function () {
   const { cachedData, cache } = getCachedData(
-    'github-repos',
-    getOncePerDayCacheKey()
+    "github-repos",
+    getOncePerDayCacheKey(),
   )
 
   if (!cachedData) {
-    console.log('Fetching github repos.')
+    console.log("Fetching github repos.")
 
     const response = await fetch(reposUrl, {
       headers: specialHeader,

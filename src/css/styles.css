@@ -17,9 +17,9 @@
   --box-shadow: rgb(0 0 0 / 12%);
 
   /* fonts */
-  --heading-font: 'Raleway', arial, helvetica, sans-serif;
+  --heading-font: "Raleway", arial, helvetica, sans-serif;
   --heading-font-weight: 600;
-  --body-font: 'Charter', georgia, serif;
+  --body-font: "Charter", georgia, serif;
   --font-size: 18px;
 
   /* solarized colors */
@@ -342,7 +342,7 @@ main {
   height: 5px;
   border-radius: 50%;
   background-color: var(--primary-color);
-  content: '';
+  content: "";
 }
 
 .header-nav .is-active {
@@ -381,7 +381,7 @@ main {
 
 .header-anchor:hover::before,
 .header-anchor:focus::before {
-  content: url('/images/link-dark.svg');
+  content: url("/images/link-dark.svg");
   left: -25px;
   position: relative;
   float: left;
@@ -392,7 +392,7 @@ main {
 @media (prefers-color-scheme: dark) {
   .header-anchor:hover::before,
   .header-anchor:focus::before {
-    content: url('/images/link-light.svg');
+    content: url("/images/link-light.svg");
   }
 }
 
@@ -513,7 +513,7 @@ ol.footnotes-list {
 .footnotes-list li::marker {
   font-style: normal;
   font-size: 0.875rem;
-  content: '[' counter(footnotes) '] ';
+  content: "[" counter(footnotes) "] ";
 }
 
 /* mermaid */
@@ -703,7 +703,7 @@ ol.footnotes-list {
 }
 
 /* svgs */
-svg.chameleon path[stroke^='#000'] {
+svg.chameleon path[stroke^="#000"] {
   stroke: var(--text-color);
 }
 
@@ -717,7 +717,7 @@ article svg {
 }
 
 @media (prefers-color-scheme: dark) {
-  article img[src$='svg'] {
+  article img[src$="svg"] {
     filter: invert(0.7);
   }
 }

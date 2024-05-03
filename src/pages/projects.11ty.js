@@ -1,10 +1,10 @@
-const { html } = require('../_lib/html')
-const { formatDate } = require('../_lib/formatDate')
+const { html } = require("../_lib/html")
+const { formatDate } = require("../_lib/formatDate")
 
 module.exports = {
   data: {
-    title: 'Projects',
-    permalink: '/projects/',
+    title: "Projects",
+    permalink: "/projects/",
   },
 
   render(data) {
@@ -73,7 +73,7 @@ module.exports = {
       <!-- <h2>Labs</h2> -->
       <!-- <ul class="cards full-width"> -->
       <!--   ${data.collections.labs.map(
-        (item) => html` ${renderLab(item.data)} `
+        (item) => html` ${renderLab(item.data)} `,
       )} -->
       <!-- </ul> -->
 
@@ -91,7 +91,7 @@ function renderLab(data) {
     image,
     page: { url, date, excerpt },
   } = data
-  const labUrl = url.replace('README/', '')
+  const labUrl = url.replace("README/", "")
   const readmeUrl = url
   const imageUrl = `${labUrl}${image}`
   const altText = `${title} - page screenshot`
@@ -141,7 +141,7 @@ function renderRepo(repo) {
           ${repo.topics.length
             ? html`<div class="repo-topics">
                 <i>Topics:</i>
-                ${repo.topics.join(', ')}
+                ${repo.topics.join(", ")}
               </div>`
             : null}
         </div>

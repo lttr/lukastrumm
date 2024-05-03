@@ -1,9 +1,9 @@
-const html = require('../_lib/html')
+const html = require("../_lib/html")
 
 module.exports = {
   data: {
-    title: 'Sitemap',
-    permalink: '/sitemap/',
+    title: "Sitemap",
+    permalink: "/sitemap/",
   },
 
   render(data) {
@@ -11,7 +11,7 @@ module.exports = {
       <ul>
         ${data.collections.all
           .filter(
-            (page) => !page.url.startsWith('/_') && !page.url.endsWith('.json')
+            (page) => !page.url.startsWith("/_") && !page.url.endsWith(".json"),
           )
           .map(({ url, date }) => ({ url, date }))
           .sort((a, b) => a.url.localeCompare(b.url))

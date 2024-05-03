@@ -6,11 +6,11 @@ const enhance =
     const originResult = render.apply(this, args)
     let newResult = originResult
     const infostring = tokens[idx].info
-    if (infostring === '') {
-      const defaultType = 'text'
+    if (infostring === "") {
+      const defaultType = "text"
       newResult = originResult.replace(
         /<pre[^>]*>/,
-        `<pre class="language-${defaultType}">`
+        `<pre class="language-${defaultType}">`,
       )
     }
     return newResult

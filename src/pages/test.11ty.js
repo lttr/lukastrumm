@@ -1,8 +1,8 @@
-const { html } = require('../_lib/html')
+const { html } = require("../_lib/html")
 
 module.exports = {
   data: {
-    permalink: '/test/',
+    permalink: "/test/",
   },
   async render(data) {
     return html`

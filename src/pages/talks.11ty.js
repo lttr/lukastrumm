@@ -1,10 +1,10 @@
-const { html } = require('../_lib/html')
-const { formatDate } = require('../_lib/formatDate')
+const { html } = require("../_lib/html")
+const { formatDate } = require("../_lib/formatDate")
 
 module.exports = {
   data: {
-    title: 'Talks',
-    permalink: '/talks/',
+    title: "Talks",
+    permalink: "/talks/",
   },
 
   render(data) {
@@ -24,7 +24,7 @@ module.exports = {
           .sort(
             (t1, t2) =>
               new Date(t2.data.date).getTime() -
-              new Date(t1.data.date).getTime()
+              new Date(t1.data.date).getTime(),
           )
           .map((item) => html`${renderTalk(item)}`)}
       </ul>

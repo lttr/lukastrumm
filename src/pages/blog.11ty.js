@@ -1,10 +1,10 @@
-const html = require('../_lib/html')
-const { postInline } = require('../_includes/partials/postSnippets.11ty')
+const html = require("../_lib/html")
+const { postInline } = require("../_includes/partials/postSnippets.11ty")
 
 module.exports = {
   data: {
-    title: 'Blog',
-    permalink: '/blog/',
+    title: "Blog",
+    permalink: "/blog/",
   },
 
   render(data) {

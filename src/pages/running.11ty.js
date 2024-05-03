@@ -1,10 +1,10 @@
-const { html } = require('../_lib/html')
+const { html } = require("../_lib/html")
 
 module.exports = {
   data: {
-    layout: 'layouts/running',
-    title: 'Running',
-    permalink: '/running/',
+    layout: "layouts/running",
+    title: "Running",
+    permalink: "/running/",
   },
 
   render() {

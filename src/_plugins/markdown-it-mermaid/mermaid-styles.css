@@ -18,48 +18,48 @@
   --green-light: #b5be5a88;
 }
 
-[id^='mermaid'] .green > * {
+[id^="mermaid"] .green > * {
   fill: var(--green-light) !important;
   stroke: var(--green) !important;
 }
 
-[id^='mermaid'] .red > * {
+[id^="mermaid"] .red > * {
   fill: var(--red-light) !important;
   stroke: var(--red) !important;
 }
 
-[id^='mermaid'] .blue > * {
+[id^="mermaid"] .blue > * {
   fill: var(--blue-light) !important;
   stroke: var(--blue) !important;
 }
 
-[id^='mermaid'] .violet > * {
+[id^="mermaid"] .violet > * {
   fill: var(--violet-light) !important;
   stroke: var(--violet) !important;
 }
 
-[id^='mermaid'] .yellow > * {
+[id^="mermaid"] .yellow > * {
   fill: var(--yellow-light) !important;
   stroke: var(--yellow) !important;
 }
 
-[id^='mermaid'] .orange > * {
+[id^="mermaid"] .orange > * {
   fill: var(--orange-light) !important;
   stroke: var(--orange) !important;
 }
 
-[id^='mermaid'] .cyan > * {
+[id^="mermaid"] .cyan > * {
   fill: var(--cyan-light) !important;
   stroke: var(--cyan) !important;
 }
 
-[id^='mermaid'] .magenta > * {
+[id^="mermaid"] .magenta > * {
   fill: var(--magenta-light) !important;
   stroke: var(--magenta) !important;
 }
 
 /* stylelint-disable-next-line selector-class-pattern */
-[id^='mermaid'] .edgeLabel {
+[id^="mermaid"] .edgeLabel {
   background-color: var(--body-back-color) !important;
 }
 

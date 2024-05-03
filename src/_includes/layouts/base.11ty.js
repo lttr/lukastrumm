@@ -1,13 +1,13 @@
-const inline = require('../../_lib/inline')
-const { html, raw, js } = require('../../_lib/html')
+const inline = require("../../_lib/inline")
+const { html, raw, js } = require("../../_lib/html")
 
-const fonts = require('../partials/fonts.11ty')
-const footer = require('../partials/footer.11ty')
-const header = require('../partials/header.11ty')
-const klipse = require('../partials/klipse.11ty')
-const mermaid = require('../partials/mermaid.11ty')
-const meta = require('../partials/meta.11ty')
-const styles = require('../partials/styles.11ty')
+const fonts = require("../partials/fonts.11ty")
+const footer = require("../partials/footer.11ty")
+const header = require("../partials/header.11ty")
+const klipse = require("../partials/klipse.11ty")
+const mermaid = require("../partials/mermaid.11ty")
+const meta = require("../partials/meta.11ty")
+const styles = require("../partials/styles.11ty")
 
 module.exports = function base(eleventy, content, data) {
   const hasCodeBlock = content.includes('class="language-')
@@ -15,7 +15,7 @@ module.exports = function base(eleventy, content, data) {
   const hasRunnableCodeBlock = content.includes('class="klipse')
 
   return html`
-    <!DOCTYPE html>
+    <!doctype html>
     <html lang="en">
       <head>
         ${meta(eleventy, data)} ${fonts()} ${styles()}
@@ -29,10 +29,10 @@ module.exports = function base(eleventy, content, data) {
         </div>
         <script>
           ${hasCodeBlock
-            ? js`${inline('./src/js/enable-copy-to-clipboard.js')}`.min()
+            ? js`${inline("./src/js/enable-copy-to-clipboard.js")}`.min()
             : null}
           ${hasRunnableCodeBlock
-            ? js`${inline('./src/js/enable-klipse.js')}`
+            ? js`${inline("./src/js/enable-klipse.js")}`
             : null}
         </script>
         ${hasRunnableCodeBlock ? raw`${klipse(eleventy)}` : null}

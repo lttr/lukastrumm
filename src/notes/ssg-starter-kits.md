@@ -1,7 +1,7 @@
 ---
 title: SSG starter kits
 date: 2020-04-14
-tags: ['ssg', 'eleventy']
+tags: ["ssg", "eleventy"]
 ---
 
 ## Eleventy

@@ -1,8 +1,8 @@
-const { html, css } = require('../../_lib/html')
-const inline = require('../../_lib/inline')
+const { html, css } = require("../../_lib/html")
+const inline = require("../../_lib/inline")
 
-const indexCss = inline('./src/css/styles.css')
-const codeCss = inline('./src/css/code.css')
+const indexCss = inline("./src/css/styles.css")
+const codeCss = inline("./src/css/code.css")
 
 function externalStyles() {
   return html`

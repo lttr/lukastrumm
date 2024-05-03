@@ -1,10 +1,10 @@
-const html = require('../../_lib/html')
+const html = require("../../_lib/html")
 
 module.exports = (eleventy, data) => html`
   <header class="page-header">
     <div class="header-content">
       <h1 class="site-name">
-        <a href="${eleventy.url('/')}">${data.metadata.title}</a>
+        <a href="${eleventy.url("/")}">${data.metadata.title}</a>
       </h1>
       <nav class="header-nav">
         <ul>
@@ -13,7 +13,7 @@ module.exports = (eleventy, data) => html`
             return html`
               <li>
                 <a
-                  class="${isActive ? 'is-active' : ''}"
+                  class="${isActive ? "is-active" : ""}"
                   href="${eleventy.url(item.url)}"
                 >
                   ${item.text}
@@ -23,7 +23,7 @@ module.exports = (eleventy, data) => html`
           })}
           <li>
             <a
-              href="${eleventy.url('/search')}"
+              href="${eleventy.url("/search")}"
               id="search-link"
               aria-label="search"
             >

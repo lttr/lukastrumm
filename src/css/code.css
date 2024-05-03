@@ -23,8 +23,8 @@
   --code-variable-fg: #996100;
   --code-result: #fff;
   --code-selection: rgb(200 200 200 / 50%);
-  --font-family-code: 'Fira Mono', consolas, monaco, 'Andale Mono',
-    'Ubuntu Mono', monospace;
+  --font-family-code: "Fira Mono", consolas, monaco, "Andale Mono",
+    "Ubuntu Mono", monospace;
   --font-size-code: 15px;
   --font-size-code-fenced-block: 16px;
 }
@@ -94,7 +94,7 @@
 }
 
 .highlight-line-add::before {
-  content: '+';
+  content: "+";
   position: relative;
   left: -0.35em;
   margin-left: -0.5em;
@@ -106,7 +106,7 @@
 }
 
 .highlight-line-remove::before {
-  content: '-';
+  content: "-";
   position: relative;
   left: -0.35em;
   margin-left: -0.5em;
@@ -123,8 +123,8 @@
 
 /* pre */
 
-code[class*='language-'],
-pre[class*='language-'] {
+code[class*="language-"],
+pre[class*="language-"] {
   color: var(--text-color);
   background-color: var(--code-bg);
   font-family: var(--font-family-code);
@@ -153,7 +153,7 @@ pre .title {
 }
 
 /* Code blocks */
-pre[class*='language-']:not(.klipse-actual) {
+pre[class*="language-"]:not(.klipse-actual) {
   overflow: auto;
   border-radius: 0.25em;
   padding: 1.4em;

@@ -1,13 +1,13 @@
-const html = require('../_lib/html')
+const html = require("../_lib/html")
 const {
   postInline,
   getCategory,
-} = require('../_includes/partials/postSnippets.11ty')
+} = require("../_includes/partials/postSnippets.11ty")
 
 module.exports = {
   data: {
-    title: 'Search',
-    permalink: '/search/',
+    title: "Search",
+    permalink: "/search/",
   },
 
   render(data) {
@@ -65,7 +65,7 @@ module.exports = {
               <li>
                 <span class="category">${category}</span>${postInline(
                   post.data,
-                  false
+                  false,
                 )}
               </li>
             `
@@ -83,17 +83,17 @@ module.exports = {
       </div>
 
       <script>
-        const input = document.getElementById('search-input')
-        const initialList = document.getElementById('initial-list')
-        const results = document.getElementById('search-results-list')
-        const resultsTemplate = document.getElementById('results-template')
+        const input = document.getElementById("search-input")
+        const initialList = document.getElementById("initial-list")
+        const results = document.getElementById("search-results-list")
+        const resultsTemplate = document.getElementById("results-template")
 
         function getCategory(url) {
-          const firstSegment = url.split('/')[1]
+          const firstSegment = url.split("/")[1]
           if (firstSegment) {
             switch (firstSegment) {
-              case 'notes':
-                return 'note'
+              case "notes":
+                return "note"
               default:
                 return firstSegment
             }
@@ -102,7 +102,7 @@ module.exports = {
 
         function performSearch(searchIndex) {
           const searchString = input.value
-          results.innerHTML = ''
+          results.innerHTML = ""
           if (searchString && searchString.length > 2) {
             initialList.hidden = true
             results.hidden = false
@@ -110,23 +110,23 @@ module.exports = {
               if (item.text.includes(searchString)) {
                 const searchTextStart = item.text.substring(
                   item.text.indexOf(searchString) - 20,
-                  item.text.indexOf(searchString)
+                  item.text.indexOf(searchString),
                 )
                 const searchTextEnd = item.text.substr(
                   item.text.indexOf(searchString) + searchString.length,
-                  searchString.length + 20
+                  searchString.length + 20,
                 )
                 const template = resultsTemplate.content.cloneNode(true)
-                template.querySelector('a').href = item.url
-                template.querySelector('a').textContent = item.title
-                template.querySelector('.category').textContent = getCategory(
-                  item.url
+                template.querySelector("a").href = item.url
+                template.querySelector("a").textContent = item.title
+                template.querySelector(".category").textContent = getCategory(
+                  item.url,
                 )
-                template.querySelector('.search-match').textContent =
+                template.querySelector(".search-match").textContent =
                   searchString
-                template.querySelector('.search-text-start').textContent =
+                template.querySelector(".search-text-start").textContent =
                   searchTextStart
-                template.querySelector('.search-text-end').textContent =
+                template.querySelector(".search-text-end").textContent =
                   searchTextEnd
                 results.appendChild(template)
               }
@@ -137,11 +137,11 @@ module.exports = {
           }
         }
 
-        const searchIndex = fetch('/search.json')
+        const searchIndex = fetch("/search.json")
           .then((r) => r.json())
           .then((searchIndex) => {
             performSearch(searchIndex)
-            input.addEventListener('input', () => {
+            input.addEventListener("input", () => {
               performSearch(searchIndex)
             })
           })

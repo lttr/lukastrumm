@@ -1,5 +1,5 @@
-const html = require('../../_lib/html')
-const { formatDate } = require('../../_lib/formatDate')
+const html = require("../../_lib/html")
+const { formatDate } = require("../../_lib/formatDate")
 
 function postInline(data, includeDate = true) {
   const {
@@ -13,7 +13,7 @@ function postInline(data, includeDate = true) {
         ? html`<time datetime="${date.toISOString()}">
             ${formatDate(date)}
           </time>`
-        : ''}
+        : ""}
     </span>
   `
 }
@@ -26,7 +26,7 @@ function postWithExcerpt(data) {
   return html`
     <a href="${url}" class="article-title">${title}</a><br />
     <time datetime="${date.toISOString()}">${formatDate(date)}</time>
-    ${data.draft ? '>> DRAFT <<' : ''}
+    ${data.draft ? ">> DRAFT <<" : ""}
     <p class="excerpt">${excerpt}</p>
   `
 }
@@ -41,11 +41,11 @@ function tags(tags) {
 }
 
 function getCategory(url) {
-  const firstSegment = url.split('/')[1]
+  const firstSegment = url.split("/")[1]
   if (firstSegment) {
     switch (firstSegment) {
-      case 'notes':
-        return 'note'
+      case "notes":
+        return "note"
       default:
         return firstSegment
     }

@@ -1,10 +1,10 @@
-const html = require('../_lib/html')
-const { postInline, tags } = require('../_includes/partials/postSnippets.11ty')
+const html = require("../_lib/html")
+const { postInline, tags } = require("../_includes/partials/postSnippets.11ty")
 
 module.exports = {
   data: {
-    title: 'Notes',
-    permalink: '/notes/',
+    title: "Notes",
+    permalink: "/notes/",
   },
 
   render(data) {
@@ -15,9 +15,9 @@ module.exports = {
             <li>
               ${postInline(item.data)}${Array.isArray(item.data.tags)
                 ? tags(item.data.tags)
-                : ''}
+                : ""}
             </li>
-          `
+          `,
         )}
       </ul>
     `

@@ -51,4 +51,4 @@ git remote prune origin
 
 ### Local vs tracking vs remote branch
 
-![origin/X tracks X on origin](tracking-remote-branch-schema.png 'Image from _[stackoverflow](http://stackoverflow.com/a/23961231)_')
+![origin/X tracks X on origin](tracking-remote-branch-schema.png "Image from _[stackoverflow](http://stackoverflow.com/a/23961231)_")

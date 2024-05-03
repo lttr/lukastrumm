@@ -1,9 +1,9 @@
-const html = require('../../_lib/html')
+const html = require("../../_lib/html")
 
 module.exports = (eleventy) => html`
   <link
     rel="stylesheet"
-    href="${eleventy.url('/css/codemirror.css')}"
+    href="${eleventy.url("/css/codemirror.css")}"
     media="non-existing"
     onload="this.media='all'"
   />

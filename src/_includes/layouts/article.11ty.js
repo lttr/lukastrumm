@@ -1,8 +1,8 @@
-const { html, raw } = require('../../_lib/html')
-const { formatDate } = require('../../_lib/formatDate')
-const comments = require('../partials/comments.11ty')
+const { html, raw } = require("../../_lib/html")
+const { formatDate } = require("../../_lib/formatDate")
+const comments = require("../partials/comments.11ty")
 
-const base = require('./base.11ty')
+const base = require("./base.11ty")
 
 module.exports = {
   render(data) {
@@ -19,13 +19,13 @@ module.exports = {
       updatedDate = new Date(lastUpdate.date)
     }
 
-    const postContentSectionClasses = ['post-content']
+    const postContentSectionClasses = ["post-content"]
     if (excerpt) {
-      postContentSectionClasses.push('has-excerpt')
+      postContentSectionClasses.push("has-excerpt")
     }
 
     const isBlog = data.collections.blog.some(
-      (post) => post.inputPath === page.inputPath
+      (post) => post.inputPath === page.inputPath,
     )
 
     const template = html`
@@ -36,51 +36,51 @@ module.exports = {
             <span class="published-on">
               <time datetime="${date.toISOString()}">${formatDate(date)}</time>
               ${updatedDate
-        ? html`
+                ? html`
                     <br />
                     <time datetime="${date.toISOString()}">
                       (last update ${formatDate(updatedDate)})
                     </time>
                   `
-        : ''}
+                : ""}
             </span>
             ${tags
-        ? html`
+              ? html`
                   <span class="tags">
                     ${tags.map((tag) => {
-          const url = `/tag/${tag}`
-          return html`
+                      const url = `/tag/${tag}`
+                      return html`
                         <a href="${url}" class="tag-badge">${tag}</a>
                       `
-        })}
+                    })}
                   </span>
                 `
-        : ''}
+              : ""}
           </p>
         </header>
 
-        <section class="${postContentSectionClasses.join(' ')}">
+        <section class="${postContentSectionClasses.join(" ")}">
           ${raw`${content}`}
         </section>
 
         <footer>
           ${currentArticleUpdates
-        ? html`
+            ? html`
                 <section class="updates">
                   <div class="toc-heading">Updates</div>
                   <ul>
                     ${currentArticleUpdates.map((update) => {
-          return html`<li>${update.date} ${update.message}</li>`
-        })}
+                      return html`<li>${update.date} ${update.message}</li>`
+                    })}
                   </ul>
                 </section>
               `
-        : null}
+            : null}
         </footer>
       </article>
       ${isBlog
         ? html`<section class="comments">${comments(this)}</section>`
-        : ''}
+        : ""}
     `
     return base(this, template, data)
   },

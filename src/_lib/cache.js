@@ -1,7 +1,7 @@
-const path = require('path')
-const flatCache = require('flat-cache')
+const path = require("path")
+const flatCache = require("flat-cache")
 
-const dataCacheDir = '.datacache'
+const dataCacheDir = ".datacache"
 
 function getCachedData(name, key) {
   const cache = flatCache.load(name, path.resolve(dataCacheDir))

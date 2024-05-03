@@ -1,4 +1,4 @@
-const { html, raw } = require('../_lib/html')
+const { html, raw } = require("../_lib/html")
 
 const enhance =
   (render) =>
@@ -6,8 +6,8 @@ const enhance =
     // args = [tokens, idx, options, env, slf]
     const [tokens = {}, idx = 0] = args
     const infostring = tokens[idx].info
-    const isMermaid = infostring.startsWith('mermaid')
-    const caption = tokens[idx].info.split('//')[1]
+    const isMermaid = infostring.startsWith("mermaid")
+    const caption = tokens[idx].info.split("//")[1]
     const originalResult = render.apply(this, args)
     let newResult = originalResult
     if (isMermaid) {
@@ -16,15 +16,15 @@ const enhance =
       let diagramText = tokens[idx].content
       if (
         !diagramText.includes(linkStyleBasis) &&
-        diagramText.startsWith('graph')
+        diagramText.startsWith("graph")
       ) {
-        diagramText = diagramText.replace('\n', `\n${linkStyleBasis}\n`)
+        diagramText = diagramText.replace("\n", `\n${linkStyleBasis}\n`)
       }
 
-      const approxHeight = diagramText.split('\n').length * 40
+      const approxHeight = diagramText.split("\n").length * 40
       const styles = `
       min-height: ${approxHeight}px;
-      ${process.env.DEV ? '' : 'visibility: hidden;'}
+      ${process.env.DEV ? "" : "visibility: hidden;"}
     `
       newResult = html`
         <figure>
@@ -32,7 +32,7 @@ const enhance =
             ${diagramText}
         </pre
           >
-          <figcaption>${caption ? raw`${caption}` : ''}</figcaption>
+          <figcaption>${caption ? raw`${caption}` : ""}</figcaption>
         </figure>
       `
     }
