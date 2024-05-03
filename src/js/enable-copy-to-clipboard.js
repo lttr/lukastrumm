@@ -77,7 +77,7 @@ function copyToClipboard(string) {
   if (!result) {
     const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0
     const copyHotkey = isMac ? '⌘C' : 'CTRL+C'
-    result = prompt(`Press ${copyHotkey}`, string) // eslint-disable-line no-alert
+    result = prompt(`Press ${copyHotkey}`, string)  
     if (!result) {
       return false
     }

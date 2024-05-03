@@ -1,6 +1,6 @@
 const { html } = require('../../_lib/html')
 
-function comments(eleventy) {
+function comments() {
   return html`
     <script
       src="https://giscus.app/client.js"

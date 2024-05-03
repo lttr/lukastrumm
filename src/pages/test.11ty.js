@@ -1,4 +1,4 @@
-const { html, raw } = require('../_lib/html')
+const { html } = require('../_lib/html')
 
 module.exports = {
   data: {

@@ -1,8 +1,5 @@
 const html = require('./_lib/html')
-const {
-  postInline,
-  postWithExcerpt,
-} = require('./_includes/partials/postSnippets.11ty')
+const { postWithExcerpt } = require('./_includes/partials/postSnippets.11ty')
 
 module.exports = {
   data: {
@@ -16,12 +13,12 @@ module.exports = {
         <h1>Blog posts</h1>
         <ul class="cards">
           ${collections.blog
-            .slice(0, 6)
-            .map(
-              (post) => html`
+        .slice(0, 6)
+        .map(
+          (post) => html`
                 <li class="card">${postWithExcerpt(post.data)}</li>
               `
-            )}
+        )}
         </ul>
         <p>
           <a href="/blog">All posts ➙</a>

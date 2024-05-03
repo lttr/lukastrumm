@@ -1,3 +1,5 @@
+/* global mermaid */
+
 // elements with mermaid diagram code
 const mermaids = document.querySelectorAll('.mermaid')
 

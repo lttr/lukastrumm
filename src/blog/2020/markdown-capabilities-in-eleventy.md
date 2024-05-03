@@ -14,7 +14,7 @@ Markdown in Eleventy is parsed by [markdown-it](https://github.com/markdown-it/m
 
 The first example is a table of content---it is a list that consists of headings on level 2. The plugin for this is [`markdown-it-table-of-contents`](https://www.npmjs.com/package/markdown-it-table-of-contents).
 
-[[toc]]
+[-[TOC]-]
 
 ## This is a heading h2
 

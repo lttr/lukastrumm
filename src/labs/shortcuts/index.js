@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const formatShortcut = (element, info) => {
   let text = info.text
   text = text

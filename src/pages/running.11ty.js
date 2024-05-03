@@ -1,5 +1,4 @@
 const { html } = require('../_lib/html')
-const { formatDate } = require('../_lib/formatDate')
 
 module.exports = {
   data: {
@@ -8,7 +7,7 @@ module.exports = {
     permalink: '/running/',
   },
 
-  render(data) {
+  render() {
     return html`
       <img src="/images/behvevode.jpg" alt="Foot" />
 

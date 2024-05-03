@@ -40,7 +40,7 @@ function cleanTemplate(content) {
     ''
   )
   // remove punctuation
-  text = text.replace(/\.|\,|:|\?|-|—|#|\(|\)/g, '')
+  text = text.replace(/\.|,|:|\?|-|—|#|\(|\)/g, '')
   //remove repeated spaces
   text = text.replace(/[ ]{2,}/g, ' ')
   return text

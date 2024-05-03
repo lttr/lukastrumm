@@ -21,12 +21,12 @@ module.exports = {
       ${styles}
       <ul class="cards full-width">
         ${data.talks
-        .sort(
-          (t1, t2) =>
-            new Date(t2.data.date).getTime() -
-            new Date(t1.data.date).getTime()
-        )
-        .map((item) => html`${renderTalk(item)}`)}
+          .sort(
+            (t1, t2) =>
+              new Date(t2.data.date).getTime() -
+              new Date(t1.data.date).getTime()
+          )
+          .map((item) => html`${renderTalk(item)}`)}
       </ul>
     `
   },
@@ -47,7 +47,7 @@ function renderTalk(item) {
           <h2>${title}</h2>
           ${slug && html`<div><a href="${slidesUrl}">Slides</a></div>`}
           ${lang &&
-    html`<div>
+          html`<div>
             <em style="text-transform: capitalize;">in ${lang}</em>
           </div>`}
           <time datetime="${talkDate.toISOString()}">

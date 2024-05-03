@@ -19,7 +19,7 @@ module.exports = {
       updatedDate = new Date(lastUpdate.date)
     }
 
-    postContentSectionClasses = ['post-content']
+    const postContentSectionClasses = ['post-content']
     if (excerpt) {
       postContentSectionClasses.push('has-excerpt')
     }
@@ -36,26 +36,26 @@ module.exports = {
             <span class="published-on">
               <time datetime="${date.toISOString()}">${formatDate(date)}</time>
               ${updatedDate
-                ? html`
+        ? html`
                     <br />
                     <time datetime="${date.toISOString()}">
                       (last update ${formatDate(updatedDate)})
                     </time>
                   `
-                : ''}
+        : ''}
             </span>
             ${tags
-              ? html`
+        ? html`
                   <span class="tags">
                     ${tags.map((tag) => {
-                      const url = `/tag/${tag}`
-                      return html`
+          const url = `/tag/${tag}`
+          return html`
                         <a href="${url}" class="tag-badge">${tag}</a>
                       `
-                    })}
+        })}
                   </span>
                 `
-              : ''}
+        : ''}
           </p>
         </header>
 
@@ -65,17 +65,17 @@ module.exports = {
 
         <footer>
           ${currentArticleUpdates
-            ? html`
+        ? html`
                 <section class="updates">
                   <div class="toc-heading">Updates</div>
                   <ul>
                     ${currentArticleUpdates.map((update) => {
-                      return html`<li>${update.date} ${update.message}</li>`
-                    })}
+          return html`<li>${update.date} ${update.message}</li>`
+        })}
                   </ul>
                 </section>
               `
-            : null}
+        : null}
         </footer>
       </article>
       ${isBlog

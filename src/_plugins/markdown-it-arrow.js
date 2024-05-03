@@ -24,6 +24,6 @@ function replaceInTokens(inlineTokens) {
   }
 }
 
-module.exports = (md, options) => {
+module.exports = (md) => {
   md.core.ruler.before('replacements', 'arrow', arrow)
 }
