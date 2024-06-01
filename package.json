@@ -36,7 +36,7 @@
     "@netlify/plugin-lighthouse": "^4.0.3",
     "@npmcli/git": "^2.1.0",
     "copyfiles": "^2.4.1",
-    "cypress": "^9.2.1",
+    "cypress": "^13.10.0",
     "eleventy-plugin-lazyimages": "^2.1.2",
     "eleventy-plugin-svg-contents": "^0.7.0",
     "eslint": "^9.1.1",
