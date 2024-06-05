@@ -5,11 +5,9 @@ tags:
   - css
 ---
 
-## CSS resets
-
 Published all around the internet (also known as _normize_, _sanitize_, _remedy_, _reboot_ or _preflight_).
 
-### Articles about the topic (on css-tricks)
+## Articles about the topic (on css-tricks)
 
 - (2015) https://css-tricks.com/accidental-css-resets/
 - (2017) https://css-tricks.com/reboot-resets-reasoning/
@@ -18,7 +16,7 @@ Published all around the internet (also known as _normize_, _sanitize_, _remedy_
 - (2022) https://css-tricks.com/an-interview-with-elad-shechter-on-the-new-css-reset/
 - (2022) https://css-tricks.com/notes-on-josh-comeaus-custom-css-reset/
 
-### Some resets
+## Some resets
 
 - [Eric Mayer's original reset](https://meyerweb.com/eric/tools/css/reset/)
 - [Nicolas Gallagher - normalize.css](https://github.com/necolas/normalize.css)
@@ -33,7 +31,7 @@ Published all around the internet (also known as _normize_, _sanitize_, _remedy_
 - [Tailwind's preflight](https://github.com/tailwindlabs/tailwindcss/blob/next/packages/tailwindcss/preflight.css)
 - [Bootstrap's Reboot](https://getbootstrap.com/docs/5.2/content/reboot/)
 
-### Related articles
+## Related articles
 
 - https://moderncss.dev/modern-css-for-dynamic-component-based-architecture/
 - https://www.mayank.co/blog/revert-layer
