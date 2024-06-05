@@ -2,6 +2,7 @@
 title: Web platform features status in browsers
 date: 2021-03-11
 tags:
+  - webstandards
 ---
 
 - https://caniuse.com/

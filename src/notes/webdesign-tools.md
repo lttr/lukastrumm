@@ -18,7 +18,7 @@ tags:
 - https://www.joshwcomeau.com/shadow-palette/
 - https://css-generators.com/
 - https://chir.ag/projects/name-that-color/
-  - https://gradient.style/
+- https://gradient.style/
 - https://contrast-triangle.com
 - https://linear-easing-generator.netlify.app/
 - https://css.land/
@@ -29,6 +29,7 @@ tags:
 - https://typescale.com/
 - https://buttonbuddy.dev/
 - https://supportscss.dev/
+- https://quantityqueries.com/
 
 ## Fonts
 
