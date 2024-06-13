@@ -8,6 +8,7 @@ tags:
 
 - https://metatags.io/
 - http://software.hixie.ch/utilities/js/live-dom-viewer/
+- http://anchor-tool.com/
 
 ## CSS
 
