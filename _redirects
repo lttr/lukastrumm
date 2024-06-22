@@ -1,5 +1,5 @@
 /notes/reusable-components/ /blog/2021/reusable-components/
 
 # Plausible (https://plausible.io/docs/proxy/guides/netlify)
-/elbisualp/js/script.js https://plausible.io/js/script.js 200
-/elbisualp/api/event https://plausible.io/api/event 200
+/elbisualp/js/script.js https://plausible.lttr.cz/js/script.js 200
+/elbisualp/api/event https://plausible.lttr.cz/api/event 200
