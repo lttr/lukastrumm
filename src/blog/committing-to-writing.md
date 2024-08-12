@@ -4,35 +4,38 @@ date: 2024-08-12
 tags: writing
 ---
 
-I have been struggling with writing regularly for quite some time. I wanted to write more, publish blog posts and I'm even dreaming about writing a book it the future.
+I have been struggling to write regularly for quite some time. I wanted to write more, publish blog posts and I'm even dreaming of writing a book in the future.
 
 ---
 
-As usual I am procrastinating this activity a big time. Until today. I finally feel confident in ability to write something, write something several times every week and stick to it for some time.
+As usual I am procrastinating this activity a big time. Until today. I finally feel confident in my ability to write, to write several times a week and to stick with it for some time.
 
-I have a feeling that I recognize. I have been there before. It is a feeling where all prerequisites are satisfied and you are ready. I had that feeling when I started running almost every day. And that was successful, I still run several times a week ten years later.
+I have the feeling that I recognize myself. I have been there before. It is a feeling where all the conditions are met and you are ready. I had that feeling when I started running almost every day. And it worked, I still run several times a week ten years later.
 
-There have been a number of reasons to write periodically for me. But looking at my website I struggle: 10 posts in 4 years. Better than nothing, maybe.
+There have been a number of reasons for me to write periodically for me. But looking at my website I struggle: 10 posts in 4 years. Better than nothing, maybe.
 
 So, the reasons:
 
-- writing force you to shape your ideas
-- publishing ideas make it easy to share them
-- publishing ideas make it easy to archive them
+- writing forces you to shape your ideas
+- publishing ideas makes it easy to share them
+- publishing ideas makes it easy to archive them
 - others can _see_ what you know
 - writing itself puts you in a great state of flow
 
-There might be more reasons but this is enough. Every point on this list is big by itself.
+There could be more reasons but this is enough. Each item on this list is great in itself.
 
-Now what are the prerequisites? Why do I feel confident, that I will be able to write consistently?
+## Why am I confident now?
 
-- I have stable working schedule, and specifically I am able to start with my day early in the morning when it is a great time for writing.
-- I have a lot of ideas. Every week I tell myself that I should write about something.
-- I have some confidence that it is worth it. This is a classical problem --- everything have been already written on the internet --- so why should I bother.
-- I have a publishing workflow. Write markdown, commit and push. Easy, isn't it. My favourite editor for writing right now is Obsidian with vim keybindings. I like the semi-wysiwyg way of writing markdown. Also, I already write markdown notes several times a week.
-- I believe I know enough english to form the ideas I have in mind.
+Now what are the conditions? Why do I feel confident, that I will be able to write consistently?
 
-Only time can tell whether I will be successful. But I can thank a few people already:
+- I have a stable work schedule, and especially being able to start with my day early in the morning, which is a great time to write.
+- I have a lot of ideas. Every week I tell myself to write about something.
+- I have some confidence that it will be worth it. This is a classic problem---everything has already been written on the internet---so why should I bother.
+- I have a publishing workflow. Write markdown, commit and push. Easy, isn't it? My favourite editor for writing at the moment is Obsidian with vim keybindings. I like the semi-wysiwyg way of writing markdown. I also already write markdown notes several times a week.
+- I believe I know enough English to express the ideas I have in mind.
+
+Only time will tell if I will be successful. But I already have a few people to
+thank:
 
 About the importance of blogging and owning your content I have learned from [Scott Hanselman](https://www.hanselman.com/blog).
 
