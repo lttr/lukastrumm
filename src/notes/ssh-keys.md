@@ -8,6 +8,8 @@ tags: linux
 
 ```bash
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+# better, more modern:
+ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 
 ### Check correct file permissions

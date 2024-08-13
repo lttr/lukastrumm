@@ -31,15 +31,20 @@ tags:
 - https://buttonbuddy.dev/
 - https://supportscss.dev/
 - https://quantityqueries.com/
+- https://layout-breakouts.andrewwalpole.dev/
+- https://scroll-driven-animations.style/
 
 ## Fonts
 
 - https://seek-oss.github.io/capsize/
+- https://wakamaifondue.com/
+- https://modernfontstacks.com/
 
 ## Javascript
 
 - https://objectexplorer.netlify.app/
 - https://arrayexplorer.netlify.app/
+- https://www.joshwcomeau.com/operator-lookup/
 
 ## SVG
 
