@@ -6,7 +6,8 @@ const {
   getOncePerDayCacheKey,
 } = require("../_lib/cache")
 
-const reposUrl = "https://api.github.com/users/lttr/repos"
+const reposUrl =
+  "https://api.github.com/users/lttr/repos?per_page=100&sort=pushed"
 const specialHeader = {
   // this header is required for fields in preview version
   // (topics property)
