@@ -57,6 +57,12 @@ This is baked into a few attempts to create useful dashboards. Check them all ou
 
 You can use them from time to time to catch up on what is new in general or what is new in the Wide adoption status. It is also a good reference when you are starting a new project and deciding what set of features is actually available and supported enough.
 
+![Web Features Explorer display the information in a clean way](web-features-explorer.webp)
+
+![Webstatus.dev shows real progress on features in terms of passed web platform tests in graphs](webstatus.webp)
+
+![My Web Platform Features dashboard allows filtering and sorting features](web-platform-features.webp)
+
 ## The future
 
 Some features have recently been implemented in all browsers rather quickly. But some may not even be considered a good idea by some browser makers. You can find detailed information about what may or may not be coming at the following sites:
