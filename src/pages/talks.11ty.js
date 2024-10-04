@@ -1,5 +1,7 @@
-const { html } = require("../_lib/html")
+const { html, raw } = require("../_lib/html")
 const { formatDate } = require("../_lib/formatDate")
+const markdownIt = require("markdown-it")
+const md = markdownIt()
 
 module.exports = {
   data: {
@@ -14,6 +16,13 @@ module.exports = {
           display: grid;
           grid-gap: 1rem;
           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .card-image {
+          float: right;
+          aspect-ratio: 1;
+          margin-top: 1.5rem;
+          filter: unset !important;
         }
       </style>
     `
@@ -36,7 +45,7 @@ function renderTalk(item) {
   const {
     excerpt,
     slug,
-    data: { title, date, lang },
+    data: { title, date, lang, image },
   } = item
   const slidesUrl = `https://talks.lukastrumm.com/${slug}`
   const talkDate = new Date(date)
@@ -44,6 +53,13 @@ function renderTalk(item) {
     <li class="card-wrapper">
       <article class="card">
         <div class="card-body">
+          ${image &&
+          html`<img
+            src="${slidesUrl + "/" + image}"
+            width="120"
+            alt=""
+            class="card-image"
+          />`}
           <h2>${title}</h2>
           ${slug && html`<div><a href="${slidesUrl}">Slides</a></div>`}
           ${lang &&
@@ -53,7 +69,7 @@ function renderTalk(item) {
           <time datetime="${talkDate.toISOString()}">
             ${formatDate(date)}
           </time>
-          <p class="excerpt">${excerpt}</p>
+          <p class="excerpt">${raw`${md.renderInline(excerpt)}`}</p>
         </div>
       </article>
     </li>
