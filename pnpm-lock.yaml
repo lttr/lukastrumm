@@ -111,8 +111,8 @@ devDependencies:
     specifier: ^3.0.2
     version: 3.0.2
   simple-icons:
-    specifier: ^6.6.0
-    version: 6.23.0
+    specifier: ^13.0.0
+    version: 13.0.0
   stylelint:
     specifier: ^14.2.0
     version: 14.16.0
@@ -11259,8 +11259,8 @@ packages:
       simple-concat: 1.0.1
     dev: true
 
-  /simple-icons@6.23.0:
-    resolution: {integrity: sha512-9ql+6OdW5Dnfx1/z5z8MYO2y+OM4Oj4XBvQY5Nlye4eW+Nf5igHzHIKKtTmFkvCmR0lrddZpe1F/89chgoUXhg==}
+  /simple-icons@13.0.0:
+    resolution: {integrity: sha512-emybHoFXO9IorOH8Uy8GwavS1oOQk6bVMxrIAXztNn/EcRc17yHmJM6XpUUd1CcDpax0dHAbpqvGp4hqWlQapg==}
     engines: {node: '>=0.12.18'}
     dev: true
 
