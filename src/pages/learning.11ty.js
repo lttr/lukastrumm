@@ -60,12 +60,6 @@ module.exports = {
                     html`<li>
                       <h4>${issue.title}</h4>
                       <p>${raw`${insertNewlines(linkifyStr(issue.body))}`}</p>
-                      <p>
-                        <em
-                          >finished in
-                          ${formatMonthAndYear(issue.closed_at)}</em
-                        >
-                      </p>
                     </li>`,
                 )}
             </ul>
