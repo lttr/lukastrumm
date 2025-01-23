@@ -105,3 +105,33 @@ If you are using `yarn` a lot, it might be worth looking it its version enforcem
 ## Conclusion
 
 The JavaScript ecosystem is moving fast. If you want to be up to date you need tooling that help you keep your sanity. With tooling that I have described in this article, you can forget about some aspects of dependency management---and that is a good thing.
+
+## Update in 2025
+
+The engines field is still useful. I use it to specify NodeJS version for [Nixpacks](https://nixpacks.com/docs/providers/node), a build tool that infer most information from a project setup.
+
+I'm not happy with Corepack. It does not work seamlessly as one would expect. I
+had issues with `pnpm` not being on the path on my Linux machine from time to
+time. Support in some environment was lacking.
+
+What I like now is again `pnpm`, which automatically installs the right version
+of itself based on the `packageManager` field in `package.json` since version 10. In environments where Corepack is running well, it works with this setup, since
+all that is needed is the same `packageManager` field.
+
+You can do a package manager update like this (after `pnpm` is managing its
+versions, instead of Corepack):
+
+```bash
+pnpm self-update
+pnpm pkg set packageManager="pnpm@$(pnpm --version)"
+```
+
+For upgrading Node version in a project I use:
+
+```bash
+fnm install --lts
+fnm use lts-latest
+node --version > .node-version
+```
+
+And run tests and other validations, update other environments if needed.
