@@ -16,3 +16,4 @@ sort-package-json
 tldrlegal
 npm-why
 detype
+npm-home

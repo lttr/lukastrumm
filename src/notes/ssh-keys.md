@@ -9,7 +9,7 @@ tags: linux
 ```bash
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 # better, more modern:
-ssh-keygen -t ed25519 -C "your_email@example.com"
+ssh-keygen -t ed25519 -C "your_email@example.com" -f "file_name"
 ```
 
 ### Check correct file permissions
