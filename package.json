@@ -11,7 +11,7 @@
     "node": ">=20",
     "pnpm": ">=8"
   },
-  "packageManager": "pnpm@10.0.0",
+  "packageManager": "pnpm@10.2.0",
   "author": "Lukas Trumm",
   "license": "MIT",
   "scripts": {
