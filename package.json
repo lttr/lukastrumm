@@ -8,10 +8,10 @@
     "url": "git@github.com:lttr/lukastrumm.git"
   },
   "engines": {
-    "node": ">=20",
-    "pnpm": ">=8"
+    "node": ">=22",
+    "pnpm": ">=10"
   },
-  "packageManager": "pnpm@10.2.0",
+  "packageManager": "pnpm@10.6.4",
   "author": "Lukas Trumm",
   "license": "MIT",
   "scripts": {
@@ -69,5 +69,14 @@
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^24.0.0",
     "ucontent": "^2.0.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@netlify/esbuild",
+      "cypress",
+      "netlify-cli",
+      "puppeteer",
+      "sharp"
+    ]
   }
 }
