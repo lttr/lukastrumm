@@ -45,7 +45,7 @@ function renderTalk(item) {
   const {
     excerpt,
     slug,
-    data: { title, date, lang, image },
+    data: { title, date, lang, image, video },
   } = item
   const slidesUrl = `https://talks.lukastrumm.com/${slug}`
   const talkDate = new Date(date)
@@ -61,7 +61,11 @@ function renderTalk(item) {
             class="card-image"
           />`}
           <h2>${title}</h2>
-          ${slug && html`<div><a href="${slidesUrl}">Slides</a></div>`}
+          ${slug &&
+          html`<div>
+            <a href="${slidesUrl}">Slides</a>
+            ${video && html` | <a href="${video}">Video</a>`}
+          </div>`}
           ${lang &&
           html`<div>
             <em style="text-transform: capitalize;">in ${lang}</em>
