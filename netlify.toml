@@ -26,16 +26,16 @@ autoLaunch = false
   [headers.values]
     Access-Control-Allow-Origin = "https://giscus.app"
 
-[[plugins]]
-  package = "netlify-plugin-cypress"
+# [[plugins]]
+#   package = "netlify-plugin-cypress"
 
-[[plugins]]
-  package = "netlify-plugin-no-more-404"
-
-  [plugins.inputs]
-  # either "warn" or "error"
-  on404 = "warn"
-  cacheKey = "no-more-404-v2"
+# [[plugins]]
+#   package = "netlify-plugin-no-more-404"
+#
+#   [plugins.inputs]
+#   # either "warn" or "error"
+#   on404 = "warn"
+#   cacheKey = "no-more-404-v2"
 
 # [[plugins]]
 #   package = "@netlify/plugin-lighthouse"
