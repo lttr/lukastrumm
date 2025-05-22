@@ -34,6 +34,7 @@ tags:
 - https://layout-breakouts.andrewwalpole.dev/
 - https://scroll-driven-animations.style/
 - https://contrast-finder.tanaguru.com/
+- https://maketintsandshades.com
 
 ## Fonts
 

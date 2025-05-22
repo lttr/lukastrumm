@@ -13,3 +13,4 @@ tags:
 - https://github.com/vuejs/docs/issues/2381
 - https://github.com/nuxt/nuxt/discussions/21073
 - https://github.com/denoland/fresh/issues/2012
+- https://github.com/nuxt/nuxt/issues/24941
