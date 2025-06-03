@@ -2,8 +2,8 @@
 title: Project local Neovim settings
 date: 2025-06-03
 tags:
-- neovim
-- configuration
+  - neovim
+  - configuration
 ---
 
 ## 1. Enable `exrc` option
@@ -16,7 +16,7 @@ vim.opt.exrc = true
 
 ## 2. Create `.nvim.lua`
 
-The local config can be any lua code in `<your-project>/.nvim.lua` 
+The local config can be any lua code in `<your-project>/.nvim.lua`
 
 Ignore the local config file, if it is your personal and you don't want change `.gitignore`.
 
@@ -29,6 +29,7 @@ echo -e ".nvim.lua" >> .git/info/exclude
 Neovim is going to ask you every time whether to load the file.
 
 But you can mark it as trusted:
+
 - open the file `.nvim.lua`
 - execute `:trust` ex-command
 
@@ -37,19 +38,12 @@ But you can mark it as trusted:
 I usually let Neovim to format my code on file save, but in some legacy projects it might not be desirable, so here is my `.nvim.lua` file then:
 
 ```lua
--- completely disable format on save and similar commands
+-- disable format on save by clearing the autocommands from Conform.nvim
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-    buffer = 0,
-    callback = function()
-        return true
-    end,
-})
-vim.api.nvim_create_autocmd("BufWritePost", {
-    buffer = 0,
-    callback = function()
-        return true
-    end,
-})
-
+vim.defer_fn(function()
+    local conform = require("conform")
+    conform.formatters_by_ft = conform.formatters_by_ft or {}
+    -- Clear the autocmd by recreating the augroup empty
+    vim.api.nvim_create_augroup("Conform", { clear = true })
+end, 100) -- Wait for Conform to load
 ```
