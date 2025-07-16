@@ -35,6 +35,7 @@ tags:
 - https://scroll-driven-animations.style/
 - https://contrast-finder.tanaguru.com/
 - https://maketintsandshades.com
+- https://css.glass/
 
 ## Fonts
 
