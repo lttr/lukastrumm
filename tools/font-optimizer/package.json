@@ -8,7 +8,7 @@
     "node": ">=20",
     "pnpm": ">=8"
   },
-  "packageManager": "pnpm@8.15.1",
+  "packageManager": "pnpm@10.17.1",
   "scripts": {
     "start": "node index.js",
     "clean": "rm -r ./charter* ./Charter* ./raleway*",

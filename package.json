@@ -11,7 +11,7 @@
     "node": ">=22",
     "pnpm": ">=10"
   },
-  "packageManager": "pnpm@10.6.4",
+  "packageManager": "pnpm@10.17.1",
   "author": "Lukas Trumm",
   "license": "MIT",
   "scripts": {
@@ -33,6 +33,7 @@
     "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
     "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
+    "@eslint/js": "^9.23.0",
     "@netlify/plugin-lighthouse": "^4.0.3",
     "@npmcli/git": "^2.1.0",
     "copyfiles": "^2.4.1",
