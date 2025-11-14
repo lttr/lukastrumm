@@ -1,5 +1,4 @@
 const { html, raw } = require("../_lib/html")
-const { formatMonthAndYear } = require("../_lib/formatDate")
 const linkifyStr = require("linkify-string")
 
 function insertNewlines(str) {
@@ -33,7 +32,7 @@ module.exports = {
     return html`
       <div class="post-content">
         <p><em>This is my learning progress.</em></p>
-        <h2>Upcomming</h2>
+        <h2>Future / Maybe</h2>
         <ul>
           ${data.learningProgressIssues
             .filter((issue) => issue.state === "open")
