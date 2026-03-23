@@ -11,8 +11,7 @@ module.exports = {
   render() {
     const styles = html`<style>
       ${css`
-        ${inline(path.join(__dirname, "cv.css"))}
-      `}
+        ${inline(path.join(__dirname, "cv.css"))}`}
     </style> `
     return html`
       ${styles}
@@ -39,21 +38,42 @@ module.exports = {
       <h2>Skills</h2>
 
       <ul>
-        <li>JavaScript and TypeScript are languages of my choice</li>
         <li>
-          I have used a broad range or technologies and I look forward to
-          learning more
+          Leading and mentoring &ndash; both in tech teams and as a local Scout
+          group leader
         </li>
-        <li>I can bring an order into a complex system</li>
-        <li>
-          As a leader of a local Scout group I know how to lead and mentor
-        </li>
+        <li>Frontend architecture and web performance optimization</li>
+        <li>Platform engineering and developer experience</li>
+        <li>AI-assisted engineering workflows</li>
+        <li>JavaScript, TypeScript, Vue, Nuxt, modern CSS</li>
       </ul>
 
       <h2>Work experience</h2>
 
-      <h3>2023+ HTML Architect</h3>
-      <p>Crafting user experiences with HTML, CSS and JavaScript at Quanti.</p>
+      <h3>2026+ Platform Engineer</h3>
+      <ul>
+        <li>
+          I work as a member of the Platform team at Dr.&nbsp;Max Pharmacy
+          Chain, enabling other developers and the business to move faster
+        </li>
+        <li>
+          We are migrating a large Nuxt&nbsp;2 / Vue&nbsp;2 platform to the
+          latest versions
+        </li>
+      </ul>
+
+      <h3>2023+ Architect, Senior Software Engineer</h3>
+      <ul>
+        <li>
+          I have led frontend architecture on several projects at Quanti,
+          focused on Nuxt, Vue and modern CSS
+        </li>
+        <li>Drove web performance optimizations on e-commerce sites</li>
+        <li>
+          Gave talks on web frameworks, performance and AI-assisted engineering;
+          contributed to the company's AI adoption movement
+        </li>
+      </ul>
 
       <h3>2020 &ndash; 2023 Technical leader</h3>
       <ul>
