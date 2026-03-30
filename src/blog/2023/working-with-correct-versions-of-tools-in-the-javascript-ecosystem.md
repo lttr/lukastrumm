@@ -5,6 +5,7 @@ tags:
   - dependency-management
   - javascript
   - npm
+  - pnpm
 ---
 
 The ideal is to have the desired version of every tool at every situation during both development and deployment. Docker might be the answer for someone, but it might not be practical to use it all the time. Let's analyze the situation.
