@@ -730,3 +730,75 @@ article svg {
   border-top: 1px solid var(--back-color);
   padding-top: 2rem;
 }
+
+/* tips */
+
+.tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.tip-item {
+  border-left: 3px solid var(--primary-color);
+  padding-left: 1em;
+}
+
+.tip-item .tip-title {
+  margin-top: 0 !important;
+  margin-bottom: 0.3em;
+}
+
+.tip-item time {
+  font-size: var(--small-font);
+}
+
+.tip-number {
+  display: block;
+  font-family: var(--heading-font);
+  font-weight: var(--heading-font-weight);
+  font-size: var(--small-font);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.tip-item .tip-body p:last-child {
+  margin-bottom: 0.3em;
+}
+
+.tip-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  margin-top: 2rem;
+}
+
+.tip-footer > p,
+.home-page .tips-list + p {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* single tip page */
+
+.tip > header .tip-number {
+  margin-top: 2rem;
+}
+
+.tip > header h1 {
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.tip > header .post-header-description {
+  margin-bottom: 0;
+}
+
+.tip .post-content:not(.has-excerpt) {
+  border-top: none;
+}
+
+.tip .post-content:not(.has-excerpt) > *:first-child {
+  margin-top: 1.5rem;
+}

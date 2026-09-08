@@ -4,6 +4,7 @@
   "description": "Ideas about web engineering",
   "feedPath": "/feed.xml",
   "navigation": [
+    { "text": "Tips", "url": "/tips/" },
     { "text": "Blog", "url": "/blog/" },
     { "text": "Notes", "url": "/notes/" },
     { "text": "Projects", "url": "/projects/" },
