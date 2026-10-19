@@ -10,7 +10,7 @@ module.exports = {
   render(data) {
     return html`
       <div class="tips-list">
-        ${data.collections.tips.map((item) => tipFull(item))}
+        ${[...data.collections.tips].reverse().map((item) => tipFull(item))}
       </div>
     `
   },

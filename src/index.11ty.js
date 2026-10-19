@@ -13,7 +13,7 @@ module.exports = {
       <section class="home-page">
         <h1>Tips</h1>
         <div class="tips-list">
-          ${collections.tips.slice(0, 3).map((item) => tipFull(item))}
+          ${collections.tips.slice(-1).map((item) => tipFull(item))}
         </div>
         <p>
           <a href="/tips">All tips ➙</a>
