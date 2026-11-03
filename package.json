@@ -8,7 +8,6 @@
     "url": "git@github.com:lttr/lukastrumm.git"
   },
   "engines": {
-    "node": ">=22",
     "pnpm": ">=10"
   },
   "packageManager": "pnpm@10.17.1",
